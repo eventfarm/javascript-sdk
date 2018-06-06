@@ -1,5 +1,7 @@
 # Official Event Farm Node SDK
 
+https://www.npmjs.com/package/@eventfarm/node-sdk
+
 ### Installation
 
 ```bash
