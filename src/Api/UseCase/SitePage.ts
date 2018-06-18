@@ -19,13 +19,15 @@ export class SitePage {
     }
 
     // POST USE CASES: Commands
-    CreateSitePage(eventId: string, title: string, content: string, displayOrder: number = null, sitePageId: string = null): any {
+    CreateSitePage(eventId: string, title: string, content: string, displayOrder: number = null, sitePageId: string = null, styles: string = null, scripts: string = null): any {
         return this.restClient.post('SitePage/UseCase/CreateSitePage', {
             eventId,
             title,
             content,
             displayOrder,
-            sitePageId
+            sitePageId,
+            styles,
+            scripts
         }    );
     }
 
@@ -48,6 +50,17 @@ export class SitePage {
         return this.restClient.post('SitePage/UseCase/SetDisplayOrderForSitePage', {
             sitePageId,
             displayOrder
+        }    );
+    }
+
+    SetMetaInfoForSitePage(sitePageId: string, title: string = null, description: string = null, keywords: string = null, imageUrl: string = null, twitterHandle: string = null): any {
+        return this.restClient.post('SitePage/UseCase/SetMetaInfoForSitePage', {
+            sitePageId,
+            title,
+            description,
+            keywords,
+            imageUrl,
+            twitterHandle
         }    );
     }
 
