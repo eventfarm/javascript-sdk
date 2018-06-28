@@ -55,10 +55,112 @@ export class Stack {
         }    );
     }
 
+    CreateStack(eventId: string, ticketTypeId: string, methodId: string, quantity: number, maxQty: number, price: number = null, serviceFee: number = null, openingTime: number = null, closingTime: number = null, transferable: boolean = null, inviteDesignId: string = null, confirmDesignId: string = null, declineDesignId: string = null, stackId: string = null): any {
+        return this.restClient.post('Stack/UseCase/CreateStack', {
+            eventId,
+            ticketTypeId,
+            methodId,
+            quantity,
+            maxQty,
+            price,
+            serviceFee,
+            openingTime,
+            closingTime,
+            transferable,
+            inviteDesignId,
+            confirmDesignId,
+            declineDesignId,
+            stackId
+        }    );
+    }
+
+    DeleteStack(stackId: string): any {
+        return this.restClient.post('Stack/UseCase/DeleteStack', {
+            stackId
+        }    );
+    }
+
     RemovePromotionFromStacks(promotionId: string, stackIds: any): any {
         return this.restClient.post('Stack/UseCase/RemovePromotionFromStacks', {
             promotionId,
             stackIds
+        }    );
+    }
+
+    SetClosingTimeForStack(stackId: string, closingTime: number): any {
+        return this.restClient.post('Stack/UseCase/SetClosingTimeForStack', {
+            stackId,
+            closingTime
+        }    );
+    }
+
+    SetConfirmDesignForStack(stackId: string, confirmDesignId: string): any {
+        return this.restClient.post('Stack/UseCase/SetConfirmDesignForStack', {
+            stackId,
+            confirmDesignId
+        }    );
+    }
+
+    SetDeclineDesignForStack(stackId: string, declineDesignId: string): any {
+        return this.restClient.post('Stack/UseCase/SetDeclineDesignForStack', {
+            stackId,
+            declineDesignId
+        }    );
+    }
+
+    SetInviteDesignForStack(stackId: string, inviteDesignId: string): any {
+        return this.restClient.post('Stack/UseCase/SetInviteDesignForStack', {
+            stackId,
+            inviteDesignId
+        }    );
+    }
+
+    SetMaxQuantityForStack(stackId: string, maxQuantity: number): any {
+        return this.restClient.post('Stack/UseCase/SetMaxQuantityForStack', {
+            stackId,
+            maxQuantity
+        }    );
+    }
+
+    SetMethodForStack(stackId: string, methodSlug: string): any {
+        return this.restClient.post('Stack/UseCase/SetMethodForStack', {
+            stackId,
+            methodSlug
+        }    );
+    }
+
+    SetOpeningTimeForStack(stackId: string, openingTime: number): any {
+        return this.restClient.post('Stack/UseCase/SetOpeningTimeForStack', {
+            stackId,
+            openingTime
+        }    );
+    }
+
+    SetPriceForStack(stackId: string, price: number): any {
+        return this.restClient.post('Stack/UseCase/SetPriceForStack', {
+            stackId,
+            price
+        }    );
+    }
+
+    SetQuantityForStack(stackId: string, quantity: number): any {
+        return this.restClient.post('Stack/UseCase/SetQuantityForStack', {
+            stackId,
+            quantity
+        }    );
+    }
+
+    SetServiceFeeForStack(stackId: string, serviceFee: number): any {
+        return this.restClient.post('Stack/UseCase/SetServiceFeeForStack', {
+            stackId,
+            serviceFee
+        }    );
+    }
+
+    SetTransferableForStack(stackId: string, transferable: boolean): any {
+        return this.restClient.post('Stack/UseCase/SetTransferableForStack', {
+            stackId,
+            transferable
         }    );
     }
 }

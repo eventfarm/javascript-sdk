@@ -67,6 +67,7 @@ export interface UserAttributeNamespaceTypeInterface {
     isTwitter: boolean;
     isConvio: boolean;
     isGoogle: boolean;
+    isCustom: boolean;
 }
 export interface UserIdentifierTypeInterface {
     slug: string;
@@ -935,6 +936,7 @@ export class User {
                 'isTwitter': false,
                 'isConvio': false,
                 'isGoogle': false,
+                'isCustom': false,
             },
             {
                 'slug': 'info',
@@ -949,6 +951,7 @@ export class User {
                 'isTwitter': false,
                 'isConvio': false,
                 'isGoogle': false,
+                'isCustom': false,
             },
             {
                 'slug': 'hover',
@@ -963,6 +966,7 @@ export class User {
                 'isTwitter': false,
                 'isConvio': false,
                 'isGoogle': false,
+                'isCustom': false,
             },
             {
                 'slug': 'facebook',
@@ -977,6 +981,7 @@ export class User {
                 'isTwitter': false,
                 'isConvio': false,
                 'isGoogle': false,
+                'isCustom': false,
             },
             {
                 'slug': 'linked-in',
@@ -991,6 +996,7 @@ export class User {
                 'isTwitter': false,
                 'isConvio': false,
                 'isGoogle': false,
+                'isCustom': false,
             },
             {
                 'slug': 'salesforce',
@@ -1005,6 +1011,7 @@ export class User {
                 'isTwitter': false,
                 'isConvio': false,
                 'isGoogle': false,
+                'isCustom': false,
             },
             {
                 'slug': 'twitter',
@@ -1019,6 +1026,7 @@ export class User {
                 'isTwitter': true,
                 'isConvio': false,
                 'isGoogle': false,
+                'isCustom': false,
             },
             {
                 'slug': 'convio',
@@ -1033,6 +1041,7 @@ export class User {
                 'isTwitter': false,
                 'isConvio': true,
                 'isGoogle': false,
+                'isCustom': false,
             },
             {
                 'slug': 'google',
@@ -1047,6 +1056,22 @@ export class User {
                 'isTwitter': false,
                 'isConvio': false,
                 'isGoogle': true,
+                'isCustom': false,
+            },
+            {
+                'slug': 'custom',
+                'name': 'Custom',
+                'description': null,
+                'isInternal': false,
+                'isInfo': false,
+                'isHover': false,
+                'isSpamReport': false,
+                'isLinkedin': false,
+                'isSalesforce': false,
+                'isTwitter': false,
+                'isConvio': false,
+                'isGoogle': false,
+                'isCustom': true,
             },
         ];
     }

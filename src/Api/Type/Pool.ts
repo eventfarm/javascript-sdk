@@ -9,6 +9,7 @@ export interface FeatureTypeInterface {
     isWhiteLabeling: boolean;
     isAgents: boolean;
     isVisaCheckout: boolean;
+    isCanvas: boolean;
 }
 export interface PoolAllotmentTypeInterface {
     slug: string;
@@ -56,6 +57,7 @@ export class Pool {
                 'isWhiteLabeling': false,
                 'isAgents': false,
                 'isVisaCheckout': false,
+                'isCanvas': false,
             },
             {
                 'slug': 'apiaccess',
@@ -68,6 +70,7 @@ export class Pool {
                 'isWhiteLabeling': false,
                 'isAgents': false,
                 'isVisaCheckout': false,
+                'isCanvas': false,
             },
             {
                 'slug': 'marketo',
@@ -80,6 +83,7 @@ export class Pool {
                 'isWhiteLabeling': false,
                 'isAgents': false,
                 'isVisaCheckout': false,
+                'isCanvas': false,
             },
             {
                 'slug': 'emailmasking',
@@ -92,6 +96,7 @@ export class Pool {
                 'isWhiteLabeling': false,
                 'isAgents': false,
                 'isVisaCheckout': false,
+                'isCanvas': false,
             },
             {
                 'slug': 'whitelabeling',
@@ -104,6 +109,7 @@ export class Pool {
                 'isWhiteLabeling': true,
                 'isAgents': false,
                 'isVisaCheckout': false,
+                'isCanvas': false,
             },
             {
                 'slug': 'agents',
@@ -116,6 +122,7 @@ export class Pool {
                 'isWhiteLabeling': false,
                 'isAgents': true,
                 'isVisaCheckout': false,
+                'isCanvas': false,
             },
             {
                 'slug': 'visacheckout',
@@ -128,6 +135,20 @@ export class Pool {
                 'isWhiteLabeling': false,
                 'isAgents': false,
                 'isVisaCheckout': true,
+                'isCanvas': false,
+            },
+            {
+                'slug': 'canvas',
+                'name': 'Canvas',
+                'description': null,
+                'isSalesforce': false,
+                'isApiAccess': false,
+                'isMarketo': false,
+                'isEmailMasking': false,
+                'isWhiteLabeling': false,
+                'isAgents': false,
+                'isVisaCheckout': false,
+                'isCanvas': true,
             },
         ];
     }

@@ -82,6 +82,9 @@ export interface WebhookTypeInterface {
     isRegistered: boolean;
     isRemoved: boolean;
     isUpdated: boolean;
+    isAffirmativeSMS: boolean;
+    isUpdatedSMS: boolean;
+    isCreatedSMS: boolean;
 }
 
 export class Invitation {
@@ -956,6 +959,9 @@ export class Invitation {
                 'isRegistered': false,
                 'isRemoved': false,
                 'isUpdated': false,
+                'isAffirmativeSMS': false,
+                'isUpdatedSMS': false,
+                'isCreatedSMS': false,
             },
             {
                 'slug': 'assigned',
@@ -971,6 +977,9 @@ export class Invitation {
                 'isRegistered': false,
                 'isRemoved': false,
                 'isUpdated': false,
+                'isAffirmativeSMS': false,
+                'isUpdatedSMS': false,
+                'isCreatedSMS': false,
             },
             {
                 'slug': 'checkin',
@@ -986,6 +995,9 @@ export class Invitation {
                 'isRegistered': false,
                 'isRemoved': false,
                 'isUpdated': false,
+                'isAffirmativeSMS': false,
+                'isUpdatedSMS': false,
+                'isCreatedSMS': false,
             },
             {
                 'slug': 'confirmed',
@@ -1001,6 +1013,9 @@ export class Invitation {
                 'isRegistered': false,
                 'isRemoved': false,
                 'isUpdated': false,
+                'isAffirmativeSMS': false,
+                'isUpdatedSMS': false,
+                'isCreatedSMS': false,
             },
             {
                 'slug': 'created',
@@ -1016,6 +1031,9 @@ export class Invitation {
                 'isRegistered': false,
                 'isRemoved': false,
                 'isUpdated': false,
+                'isAffirmativeSMS': false,
+                'isUpdatedSMS': false,
+                'isCreatedSMS': false,
             },
             {
                 'slug': 'leave-behind',
@@ -1031,6 +1049,9 @@ export class Invitation {
                 'isRegistered': false,
                 'isRemoved': false,
                 'isUpdated': false,
+                'isAffirmativeSMS': false,
+                'isUpdatedSMS': false,
+                'isCreatedSMS': false,
             },
             {
                 'slug': 'purchased',
@@ -1046,6 +1067,9 @@ export class Invitation {
                 'isRegistered': false,
                 'isRemoved': false,
                 'isUpdated': false,
+                'isAffirmativeSMS': false,
+                'isUpdatedSMS': false,
+                'isCreatedSMS': false,
             },
             {
                 'slug': 'registered',
@@ -1061,6 +1085,9 @@ export class Invitation {
                 'isRegistered': true,
                 'isRemoved': false,
                 'isUpdated': false,
+                'isAffirmativeSMS': false,
+                'isUpdatedSMS': false,
+                'isCreatedSMS': false,
             },
             {
                 'slug': 'removed',
@@ -1076,6 +1103,9 @@ export class Invitation {
                 'isRegistered': false,
                 'isRemoved': true,
                 'isUpdated': false,
+                'isAffirmativeSMS': false,
+                'isUpdatedSMS': false,
+                'isCreatedSMS': false,
             },
             {
                 'slug': 'updated',
@@ -1091,6 +1121,63 @@ export class Invitation {
                 'isRegistered': false,
                 'isRemoved': false,
                 'isUpdated': true,
+                'isAffirmativeSMS': false,
+                'isUpdatedSMS': false,
+                'isCreatedSMS': false,
+            },
+            {
+                'slug': 'affirmative-sms',
+                'name': 'Affirmative SMS',
+                'description': null,
+                'isAffirmative': false,
+                'isAssigned': false,
+                'isCheckin': false,
+                'isConfirmed': false,
+                'isCreated': false,
+                'isLeaveBehind': false,
+                'isPurchased': false,
+                'isRegistered': false,
+                'isRemoved': false,
+                'isUpdated': false,
+                'isAffirmativeSMS': true,
+                'isUpdatedSMS': false,
+                'isCreatedSMS': false,
+            },
+            {
+                'slug': 'updated-sms',
+                'name': 'Updated SMS',
+                'description': null,
+                'isAffirmative': false,
+                'isAssigned': false,
+                'isCheckin': false,
+                'isConfirmed': false,
+                'isCreated': false,
+                'isLeaveBehind': false,
+                'isPurchased': false,
+                'isRegistered': false,
+                'isRemoved': false,
+                'isUpdated': false,
+                'isAffirmativeSMS': false,
+                'isUpdatedSMS': true,
+                'isCreatedSMS': false,
+            },
+            {
+                'slug': 'created-sms',
+                'name': 'Created SMS',
+                'description': null,
+                'isAffirmative': false,
+                'isAssigned': false,
+                'isCheckin': false,
+                'isConfirmed': false,
+                'isCreated': false,
+                'isLeaveBehind': false,
+                'isPurchased': false,
+                'isRegistered': false,
+                'isRemoved': false,
+                'isUpdated': false,
+                'isAffirmativeSMS': false,
+                'isUpdatedSMS': false,
+                'isCreatedSMS': true,
             },
         ];
     }
