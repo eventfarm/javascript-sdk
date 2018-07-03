@@ -905,8 +905,8 @@ export class DateTimeZone {
             {
                 'identifier': 'America/Montevideo',
                 'countryCode': 'UY',
-                'latitude': '-34.90917',
-                'longitude': '-56.2125',
+                'latitude': '-34.88334',
+                'longitude': '-56.18334',
             },
             {
                 'identifier': 'America/Montserrat',

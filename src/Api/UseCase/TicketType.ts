@@ -12,15 +12,15 @@ export class TicketType {
     }
 
     // POST USE CASES: Commands
-    CreateTicketType(eventId: string, name: string, quantity: number, sortOrder: number, code: string = null, description: string = null, isDeleted: boolean = null, ticketTypeId: string = null): any {
+    CreateTicketType(eventId: string, name: string, code: string, quantity: number, sortOrder: number, isDeleted: boolean = null, description: string = null, ticketTypeId: string = null): any {
         return this.restClient.post('TicketType/UseCase/CreateTicketType', {
             eventId,
             name,
+            code,
             quantity,
             sortOrder,
-            code,
-            description,
             isDeleted,
+            description,
             ticketTypeId
         }    );
     }

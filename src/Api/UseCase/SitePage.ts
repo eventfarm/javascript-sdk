@@ -53,14 +53,14 @@ export class SitePage {
         }    );
     }
 
-    SetMetaInfoForSitePage(sitePageId: string, title: string = null, description: string = null, keywords: string = null, imageUrl: string = null, twitterHandle: string = null): any {
+    SetMetaInfoForSitePage(sitePageId: string, title: string = null, description: string = null, keywords: string = null, imageUrl: string = null, name: string = null): any {
         return this.restClient.post('SitePage/UseCase/SetMetaInfoForSitePage', {
             sitePageId,
             title,
             description,
             keywords,
             imageUrl,
-            twitterHandle
+            name
         }    );
     }
 
