@@ -1,7 +1,7 @@
 {
   "name": "@eventfarm/node-sdk",
   "description": "Node SDK",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
   "authors": [
