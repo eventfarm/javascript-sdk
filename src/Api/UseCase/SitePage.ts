@@ -18,6 +18,15 @@ export class SitePage {
         }    );
     }
 
+    ListTemplatesForPool(poolId: string, shouldIncludeSharedTemplates: boolean = null, page: number = null, itemsPerPage: number = null): any {
+        return this.restClient.get('SitePage/UseCase/ListTemplatesForPool', {
+            poolId,
+            shouldIncludeSharedTemplates,
+            page,
+            itemsPerPage
+        }    );
+    }
+
     // POST USE CASES: Commands
     CreateSitePage(eventId: string, title: string, content: string, displayOrder: number = null, sitePageId: string = null, styles: string = null, scripts: string = null): any {
         return this.restClient.post('SitePage/UseCase/CreateSitePage', {
@@ -31,9 +40,37 @@ export class SitePage {
         }    );
     }
 
+    CreateTemplate(name: string, content: string, poolId: string = null, styles: string = null, scripts: string = null, color1: string = null, color2: string = null, color3: string = null, templateId: string = null): any {
+        return this.restClient.post('SitePage/UseCase/CreateTemplate', {
+            name,
+            content,
+            poolId,
+            styles,
+            scripts,
+            color1,
+            color2,
+            color3,
+            templateId
+        }    );
+    }
+
+    DuplicateSitePage(sitePageId: string, newSitePageId: string = null, toEventId: string = null): any {
+        return this.restClient.post('SitePage/UseCase/DuplicateSitePage', {
+            sitePageId,
+            newSitePageId,
+            toEventId
+        }    );
+    }
+
     RemoveSitePage(sitePageId: string): any {
         return this.restClient.post('SitePage/UseCase/RemoveSitePage', {
             sitePageId
+        }    );
+    }
+
+    RemoveTemplate(sitePageTemplateId: string): any {
+        return this.restClient.post('SitePage/UseCase/RemoveTemplate', {
+            sitePageTemplateId
         }    );
     }
 
@@ -78,6 +115,20 @@ export class SitePage {
             title,
             content,
             displayOrder
+        }    );
+    }
+
+    UpdateTemplate(templateId: string, name: string = null, content: string = null, poolId: string = null, styles: string = null, scripts: string = null, color1: string = null, color2: string = null, color3: string = null): any {
+        return this.restClient.post('SitePage/UseCase/UpdateTemplate', {
+            templateId,
+            name,
+            content,
+            poolId,
+            styles,
+            scripts,
+            color1,
+            color2,
+            color3
         }    );
     }
 }

@@ -3,6 +3,7 @@ import { RestClientInterface } from '../../RestClient/RestClientInterface';
 import { Allotment } from './Allotment';
 import { AppVersion } from './AppVersion';
 import { BugReport } from './BugReport';
+import { Canvas } from './Canvas';
 import { DomainMask } from './DomainMask';
 import { EmailDesign } from './EmailDesign';
 import { EmailDesignType } from './EmailDesignType';
@@ -56,6 +57,10 @@ export class UseCaseFactory {
 
     BugReport(): BugReport {
         return new BugReport(this.restClient);
+    }
+
+    Canvas(): Canvas {
+        return new Canvas(this.restClient);
     }
 
     DomainMask(): DomainMask {
