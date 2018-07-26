@@ -13,7 +13,7 @@ npm install --save @eventfarm/node-sdk
 OAuth is done using the Password Grant. You are going to need a Client Id and Secret that will be provided by Event Farm.
 
 ```typescript
-import { AccessToken, ApiClient } from '@eventfarm/client-sdk';
+import { AccessToken, ApiClient } from '@eventfarm/node-sdk';
 
 const eventFarmSDK = new ApiClient(
     'client_id', // required string
