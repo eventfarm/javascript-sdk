@@ -128,13 +128,12 @@ export class Invitation {
         }    );
     }
 
-    ListWaitlistForEvent(eventId: string, withData: any = null, withUserAttributes: any = null, query: string = null, statusFilter: any = null, lastModifiedTimestamp: number = null, isCheckedIn: boolean = null, sortBy: string = null, sortDirection: string = null, page: number = null, itemsPerPage: number = null): any {
+    ListWaitlistForEvent(eventId: string, withData: any = null, withUserAttributes: any = null, query: string = null, lastModifiedTimestamp: number = null, isCheckedIn: boolean = null, sortBy: string = null, sortDirection: string = null, page: number = null, itemsPerPage: number = null): any {
         return this.restClient.get('Invitation/UseCase/ListWaitlistForEvent', {
             eventId,
             withData,
             withUserAttributes,
             query,
-            statusFilter,
             lastModifiedTimestamp,
             isCheckedIn,
             sortBy,
@@ -285,9 +284,9 @@ export class Invitation {
         }    );
     }
 
-    PromoteInvitationFromWaitlist(invitationId: string, newInvitationStatus: string, shouldSendEmail: boolean = null): any {
-        return this.restClient.post('Invitation/UseCase/PromoteInvitationFromWaitlist', {
-            invitationId,
+    PromoteInvitationsFromWaitlist(invitationIds: any, newInvitationStatus: string, shouldSendEmail: boolean = null): any {
+        return this.restClient.post('Invitation/UseCase/PromoteInvitationsFromWaitlist', {
+            invitationIds,
             newInvitationStatus,
             shouldSendEmail
         }    );

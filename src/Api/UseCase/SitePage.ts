@@ -40,16 +40,14 @@ export class SitePage {
         }    );
     }
 
-    CreateTemplate(name: string, content: string, poolId: string = null, styles: string = null, scripts: string = null, color1: string = null, color2: string = null, color3: string = null, templateId: string = null): any {
+    CreateTemplate(name: string, content: string, difficulty: string, poolId: string = null, styles: string = null, scripts: string = null, templateId: string = null): any {
         return this.restClient.post('SitePage/UseCase/CreateTemplate', {
             name,
             content,
+            difficulty,
             poolId,
             styles,
             scripts,
-            color1,
-            color2,
-            color3,
             templateId
         }    );
     }
@@ -59,6 +57,20 @@ export class SitePage {
             sitePageId,
             newSitePageId,
             toEventId
+        }    );
+    }
+
+    DuplicateTemplate(templateId: string, newTemplateId: string = null, toPoolId: string = null): any {
+        return this.restClient.post('SitePage/UseCase/DuplicateTemplate', {
+            templateId,
+            newTemplateId,
+            toPoolId
+        }    );
+    }
+
+    GenerateSitePageTemplates(): any {
+        return this.restClient.post('SitePage/UseCase/GenerateSitePageTemplates', {
+
         }    );
     }
 
@@ -118,17 +130,14 @@ export class SitePage {
         }    );
     }
 
-    UpdateTemplate(templateId: string, name: string = null, content: string = null, poolId: string = null, styles: string = null, scripts: string = null, color1: string = null, color2: string = null, color3: string = null): any {
+    UpdateTemplate(templateId: string, name: string = null, content: string = null, poolId: string = null, styles: string = null, scripts: string = null): any {
         return this.restClient.post('SitePage/UseCase/UpdateTemplate', {
             templateId,
             name,
             content,
             poolId,
             styles,
-            scripts,
-            color1,
-            color2,
-            color3
+            scripts
         }    );
     }
 }

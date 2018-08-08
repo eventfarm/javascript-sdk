@@ -15,6 +15,7 @@ import { Region } from './Region';
 import { Report } from './Report';
 import { Salesforce } from './Salesforce';
 import { Salutation } from './Salutation';
+import { SitePage } from './SitePage';
 import { Stack } from './Stack';
 import { User } from './User';
 
@@ -86,6 +87,10 @@ export class TypeFactory
 
     Salutation(): Salutation {
         return new Salutation();
+    }
+
+    SitePage(): SitePage {
+        return new SitePage();
     }
 
     Stack(): Stack {
