@@ -17,8 +17,7 @@ export class AxiosRestClient implements RestClientInterface {
         });
     }
 
-    post(path: string, formParameters: any, headers?: any, options?: any, timeoutSeconds?: number): AxiosPromise {
-        // headers['Content-Type'] = 'application/json';
+    post(path: string, formParameters: any, headers: any = {}, options?: any, timeoutSeconds?: number): AxiosPromise {
         return axios({
             method: 'POST',
             url: this.makeUrl(path),

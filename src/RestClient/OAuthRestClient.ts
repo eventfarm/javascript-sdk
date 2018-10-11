@@ -59,18 +59,18 @@ export class OAuthRestClient implements RestClientInterface {
     }
 
     private async getPasswordCredentialsAccessToken() {
-        const response = await this.accessTokenRestClient.post('oauth/token', {
+        const response = await this.accessTokenRestClient.post('/oauth2/token', {
             'grant_type': 'password',
             'client_id': this.clientId,
             'client_secret': this.clientSecret,
             'username': this.email,
             'password': this.password,
-        });
+        })
         return this.getOAuthAccessTokenFromResponse(response.data);
     }
 
     private async getRefreshToken(refreshToken: string) {
-        const response = await this.accessTokenRestClient.post('oauth/token', {
+        const response = await this.accessTokenRestClient.post('/oauth2/token', {
             'grant_type': 'refresh_token',
             'refresh_token': refreshToken,
             'client_id': this.clientId,
@@ -80,6 +80,7 @@ export class OAuthRestClient implements RestClientInterface {
     }
 
     private getOAuthAccessTokenFromResponse(data: any): OAuthAccessToken {
+        console.log(data);
         const accessTokenData: AccessTokenJWTInterface = jwtDecode(data.access_token);
         const accessToken = new AccessToken(
             accessTokenData.aud,
@@ -114,19 +115,19 @@ export class AccessToken {
         private _expiresAt: number,
         private _email: string|null = null
     ) {}
-    
+
     get clientId(): string {
         return this._clientId;
     }
-    
+
     get tokenString(): string {
         return this._tokenString;
     }
-    
+
     get expiresAt(): number {
         return this._expiresAt;
     }
-    
+
     get email(): string | null {
         return this._email;
     }
