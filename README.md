@@ -1,4 +1,9 @@
-# Official Event Farm Node SDK
+
+<h1 align="center">
+      	<img height="100" src="https://i.imgur.com/yiv5YMX.png" alt="Event Farm Logo" /> 
+      	<br />Official Event Farm Node SDK
+</h1>
+
 
 https://www.npmjs.com/package/@eventfarm/node-sdk
 
