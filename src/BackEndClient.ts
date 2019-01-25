@@ -1,9 +1,10 @@
-import { AbstractApi } from './AbstractApi';
+import { AbstractApi, EventFarmAPIClientInterface } from './AbstractApi';
 import { RestClientInterface } from './Interfaces';
 import { PasswordGrantRestClient } from './Rest/Server/PasswordGrantRestClient';
 import { AxiosRestClient } from './Rest/AxiosRestClient';
 
-export class BackEndClient extends AbstractApi {
+export class BackEndClient extends AbstractApi
+  implements EventFarmAPIClientInterface {
   constructor(
     protected readonly clientId: string,
     protected readonly clientSecret: string,

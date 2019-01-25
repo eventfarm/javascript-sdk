@@ -5,6 +5,14 @@ import { USAState } from './Api/DateTime/USAStates';
 import { UseCaseFactory } from './Api/UseCase/UseCaseFactory';
 import { RestClientInterface } from './Interfaces';
 
+export interface EventFarmAPIClientInterface {
+  dateTimeFactory: DateTimeZone;
+  usaStateList: USAState;
+  countryList: Countries;
+  typeFactory: TypeFactory;
+  useCaseFactory: UseCaseFactory;
+}
+
 export abstract class AbstractApi {
   readonly dateTimeFactory = new DateTimeZone();
   readonly usaStateList = new USAState();
