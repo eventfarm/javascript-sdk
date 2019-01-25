@@ -1,4 +1,8 @@
-import { RestClientInterface } from '../../RestClient/RestClientInterface';
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
+
+import { RestClientInterface } from '../../interfaces';
 
 export class SitePage {
     constructor(private restClient: RestClientInterface) {}
@@ -28,7 +32,7 @@ export class SitePage {
     }
 
     // POST USE CASES: Commands
-    CreateSitePage(eventId: string, title: string, content: string, displayOrder: number = null, sitePageId: string = null, styles: string = null, scripts: string = null): any {
+    CreateSitePage(eventId: string, title: string, content: string, displayOrder: number = null, sitePageId: string = null, styles: string = null, scripts: string = null, sourceTemplateId: string = null): any {
         return this.restClient.post('SitePage/UseCase/CreateSitePage', {
             eventId,
             title,
@@ -36,11 +40,12 @@ export class SitePage {
             displayOrder,
             sitePageId,
             styles,
-            scripts
+            scripts,
+            sourceTemplateId
         }    );
     }
 
-    CreateTemplate(name: string, content: string, difficulty: string, poolId: string = null, styles: string = null, scripts: string = null, templateId: string = null): any {
+    CreateTemplate(name: string, content: string, difficulty: string, poolId: string = null, styles: string = null, scripts: string = null, description: string = null, templateId: string = null): any {
         return this.restClient.post('SitePage/UseCase/CreateTemplate', {
             name,
             content,
@@ -48,6 +53,7 @@ export class SitePage {
             poolId,
             styles,
             scripts,
+            description,
             templateId
         }    );
     }

@@ -1,3 +1,7 @@
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
+
 export interface DateTimeZoneInterface {
     'identifier': string;
     'countryCode': string;
@@ -905,8 +909,8 @@ export class DateTimeZone {
             {
                 'identifier': 'America/Montevideo',
                 'countryCode': 'UY',
-                'latitude': '-34.88334',
-                'longitude': '-56.18334',
+                'latitude': '-34.90917',
+                'longitude': '-56.2125',
             },
             {
                 'identifier': 'America/Montserrat',
@@ -1541,8 +1545,8 @@ export class DateTimeZone {
             {
                 'identifier': 'Asia/Macau',
                 'countryCode': 'MO',
-                'latitude': '22.23333',
-                'longitude': '113.58333',
+                'latitude': '22.19722',
+                'longitude': '113.54166',
             },
             {
                 'identifier': 'Asia/Magadan',

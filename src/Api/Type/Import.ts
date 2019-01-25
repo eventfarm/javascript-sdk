@@ -1,3 +1,6 @@
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
 export interface ImportColumnHeaderTypeInterface {
     slug: string;
     name: string;
@@ -472,7 +475,7 @@ export class Import {
             },
             {
                 'slug': 'telephone',
-                'name': 'Telephone',
+                'name': 'Mobile Phone',
                 'description': null,
                 'isAddress1': false,
                 'isAddress2': false,

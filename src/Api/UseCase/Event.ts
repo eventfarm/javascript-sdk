@@ -1,4 +1,8 @@
-import { RestClientInterface } from '../../RestClient/RestClientInterface';
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
+
+import { RestClientInterface } from '../../interfaces';
 
 export class Event {
     constructor(private restClient: RestClientInterface) {}
@@ -66,6 +70,24 @@ export class Event {
             eventDateFilterType,
             poolId,
             tags
+        }    );
+    }
+
+    ListEventsForPool(poolId: string, query: string = null, attributesFilter: any = null, attributesExcludeFilter: any = null, withData: any = null, lastModifiedTimestamp: number = null, page: number = null, itemsPerPage: number = null, sortBy: string = null, sortDirection: string = null, eventDateFilterType: string = null, tags: any = null, earliestStartTimestamp: number = null): any {
+        return this.restClient.get('Event/UseCase/ListEventsForPool', {
+            poolId,
+            query,
+            attributesFilter,
+            attributesExcludeFilter,
+            withData,
+            lastModifiedTimestamp,
+            page,
+            itemsPerPage,
+            sortBy,
+            sortDirection,
+            eventDateFilterType,
+            tags,
+            earliestStartTimestamp
         }    );
     }
 
@@ -211,8 +233,68 @@ export class Event {
         }    );
     }
 
+    DisableAmexCard(eventId: string): any {
+        return this.restClient.post('Event/UseCase/DisableAmexCard', {
+            eventId
+        }    );
+    }
+
+    DisableCanvas(eventId: string): any {
+        return this.restClient.post('Event/UseCase/DisableCanvas', {
+            eventId
+        }    );
+    }
+
+    DisableDiscoverCard(eventId: string): any {
+        return this.restClient.post('Event/UseCase/DisableDiscoverCard', {
+            eventId
+        }    );
+    }
+
+    DisableDistribution(eventId: string): any {
+        return this.restClient.post('Event/UseCase/DisableDistribution', {
+            eventId
+        }    );
+    }
+
+    DisableDonation(eventId: string): any {
+        return this.restClient.post('Event/UseCase/DisableDonation', {
+            eventId
+        }    );
+    }
+
+    DisableDuplicateEmails(eventId: string): any {
+        return this.restClient.post('Event/UseCase/DisableDuplicateEmails', {
+            eventId
+        }    );
+    }
+
+    DisableEditName(eventId: string): any {
+        return this.restClient.post('Event/UseCase/DisableEditName', {
+            eventId
+        }    );
+    }
+
     DisableEfx(eventId: string): any {
         return this.restClient.post('Event/UseCase/DisableEfx', {
+            eventId
+        }    );
+    }
+
+    DisableGuestCanChangeResponse(eventId: string): any {
+        return this.restClient.post('Event/UseCase/DisableGuestCanChangeResponse', {
+            eventId
+        }    );
+    }
+
+    DisableInvitationReveal(eventId: string): any {
+        return this.restClient.post('Event/UseCase/DisableInvitationReveal', {
+            eventId
+        }    );
+    }
+
+    DisableMastercardCard(eventId: string): any {
+        return this.restClient.post('Event/UseCase/DisableMastercardCard', {
             eventId
         }    );
     }
@@ -230,8 +312,74 @@ export class Event {
         }    );
     }
 
+    DisableVisaCard(eventId: string): any {
+        return this.restClient.post('Event/UseCase/DisableVisaCard', {
+            eventId
+        }    );
+    }
+
+    EnableAmexCard(eventId: string): any {
+        return this.restClient.post('Event/UseCase/EnableAmexCard', {
+            eventId
+        }    );
+    }
+
+    EnableCanvas(eventId: string): any {
+        return this.restClient.post('Event/UseCase/EnableCanvas', {
+            eventId
+        }    );
+    }
+
+    EnableDiscoverCard(eventId: string): any {
+        return this.restClient.post('Event/UseCase/EnableDiscoverCard', {
+            eventId
+        }    );
+    }
+
+    EnableDistribution(eventId: string): any {
+        return this.restClient.post('Event/UseCase/EnableDistribution', {
+            eventId
+        }    );
+    }
+
+    EnableDonation(eventId: string): any {
+        return this.restClient.post('Event/UseCase/EnableDonation', {
+            eventId
+        }    );
+    }
+
+    EnableDuplicateEmails(eventId: string): any {
+        return this.restClient.post('Event/UseCase/EnableDuplicateEmails', {
+            eventId
+        }    );
+    }
+
+    EnableEditName(eventId: string): any {
+        return this.restClient.post('Event/UseCase/EnableEditName', {
+            eventId
+        }    );
+    }
+
     EnableEfx(eventId: string): any {
         return this.restClient.post('Event/UseCase/EnableEfx', {
+            eventId
+        }    );
+    }
+
+    EnableGuestCanChangeResponse(eventId: string): any {
+        return this.restClient.post('Event/UseCase/EnableGuestCanChangeResponse', {
+            eventId
+        }    );
+    }
+
+    EnableInvitationReveal(eventId: string): any {
+        return this.restClient.post('Event/UseCase/EnableInvitationReveal', {
+            eventId
+        }    );
+    }
+
+    EnableMastercardCard(eventId: string): any {
+        return this.restClient.post('Event/UseCase/EnableMastercardCard', {
             eventId
         }    );
     }
@@ -246,6 +394,12 @@ export class Event {
         return this.restClient.post('Event/UseCase/EnableUserField', {
             eventId,
             field
+        }    );
+    }
+
+    EnableVisaCard(eventId: string): any {
+        return this.restClient.post('Event/UseCase/EnableVisaCard', {
+            eventId
         }    );
     }
 
@@ -301,6 +455,20 @@ export class Event {
         return this.restClient.post('Event/UseCase/SetDefaultSitePageForEvent', {
             eventId,
             sitePageId
+        }    );
+    }
+
+    SetEventMaxInvitationCount(eventId: string, eventMaxInvitationCount: number): any {
+        return this.restClient.post('Event/UseCase/SetEventMaxInvitationCount', {
+            eventId,
+            eventMaxInvitationCount
+        }    );
+    }
+
+    SetEventMinInvitationCount(eventId: string, eventMinInvitationCount: number): any {
+        return this.restClient.post('Event/UseCase/SetEventMinInvitationCount', {
+            eventId,
+            eventMinInvitationCount
         }    );
     }
 

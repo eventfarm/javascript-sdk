@@ -1,4 +1,8 @@
-import { RestClientInterface } from '../../RestClient/RestClientInterface';
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
+
+import { RestClientInterface } from '../../interfaces';
 
 export class TicketType {
     constructor(private restClient: RestClientInterface) {}
@@ -31,7 +35,7 @@ export class TicketType {
         }    );
     }
 
-    SetDescriptionForTicketType(ticketTypeId: string, description: string): any {
+    SetDescriptionForTicketType(ticketTypeId: string, description: string = null): any {
         return this.restClient.post('TicketType/UseCase/SetDescriptionForTicketType', {
             ticketTypeId,
             description

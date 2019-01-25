@@ -1,10 +1,12 @@
-import { RestClientInterface } from './RestClientInterface';
-import { OAuthAccessToken } from './OAuthAccessToken';
 import * as jwtDecode from 'jwt-decode';
 
-export class OAuthRestClient implements RestClientInterface {
+import { ServerAccessToken } from './ServerAccessToken';
+import { JWTAccessToken, JWTAccessTokenInterface } from '../JWTAccessToken';
+import { RestClientInterface } from '../../interfaces';
 
-    private oAuthAccessToken: OAuthAccessToken = null;
+export class PasswordGrantRestClient implements RestClientInterface {
+
+    private oAuthAccessToken: ServerAccessToken = null;
 
     constructor(
         private restClient: RestClientInterface,
@@ -15,17 +17,17 @@ export class OAuthRestClient implements RestClientInterface {
         private password: string
     ) { }
 
-    async get(path: string, queryParameters: any, headers?: Headers, options?: any, timeoutSeconds?: number) {
+    async get(path: string, queryParameters = {}, headers = {}, options = {}, timeoutSeconds = 5000) {
         const authorizeHeaders = await this.getAuthorizationHeaders(headers);
         return this.restClient.get(path, queryParameters, authorizeHeaders)
     }
 
-    async post(path: string, formParameters: any, headers?: Headers, options?: any, timeoutSeconds?: number) {
+    async post(path: string, formParameters = {}, headers = {}, options = {}, timeoutSeconds = 5000) {
         const authorizeHeaders = await this.getAuthorizationHeaders(headers);
         return this.restClient.post(path, formParameters, authorizeHeaders)
     }
 
-    async postMultipart(path: string, formParameters: any, headers?: Headers, options?: any, timeoutSeconds?: number) {
+    async postMultipart(path: string, formParameters = {}, headers = {}, options = {}, timeoutSeconds = 5000) {
         const authorizeHeaders = await this.getAuthorizationHeaders(headers);
         return this.restClient.postMultipart(path, formParameters, authorizeHeaders)
     }
@@ -36,7 +38,7 @@ export class OAuthRestClient implements RestClientInterface {
         return headers;
     }
 
-    private async getOAuthAccessToken(): Promise<OAuthAccessToken> {
+    private async getOAuthAccessToken(): Promise<ServerAccessToken> {
         if (this.oAuthAccessToken === null) {
             this.oAuthAccessToken = await this.getPasswordCredentialsAccessToken();
         }
@@ -59,18 +61,18 @@ export class OAuthRestClient implements RestClientInterface {
     }
 
     private async getPasswordCredentialsAccessToken() {
-        const response = await this.accessTokenRestClient.post('/oauth2/token', {
+        const response = await this.accessTokenRestClient.post('oauth2/token', {
             'grant_type': 'password',
             'client_id': this.clientId,
             'client_secret': this.clientSecret,
             'username': this.email,
             'password': this.password,
-        })
+        });
         return this.getOAuthAccessTokenFromResponse(response.data);
     }
 
     private async getRefreshToken(refreshToken: string) {
-        const response = await this.accessTokenRestClient.post('/oauth2/token', {
+        const response = await this.accessTokenRestClient.post('oauth2/token', {
             'grant_type': 'refresh_token',
             'refresh_token': refreshToken,
             'client_id': this.clientId,
@@ -79,56 +81,20 @@ export class OAuthRestClient implements RestClientInterface {
         return this.getOAuthAccessTokenFromResponse(response.data);
     }
 
-    private getOAuthAccessTokenFromResponse(data: any): OAuthAccessToken {
-        console.log(data);
-        const accessTokenData: AccessTokenJWTInterface = jwtDecode(data.access_token);
-        const accessToken = new AccessToken(
+    private getOAuthAccessTokenFromResponse(data: any): ServerAccessToken {
+        const accessTokenData: JWTAccessTokenInterface = jwtDecode(data.access_token);
+        const accessToken = new JWTAccessToken(
             accessTokenData.aud,
             accessTokenData.jti,
             accessTokenData.exp,
             accessTokenData.sub
         );
-        return new OAuthAccessToken(
+        return new ServerAccessToken(
             data.token_type,
             accessToken.tokenString,
             data.expires_at,
             data.refresh_token,
             data.user_id
         );
-    }
-}
-
-export interface AccessTokenJWTInterface {
-    aud: string;
-    jti: string;
-    iat: number;
-    nbf: number;
-    exp: number;
-    sub: string;
-    scopes: string[];
-}
-
-export class AccessToken {
-    constructor(
-        private _clientId: string,
-        private _tokenString: string,
-        private _expiresAt: number,
-        private _email: string|null = null
-    ) {}
-
-    get clientId(): string {
-        return this._clientId;
-    }
-
-    get tokenString(): string {
-        return this._tokenString;
-    }
-
-    get expiresAt(): number {
-        return this._expiresAt;
-    }
-
-    get email(): string | null {
-        return this._email;
     }
 }

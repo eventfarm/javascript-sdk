@@ -1,7 +1,11 @@
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
 export interface SitePageTemplateDifficultyTypeInterface {
     slug: string;
     name: string;
     description?: string;
+    isCustom: boolean;
     isBeginner: boolean;
     isIntermediate: boolean;
     isAdvanced: boolean;
@@ -12,9 +16,20 @@ export class SitePage {
     SitePageTemplateDifficultyType(): SitePageTemplateDifficultyTypeInterface[] {
         return [
             {
+                'slug': 'custom',
+                'name': 'Custom',
+                'description': null,
+                'isCustom': true,
+                'isBeginner': false,
+                'isIntermediate': false,
+                'isAdvanced': false,
+                'isExpert': false,
+            },
+            {
                 'slug': 'beginner',
                 'name': 'Beginner',
-                'description': 'Beginner templates are for noobs',
+                'description': null,
+                'isCustom': false,
                 'isBeginner': true,
                 'isIntermediate': false,
                 'isAdvanced': false,
@@ -23,7 +38,8 @@ export class SitePage {
             {
                 'slug': 'intermediate',
                 'name': 'Intermediate',
-                'description': 'Intermediate templates are for noobs',
+                'description': null,
+                'isCustom': false,
                 'isBeginner': false,
                 'isIntermediate': true,
                 'isAdvanced': false,
@@ -32,7 +48,8 @@ export class SitePage {
             {
                 'slug': 'advanced',
                 'name': 'Advanced',
-                'description': 'Advanced templates are for noobs',
+                'description': null,
+                'isCustom': false,
                 'isBeginner': false,
                 'isIntermediate': false,
                 'isAdvanced': true,
@@ -41,7 +58,8 @@ export class SitePage {
             {
                 'slug': 'expert',
                 'name': 'Expert',
-                'description': 'Expert templates are for noobs',
+                'description': null,
+                'isCustom': false,
                 'isBeginner': false,
                 'isIntermediate': false,
                 'isAdvanced': false,

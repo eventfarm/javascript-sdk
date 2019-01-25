@@ -1,3 +1,6 @@
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
 export interface FeatureTypeInterface {
     slug: string;
     name: string;
@@ -30,11 +33,14 @@ export interface PoolContractTypeInterface {
     slug: string;
     name: string;
     description?: string;
+    isCIO: boolean;
     isIntro: boolean;
+    isTrial: boolean;
     isPro: boolean;
     isPremier: boolean;
     isPremierPlus: boolean;
     isCustom: boolean;
+    isInternal: boolean;
 }
 export interface PoolWebhookTypeInterface {
     slug: string;
@@ -204,54 +210,108 @@ export class Pool {
     PoolContractType(): PoolContractTypeInterface[] {
         return [
             {
-                'slug': 'intro',
-                'name': 'Intro',
+                'slug': 'cio',
+                'name': 'CIO',
                 'description': null,
-                'isIntro': true,
+                'isCIO': true,
+                'isIntro': false,
+                'isTrial': false,
                 'isPro': false,
                 'isPremier': false,
                 'isPremierPlus': false,
                 'isCustom': false,
+                'isInternal': false,
+            },
+            {
+                'slug': 'intro',
+                'name': 'Intro',
+                'description': null,
+                'isCIO': false,
+                'isIntro': true,
+                'isTrial': false,
+                'isPro': false,
+                'isPremier': false,
+                'isPremierPlus': false,
+                'isCustom': false,
+                'isInternal': false,
+            },
+            {
+                'slug': 'trial',
+                'name': 'Trial',
+                'description': null,
+                'isCIO': false,
+                'isIntro': false,
+                'isTrial': true,
+                'isPro': false,
+                'isPremier': false,
+                'isPremierPlus': false,
+                'isCustom': false,
+                'isInternal': false,
             },
             {
                 'slug': 'pro',
                 'name': 'Pro',
                 'description': null,
+                'isCIO': false,
                 'isIntro': false,
+                'isTrial': false,
                 'isPro': true,
                 'isPremier': false,
                 'isPremierPlus': false,
                 'isCustom': false,
+                'isInternal': false,
             },
             {
                 'slug': 'premier',
                 'name': 'Premier',
                 'description': null,
+                'isCIO': false,
                 'isIntro': false,
+                'isTrial': false,
                 'isPro': false,
                 'isPremier': true,
                 'isPremierPlus': false,
                 'isCustom': false,
+                'isInternal': false,
             },
             {
                 'slug': 'premierPlus',
                 'name': 'Premier Plus',
                 'description': null,
+                'isCIO': false,
                 'isIntro': false,
+                'isTrial': false,
                 'isPro': false,
                 'isPremier': false,
                 'isPremierPlus': true,
                 'isCustom': false,
+                'isInternal': false,
             },
             {
                 'slug': 'custom',
                 'name': 'Custom',
                 'description': null,
+                'isCIO': false,
                 'isIntro': false,
+                'isTrial': false,
                 'isPro': false,
                 'isPremier': false,
                 'isPremierPlus': false,
                 'isCustom': true,
+                'isInternal': false,
+            },
+            {
+                'slug': 'internal',
+                'name': 'Internal',
+                'description': null,
+                'isCIO': false,
+                'isIntro': false,
+                'isTrial': false,
+                'isPro': false,
+                'isPremier': false,
+                'isPremierPlus': false,
+                'isCustom': false,
+                'isInternal': true,
             },
         ];
     }

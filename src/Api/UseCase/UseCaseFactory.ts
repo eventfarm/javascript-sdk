@@ -1,5 +1,6 @@
-import { RestClientInterface } from '../../RestClient/RestClientInterface';
+import { RestClientInterface } from '../../interfaces';
 
+import { ActivityLog } from './ActivityLog';
 import { Allotment } from './Allotment';
 import { AppVersion } from './AppVersion';
 import { BugReport } from './BugReport';
@@ -19,14 +20,15 @@ import { Import } from './Import';
 import { Integration } from './Integration';
 import { IntegrationFieldMapping } from './IntegrationFieldMapping';
 import { IntegrationStatusMapping } from './IntegrationStatusMapping';
-import { Interaction } from './Interaction';
 import { Invitation } from './Invitation';
 import { OAuth } from './OAuth';
+import { OAuth2 } from './OAuth2';
 import { Pool } from './Pool';
 import { PoolContact } from './PoolContact';
 import { PoolContract } from './PoolContract';
 import { PoolFeature } from './PoolFeature';
 import { Promotion } from './Promotion';
+import { Question } from './Question';
 import { Queue } from './Queue';
 import { Region } from './Region';
 import { Report } from './Report';
@@ -46,6 +48,10 @@ import { UserName } from './UserName';
 
 export class UseCaseFactory {
     constructor(private restClient: RestClientInterface) {}
+
+    ActivityLog(): ActivityLog {
+        return new ActivityLog(this.restClient);
+    }
 
     Allotment(): Allotment {
         return new Allotment(this.restClient);
@@ -123,16 +129,16 @@ export class UseCaseFactory {
         return new IntegrationStatusMapping(this.restClient);
     }
 
-    Interaction(): Interaction {
-        return new Interaction(this.restClient);
-    }
-
     Invitation(): Invitation {
         return new Invitation(this.restClient);
     }
 
     OAuth(): OAuth {
         return new OAuth(this.restClient);
+    }
+
+    OAuth2(): OAuth2 {
+        return new OAuth2(this.restClient);
     }
 
     Pool(): Pool {
@@ -153,6 +159,10 @@ export class UseCaseFactory {
 
     Promotion(): Promotion {
         return new Promotion(this.restClient);
+    }
+
+    Question(): Question {
+        return new Question(this.restClient);
     }
 
     Queue(): Queue {

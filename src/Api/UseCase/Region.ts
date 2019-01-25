@@ -1,4 +1,8 @@
-import { RestClientInterface } from '../../RestClient/RestClientInterface';
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
+
+import { RestClientInterface } from '../../interfaces';
 
 export class Region {
     constructor(private restClient: RestClientInterface) {}

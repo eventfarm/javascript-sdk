@@ -1,40 +1,62 @@
-
 <h1 align="center">
       	<img height="100" src="https://i.imgur.com/yiv5YMX.png" alt="Event Farm Logo" /> 
-      	<br />Official Event Farm Node SDK
+      	<br />Official Event Farm JavaScript SDK
 </h1>
 
+*With full **TypeScript** support!*
 
-https://www.npmjs.com/package/@eventfarm/node-sdk
+[Check us out on npm!](https://www.npmjs.com/package/@eventfarm/javascript-sdk)
 
 ### Installation
 
 ```bash
-npm install --save @eventfarm/node-sdk
+npm install --save @eventfarm/javascript-sdk
 ```
 
 ### Usage
 
+#### Client Side Application (React, Angular, Vue, etc.)
+
+You are going to need to get an access token JWT using the Event Farm OAuth.
+
+```typescript
+import { FrontEndClient } from '@eventfarm/javascript-sdk/dist/api-for-client';
+import { ClientAccessToken } from '@eventfarm/javascript-sdk/dist/Rest/Client/ClientAccessToken';
+
+const jwtResponseFromOauth: string = 'crazy-jwt-string-from-ef-oauth-login';
+
+const client = new FrontEndClient(
+  ClientAccessToken.createFromJWT(jwtResponseFromOauth)
+);
+
+async function listEvents(userId: string): Promise<{}> {
+  return await client.useCaseFactory.Event().ListEventsForUser(userId);
+}
+
+listEvents('my-user-id').then(apiResponse => console.log(apiResponse));
+```
+
+#### Node
+
 OAuth is done using the Password Grant. You are going to need a Client Id and Secret that will be provided by Event Farm.
 
 ```typescript
-import { AccessToken, ApiClient } from '@eventfarm/node-sdk';
+import { BackEndClient } from '@eventfarm/javascript-sdk/dist/api-for-node';
 
-const eventFarmSDK = new ApiClient(
+const client = new BackEndClient(
     'client_id', // required string
     'client_secret', // required string
     'email', // required string
     'password', // required string
-    'apiBaseUrl', // optional string
-    'loginBaseUrl', // optional string
+    'loginBaseUrl', // default: 'https://eventfarm.com/app/oauth/token'
+    'apiBaseUrl', // default: 'https://eventfarm.com/api/v2'
 );
 
 async function listEvents(userId: string): Promise<{}> {
-  return await eventFarmSDK.useCaseFactory.Event().ListEventsForUser(userId);
+  return await client.useCaseFactory.Event().ListEventsForUser(userId);
 }
 
-listEvents(AccessToken.userId).then(apiResponse => console.log(apiResponse));
-
+listEvents('my-user-id').then(apiResponse => console.log(apiResponse));
 ```
 
 ### Responses

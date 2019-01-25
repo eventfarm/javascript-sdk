@@ -1,4 +1,8 @@
-import { RestClientInterface } from '../../RestClient/RestClientInterface';
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
+
+import { RestClientInterface } from '../../interfaces';
 
 export class Invitation {
     constructor(private restClient: RestClientInterface) {}
@@ -115,9 +119,38 @@ export class Invitation {
         }    );
     }
 
-    ListInvitationsForUser(userId: string, poolId: string, page: number = null, itemsPerPage: number = null, eventDateFilterType: string = null, sortDirection: string = null, withData: any = null, statusFilter: any = null): any {
+    ListInvitationsForUser(userId: string, poolId: string = null, eventId: string = null, page: number = null, itemsPerPage: number = null, eventDateFilterType: string = null, sortDirection: string = null, withData: any = null, statusFilter: any = null): any {
         return this.restClient.get('Invitation/UseCase/ListInvitationsForUser', {
             userId,
+            poolId,
+            eventId,
+            page,
+            itemsPerPage,
+            eventDateFilterType,
+            sortDirection,
+            withData,
+            statusFilter
+        }    );
+    }
+
+    ListInvitationsForUserByEmail(email: string, poolId: string = null, eventId: string = null, page: number = null, itemsPerPage: number = null, eventDateFilterType: string = null, sortDirection: string = null, withData: any = null, statusFilter: any = null): any {
+        return this.restClient.get('Invitation/UseCase/ListInvitationsForUserByEmail', {
+            email,
+            poolId,
+            eventId,
+            page,
+            itemsPerPage,
+            eventDateFilterType,
+            sortDirection,
+            withData,
+            statusFilter
+        }    );
+    }
+
+    ListInvitationsForUserForParent(userId: string, parentEventId: string, poolId: string = null, page: number = null, itemsPerPage: number = null, eventDateFilterType: string = null, sortDirection: string = null, withData: any = null, statusFilter: any = null): any {
+        return this.restClient.get('Invitation/UseCase/ListInvitationsForUserForParent', {
+            userId,
+            parentEventId,
             poolId,
             page,
             itemsPerPage,
@@ -338,7 +371,7 @@ export class Invitation {
         }    );
     }
 
-    UpdateInvitation(invitationId: string, stackId: string, invitationStatus: string, company: string = null, position: string = null, email: string = null, firstName: string = null, lastName: string = null, other: string = null): any {
+    UpdateInvitation(invitationId: string, stackId: string, invitationStatus: string, company: string = null, position: string = null, email: string = null, firstName: string = null, lastName: string = null, other: string = null, telephone: string = null): any {
         return this.restClient.post('Invitation/UseCase/UpdateInvitation', {
             invitationId,
             stackId,
@@ -348,7 +381,8 @@ export class Invitation {
             email,
             firstName,
             lastName,
-            other
+            other,
+            telephone
         }    );
     }
 }

@@ -1,6 +1,5 @@
 import axios, { AxiosPromise } from 'axios';
-
-import { RestClientInterface } from './RestClientInterface';
+import { RestClientInterface } from '../interfaces';
 
 export class AxiosRestClient implements RestClientInterface {
     constructor(
@@ -17,7 +16,7 @@ export class AxiosRestClient implements RestClientInterface {
         });
     }
 
-    post(path: string, formParameters: any, headers: any = {}, options?: any, timeoutSeconds?: number): AxiosPromise {
+    post(path: string, formParameters: any, headers?: any, options?: any, timeoutSeconds?: number): AxiosPromise {
         return axios({
             method: 'POST',
             url: this.makeUrl(path),

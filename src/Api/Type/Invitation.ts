@@ -1,3 +1,6 @@
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
 export interface InvitationActionTypeInterface {
     slug: string;
     name: string;
@@ -1091,7 +1094,7 @@ export class Invitation {
             },
             {
                 'slug': 'removed',
-                'name': 'Updated',
+                'name': 'Removed',
                 'description': null,
                 'isAffirmative': false,
                 'isAssigned': false,

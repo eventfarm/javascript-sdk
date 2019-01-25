@@ -1,4 +1,4 @@
-export class OAuthAccessToken {
+export class ServerAccessToken {
     constructor(
         private _tokenType: string,
         private _accessToken: string,

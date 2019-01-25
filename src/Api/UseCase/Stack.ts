@@ -1,4 +1,8 @@
-import { RestClientInterface } from '../../RestClient/RestClientInterface';
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
+
+import { RestClientInterface } from '../../interfaces';
 
 export class Stack {
     constructor(private restClient: RestClientInterface) {}
@@ -60,6 +64,26 @@ export class Stack {
             eventId,
             ticketTypeId,
             methodId,
+            quantity,
+            maxQty,
+            price,
+            serviceFee,
+            openingTime,
+            closingTime,
+            transferable,
+            inviteDesignId,
+            confirmDesignId,
+            declineDesignId,
+            stackId
+        }    );
+    }
+
+    CreateStackFromSettings(eventId: string, ticketTypeId: string, privateInvite: boolean, fcfs: boolean, quantity: number, maxQty: number, price: number = null, serviceFee: number = null, openingTime: number = null, closingTime: number = null, transferable: boolean = null, inviteDesignId: string = null, confirmDesignId: string = null, declineDesignId: string = null, stackId: string = null): any {
+        return this.restClient.post('Stack/UseCase/CreateStackFromSettings', {
+            eventId,
+            ticketTypeId,
+            privateInvite,
+            fcfs,
             quantity,
             maxQty,
             price,
@@ -161,6 +185,38 @@ export class Stack {
         return this.restClient.post('Stack/UseCase/SetTransferableForStack', {
             stackId,
             transferable
+        }    );
+    }
+
+    UpdateStack(stackId: string, methodSlug: string = null, price: number = null, serviceFee: number = null, quantity: number = null, maxQuantity: number = null, transferable: boolean = null): any {
+        return this.restClient.post('Stack/UseCase/UpdateStack', {
+            stackId,
+            methodSlug,
+            price,
+            serviceFee,
+            quantity,
+            maxQuantity,
+            transferable
+        }    );
+    }
+
+    UpdateStackFromSettings(stackId: string, eventId: string = null, ticketTypeId: string = null, privateInvite: boolean = null, fcfs: boolean = null, quantity: number = null, maxQty: number = null, price: number = null, serviceFee: number = null, openingTime: number = null, closingTime: number = null, transferable: boolean = null, inviteDesignId: string = null, confirmDesignId: string = null, declineDesignId: string = null): any {
+        return this.restClient.post('Stack/UseCase/UpdateStackFromSettings', {
+            stackId,
+            eventId,
+            ticketTypeId,
+            privateInvite,
+            fcfs,
+            quantity,
+            maxQty,
+            price,
+            serviceFee,
+            openingTime,
+            closingTime,
+            transferable,
+            inviteDesignId,
+            confirmDesignId,
+            declineDesignId
         }    );
     }
 }

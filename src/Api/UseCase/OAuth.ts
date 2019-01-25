@@ -1,4 +1,8 @@
-import { RestClientInterface } from '../../RestClient/RestClientInterface';
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
+
+import { RestClientInterface } from '../../interfaces';
 
 export class OAuth {
     constructor(private restClient: RestClientInterface) {}
@@ -14,28 +18,6 @@ export class OAuth {
     CreateGhostAccessToken(email: string): any {
         return this.restClient.post('OAuth/UseCase/CreateGhostAccessToken', {
             email
-        }    );
-    }
-
-    CreateOAuthClient(name: string, redirectUrls: any, identifier: string = null, secret: string = null): any {
-        return this.restClient.post('OAuth/UseCase/CreateOAuthClient', {
-            name,
-            redirectUrls,
-            identifier,
-            secret
-        }    );
-    }
-
-    RevokeAccessToken(identifier: string): any {
-        return this.restClient.post('OAuth/UseCase/RevokeAccessToken', {
-            identifier
-        }    );
-    }
-
-    SetRedirectUrlsForOAuthClient(identifier: string, redirectUrls: any): any {
-        return this.restClient.post('OAuth/UseCase/SetRedirectUrlsForOAuthClient', {
-            identifier,
-            redirectUrls
         }    );
     }
 }

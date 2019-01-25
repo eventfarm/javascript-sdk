@@ -1,3 +1,6 @@
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
 export interface EventRoleTypeInterface {
     slug: string;
     name: string;

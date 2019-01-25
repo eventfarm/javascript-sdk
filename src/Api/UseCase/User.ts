@@ -1,4 +1,8 @@
-import { RestClientInterface } from '../../RestClient/RestClientInterface';
+/**
+ * This file was auto generated, please do not edit it directly.
+**/
+
+import { RestClientInterface } from '../../interfaces';
 
 export class User {
     constructor(private restClient: RestClientInterface) {}
@@ -12,11 +16,21 @@ export class User {
         }    );
     }
 
-    GetUser(userId: string, withData: any = null, withUserAttributes: any = null): any {
+    GetUser(userId: string, withData: any = null, withUserAttributes: any = null, poolId: string = null): any {
         return this.restClient.get('User/UseCase/GetUser', {
             userId,
             withData,
-            withUserAttributes
+            withUserAttributes,
+            poolId
+        }    );
+    }
+
+    GetUserByEmail(email: string, withData: any = null, withUserAttributes: any = null, poolId: string = null): any {
+        return this.restClient.get('User/UseCase/GetUserByEmail', {
+            email,
+            withData,
+            withUserAttributes,
+            poolId
         }    );
     }
 
@@ -107,7 +121,21 @@ export class User {
         }    );
     }
 
-    CreateCIOAccount(email: string = null, firstName: string = null, lastName: string = null, company: string = null, position: string = null, phone: string = null, title: string = null, other: string = null): any {
+    CreateAuthUser(email: string = null, firstName: string = null, lastName: string = null, company: string = null, position: string = null, phone: string = null, poolId: string = null, title: string = null, other: string = null): any {
+        return this.restClient.post('User/UseCase/CreateAuthUser', {
+            email,
+            firstName,
+            lastName,
+            company,
+            position,
+            phone,
+            poolId,
+            title,
+            other
+        }    );
+    }
+
+    CreateCIOAccount(email: string = null, firstName: string = null, lastName: string = null, company: string = null, position: string = null, phone: string = null, title: string = null, other: string = null, userId: string = null, poolId: string = null): any {
         return this.restClient.post('User/UseCase/CreateCIOAccount', {
             email,
             firstName,
@@ -116,7 +144,9 @@ export class User {
             position,
             phone,
             title,
-            other
+            other,
+            userId,
+            poolId
         }    );
     }
 
@@ -177,9 +207,17 @@ export class User {
         }    );
     }
 
-    SendForgotPasswordEmail(email: string): any {
+    SendForgotPasswordEmail(email: string, appName: string = null): any {
         return this.restClient.post('User/UseCase/SendForgotPasswordEmail', {
-            email
+            email,
+            appName
+        }    );
+    }
+
+    SendVerificationEmail(email: string, appName: string = null): any {
+        return this.restClient.post('User/UseCase/SendVerificationEmail', {
+            email,
+            appName
         }    );
     }
 
