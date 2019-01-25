@@ -5,10 +5,7 @@ import { ImplicitRestClient } from './Rest/Client/ImplicitRestClient';
 import { ClientAccessToken } from './Rest/Client/ClientAccessToken';
 
 export class FrontEndClient extends AbstractApi {
-  constructor(
-    protected readonly accessToken: ClientAccessToken,
-    apiBaseUri?: string,
-  ) {
+  constructor(protected accessToken: ClientAccessToken, apiBaseUri?: string) {
     super(apiBaseUri);
   }
 
