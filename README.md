@@ -1,9 +1,7 @@
 <h1 align="center">
       	<img height="100" src="https://i.imgur.com/yiv5YMX.png" alt="Event Farm Logo" /> 
-      	<br />Official Event Farm JavaScript SDK
+      	<br />Official Event Farm TypeScript SDK
 </h1>
-
-*With full **TypeScript** support!*
 
 [Check us out on npm!](https://www.npmjs.com/package/@eventfarm/javascript-sdk)
 
@@ -20,7 +18,7 @@ npm install --save @eventfarm/javascript-sdk
 You are going to need to get an access token JWT using the Event Farm OAuth.
 
 ```typescript
-import { FrontEndClient } from '@eventfarm/javascript-sdk/dist/api-for-client';
+import { FrontEndClient } from '@eventfarm/javascript-sdk/dist/FrontEndClient';
 import { ClientAccessToken } from '@eventfarm/javascript-sdk/dist/Rest/Client/ClientAccessToken';
 
 const jwtResponseFromOauth: string = 'crazy-jwt-string-from-ef-oauth-login';
@@ -36,12 +34,14 @@ async function listEvents(userId: string): Promise<{}> {
 listEvents('my-user-id').then(apiResponse => console.log(apiResponse));
 ```
 
-#### Node
+#### Server Side (Express, Koa, etc.)
+
+[See Example](./example/node)
 
 OAuth is done using the Password Grant. You are going to need a Client Id and Secret that will be provided by Event Farm.
 
 ```typescript
-import { BackEndClient } from '@eventfarm/javascript-sdk/dist/api-for-node';
+import { BackEndClient } from '@eventfarm/javascript-sdk/dist/BackEndClient';
 
 const client = new BackEndClient(
     'client_id', // required string

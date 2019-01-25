@@ -1,6 +1,6 @@
-import { AbstractApi } from './abstract-api';
+import { AbstractApi } from './AbstractApi';
 import { AxiosRestClient } from './Rest/AxiosRestClient';
-import { RestClientInterface } from './interfaces';
+import { RestClientInterface } from './Interfaces';
 import { ImplicitRestClient } from './Rest/Client/ImplicitRestClient';
 import { ClientAccessToken } from './Rest/Client/ClientAccessToken';
 

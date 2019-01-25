@@ -2,7 +2,7 @@ import * as jwtDecode from 'jwt-decode';
 
 import { ServerAccessToken } from './ServerAccessToken';
 import { JWTAccessToken, JWTAccessTokenInterface } from '../JWTAccessToken';
-import { RestClientInterface } from '../../interfaces';
+import { RestClientInterface } from '../../Interfaces';
 
 export class PasswordGrantRestClient implements RestClientInterface {
   private oAuthAccessToken: ServerAccessToken = null;

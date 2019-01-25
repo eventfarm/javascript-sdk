@@ -1,5 +1,5 @@
 import { ClientAccessToken } from './ClientAccessToken';
-import { RestClientInterface, StringField } from '../../interfaces';
+import { RestClientInterface, StringField } from '../../Interfaces';
 
 export class ImplicitRestClient implements RestClientInterface {
   constructor(

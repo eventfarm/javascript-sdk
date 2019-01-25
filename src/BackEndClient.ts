@@ -1,5 +1,5 @@
-import { AbstractApi } from './abstract-api';
-import { RestClientInterface } from './interfaces';
+import { AbstractApi } from './AbstractApi';
+import { RestClientInterface } from './Interfaces';
 import { PasswordGrantRestClient } from './Rest/Server/PasswordGrantRestClient';
 import { AxiosRestClient } from './Rest/AxiosRestClient';
 

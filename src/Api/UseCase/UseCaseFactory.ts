@@ -1,4 +1,4 @@
-import { RestClientInterface } from '../../interfaces';
+import { RestClientInterface } from '../../Interfaces';
 
 import { ActivityLog } from './ActivityLog';
 import { Allotment } from './Allotment';

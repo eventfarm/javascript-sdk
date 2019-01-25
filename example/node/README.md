@@ -1,18 +1,36 @@
 <h1 align="center">
       	<img height="100" src="https://i.imgur.com/yiv5YMX.png" alt="Event Farm Logo" /> 
-      	<br />Official Event Farm JavaScript (Node) SDK
+      	<br />Official Event Farm Node.js SDK Example
 </h1>
-
-*With full **TypeScript** support!*
-
-[Check us out on npm!](https://www.npmjs.com/package/@eventfarm/javascript-sdk)
-
-### Installation
-
-```bash
-npm install --save @eventfarm/javascript-sdk
-```
 
 ### Usage
 
-OAuth is done using the Password Grant. You are going to need a Client Id and Secret that will be provided by Event Farm. Please see [src/main.ts](src/main.ts)
+[Please see ./src/main.ts](./src/main.ts)
+
+```typescript
+require('dotenv').config();
+
+import { BackEndClient } from '@eventfarm/javascript-sdk/dist/BackEndClient';
+import { ClientAccessToken } from '@eventfarm/javascript-sdk/dist/Rest/Client/ClientAccessToken';
+
+
+const client = new BackEndClient(
+  process.env.CLIENT_ID,
+  process.env.CLIENT_SECRET,
+  process.env.EMAIL,
+  process.env.PASSWORD,
+  process.env.AUTH_DOMAIN,
+  process.env.API_DOMAIN,
+);
+
+client.useCaseFactory
+  .Feature()
+  .ListFeatures()
+  .then((apiResponse: any) => {
+    console.log(apiResponse.data);
+  })
+  .catch(err => {
+    console.log(err.response.data);
+  });
+
+```

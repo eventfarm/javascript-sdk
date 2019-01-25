@@ -3,7 +3,7 @@ import { DateTimeZone } from './Api/DateTime/DateTimeZone';
 import { TypeFactory } from './Api/Type/TypeFactory';
 import { USAState } from './Api/DateTime/USAStates';
 import { UseCaseFactory } from './Api/UseCase/UseCaseFactory';
-import { RestClientInterface } from './interfaces';
+import { RestClientInterface } from './Interfaces';
 
 export abstract class AbstractApi {
   readonly dateTimeFactory = new DateTimeZone();

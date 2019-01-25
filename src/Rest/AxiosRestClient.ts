@@ -1,5 +1,5 @@
 import axios, { AxiosPromise } from 'axios';
-import { RestClientInterface } from '../interfaces';
+import { RestClientInterface } from '../Interfaces';
 
 export class AxiosRestClient implements RestClientInterface {
   constructor(private basePath: string) {}

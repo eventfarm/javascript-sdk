@@ -1,7 +1,6 @@
-
 require('dotenv').config();
 
-import { BackEndClient } from '@eventfarm/javascript-sdk/dist/api-for-node';
+import { BackEndClient } from '@eventfarm/javascript-sdk/dist/BackEndClient';
 import { ClientAccessToken } from '@eventfarm/javascript-sdk/dist/Rest/Client/ClientAccessToken';
 
 

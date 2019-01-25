@@ -2,7 +2,7 @@
  * This file was auto generated, please do not edit it directly.
  **/
 
-import { RestClientInterface } from '../../interfaces';
+import { RestClientInterface } from '../../Interfaces';
 
 export class UserIdentifier {
   constructor(private restClient: RestClientInterface) {}
