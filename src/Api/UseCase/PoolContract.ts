@@ -1,24 +1,27 @@
 /**
  * This file was auto generated, please do not edit it directly.
-**/
+ **/
 
 import { RestClientInterface } from '../../interfaces';
 
 export class PoolContract {
-    constructor(private restClient: RestClientInterface) {}
+  constructor(private restClient: RestClientInterface) {}
 
-    // GET: Queries
-    CountPoolContractUsers(poolId: string): any {
-        return this.restClient.get('PoolContract/UseCase/CountPoolContractUsers', {
-            poolId
-        }    );
-    }
+  // GET: Queries
+  CountPoolContractUsers(poolId: string): any {
+    return this.restClient.get('PoolContract/UseCase/CountPoolContractUsers', {
+      poolId,
+    });
+  }
 
-    GetEmailCountsForPoolContract(poolId: string): any {
-        return this.restClient.get('PoolContract/UseCase/GetEmailCountsForPoolContract', {
-            poolId
-        }    );
-    }
+  GetEmailCountsForPoolContract(poolId: string): any {
+    return this.restClient.get(
+      'PoolContract/UseCase/GetEmailCountsForPoolContract',
+      {
+        poolId,
+      },
+    );
+  }
 
-    // POST USE CASES: Commands
+  // POST USE CASES: Commands
 }

@@ -22,7 +22,7 @@ export class BackEndClient extends AbstractApi {
       this.clientId,
       this.clientSecret,
       this.email,
-      this.password
+      this.password,
     );
   }
 }

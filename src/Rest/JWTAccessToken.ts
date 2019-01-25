@@ -8,13 +8,12 @@ export interface JWTAccessTokenInterface {
   scopes: string[];
 }
 
-
 export class JWTAccessToken {
   constructor(
     private _clientId: string,
     private _tokenString: string,
     private _expiresAt: number,
-    private _email: string|null = null
+    private _email: string | null = null,
   ) {}
 
   get clientId(): string {

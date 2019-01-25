@@ -9,13 +9,13 @@ export class FrontEndClient extends AbstractApi {
     protected readonly accessToken: ClientAccessToken,
     apiBaseUri?: string,
   ) {
-    super(apiBaseUri)
+    super(apiBaseUri);
   }
 
   get restClient(): RestClientInterface {
     return new ImplicitRestClient(
       new AxiosRestClient(this.apiBaseUri),
-      this.accessToken
+      this.accessToken,
     );
   }
 }

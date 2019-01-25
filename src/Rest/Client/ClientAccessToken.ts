@@ -2,9 +2,9 @@ import * as jwtDecode from 'jwt-decode';
 import { JWTAccessTokenInterface } from '../JWTAccessToken';
 
 export interface AccessTokenInterface {
-  readonly clientId: string,
-  readonly accessToken: string,
-  readonly expiresAt: number,
+  readonly clientId: string;
+  readonly accessToken: string;
+  readonly expiresAt: number;
   readonly userId: string | null;
   readonly tokenString: string;
 }
@@ -17,14 +17,21 @@ export class ClientAccessToken implements AccessTokenInterface {
     public readonly clientId: string,
     public readonly accessToken: string,
     public readonly expiresAt: number,
-    userId: string | null = null
+    userId: string | null = null,
   ) {
     this.userId = userId;
     this.tokenString = `Bearer ${this.accessToken}`;
   }
 
-  public static createFromJsonObject(json: AccessTokenInterface): ClientAccessToken {
-    return new ClientAccessToken(json.clientId, json.accessToken, json.expiresAt, json.userId);
+  public static createFromJsonObject(
+    json: AccessTokenInterface,
+  ): ClientAccessToken {
+    return new ClientAccessToken(
+      json.clientId,
+      json.accessToken,
+      json.expiresAt,
+      json.userId,
+    );
   }
 
   public static createFromJWTString(jwtString: string): ClientAccessToken {

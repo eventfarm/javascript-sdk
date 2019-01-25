@@ -47,185 +47,185 @@ import { UserIdentifier } from './UserIdentifier';
 import { UserName } from './UserName';
 
 export class UseCaseFactory {
-    constructor(private restClient: RestClientInterface) {}
+  constructor(private restClient: RestClientInterface) {}
 
-    ActivityLog(): ActivityLog {
-        return new ActivityLog(this.restClient);
-    }
+  ActivityLog(): ActivityLog {
+    return new ActivityLog(this.restClient);
+  }
 
-    Allotment(): Allotment {
-        return new Allotment(this.restClient);
-    }
+  Allotment(): Allotment {
+    return new Allotment(this.restClient);
+  }
 
-    AppVersion(): AppVersion {
-        return new AppVersion(this.restClient);
-    }
+  AppVersion(): AppVersion {
+    return new AppVersion(this.restClient);
+  }
 
-    BugReport(): BugReport {
-        return new BugReport(this.restClient);
-    }
+  BugReport(): BugReport {
+    return new BugReport(this.restClient);
+  }
 
-    Canvas(): Canvas {
-        return new Canvas(this.restClient);
-    }
+  Canvas(): Canvas {
+    return new Canvas(this.restClient);
+  }
 
-    DomainMask(): DomainMask {
-        return new DomainMask(this.restClient);
-    }
+  DomainMask(): DomainMask {
+    return new DomainMask(this.restClient);
+  }
 
-    EmailDesign(): EmailDesign {
-        return new EmailDesign(this.restClient);
-    }
+  EmailDesign(): EmailDesign {
+    return new EmailDesign(this.restClient);
+  }
 
-    EmailDesignType(): EmailDesignType {
-        return new EmailDesignType(this.restClient);
-    }
+  EmailDesignType(): EmailDesignType {
+    return new EmailDesignType(this.restClient);
+  }
 
-    EmailMessage(): EmailMessage {
-        return new EmailMessage(this.restClient);
-    }
+  EmailMessage(): EmailMessage {
+    return new EmailMessage(this.restClient);
+  }
 
-    EmailNotification(): EmailNotification {
-        return new EmailNotification(this.restClient);
-    }
+  EmailNotification(): EmailNotification {
+    return new EmailNotification(this.restClient);
+  }
 
-    EmailSample(): EmailSample {
-        return new EmailSample(this.restClient);
-    }
+  EmailSample(): EmailSample {
+    return new EmailSample(this.restClient);
+  }
 
-    EmailTemplate(): EmailTemplate {
-        return new EmailTemplate(this.restClient);
-    }
+  EmailTemplate(): EmailTemplate {
+    return new EmailTemplate(this.restClient);
+  }
 
-    Event(): Event {
-        return new Event(this.restClient);
-    }
+  Event(): Event {
+    return new Event(this.restClient);
+  }
 
-    Feature(): Feature {
-        return new Feature(this.restClient);
-    }
+  Feature(): Feature {
+    return new Feature(this.restClient);
+  }
 
-    FeatureToggle(): FeatureToggle {
-        return new FeatureToggle(this.restClient);
-    }
+  FeatureToggle(): FeatureToggle {
+    return new FeatureToggle(this.restClient);
+  }
 
-    Group(): Group {
-        return new Group(this.restClient);
-    }
+  Group(): Group {
+    return new Group(this.restClient);
+  }
 
-    Import(): Import {
-        return new Import(this.restClient);
-    }
+  Import(): Import {
+    return new Import(this.restClient);
+  }
 
-    Integration(): Integration {
-        return new Integration(this.restClient);
-    }
+  Integration(): Integration {
+    return new Integration(this.restClient);
+  }
 
-    IntegrationFieldMapping(): IntegrationFieldMapping {
-        return new IntegrationFieldMapping(this.restClient);
-    }
+  IntegrationFieldMapping(): IntegrationFieldMapping {
+    return new IntegrationFieldMapping(this.restClient);
+  }
 
-    IntegrationStatusMapping(): IntegrationStatusMapping {
-        return new IntegrationStatusMapping(this.restClient);
-    }
+  IntegrationStatusMapping(): IntegrationStatusMapping {
+    return new IntegrationStatusMapping(this.restClient);
+  }
 
-    Invitation(): Invitation {
-        return new Invitation(this.restClient);
-    }
+  Invitation(): Invitation {
+    return new Invitation(this.restClient);
+  }
 
-    OAuth(): OAuth {
-        return new OAuth(this.restClient);
-    }
+  OAuth(): OAuth {
+    return new OAuth(this.restClient);
+  }
 
-    OAuth2(): OAuth2 {
-        return new OAuth2(this.restClient);
-    }
+  OAuth2(): OAuth2 {
+    return new OAuth2(this.restClient);
+  }
 
-    Pool(): Pool {
-        return new Pool(this.restClient);
-    }
+  Pool(): Pool {
+    return new Pool(this.restClient);
+  }
 
-    PoolContact(): PoolContact {
-        return new PoolContact(this.restClient);
-    }
+  PoolContact(): PoolContact {
+    return new PoolContact(this.restClient);
+  }
 
-    PoolContract(): PoolContract {
-        return new PoolContract(this.restClient);
-    }
+  PoolContract(): PoolContract {
+    return new PoolContract(this.restClient);
+  }
 
-    PoolFeature(): PoolFeature {
-        return new PoolFeature(this.restClient);
-    }
+  PoolFeature(): PoolFeature {
+    return new PoolFeature(this.restClient);
+  }
 
-    Promotion(): Promotion {
-        return new Promotion(this.restClient);
-    }
+  Promotion(): Promotion {
+    return new Promotion(this.restClient);
+  }
 
-    Question(): Question {
-        return new Question(this.restClient);
-    }
+  Question(): Question {
+    return new Question(this.restClient);
+  }
 
-    Queue(): Queue {
-        return new Queue(this.restClient);
-    }
+  Queue(): Queue {
+    return new Queue(this.restClient);
+  }
 
-    Region(): Region {
-        return new Region(this.restClient);
-    }
+  Region(): Region {
+    return new Region(this.restClient);
+  }
 
-    Report(): Report {
-        return new Report(this.restClient);
-    }
+  Report(): Report {
+    return new Report(this.restClient);
+  }
 
-    Salesforce(): Salesforce {
-        return new Salesforce(this.restClient);
-    }
+  Salesforce(): Salesforce {
+    return new Salesforce(this.restClient);
+  }
 
-    SalesforceEventSetting(): SalesforceEventSetting {
-        return new SalesforceEventSetting(this.restClient);
-    }
+  SalesforceEventSetting(): SalesforceEventSetting {
+    return new SalesforceEventSetting(this.restClient);
+  }
 
-    SalesforcePoolSetting(): SalesforcePoolSetting {
-        return new SalesforcePoolSetting(this.restClient);
-    }
+  SalesforcePoolSetting(): SalesforcePoolSetting {
+    return new SalesforcePoolSetting(this.restClient);
+  }
 
-    Salutation(): Salutation {
-        return new Salutation(this.restClient);
-    }
+  Salutation(): Salutation {
+    return new Salutation(this.restClient);
+  }
 
-    SitePage(): SitePage {
-        return new SitePage(this.restClient);
-    }
+  SitePage(): SitePage {
+    return new SitePage(this.restClient);
+  }
 
-    Stack(): Stack {
-        return new Stack(this.restClient);
-    }
+  Stack(): Stack {
+    return new Stack(this.restClient);
+  }
 
-    TicketBlock(): TicketBlock {
-        return new TicketBlock(this.restClient);
-    }
+  TicketBlock(): TicketBlock {
+    return new TicketBlock(this.restClient);
+  }
 
-    TicketType(): TicketType {
-        return new TicketType(this.restClient);
-    }
+  TicketType(): TicketType {
+    return new TicketType(this.restClient);
+  }
 
-    User(): User {
-        return new User(this.restClient);
-    }
+  User(): User {
+    return new User(this.restClient);
+  }
 
-    UserAddress(): UserAddress {
-        return new UserAddress(this.restClient);
-    }
+  UserAddress(): UserAddress {
+    return new UserAddress(this.restClient);
+  }
 
-    UserAttribute(): UserAttribute {
-        return new UserAttribute(this.restClient);
-    }
+  UserAttribute(): UserAttribute {
+    return new UserAttribute(this.restClient);
+  }
 
-    UserIdentifier(): UserIdentifier {
-        return new UserIdentifier(this.restClient);
-    }
+  UserIdentifier(): UserIdentifier {
+    return new UserIdentifier(this.restClient);
+  }
 
-    UserName(): UserName {
-        return new UserName(this.restClient);
-    }
+  UserName(): UserName {
+    return new UserName(this.restClient);
+  }
 }

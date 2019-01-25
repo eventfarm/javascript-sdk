@@ -19,85 +19,84 @@ import { SitePage } from './SitePage';
 import { Stack } from './Stack';
 import { User } from './User';
 
-export class TypeFactory
-{
-    AppVersion(): AppVersion {
-        return new AppVersion();
-    }
+export class TypeFactory {
+  AppVersion(): AppVersion {
+    return new AppVersion();
+  }
 
-    EmailDesign(): EmailDesign {
-        return new EmailDesign();
-    }
+  EmailDesign(): EmailDesign {
+    return new EmailDesign();
+  }
 
-    EmailMessage(): EmailMessage {
-        return new EmailMessage();
-    }
+  EmailMessage(): EmailMessage {
+    return new EmailMessage();
+  }
 
-    EmailTemplate(): EmailTemplate {
-        return new EmailTemplate();
-    }
+  EmailTemplate(): EmailTemplate {
+    return new EmailTemplate();
+  }
 
-    Event(): Event {
-        return new Event();
-    }
+  Event(): Event {
+    return new Event();
+  }
 
-    Import(): Import {
-        return new Import();
-    }
+  Import(): Import {
+    return new Import();
+  }
 
-    Integration(): Integration {
-        return new Integration();
-    }
+  Integration(): Integration {
+    return new Integration();
+  }
 
-    IntegrationFieldMapping(): IntegrationFieldMapping {
-        return new IntegrationFieldMapping();
-    }
+  IntegrationFieldMapping(): IntegrationFieldMapping {
+    return new IntegrationFieldMapping();
+  }
 
-    IntegrationStatusMapping(): IntegrationStatusMapping {
-        return new IntegrationStatusMapping();
-    }
+  IntegrationStatusMapping(): IntegrationStatusMapping {
+    return new IntegrationStatusMapping();
+  }
 
-    Invitation(): Invitation {
-        return new Invitation();
-    }
+  Invitation(): Invitation {
+    return new Invitation();
+  }
 
-    Pool(): Pool {
-        return new Pool();
-    }
+  Pool(): Pool {
+    return new Pool();
+  }
 
-    Promotion(): Promotion {
-        return new Promotion();
-    }
+  Promotion(): Promotion {
+    return new Promotion();
+  }
 
-    Queue(): Queue {
-        return new Queue();
-    }
+  Queue(): Queue {
+    return new Queue();
+  }
 
-    Region(): Region {
-        return new Region();
-    }
+  Region(): Region {
+    return new Region();
+  }
 
-    Report(): Report {
-        return new Report();
-    }
+  Report(): Report {
+    return new Report();
+  }
 
-    Salesforce(): Salesforce {
-        return new Salesforce();
-    }
+  Salesforce(): Salesforce {
+    return new Salesforce();
+  }
 
-    Salutation(): Salutation {
-        return new Salutation();
-    }
+  Salutation(): Salutation {
+    return new Salutation();
+  }
 
-    SitePage(): SitePage {
-        return new SitePage();
-    }
+  SitePage(): SitePage {
+    return new SitePage();
+  }
 
-    Stack(): Stack {
-        return new Stack();
-    }
+  Stack(): Stack {
+    return new Stack();
+  }
 
-    User(): User {
-        return new User();
-    }
+  User(): User {
+    return new User();
+  }
 }

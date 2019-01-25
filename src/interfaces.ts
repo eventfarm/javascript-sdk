@@ -1,5 +1,5 @@
 export interface StringField {
-  [key: string]: string|number|boolean;
+  [key: string]: string | number | boolean;
 }
 
 export interface RestClientInterface {
@@ -8,7 +8,7 @@ export interface RestClientInterface {
     queryParameters: StringField,
     headers?: StringField,
     options?: StringField,
-    timeoutSeconds?: number
+    timeoutSeconds?: number,
   ): Promise<any>;
 
   post(
@@ -16,7 +16,7 @@ export interface RestClientInterface {
     formParameters: StringField,
     headers?: StringField,
     options?: StringField,
-    timeoutSeconds?: number
+    timeoutSeconds?: number,
   ): Promise<any>;
 
   postMultipart(
@@ -24,6 +24,6 @@ export interface RestClientInterface {
     formParameters: StringField,
     headers?: StringField,
     options?: StringField,
-    timeoutSeconds?: number
+    timeoutSeconds?: number,
   ): Promise<any>;
 }

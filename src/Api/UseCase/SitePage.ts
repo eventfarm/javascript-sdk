@@ -1,149 +1,210 @@
 /**
  * This file was auto generated, please do not edit it directly.
-**/
+ **/
 
 import { RestClientInterface } from '../../interfaces';
 
 export class SitePage {
-    constructor(private restClient: RestClientInterface) {}
+  constructor(private restClient: RestClientInterface) {}
 
-    // GET: Queries
-    GetSitePage(sitePageId: string): any {
-        return this.restClient.get('SitePage/UseCase/GetSitePage', {
-            sitePageId
-        }    );
-    }
+  // GET: Queries
+  GetSitePage(sitePageId: string): any {
+    return this.restClient.get('SitePage/UseCase/GetSitePage', {
+      sitePageId,
+    });
+  }
 
-    ListSitePagesForEvent(eventId: string, page: number = null, itemsPerPage: number = null): any {
-        return this.restClient.get('SitePage/UseCase/ListSitePagesForEvent', {
-            eventId,
-            page,
-            itemsPerPage
-        }    );
-    }
+  ListSitePagesForEvent(
+    eventId: string,
+    page: number = null,
+    itemsPerPage: number = null,
+  ): any {
+    return this.restClient.get('SitePage/UseCase/ListSitePagesForEvent', {
+      eventId,
+      page,
+      itemsPerPage,
+    });
+  }
 
-    ListTemplatesForPool(poolId: string, shouldIncludeSharedTemplates: boolean = null, page: number = null, itemsPerPage: number = null): any {
-        return this.restClient.get('SitePage/UseCase/ListTemplatesForPool', {
-            poolId,
-            shouldIncludeSharedTemplates,
-            page,
-            itemsPerPage
-        }    );
-    }
+  ListTemplatesForPool(
+    poolId: string,
+    shouldIncludeSharedTemplates: boolean = null,
+    page: number = null,
+    itemsPerPage: number = null,
+  ): any {
+    return this.restClient.get('SitePage/UseCase/ListTemplatesForPool', {
+      poolId,
+      shouldIncludeSharedTemplates,
+      page,
+      itemsPerPage,
+    });
+  }
 
-    // POST USE CASES: Commands
-    CreateSitePage(eventId: string, title: string, content: string, displayOrder: number = null, sitePageId: string = null, styles: string = null, scripts: string = null, sourceTemplateId: string = null): any {
-        return this.restClient.post('SitePage/UseCase/CreateSitePage', {
-            eventId,
-            title,
-            content,
-            displayOrder,
-            sitePageId,
-            styles,
-            scripts,
-            sourceTemplateId
-        }    );
-    }
+  // POST USE CASES: Commands
+  CreateSitePage(
+    eventId: string,
+    title: string,
+    content: string,
+    displayOrder: number = null,
+    sitePageId: string = null,
+    styles: string = null,
+    scripts: string = null,
+    sourceTemplateId: string = null,
+  ): any {
+    return this.restClient.post('SitePage/UseCase/CreateSitePage', {
+      eventId,
+      title,
+      content,
+      displayOrder,
+      sitePageId,
+      styles,
+      scripts,
+      sourceTemplateId,
+    });
+  }
 
-    CreateTemplate(name: string, content: string, difficulty: string, poolId: string = null, styles: string = null, scripts: string = null, description: string = null, templateId: string = null): any {
-        return this.restClient.post('SitePage/UseCase/CreateTemplate', {
-            name,
-            content,
-            difficulty,
-            poolId,
-            styles,
-            scripts,
-            description,
-            templateId
-        }    );
-    }
+  CreateTemplate(
+    name: string,
+    content: string,
+    difficulty: string,
+    poolId: string = null,
+    styles: string = null,
+    scripts: string = null,
+    description: string = null,
+    templateId: string = null,
+  ): any {
+    return this.restClient.post('SitePage/UseCase/CreateTemplate', {
+      name,
+      content,
+      difficulty,
+      poolId,
+      styles,
+      scripts,
+      description,
+      templateId,
+    });
+  }
 
-    DuplicateSitePage(sitePageId: string, newSitePageId: string = null, toEventId: string = null): any {
-        return this.restClient.post('SitePage/UseCase/DuplicateSitePage', {
-            sitePageId,
-            newSitePageId,
-            toEventId
-        }    );
-    }
+  DuplicateSitePage(
+    sitePageId: string,
+    newSitePageId: string = null,
+    toEventId: string = null,
+  ): any {
+    return this.restClient.post('SitePage/UseCase/DuplicateSitePage', {
+      sitePageId,
+      newSitePageId,
+      toEventId,
+    });
+  }
 
-    DuplicateTemplate(templateId: string, newTemplateId: string = null, toPoolId: string = null): any {
-        return this.restClient.post('SitePage/UseCase/DuplicateTemplate', {
-            templateId,
-            newTemplateId,
-            toPoolId
-        }    );
-    }
+  DuplicateTemplate(
+    templateId: string,
+    newTemplateId: string = null,
+    toPoolId: string = null,
+  ): any {
+    return this.restClient.post('SitePage/UseCase/DuplicateTemplate', {
+      templateId,
+      newTemplateId,
+      toPoolId,
+    });
+  }
 
-    GenerateSitePageTemplates(): any {
-        return this.restClient.post('SitePage/UseCase/GenerateSitePageTemplates', {
+  GenerateSitePageTemplates(): any {
+    return this.restClient.post(
+      'SitePage/UseCase/GenerateSitePageTemplates',
+      {},
+    );
+  }
 
-        }    );
-    }
+  RemoveSitePage(sitePageId: string): any {
+    return this.restClient.post('SitePage/UseCase/RemoveSitePage', {
+      sitePageId,
+    });
+  }
 
-    RemoveSitePage(sitePageId: string): any {
-        return this.restClient.post('SitePage/UseCase/RemoveSitePage', {
-            sitePageId
-        }    );
-    }
+  RemoveTemplate(sitePageTemplateId: string): any {
+    return this.restClient.post('SitePage/UseCase/RemoveTemplate', {
+      sitePageTemplateId,
+    });
+  }
 
-    RemoveTemplate(sitePageTemplateId: string): any {
-        return this.restClient.post('SitePage/UseCase/RemoveTemplate', {
-            sitePageTemplateId
-        }    );
-    }
+  SetContentForSitePage(
+    sitePageId: string,
+    content: string,
+    styles: string = null,
+    scripts: string = null,
+  ): any {
+    return this.restClient.post('SitePage/UseCase/SetContentForSitePage', {
+      sitePageId,
+      content,
+      styles,
+      scripts,
+    });
+  }
 
-    SetContentForSitePage(sitePageId: string, content: string, styles: string = null, scripts: string = null): any {
-        return this.restClient.post('SitePage/UseCase/SetContentForSitePage', {
-            sitePageId,
-            content,
-            styles,
-            scripts
-        }    );
-    }
+  SetDisplayOrderForSitePage(sitePageId: string, displayOrder: string): any {
+    return this.restClient.post('SitePage/UseCase/SetDisplayOrderForSitePage', {
+      sitePageId,
+      displayOrder,
+    });
+  }
 
-    SetDisplayOrderForSitePage(sitePageId: string, displayOrder: string): any {
-        return this.restClient.post('SitePage/UseCase/SetDisplayOrderForSitePage', {
-            sitePageId,
-            displayOrder
-        }    );
-    }
+  SetMetaInfoForSitePage(
+    sitePageId: string,
+    title: string = null,
+    description: string = null,
+    keywords: string = null,
+    imageUrl: string = null,
+    name: string = null,
+  ): any {
+    return this.restClient.post('SitePage/UseCase/SetMetaInfoForSitePage', {
+      sitePageId,
+      title,
+      description,
+      keywords,
+      imageUrl,
+      name,
+    });
+  }
 
-    SetMetaInfoForSitePage(sitePageId: string, title: string = null, description: string = null, keywords: string = null, imageUrl: string = null, name: string = null): any {
-        return this.restClient.post('SitePage/UseCase/SetMetaInfoForSitePage', {
-            sitePageId,
-            title,
-            description,
-            keywords,
-            imageUrl,
-            name
-        }    );
-    }
+  SetTitleForSitePage(sitePageId: string, title: string): any {
+    return this.restClient.post('SitePage/UseCase/SetTitleForSitePage', {
+      sitePageId,
+      title,
+    });
+  }
 
-    SetTitleForSitePage(sitePageId: string, title: string): any {
-        return this.restClient.post('SitePage/UseCase/SetTitleForSitePage', {
-            sitePageId,
-            title
-        }    );
-    }
+  UpdateSitePage(
+    sitePageId: string,
+    eventId: string,
+    title: string,
+    content: string,
+    displayOrder: number = null,
+  ): any {
+    return this.restClient.post('SitePage/UseCase/UpdateSitePage', {
+      sitePageId,
+      eventId,
+      title,
+      content,
+      displayOrder,
+    });
+  }
 
-    UpdateSitePage(sitePageId: string, eventId: string, title: string, content: string, displayOrder: number = null): any {
-        return this.restClient.post('SitePage/UseCase/UpdateSitePage', {
-            sitePageId,
-            eventId,
-            title,
-            content,
-            displayOrder
-        }    );
-    }
-
-    UpdateTemplate(templateId: string, name: string = null, content: string = null, poolId: string = null, styles: string = null, scripts: string = null): any {
-        return this.restClient.post('SitePage/UseCase/UpdateTemplate', {
-            templateId,
-            name,
-            content,
-            poolId,
-            styles,
-            scripts
-        }    );
-    }
+  UpdateTemplate(
+    templateId: string,
+    name: string = null,
+    content: string = null,
+    poolId: string = null,
+    styles: string = null,
+    scripts: string = null,
+  ): any {
+    return this.restClient.post('SitePage/UseCase/UpdateTemplate', {
+      templateId,
+      name,
+      content,
+      poolId,
+      styles,
+      scripts,
+    });
+  }
 }

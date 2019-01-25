@@ -13,12 +13,11 @@ export abstract class AbstractApi {
 
   constructor(
     protected readonly apiBaseUri: string = 'https://eventfarm.com/api/v2',
-  ) {
-  }
+  ) {}
 
   get useCaseFactory() {
     return new UseCaseFactory(this.restClient);
   }
 
-  abstract get restClient(): RestClientInterface
+  abstract get restClient(): RestClientInterface;
 }

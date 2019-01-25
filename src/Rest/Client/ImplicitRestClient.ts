@@ -2,13 +2,16 @@ import { ClientAccessToken } from './ClientAccessToken';
 import { RestClientInterface, StringField } from '../../interfaces';
 
 export class ImplicitRestClient implements RestClientInterface {
-  constructor(private restClient: RestClientInterface, private accessToken: ClientAccessToken) {}
+  constructor(
+    private restClient: RestClientInterface,
+    private accessToken: ClientAccessToken,
+  ) {}
 
   get(requestPath: string, queryParameters: any, headers?: any) {
     return this.restClient.get(
       requestPath,
       queryParameters,
-      this.getAuthorizationHeaders()
+      this.getAuthorizationHeaders(),
     );
   }
 
@@ -16,7 +19,7 @@ export class ImplicitRestClient implements RestClientInterface {
     return this.restClient.post(
       requestPath,
       formParameters,
-      this.getAuthorizationHeaders()
+      this.getAuthorizationHeaders(),
     );
   }
 
@@ -24,7 +27,7 @@ export class ImplicitRestClient implements RestClientInterface {
     return this.restClient.postMultipart(
       requestPath,
       formParameters,
-      this.getAuthorizationHeaders()
+      this.getAuthorizationHeaders(),
     );
   }
 
