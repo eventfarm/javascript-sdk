@@ -7,10 +7,14 @@ import { RestClientInterface } from '../../Interfaces';
 export class Feature {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @return Promise|Observable|any
+   */
   ListFeatures(): any {
     return this.restClient.get('Feature/UseCase/ListFeatures', {});
   }
 
-  // POST USE CASES: Commands
+  // Commands
 }

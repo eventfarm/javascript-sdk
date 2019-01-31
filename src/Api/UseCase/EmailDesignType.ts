@@ -7,7 +7,11 @@ import { RestClientInterface } from '../../Interfaces';
 export class EmailDesignType {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @return Promise|Observable|any
+   */
   GetAllEmailDesignTypes(): any {
     return this.restClient.get(
       'EmailDesignType/UseCase/GetAllEmailDesignTypes',
@@ -15,5 +19,5 @@ export class EmailDesignType {
     );
   }
 
-  // POST USE CASES: Commands
+  // Commands
 }

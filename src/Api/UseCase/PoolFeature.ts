@@ -7,14 +7,26 @@ import { RestClientInterface } from '../../Interfaces';
 export class PoolFeature {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
   ListFeaturesForPool(poolId: string): any {
     return this.restClient.get('PoolFeature/UseCase/ListFeaturesForPool', {
       poolId,
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - poolId
+   * @param string - featureId
+   * @param bool? - enabled true|false
+   * @return Promise|Observable|any
+   */
   AddFeatureForPool(
     poolId: string,
     featureId: string,
@@ -27,6 +39,11 @@ export class PoolFeature {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param string - featureId
+   * @return Promise|Observable|any
+   */
   DisableFeatureForPool(poolId: string, featureId: string): any {
     return this.restClient.post('PoolFeature/UseCase/DisableFeatureForPool', {
       poolId,
@@ -34,6 +51,11 @@ export class PoolFeature {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param string - featureId
+   * @return Promise|Observable|any
+   */
   EnableFeatureForPool(poolId: string, featureId: string): any {
     return this.restClient.post('PoolFeature/UseCase/EnableFeatureForPool', {
       poolId,
@@ -41,6 +63,11 @@ export class PoolFeature {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param string - featureId
+   * @return Promise|Observable|any
+   */
   RemoveFeatureForPool(poolId: string, featureId: string): any {
     return this.restClient.post('PoolFeature/UseCase/RemoveFeatureForPool', {
       poolId,

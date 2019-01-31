@@ -7,7 +7,13 @@ import { RestClientInterface } from '../../Interfaces';
 export class BugReport {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - bugReportId
+   * @param array? - withData User
+   * @return Promise|Observable|any
+   */
   GetBugReport(bugReportId: string, withData: any = null): any {
     return this.restClient.get('BugReport/UseCase/GetBugReport', {
       bugReportId,
@@ -15,6 +21,11 @@ export class BugReport {
     });
   }
 
+  /**
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-500
+   * @return Promise|Observable|any
+   */
   ListBugReports(page: number = null, itemsPerPage: number = null): any {
     return this.restClient.get('BugReport/UseCase/ListBugReports', {
       page,
@@ -22,7 +33,17 @@ export class BugReport {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - userId
+   * @param string - action
+   * @param string - message
+   * @param string - request
+   * @param string - response
+   * @param string? - bugReportId
+   * @return Promise|Observable|any
+   */
   CreateBugReport(
     userId: string,
     action: string,

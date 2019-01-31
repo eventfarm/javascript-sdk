@@ -7,7 +7,12 @@ import { RestClientInterface } from '../../Interfaces';
 export class EmailNotification {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
   GetOpenActionsForEventOverLastMonth(eventId: string): any {
     return this.restClient.get(
       'EmailNotification/UseCase/GetOpenActionsForEventOverLastMonth',
@@ -17,7 +22,16 @@ export class EmailNotification {
     );
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - emailMessageId
+   * @param string - type
+   * @param int - createdAt
+   * @param string? - eventId
+   * @param string? - emailNotificationId
+   * @return Promise|Observable|any
+   */
   CreateSparkpostNotification(
     emailMessageId: string,
     type: string,
@@ -37,6 +51,11 @@ export class EmailNotification {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @param int? - totalRecords
+   * @return Promise|Observable|any
+   */
   SimulateEmailNotificationsForEvent(
     eventId: string,
     totalRecords: number = null,

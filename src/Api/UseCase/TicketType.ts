@@ -7,7 +7,13 @@ import { RestClientInterface } from '../../Interfaces';
 export class TicketType {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - eventId
+   * @param bool? - shouldHideDeleted true|false
+   * @return Promise|Observable|any
+   */
   ListTicketTypesForEvent(
     eventId: string,
     shouldHideDeleted: boolean = null,
@@ -18,7 +24,19 @@ export class TicketType {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - eventId
+   * @param string - name
+   * @param string - code
+   * @param int - quantity
+   * @param int - sortOrder
+   * @param bool? - isDeleted true|false
+   * @param string? - description
+   * @param string? - ticketTypeId
+   * @return Promise|Observable|any
+   */
   CreateTicketType(
     eventId: string,
     name: string,
@@ -41,12 +59,21 @@ export class TicketType {
     });
   }
 
+  /**
+   * @param string - ticketTypeId
+   * @return Promise|Observable|any
+   */
   DeleteTicketType(ticketTypeId: string): any {
     return this.restClient.post('TicketType/UseCase/DeleteTicketType', {
       ticketTypeId,
     });
   }
 
+  /**
+   * @param string - ticketTypeId
+   * @param string? - description
+   * @return Promise|Observable|any
+   */
   SetDescriptionForTicketType(
     ticketTypeId: string,
     description: string = null,
@@ -60,6 +87,11 @@ export class TicketType {
     );
   }
 
+  /**
+   * @param string - ticketTypeId
+   * @param int - displayOrder
+   * @return Promise|Observable|any
+   */
   SetDisplayOrderForTicketType(
     ticketTypeId: string,
     displayOrder: number,
@@ -73,6 +105,11 @@ export class TicketType {
     );
   }
 
+  /**
+   * @param string - ticketTypeId
+   * @param string - name
+   * @return Promise|Observable|any
+   */
   SetNameForTicketType(ticketTypeId: string, name: string): any {
     return this.restClient.post('TicketType/UseCase/SetNameForTicketType', {
       ticketTypeId,
@@ -80,6 +117,11 @@ export class TicketType {
     });
   }
 
+  /**
+   * @param string - ticketTypeId
+   * @param int - quantity
+   * @return Promise|Observable|any
+   */
   SetQuantityForTicketType(ticketTypeId: string, quantity: number): any {
     return this.restClient.post('TicketType/UseCase/SetQuantityForTicketType', {
       ticketTypeId,

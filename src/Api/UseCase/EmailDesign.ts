@@ -7,19 +7,34 @@ import { RestClientInterface } from '../../Interfaces';
 export class EmailDesign {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - emailDesignId
+   * @return Promise|Observable|any
+   */
   GetEmailDesign(emailDesignId: string): any {
     return this.restClient.get('EmailDesign/UseCase/GetEmailDesign', {
       emailDesignId,
     });
   }
 
+  /**
+   * @param string - emailDesignImageId
+   * @return Promise|Observable|any
+   */
   GetEmailDesignImage(emailDesignImageId: string): any {
     return this.restClient.get('EmailDesign/UseCase/GetEmailDesignImage', {
       emailDesignImageId,
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param int? - page
+   * @param int? - itemsPerPage
+   * @return Promise|Observable|any
+   */
   ListEmailDesignsByEvent(
     eventId: string,
     page: number = null,
@@ -32,7 +47,26 @@ export class EmailDesign {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - name
+   * @param string - layout
+   * @param string - fromName
+   * @param string - subject
+   * @param string - content
+   * @param string - backgroundColor
+   * @param string - emailDesignTypeId
+   * @param string - eventId
+   * @param string? - fromEmail
+   * @param string? - replyEmail
+   * @param array? - ccEmail
+   * @param array? - bccEmail
+   * @param string? - domainMaskId
+   * @param string? - domainMaskEmail
+   * @param string? - emailDesignId
+   * @return Promise|Observable|any
+   */
   CreateEmailDesign(
     name: string,
     layout: string,
@@ -69,6 +103,24 @@ export class EmailDesign {
     });
   }
 
+  /**
+   * @param string - name
+   * @param string - layout blank|alt-email-layout
+   * @param string - fromName
+   * @param string - subject
+   * @param string - backgroundColor
+   * @param string - emailDesignTypeId
+   * @param string - eventId
+   * @param string - emailTemplateType simple-template|simple-header|simple-template-border|default-invite|full-width-header
+   * @param string? - fromEmail
+   * @param string? - replyEmail
+   * @param array? - ccEmails
+   * @param array? - bccEmails
+   * @param string? - domainMaskId
+   * @param string? - domainMaskEmail
+   * @param string? - emailDesignId
+   * @return Promise|Observable|any
+   */
   CreateEmailDesignFromTemplate(
     name: string,
     layout: string,
@@ -108,6 +160,12 @@ export class EmailDesign {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @param string - image image/jpeg|image/png
+   * @param string? - emailDesignImageId
+   * @return Promise|Observable|any
+   */
   CreateEmailDesignImage(
     eventId: string,
     image: any,
@@ -123,6 +181,12 @@ export class EmailDesign {
     );
   }
 
+  /**
+   * @param string - originalEmailDesignId
+   * @param string? - duplicateEventId
+   * @param string? - duplicateEmailDesignId
+   * @return Promise|Observable|any
+   */
   DuplicateEmailDesign(
     originalEmailDesignId: string,
     duplicateEventId: string = null,
@@ -135,12 +199,34 @@ export class EmailDesign {
     });
   }
 
+  /**
+   * @param string - emailDesignId
+   * @return Promise|Observable|any
+   */
   RemoveEmailDesign(emailDesignId: string): any {
     return this.restClient.post('EmailDesign/UseCase/RemoveEmailDesign', {
       emailDesignId,
     });
   }
 
+  /**
+   * @param string - emailDesignId
+   * @param string - name
+   * @param string - layout
+   * @param string - fromName
+   * @param string - subject
+   * @param string - content
+   * @param string - backgroundColor
+   * @param string - emailDesignTypeId
+   * @param string - eventId
+   * @param string? - fromEmail
+   * @param string? - replyEmail
+   * @param array? - ccEmail
+   * @param array? - bccEmail
+   * @param string? - domainMaskId
+   * @param string? - domainMaskEmail
+   * @return Promise|Observable|any
+   */
   UpdateEmailDesign(
     emailDesignId: string,
     name: string,

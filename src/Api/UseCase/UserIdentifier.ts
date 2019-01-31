@@ -7,9 +7,16 @@ import { RestClientInterface } from '../../Interfaces';
 export class UserIdentifier {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - userIdentifierId
+   * @param string - identifier
+   * @param string? - poolId
+   * @return Promise|Observable|any
+   */
   SetUserIdentifier(
     userIdentifierId: string,
     identifier: string,

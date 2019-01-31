@@ -7,7 +7,19 @@ import { RestClientInterface } from '../../Interfaces';
 export class Question {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - eventId
+   * @param array? - withData TicketType|Answers
+   * @param bool? - shouldHideDeleted true|false
+   * @param string? - query
+   * @param string? - sortBy
+   * @param string? - sortDirection
+   * @param int? - page
+   * @param int? - itemsPerPage
+   * @return Promise|Observable|any
+   */
   ListQuestionsForEvent(
     eventId: string,
     withData: any = null,
@@ -30,5 +42,5 @@ export class Question {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
 }

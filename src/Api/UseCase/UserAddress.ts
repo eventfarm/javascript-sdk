@@ -7,7 +7,15 @@ import { RestClientInterface } from '../../Interfaces';
 export class UserAddress {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - poolId
+   * @param string - userId
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListAddressesForUser(
     poolId: string,
     userId: string,
@@ -22,7 +30,20 @@ export class UserAddress {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - poolId
+   * @param string - userId
+   * @param string? - address1
+   * @param string? - city
+   * @param string? - state
+   * @param string? - postalCode
+   * @param string? - country
+   * @param string? - address2
+   * @param string? - userAddressId
+   * @return Promise|Observable|any
+   */
   AddUserAddress(
     poolId: string,
     userId: string,
@@ -47,12 +68,26 @@ export class UserAddress {
     });
   }
 
+  /**
+   * @param string - userAddressId
+   * @return Promise|Observable|any
+   */
   RemoveUserAddress(userAddressId: string): any {
     return this.restClient.post('UserAddress/UseCase/RemoveUserAddress', {
       userAddressId,
     });
   }
 
+  /**
+   * @param string - userAddressId
+   * @param string? - address1
+   * @param string? - city
+   * @param string? - state
+   * @param string? - postalCode
+   * @param string? - country
+   * @param string? - address2
+   * @return Promise|Observable|any
+   */
   SetUserAddress(
     userAddressId: string,
     address1: string = null,

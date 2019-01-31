@@ -7,7 +7,14 @@ import { RestClientInterface } from '../../Interfaces';
 export class Allotment {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - stackId
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListAllotmentsForStack(
     stackId: string,
     page: number = null,
@@ -20,7 +27,15 @@ export class Allotment {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - ticketBlockId
+   * @param string - stackId
+   * @param int - quantity
+   * @param string? - allotmentId
+   * @return Promise|Observable|any
+   */
   CreateAllotment(
     ticketBlockId: string,
     stackId: string,
@@ -35,12 +50,21 @@ export class Allotment {
     });
   }
 
+  /**
+   * @param string - allotmentId
+   * @return Promise|Observable|any
+   */
   DeleteAllotment(allotmentId: string): any {
     return this.restClient.post('Allotment/UseCase/DeleteAllotment', {
       allotmentId,
     });
   }
 
+  /**
+   * @param string - allotmentId
+   * @param int - quantity >= 1
+   * @return Promise|Observable|any
+   */
   SetAllotmentQuantity(allotmentId: string, quantity: number): any {
     return this.restClient.post('Allotment/UseCase/SetAllotmentQuantity', {
       allotmentId,

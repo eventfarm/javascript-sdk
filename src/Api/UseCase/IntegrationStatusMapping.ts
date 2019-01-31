@@ -7,7 +7,13 @@ import { RestClientInterface } from '../../Interfaces';
 export class IntegrationStatusMapping {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - salesforceEventSettingId
+   * @param string? - statusMappingType salesforce-campaign-member
+   * @return Promise|Observable|any
+   */
   ListStatusMappingsForSalesforceEventSetting(
     salesforceEventSettingId: string,
     statusMappingType: string = null,
@@ -21,7 +27,16 @@ export class IntegrationStatusMapping {
     );
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - statusMappingType salesforce-campaign-member
+   * @param string - integrationSettingType salesforce|marketo
+   * @param string - integrationSettingId
+   * @param string - statusId assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted|checked-in
+   * @param string - integrationStatusName
+   * @return Promise|Observable|any
+   */
   CreateIntegrationStatusMapping(
     statusMappingType: string,
     integrationSettingType: string,
@@ -41,6 +56,11 @@ export class IntegrationStatusMapping {
     );
   }
 
+  /**
+   * @param string - integrationStatusMappingId
+   * @param string - statusId assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted|checked-in
+   * @return Promise|Observable|any
+   */
   SetIntegrationStatusMappingStatusId(
     integrationStatusMappingId: string,
     statusId: string,
@@ -54,6 +74,11 @@ export class IntegrationStatusMapping {
     );
   }
 
+  /**
+   * @param string - integrationStatusMappingId
+   * @param string - integrationStatusValue
+   * @return Promise|Observable|any
+   */
   SetIntegrationStatusMappingValue(
     integrationStatusMappingId: string,
     integrationStatusValue: string,

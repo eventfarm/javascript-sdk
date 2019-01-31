@@ -7,19 +7,36 @@ import { RestClientInterface } from '../../Interfaces';
 export class Pool {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
   GetPool(poolId: string): any {
     return this.restClient.get('Pool/UseCase/GetPool', {
       poolId,
     });
   }
 
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
   GetPoolContract(poolId: string): any {
     return this.restClient.get('Pool/UseCase/GetPoolContract', {
       poolId,
     });
   }
 
+  /**
+   * @param string - userId
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-500
+   * @param string? - sortBy
+   * @param string? - sortDirection ascending|descending
+   * @return Promise|Observable|any
+   */
   ListAccessiblePoolsForUser(
     userId: string,
     page: number = null,
@@ -36,6 +53,14 @@ export class Pool {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param string? - sortBy name
+   * @param string? - sortDirection ascending|descending
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListPoolAllotmentsForPool(
     poolId: string,
     sortBy: string = null,
@@ -52,6 +77,12 @@ export class Pool {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-500
+   * @return Promise|Observable|any
+   */
   ListPoolContactsByPoolId(
     poolId: string,
     page: number = null,
@@ -64,6 +95,14 @@ export class Pool {
     });
   }
 
+  /**
+   * @param string? - name
+   * @param string? - sortBy name
+   * @param string? - sortDirection ascending|descending
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListPools(
     name: string = null,
     sortBy: string = null,
@@ -80,6 +119,14 @@ export class Pool {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param string? - sortBy name|slug
+   * @param string? - sortDirection ascending|descending
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-500
+   * @return Promise|Observable|any
+   */
   ListTagsForPool(
     poolId: string,
     sortBy: string = null,
@@ -96,7 +143,16 @@ export class Pool {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - poolId
+   * @param string - poolContractType cio|intro|trial|pro|premier|premierPlus|custom|internal
+   * @param int - startDate
+   * @param int - endDate
+   * @param string? - poolContractId
+   * @return Promise|Observable|any
+   */
   CreatePoolContract(
     poolId: string,
     poolContractType: string,
@@ -113,6 +169,12 @@ export class Pool {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param string - poolWebhookType
+   * @param string - url
+   * @return Promise|Observable|any
+   */
   CreatePoolWebhook(poolId: string, poolWebhookType: string, url: string): any {
     return this.restClient.post('Pool/UseCase/CreatePoolWebhook', {
       poolId,
@@ -121,6 +183,10 @@ export class Pool {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
   RemoveCustomerDisplayNameForPool(poolId: string): any {
     return this.restClient.post(
       'Pool/UseCase/RemoveCustomerDisplayNameForPool',
@@ -130,12 +196,24 @@ export class Pool {
     );
   }
 
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
   RemovePrivacyPolicyLinkForPool(poolId: string): any {
     return this.restClient.post('Pool/UseCase/RemovePrivacyPolicyLinkForPool', {
       poolId,
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param string - userId
+   * @param string? - slackUserId
+   * @param array? - requestedFeatureSlugs
+   * @param string? - other
+   * @return Promise|Observable|any
+   */
   SendUpgradeRequestToCsm(
     poolId: string,
     userId: string,
@@ -152,6 +230,11 @@ export class Pool {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param string - customerDisplayName
+   * @return Promise|Observable|any
+   */
   SetCustomerDisplayNameForPool(
     poolId: string,
     customerDisplayName: string,
@@ -162,6 +245,11 @@ export class Pool {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param string - privacyPolicyLink
+   * @return Promise|Observable|any
+   */
   SetPrivacyPolicyLinkForPool(poolId: string, privacyPolicyLink: string): any {
     return this.restClient.post('Pool/UseCase/SetPrivacyPolicyLinkForPool', {
       poolId,
@@ -169,6 +257,13 @@ export class Pool {
     });
   }
 
+  /**
+   * @param string - poolContractId
+   * @param string? - poolContractType cio|intro|trial|pro|premier|premierPlus|custom|internal
+   * @param int? - startDate
+   * @param int? - endDate
+   * @return Promise|Observable|any
+   */
   UpdatePoolContract(
     poolContractId: string,
     poolContractType: string = null,

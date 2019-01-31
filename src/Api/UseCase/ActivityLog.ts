@@ -7,7 +7,14 @@ import { RestClientInterface } from '../../Interfaces';
 export class ActivityLog {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - eventId
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListEntriesForEvent(
     eventId: string,
     page: number = null,
@@ -20,6 +27,12 @@ export class ActivityLog {
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListEntriesForInvitation(
     invitationId: string,
     page: number = null,
@@ -32,7 +45,19 @@ export class ActivityLog {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - eventId
+   * @param string - action
+   * @param string - actionValue
+   * @param int - actionTime
+   * @param string? - invitationId
+   * @param string? - userId
+   * @param string? - actionUserId
+   * @param string? - activityLogId
+   * @return Promise|Observable|any
+   */
   CreateActivityLog(
     eventId: string,
     action: string,
@@ -55,6 +80,19 @@ export class ActivityLog {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param string - action
+   * @param string - actionValue
+   * @param int - actionTime
+   * @param string - content
+   * @param string? - invitationId
+   * @param string? - userId
+   * @param string? - actionUserId
+   * @param string? - activityLogId
+   * @param string? - activityDetailId
+   * @return Promise|Observable|any
+   */
   CreateActivityLogAndDetail(
     eventId: string,
     action: string,

@@ -7,7 +7,15 @@ import { RestClientInterface } from '../../Interfaces';
 export class UserName {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - poolId
+   * @param string - userId
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListNamesForUser(
     poolId: string,
     userId: string,
@@ -22,7 +30,16 @@ export class UserName {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - poolId
+   * @param string - userId
+   * @param string? - firstName
+   * @param string? - lastName
+   * @param string? - userNameId
+   * @return Promise|Observable|any
+   */
   AddUserName(
     poolId: string,
     userId: string,
@@ -39,12 +56,22 @@ export class UserName {
     });
   }
 
+  /**
+   * @param string - userNameId
+   * @return Promise|Observable|any
+   */
   RemoveUserName(userNameId: string): any {
     return this.restClient.post('UserName/UseCase/RemoveUserName', {
       userNameId,
     });
   }
 
+  /**
+   * @param string - userNameId
+   * @param string? - firstName
+   * @param string? - lastName
+   * @return Promise|Observable|any
+   */
   SetUserName(
     userNameId: string,
     firstName: string = null,

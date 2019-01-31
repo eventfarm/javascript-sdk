@@ -7,7 +7,14 @@ import { RestClientInterface } from '../../Interfaces';
 export class PoolContact {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - userId
+   * @param string? - poolId
+   * @param string? - poolContactType full|create
+   * @return Promise|Observable|any
+   */
   ListPoolContactsForUser(
     userId: string,
     poolId: string = null,
@@ -20,5 +27,5 @@ export class PoolContact {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
 }

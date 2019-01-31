@@ -7,13 +7,23 @@ import { RestClientInterface } from '../../Interfaces';
 export class EmailSample {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - emailDesignId
+   * @return Promise|Observable|any
+   */
   GetEmailThumbnailUrl(emailDesignId: string): any {
     return this.restClient.get('EmailSample/UseCase/GetEmailThumbnailUrl', {
       emailDesignId,
     });
   }
 
+  /**
+   * @param string - emailDesignId
+   * @param array? - withData EmailPreview|EmailSpamResult
+   * @return Promise|Observable|any
+   */
   GetLatestEmailSampleForDesign(
     emailDesignId: string,
     withData: any = null,
@@ -27,7 +37,18 @@ export class EmailSample {
     );
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - previewUrl
+   * @param string - previewClient
+   * @param string - operatingSystem
+   * @param string - displayName
+   * @param string - thumbnailUrl
+   * @param string - emailSampleId
+   * @param string? - emailPreviewId
+   * @return Promise|Observable|any
+   */
   CreateEmailPreview(
     previewUrl: string,
     previewClient: string,
@@ -48,6 +69,13 @@ export class EmailSample {
     });
   }
 
+  /**
+   * @param string - htmlContent
+   * @param string - emailDesignId
+   * @param bool - overrideMinimumInterval true|false
+   * @param string? - emailSampleId
+   * @return Promise|Observable|any
+   */
   CreateEmailSample(
     htmlContent: string,
     emailDesignId: string,
@@ -62,6 +90,15 @@ export class EmailSample {
     });
   }
 
+  /**
+   * @param string - spamClient
+   * @param string - testType
+   * @param string - testDetails
+   * @param int - isSpam
+   * @param string - emailSampleId
+   * @param string? - emailSpamResultId
+   * @return Promise|Observable|any
+   */
   CreateEmailSpamResult(
     spamClient: string,
     testType: string,

@@ -7,7 +7,12 @@ import { RestClientInterface } from '../../Interfaces';
 export class SalesforceEventSetting {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - salesforceEventSettingId
+   * @return Promise|Observable|any
+   */
   GetSalesforceEventSetting(salesforceEventSettingId: string): any {
     return this.restClient.get(
       'SalesforceEventSetting/UseCase/GetSalesforceEventSetting',
@@ -17,6 +22,10 @@ export class SalesforceEventSetting {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
   ListSalesforceEventSettingsForEvent(eventId: string): any {
     return this.restClient.get(
       'SalesforceEventSetting/UseCase/ListSalesforceEventSettingsForEvent',
@@ -26,7 +35,12 @@ export class SalesforceEventSetting {
     );
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - salesforceEventSettingId
+   * @return Promise|Observable|any
+   */
   DisableExportForSalesforceEventSetting(
     salesforceEventSettingId: string,
   ): any {
@@ -38,6 +52,10 @@ export class SalesforceEventSetting {
     );
   }
 
+  /**
+   * @param string - salesforceEventSettingId
+   * @return Promise|Observable|any
+   */
   DisableImportForSalesforceEventSetting(
     salesforceEventSettingId: string,
   ): any {
@@ -49,6 +67,10 @@ export class SalesforceEventSetting {
     );
   }
 
+  /**
+   * @param string - salesforceEventSettingId
+   * @return Promise|Observable|any
+   */
   EnableExportForSalesforceEventSetting(salesforceEventSettingId: string): any {
     return this.restClient.post(
       'SalesforceEventSetting/UseCase/EnableExportForSalesforceEventSetting',
@@ -58,6 +80,10 @@ export class SalesforceEventSetting {
     );
   }
 
+  /**
+   * @param string - salesforceEventSettingId
+   * @return Promise|Observable|any
+   */
   EnableImportForSalesforceEventSetting(salesforceEventSettingId: string): any {
     return this.restClient.post(
       'SalesforceEventSetting/UseCase/EnableImportForSalesforceEventSetting',
@@ -67,6 +93,12 @@ export class SalesforceEventSetting {
     );
   }
 
+  /**
+   * @param string - salesforceEventSettingId
+   * @param string - campaignId
+   * @param string - campaignName
+   * @return Promise|Observable|any
+   */
   SetCampaignForSalesforceEventSetting(
     salesforceEventSettingId: string,
     campaignId: string,
@@ -82,6 +114,11 @@ export class SalesforceEventSetting {
     );
   }
 
+  /**
+   * @param string - salesforceEventSettingId
+   * @param int - invitationCount 1-100
+   * @return Promise|Observable|any
+   */
   SetInvitationCountForSalesforceEventSetting(
     salesforceEventSettingId: string,
     invitationCount: number,
@@ -95,6 +132,11 @@ export class SalesforceEventSetting {
     );
   }
 
+  /**
+   * @param string - salesforceEventSettingId
+   * @param string - invitationCreationType unconfirmed-no-email|confirmed-no-email
+   * @return Promise|Observable|any
+   */
   SetInvitationCreationTypeForSalesforceEventSetting(
     salesforceEventSettingId: string,
     invitationCreationType: string,
@@ -108,6 +150,11 @@ export class SalesforceEventSetting {
     );
   }
 
+  /**
+   * @param string - salesforceEventSettingId
+   * @param string - newContactRule do-nothing|create-contact|create-lead
+   * @return Promise|Observable|any
+   */
   SetNewContactRuleForSalesforceEventSetting(
     salesforceEventSettingId: string,
     newContactRule: string,
@@ -121,6 +168,11 @@ export class SalesforceEventSetting {
     );
   }
 
+  /**
+   * @param string - salesforceEventSettingId
+   * @param string - stackId
+   * @return Promise|Observable|any
+   */
   SetStackForSalesforceEventSetting(
     salesforceEventSettingId: string,
     stackId: string,

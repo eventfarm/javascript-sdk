@@ -7,14 +7,24 @@ import { RestClientInterface } from '../../Interfaces';
 export class OAuth {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - oauthAccessTokenId
+   * @return Promise|Observable|any
+   */
   GetOAuthAccessToken(oauthAccessTokenId: string): any {
     return this.restClient.get('OAuth/UseCase/GetOAuthAccessToken', {
       oauthAccessTokenId,
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - email
+   * @return Promise|Observable|any
+   */
   CreateGhostAccessToken(email: string): any {
     return this.restClient.post('OAuth/UseCase/CreateGhostAccessToken', {
       email,

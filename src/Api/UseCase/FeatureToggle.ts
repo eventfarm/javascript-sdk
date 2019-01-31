@@ -7,7 +7,13 @@ import { RestClientInterface } from '../../Interfaces';
 export class FeatureToggle {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - featureName
+   * @param string? - userId
+   * @return Promise|Observable|any
+   */
   GetFeatureGrant(featureName: string, userId: string = null): any {
     return this.restClient.get('FeatureToggle/UseCase/GetFeatureGrant', {
       featureName,
@@ -15,5 +21,5 @@ export class FeatureToggle {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
 }

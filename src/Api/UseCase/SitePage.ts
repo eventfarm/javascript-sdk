@@ -7,13 +7,24 @@ import { RestClientInterface } from '../../Interfaces';
 export class SitePage {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - sitePageId
+   * @return Promise|Observable|any
+   */
   GetSitePage(sitePageId: string): any {
     return this.restClient.get('SitePage/UseCase/GetSitePage', {
       sitePageId,
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListSitePagesForEvent(
     eventId: string,
     page: number = null,
@@ -26,6 +37,13 @@ export class SitePage {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param bool? - shouldIncludeSharedTemplates true|false
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-500
+   * @return Promise|Observable|any
+   */
   ListTemplatesForPool(
     poolId: string,
     shouldIncludeSharedTemplates: boolean = null,
@@ -40,7 +58,19 @@ export class SitePage {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - eventId
+   * @param string - title
+   * @param string - content
+   * @param int? - displayOrder
+   * @param string? - sitePageId
+   * @param string? - styles
+   * @param string? - scripts
+   * @param string? - sourceTemplateId
+   * @return Promise|Observable|any
+   */
   CreateSitePage(
     eventId: string,
     title: string,
@@ -63,6 +93,17 @@ export class SitePage {
     });
   }
 
+  /**
+   * @param string - name
+   * @param string - content
+   * @param string - difficulty custom|beginner|intermediate|advanced|expert
+   * @param string? - poolId
+   * @param string? - styles
+   * @param string? - scripts
+   * @param string? - description
+   * @param string? - templateId
+   * @return Promise|Observable|any
+   */
   CreateTemplate(
     name: string,
     content: string,
@@ -85,6 +126,12 @@ export class SitePage {
     });
   }
 
+  /**
+   * @param string - sitePageId
+   * @param string? - newSitePageId
+   * @param string? - toEventId
+   * @return Promise|Observable|any
+   */
   DuplicateSitePage(
     sitePageId: string,
     newSitePageId: string = null,
@@ -97,6 +144,12 @@ export class SitePage {
     });
   }
 
+  /**
+   * @param string - templateId
+   * @param string? - newTemplateId
+   * @param string? - toPoolId
+   * @return Promise|Observable|any
+   */
   DuplicateTemplate(
     templateId: string,
     newTemplateId: string = null,
@@ -109,6 +162,9 @@ export class SitePage {
     });
   }
 
+  /**
+   * @return Promise|Observable|any
+   */
   GenerateSitePageTemplates(): any {
     return this.restClient.post(
       'SitePage/UseCase/GenerateSitePageTemplates',
@@ -116,18 +172,33 @@ export class SitePage {
     );
   }
 
+  /**
+   * @param string - sitePageId
+   * @return Promise|Observable|any
+   */
   RemoveSitePage(sitePageId: string): any {
     return this.restClient.post('SitePage/UseCase/RemoveSitePage', {
       sitePageId,
     });
   }
 
+  /**
+   * @param string - sitePageTemplateId
+   * @return Promise|Observable|any
+   */
   RemoveTemplate(sitePageTemplateId: string): any {
     return this.restClient.post('SitePage/UseCase/RemoveTemplate', {
       sitePageTemplateId,
     });
   }
 
+  /**
+   * @param string - sitePageId
+   * @param string - content
+   * @param string? - styles
+   * @param string? - scripts
+   * @return Promise|Observable|any
+   */
   SetContentForSitePage(
     sitePageId: string,
     content: string,
@@ -142,6 +213,11 @@ export class SitePage {
     });
   }
 
+  /**
+   * @param string - sitePageId
+   * @param string - displayOrder
+   * @return Promise|Observable|any
+   */
   SetDisplayOrderForSitePage(sitePageId: string, displayOrder: string): any {
     return this.restClient.post('SitePage/UseCase/SetDisplayOrderForSitePage', {
       sitePageId,
@@ -149,6 +225,15 @@ export class SitePage {
     });
   }
 
+  /**
+   * @param string - sitePageId
+   * @param string? - title
+   * @param string? - description
+   * @param string? - keywords
+   * @param string? - imageUrl
+   * @param string? - name
+   * @return Promise|Observable|any
+   */
   SetMetaInfoForSitePage(
     sitePageId: string,
     title: string = null,
@@ -167,6 +252,11 @@ export class SitePage {
     });
   }
 
+  /**
+   * @param string - sitePageId
+   * @param string - title
+   * @return Promise|Observable|any
+   */
   SetTitleForSitePage(sitePageId: string, title: string): any {
     return this.restClient.post('SitePage/UseCase/SetTitleForSitePage', {
       sitePageId,
@@ -174,6 +264,14 @@ export class SitePage {
     });
   }
 
+  /**
+   * @param string - sitePageId
+   * @param string - eventId
+   * @param string - title
+   * @param string - content
+   * @param int? - displayOrder
+   * @return Promise|Observable|any
+   */
   UpdateSitePage(
     sitePageId: string,
     eventId: string,
@@ -190,6 +288,15 @@ export class SitePage {
     });
   }
 
+  /**
+   * @param string - templateId
+   * @param string? - name
+   * @param string? - content
+   * @param string? - poolId
+   * @param string? - styles
+   * @param string? - scripts
+   * @return Promise|Observable|any
+   */
   UpdateTemplate(
     templateId: string,
     name: string = null,

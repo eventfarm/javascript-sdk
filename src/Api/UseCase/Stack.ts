@@ -7,7 +7,13 @@ import { RestClientInterface } from '../../Interfaces';
 export class Stack {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - stackId
+   * @param array? - withData Event|TicketType|AvailabilityCounts
+   * @return Promise|Observable|any
+   */
   GetStack(stackId: string, withData: any = null): any {
     return this.restClient.get('Stack/UseCase/GetStack', {
       stackId,
@@ -15,6 +21,18 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param array? - withData TicketType|Event|availibilityCounts
+   * @param array? - excludeStackMethodFilter
+   * @param bool? - shouldHideDeleted true|false
+   * @param string? - query
+   * @param string? - sortBy
+   * @param string? - sortDirection
+   * @param int? - page
+   * @param int? - itemsPerPage
+   * @return Promise|Observable|any
+   */
   ListStacksForEvent(
     eventId: string,
     withData: any = null,
@@ -39,6 +57,18 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - promotionId
+   * @param array? - withData TicketType|Event
+   * @param array? - excludeStackMethodFilter
+   * @param bool? - shouldHideDeleted true|false
+   * @param string? - query
+   * @param string? - sortBy
+   * @param string? - sortDirection
+   * @param int? - page
+   * @param int? - itemsPerPage
+   * @return Promise|Observable|any
+   */
   ListStacksForPromotion(
     promotionId: string,
     withData: any = null,
@@ -63,6 +93,12 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - ticketTypeId
+   * @param int? - page
+   * @param int? - itemsPerPage
+   * @return Promise|Observable|any
+   */
   ListStacksForTicketType(
     ticketTypeId: string,
     page: number = null,
@@ -75,7 +111,13 @@ export class Stack {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - promotionId
+   * @param array - stackIds
+   * @return Promise|Observable|any
+   */
   AddPromotionToStacks(promotionId: string, stackIds: any): any {
     return this.restClient.post('Stack/UseCase/AddPromotionToStacks', {
       promotionId,
@@ -83,6 +125,23 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param string - ticketTypeId
+   * @param string - methodId
+   * @param int - quantity
+   * @param int - maxQty
+   * @param float? - price
+   * @param float? - serviceFee
+   * @param int? - openingTime
+   * @param int? - closingTime
+   * @param bool? - transferable true|false
+   * @param string? - inviteDesignId
+   * @param string? - confirmDesignId
+   * @param string? - declineDesignId
+   * @param string? - stackId
+   * @return Promise|Observable|any
+   */
   CreateStack(
     eventId: string,
     ticketTypeId: string,
@@ -117,6 +176,24 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param string - ticketTypeId
+   * @param bool - privateInvite true|false
+   * @param bool - fcfs true|false
+   * @param int - quantity
+   * @param int - maxQty
+   * @param float? - price
+   * @param float? - serviceFee
+   * @param int? - openingTime
+   * @param int? - closingTime
+   * @param bool? - transferable true|false
+   * @param string? - inviteDesignId
+   * @param string? - confirmDesignId
+   * @param string? - declineDesignId
+   * @param string? - stackId
+   * @return Promise|Observable|any
+   */
   CreateStackFromSettings(
     eventId: string,
     ticketTypeId: string,
@@ -153,12 +230,21 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @return Promise|Observable|any
+   */
   DeleteStack(stackId: string): any {
     return this.restClient.post('Stack/UseCase/DeleteStack', {
       stackId,
     });
   }
 
+  /**
+   * @param string - promotionId
+   * @param array - stackIds
+   * @return Promise|Observable|any
+   */
   RemovePromotionFromStacks(promotionId: string, stackIds: any): any {
     return this.restClient.post('Stack/UseCase/RemovePromotionFromStacks', {
       promotionId,
@@ -166,6 +252,11 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param int - closingTime
+   * @return Promise|Observable|any
+   */
   SetClosingTimeForStack(stackId: string, closingTime: number): any {
     return this.restClient.post('Stack/UseCase/SetClosingTimeForStack', {
       stackId,
@@ -173,6 +264,11 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param string - confirmDesignId
+   * @return Promise|Observable|any
+   */
   SetConfirmDesignForStack(stackId: string, confirmDesignId: string): any {
     return this.restClient.post('Stack/UseCase/SetConfirmDesignForStack', {
       stackId,
@@ -180,6 +276,11 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param string - declineDesignId
+   * @return Promise|Observable|any
+   */
   SetDeclineDesignForStack(stackId: string, declineDesignId: string): any {
     return this.restClient.post('Stack/UseCase/SetDeclineDesignForStack', {
       stackId,
@@ -187,6 +288,11 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param string - inviteDesignId
+   * @return Promise|Observable|any
+   */
   SetInviteDesignForStack(stackId: string, inviteDesignId: string): any {
     return this.restClient.post('Stack/UseCase/SetInviteDesignForStack', {
       stackId,
@@ -194,6 +300,11 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param int - maxQuantity
+   * @return Promise|Observable|any
+   */
   SetMaxQuantityForStack(stackId: string, maxQuantity: number): any {
     return this.restClient.post('Stack/UseCase/SetMaxQuantityForStack', {
       stackId,
@@ -201,6 +312,11 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param string - methodSlug
+   * @return Promise|Observable|any
+   */
   SetMethodForStack(stackId: string, methodSlug: string): any {
     return this.restClient.post('Stack/UseCase/SetMethodForStack', {
       stackId,
@@ -208,6 +324,11 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param int - openingTime
+   * @return Promise|Observable|any
+   */
   SetOpeningTimeForStack(stackId: string, openingTime: number): any {
     return this.restClient.post('Stack/UseCase/SetOpeningTimeForStack', {
       stackId,
@@ -215,6 +336,11 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param float - price
+   * @return Promise|Observable|any
+   */
   SetPriceForStack(stackId: string, price: number): any {
     return this.restClient.post('Stack/UseCase/SetPriceForStack', {
       stackId,
@@ -222,6 +348,11 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param int - quantity
+   * @return Promise|Observable|any
+   */
   SetQuantityForStack(stackId: string, quantity: number): any {
     return this.restClient.post('Stack/UseCase/SetQuantityForStack', {
       stackId,
@@ -229,6 +360,11 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param float - serviceFee
+   * @return Promise|Observable|any
+   */
   SetServiceFeeForStack(stackId: string, serviceFee: number): any {
     return this.restClient.post('Stack/UseCase/SetServiceFeeForStack', {
       stackId,
@@ -236,6 +372,11 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param bool - transferable true|false
+   * @return Promise|Observable|any
+   */
   SetTransferableForStack(stackId: string, transferable: boolean): any {
     return this.restClient.post('Stack/UseCase/SetTransferableForStack', {
       stackId,
@@ -243,6 +384,16 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param string? - methodSlug
+   * @param float? - price
+   * @param float? - serviceFee
+   * @param int? - quantity
+   * @param int? - maxQuantity
+   * @param bool? - transferable true|false
+   * @return Promise|Observable|any
+   */
   UpdateStack(
     stackId: string,
     methodSlug: string = null,
@@ -263,6 +414,24 @@ export class Stack {
     });
   }
 
+  /**
+   * @param string - stackId
+   * @param string? - eventId
+   * @param string? - ticketTypeId
+   * @param bool? - privateInvite true|false
+   * @param bool? - fcfs true|false
+   * @param int? - quantity
+   * @param int? - maxQty
+   * @param float? - price
+   * @param float? - serviceFee
+   * @param int? - openingTime
+   * @param int? - closingTime
+   * @param bool? - transferable true|false
+   * @param string? - inviteDesignId
+   * @param string? - confirmDesignId
+   * @param string? - declineDesignId
+   * @return Promise|Observable|any
+   */
   UpdateStackFromSettings(
     stackId: string,
     eventId: string = null,

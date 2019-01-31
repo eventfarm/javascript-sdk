@@ -7,7 +7,12 @@ import { RestClientInterface } from '../../Interfaces';
 export class Salesforce {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
   GetSalesforceLimitsForPool(poolId: string): any {
     return this.restClient.get(
       'Salesforce/UseCase/GetSalesforceLimitsForPool',
@@ -17,6 +22,10 @@ export class Salesforce {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
   GetSalesforceStatusForEvent(eventId: string): any {
     return this.restClient.get(
       'Salesforce/UseCase/GetSalesforceStatusForEvent',
@@ -26,6 +35,10 @@ export class Salesforce {
     );
   }
 
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
   GetSalesforceSyncUserInfoForPool(poolId: string): any {
     return this.restClient.get(
       'Salesforce/UseCase/GetSalesforceSyncUserInfoForPool',
@@ -35,6 +48,10 @@ export class Salesforce {
     );
   }
 
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
   ListSalesforceCampaignsForPool(poolId: string): any {
     return this.restClient.get(
       'Salesforce/UseCase/ListSalesforceCampaignsForPool',
@@ -44,6 +61,10 @@ export class Salesforce {
     );
   }
 
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
   ListSalesforceContactFieldsForPool(poolId: string): any {
     return this.restClient.get(
       'Salesforce/UseCase/ListSalesforceContactFieldsForPool',
@@ -53,6 +74,10 @@ export class Salesforce {
     );
   }
 
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
   ListSalesforceLeadFieldsForPool(poolId: string): any {
     return this.restClient.get(
       'Salesforce/UseCase/ListSalesforceLeadFieldsForPool',
@@ -62,6 +87,11 @@ export class Salesforce {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @param string - campaignId
+   * @return Promise|Observable|any
+   */
   ListSalesforceStatusNamesForEvent(eventId: string, campaignId: string): any {
     return this.restClient.get(
       'Salesforce/UseCase/ListSalesforceStatusNamesForEvent',
@@ -72,13 +102,22 @@ export class Salesforce {
     );
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
   ExportEventToSalesforce(eventId: string): any {
     return this.restClient.post('Salesforce/UseCase/ExportEventToSalesforce', {
       eventId,
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @return Promise|Observable|any
+   */
   ExportInvitationToSalesforce(invitationId: string): any {
     return this.restClient.post(
       'Salesforce/UseCase/ExportInvitationToSalesforce',
@@ -88,6 +127,11 @@ export class Salesforce {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @param string? - userId
+   * @return Promise|Observable|any
+   */
   ImportCampaignMembersForEvent(eventId: string, userId: string = null): any {
     return this.restClient.post(
       'Salesforce/UseCase/ImportCampaignMembersForEvent',
@@ -98,6 +142,11 @@ export class Salesforce {
     );
   }
 
+  /**
+   * @param string - salesforceEventSettingId
+   * @param string? - userId
+   * @return Promise|Observable|any
+   */
   ImportCampaignMembersForSalesforceEventSetting(
     salesforceEventSettingId: string,
     userId: string = null,

@@ -7,9 +7,14 @@ import { RestClientInterface } from '../../Interfaces';
 export class Integration {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
   InitializeSalesforceIntegrationsForEvent(eventId: string): any {
     return this.restClient.post(
       'Integration/UseCase/InitializeSalesforceIntegrationsForEvent',

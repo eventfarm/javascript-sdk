@@ -10,6 +10,15 @@ export interface ReportFormatTypeInterface {
   isPdf: boolean;
   isZip: boolean;
 }
+export interface ReportStatusTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isNew: boolean;
+  isPending: boolean;
+  isDone: boolean;
+  isError: boolean;
+}
 export interface ReportTypeInterface {
   slug: string;
   name: string;
@@ -25,6 +34,7 @@ export interface ReportTypeInterface {
   isEmailDeliverability: boolean;
   isSentEmails: boolean;
   isWaiver: boolean;
+  isActivityLog: boolean;
   isAdminEvents: boolean;
 }
 
@@ -70,6 +80,47 @@ export class Report {
     ];
   }
 
+  ReportStatusType(): ReportStatusTypeInterface[] {
+    return [
+      {
+        slug: 'new',
+        name: 'New',
+        description: null,
+        isNew: true,
+        isPending: false,
+        isDone: false,
+        isError: false,
+      },
+      {
+        slug: 'pending',
+        name: 'Pending',
+        description: null,
+        isNew: false,
+        isPending: true,
+        isDone: false,
+        isError: false,
+      },
+      {
+        slug: 'done',
+        name: 'Done',
+        description: null,
+        isNew: false,
+        isPending: false,
+        isDone: true,
+        isError: false,
+      },
+      {
+        slug: 'error',
+        name: 'Error',
+        description: null,
+        isNew: false,
+        isPending: false,
+        isDone: false,
+        isError: true,
+      },
+    ];
+  }
+
   ReportType(): ReportTypeInterface[] {
     return [
       {
@@ -87,6 +138,7 @@ export class Report {
         isEmailDeliverability: false,
         isSentEmails: false,
         isWaiver: false,
+        isActivityLog: false,
         isAdminEvents: false,
       },
       {
@@ -104,6 +156,7 @@ export class Report {
         isEmailDeliverability: false,
         isSentEmails: false,
         isWaiver: false,
+        isActivityLog: false,
         isAdminEvents: false,
       },
       {
@@ -121,6 +174,7 @@ export class Report {
         isEmailDeliverability: false,
         isSentEmails: false,
         isWaiver: false,
+        isActivityLog: false,
         isAdminEvents: false,
       },
       {
@@ -138,6 +192,7 @@ export class Report {
         isEmailDeliverability: false,
         isSentEmails: false,
         isWaiver: false,
+        isActivityLog: false,
         isAdminEvents: false,
       },
       {
@@ -155,6 +210,7 @@ export class Report {
         isEmailDeliverability: false,
         isSentEmails: false,
         isWaiver: false,
+        isActivityLog: false,
         isAdminEvents: false,
       },
       {
@@ -172,6 +228,7 @@ export class Report {
         isEmailDeliverability: false,
         isSentEmails: false,
         isWaiver: false,
+        isActivityLog: false,
         isAdminEvents: false,
       },
       {
@@ -189,6 +246,7 @@ export class Report {
         isEmailDeliverability: false,
         isSentEmails: false,
         isWaiver: false,
+        isActivityLog: false,
         isAdminEvents: false,
       },
       {
@@ -206,6 +264,7 @@ export class Report {
         isEmailDeliverability: false,
         isSentEmails: false,
         isWaiver: false,
+        isActivityLog: false,
         isAdminEvents: false,
       },
       {
@@ -221,14 +280,15 @@ export class Report {
         isTransfer: false,
         isTicketblockUsers: false,
         isEmailDeliverability: true,
-        isSentEmails: true,
+        isSentEmails: false,
         isWaiver: false,
+        isActivityLog: false,
         isAdminEvents: false,
       },
       {
-        slug: 'email',
-        name: 'Email Deliverability',
-        description: 'Email Deliverability Report',
+        slug: 'sent',
+        name: 'Sent Emails',
+        description: 'Event Sent Email Report',
         isInvitation: false,
         isConfirmed: false,
         isUnconfirmed: false,
@@ -237,9 +297,10 @@ export class Report {
         isCheckin: false,
         isTransfer: false,
         isTicketblockUsers: false,
-        isEmailDeliverability: true,
+        isEmailDeliverability: false,
         isSentEmails: true,
         isWaiver: false,
+        isActivityLog: false,
         isAdminEvents: false,
       },
       {
@@ -257,6 +318,25 @@ export class Report {
         isEmailDeliverability: false,
         isSentEmails: false,
         isWaiver: true,
+        isActivityLog: false,
+        isAdminEvents: false,
+      },
+      {
+        slug: 'activitylog',
+        name: 'Activity Log',
+        description: 'Log of Events Activities',
+        isInvitation: false,
+        isConfirmed: false,
+        isUnconfirmed: false,
+        isPurchased: false,
+        isWaitlist: false,
+        isCheckin: false,
+        isTransfer: false,
+        isTicketblockUsers: false,
+        isEmailDeliverability: false,
+        isSentEmails: false,
+        isWaiver: false,
+        isActivityLog: true,
         isAdminEvents: false,
       },
       {
@@ -274,6 +354,7 @@ export class Report {
         isEmailDeliverability: false,
         isSentEmails: false,
         isWaiver: false,
+        isActivityLog: false,
         isAdminEvents: true,
       },
     ];

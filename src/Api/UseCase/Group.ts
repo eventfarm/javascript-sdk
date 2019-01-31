@@ -7,7 +7,13 @@ import { RestClientInterface } from '../../Interfaces';
 export class Group {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - groupId
+   * @param array? - withData totalUsersInGroup|creatorUser
+   * @return Promise|Observable|any
+   */
   GetGroup(groupId: string, withData: any = null): any {
     return this.restClient.get('Group/UseCase/GetGroup', {
       groupId,
@@ -15,6 +21,16 @@ export class Group {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param string - userId
+   * @param string? - groupOwnerUserId
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-500
+   * @param string? - sortBy
+   * @param string? - sortDirection ascending|descending
+   * @return Promise|Observable|any
+   */
   ListGroupMembershipForUser(
     poolId: string,
     userId: string,
@@ -35,6 +51,15 @@ export class Group {
     });
   }
 
+  /**
+   * @param string - userId
+   * @param string? - query
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-500
+   * @param string? - sortBy
+   * @param string? - sortDirection ascending|descending
+   * @return Promise|Observable|any
+   */
   ListGroupsOwnedByUser(
     userId: string,
     query: string = null,
@@ -53,7 +78,13 @@ export class Group {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - groupId
+   * @param array - userIds
+   * @return Promise|Observable|any
+   */
   AddUsersToGroup(groupId: string, userIds: any): any {
     return this.restClient.post('Group/UseCase/AddUsersToGroup', {
       groupId,
@@ -61,6 +92,12 @@ export class Group {
     });
   }
 
+  /**
+   * @param string - userId
+   * @param string - groupName
+   * @param string? - groupId
+   * @return Promise|Observable|any
+   */
   CreateGroupForUser(
     userId: string,
     groupName: string,
@@ -73,12 +110,21 @@ export class Group {
     });
   }
 
+  /**
+   * @param string - groupId
+   * @return Promise|Observable|any
+   */
   DeleteGroup(groupId: string): any {
     return this.restClient.post('Group/UseCase/DeleteGroup', {
       groupId,
     });
   }
 
+  /**
+   * @param string - destinationGroupId
+   * @param array - fromGroupIds
+   * @return Promise|Observable|any
+   */
   MergeGroups(destinationGroupId: string, fromGroupIds: any): any {
     return this.restClient.post('Group/UseCase/MergeGroups', {
       destinationGroupId,
@@ -86,6 +132,11 @@ export class Group {
     });
   }
 
+  /**
+   * @param string - groupId
+   * @param array - userIds
+   * @return Promise|Observable|any
+   */
   RemoveUsersFromGroup(groupId: string, userIds: any): any {
     return this.restClient.post('Group/UseCase/RemoveUsersFromGroup', {
       groupId,
@@ -93,6 +144,12 @@ export class Group {
     });
   }
 
+  /**
+   * @param string - groupId
+   * @param string - userId
+   * @param string - groupName
+   * @return Promise|Observable|any
+   */
   SetGroupName(groupId: string, userId: string, groupName: string): any {
     return this.restClient.post('Group/UseCase/SetGroupName', {
       groupId,

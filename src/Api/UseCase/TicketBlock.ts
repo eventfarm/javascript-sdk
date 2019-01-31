@@ -7,7 +7,13 @@ import { RestClientInterface } from '../../Interfaces';
 export class TicketBlock {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - ticketBlockId
+   * @param array? - withData Event|Allotments|AllotmentsAndStack|AllotmentCounts
+   * @return Promise|Observable|any
+   */
   GetTicketBlock(ticketBlockId: string, withData: any = null): any {
     return this.restClient.get('TicketBlock/UseCase/GetTicketBlock', {
       ticketBlockId,
@@ -15,6 +21,18 @@ export class TicketBlock {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param string? - query
+   * @param array? - withData Event|Allotments|AllotmentsAndStack|AllotmentCounts
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-50
+   * @param string? - sortBy name
+   * @param string? - sortDirection ascending|descending
+   * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
+   * @param bool? - shouldHideDeleted true|false
+   * @return Promise|Observable|any
+   */
   ListTicketBlocksForEvent(
     eventId: string,
     query: string = null,
@@ -39,6 +57,18 @@ export class TicketBlock {
     });
   }
 
+  /**
+   * @param string - userId
+   * @param string? - query
+   * @param array? - withData Event
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-500
+   * @param string? - sortBy event-start|event-end
+   * @param string? - sortDirection ascending|descending
+   * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
+   * @param string? - poolId
+   * @return Promise|Observable|any
+   */
   ListTicketBlocksForUser(
     userId: string,
     query: string = null,
@@ -63,7 +93,16 @@ export class TicketBlock {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - ticketBlockId
+   * @param string - email
+   * @param string - firstName
+   * @param string - lastName
+   * @param string? - authenticatedUserId
+   * @return Promise|Observable|any
+   */
   AddUserRoleToTicketBlock(
     ticketBlockId: string,
     email: string,
@@ -83,6 +122,14 @@ export class TicketBlock {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @param string - name
+   * @param bool? - isBlacklistEnabled true|false
+   * @param string? - emailText
+   * @param string? - ticketBlockId
+   * @return Promise|Observable|any
+   */
   CreateTicketBlock(
     eventId: string,
     name: string,
@@ -99,6 +146,10 @@ export class TicketBlock {
     });
   }
 
+  /**
+   * @param string - ticketBlockId
+   * @return Promise|Observable|any
+   */
   DisableTicketBlockBlacklist(ticketBlockId: string): any {
     return this.restClient.post(
       'TicketBlock/UseCase/DisableTicketBlockBlacklist',
@@ -108,6 +159,10 @@ export class TicketBlock {
     );
   }
 
+  /**
+   * @param string - ticketBlockId
+   * @return Promise|Observable|any
+   */
   EnableTicketBlockBlacklist(ticketBlockId: string): any {
     return this.restClient.post(
       'TicketBlock/UseCase/EnableTicketBlockBlacklist',
@@ -117,6 +172,11 @@ export class TicketBlock {
     );
   }
 
+  /**
+   * @param string - userId
+   * @param string - ticketBlockId
+   * @return Promise|Observable|any
+   */
   RemoveAllUserRolesFromTicketBlock(
     userId: string,
     ticketBlockId: string,
@@ -130,12 +190,21 @@ export class TicketBlock {
     );
   }
 
+  /**
+   * @param string - ticketBlockId
+   * @return Promise|Observable|any
+   */
   RemoveTicketBlock(ticketBlockId: string): any {
     return this.restClient.post('TicketBlock/UseCase/RemoveTicketBlock', {
       ticketBlockId,
     });
   }
 
+  /**
+   * @param string - ticketBlockId
+   * @param string - emailText
+   * @return Promise|Observable|any
+   */
   SetTicketBlockEmailText(ticketBlockId: string, emailText: string): any {
     return this.restClient.post('TicketBlock/UseCase/SetTicketBlockEmailText', {
       ticketBlockId,
@@ -143,6 +212,11 @@ export class TicketBlock {
     });
   }
 
+  /**
+   * @param string - ticketBlockId
+   * @param string - name
+   * @return Promise|Observable|any
+   */
   SetTicketBlockName(ticketBlockId: string, name: string): any {
     return this.restClient.post('TicketBlock/UseCase/SetTicketBlockName', {
       ticketBlockId,

@@ -7,7 +7,13 @@ import { RestClientInterface } from '../../Interfaces';
 export class Import {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - userImportId
+   * @param array? - withData GoodRecords|DuplicateRecords|ErrorRecords|ImportFailureRecords
+   * @return Promise|Observable|any
+   */
   GetUserImport(userImportId: string, withData: any = null): any {
     return this.restClient.get('Import/UseCase/GetUserImport', {
       userImportId,
@@ -15,6 +21,11 @@ export class Import {
     });
   }
 
+  /**
+   * @param string - userImportId
+   * @param string - fileId
+   * @return Promise|Observable|any
+   */
   GetUserImportFile(userImportId: string, fileId: string): any {
     return this.restClient.get(
       'Import/UseCase/GetUserImportFile',
@@ -29,7 +40,19 @@ export class Import {
     );
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - userImportId
+   * @param string - eventId
+   * @param string? - stackId
+   * @param int? - guestsPerInvitation >= 1
+   * @param string? - invitationCreationType unconfirmed-no-email|confirmed-no-email|send-email
+   * @param string? - groupName
+   * @param string? - groupId
+   * @param string? - redirectUrl
+   * @return Promise|Observable|any
+   */
   PostProcessAndImportInvitations(
     userImportId: string,
     eventId: string,
@@ -55,6 +78,13 @@ export class Import {
     );
   }
 
+  /**
+   * @param string - userImportId
+   * @param string? - groupName
+   * @param string? - groupId
+   * @param string? - redirectUrl
+   * @return Promise|Observable|any
+   */
   PostProcessAndImportUsers(
     userImportId: string,
     groupName: string = null,
@@ -69,6 +99,12 @@ export class Import {
     });
   }
 
+  /**
+   * @param string - userId
+   * @param string - poolId
+   * @param string - spreadsheet
+   * @return Promise|Observable|any
+   */
   PreProcessSpreadsheetForUserImport(
     userId: string,
     poolId: string,

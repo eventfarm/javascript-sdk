@@ -7,7 +7,14 @@ import { RestClientInterface } from '../../Interfaces';
 export class User {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - removeUserId
+   * @param string - requestUserId
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
   CheckIfUserCanBeRemovedFromPool(
     removeUserId: string,
     requestUserId: string,
@@ -20,6 +27,13 @@ export class User {
     });
   }
 
+  /**
+   * @param string - userId
+   * @param array? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName
+   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string? - poolId
+   * @return Promise|Observable|any
+   */
   GetUser(
     userId: string,
     withData: any = null,
@@ -34,6 +48,13 @@ export class User {
     });
   }
 
+  /**
+   * @param string - email
+   * @param array? - withData UserName|UserAddress|UserToken|isEFAdmin|internalUserName
+   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string? - poolId
+   * @return Promise|Observable|any
+   */
   GetUserByEmail(
     email: string,
     withData: any = null,
@@ -48,6 +69,13 @@ export class User {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param string - userId
+   * @param array? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName
+   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @return Promise|Observable|any
+   */
   GetUserInPool(
     poolId: string,
     userId: string,
@@ -62,6 +90,11 @@ export class User {
     });
   }
 
+  /**
+   * @param string - userId
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
   GetUserRolesForEvent(userId: string, eventId: string): any {
     return this.restClient.get('User/UseCase/GetUserRolesForEvent', {
       userId,
@@ -69,6 +102,11 @@ export class User {
     });
   }
 
+  /**
+   * @param string - userId
+   * @param string - ticketBlockId
+   * @return Promise|Observable|any
+   */
   GetUserRolesForTicketBlock(userId: string, ticketBlockId: string): any {
     return this.restClient.get('User/UseCase/GetUserRolesForTicketBlock', {
       userId,
@@ -76,6 +114,16 @@ export class User {
     });
   }
 
+  /**
+   * @param array - poolIds
+   * @param array? - withData UserIdentifiers|UserNames|UserAttributes
+   * @param string? - query
+   * @param string? - sortBy name
+   * @param string? - sortDirection ascending|descending
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListUsersForPools(
     poolIds: any,
     withData: any = null,
@@ -96,6 +144,16 @@ export class User {
     });
   }
 
+  /**
+   * @param string - ticketBlockId
+   * @param array? - withData UserIdentifiers|UserNames|UserAttributes
+   * @param string? - query
+   * @param string? - sortBy name
+   * @param string? - sortDirection ascending|descending
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListUsersForTicketBlock(
     ticketBlockId: string,
     withData: any = null,
@@ -116,6 +174,17 @@ export class User {
     });
   }
 
+  /**
+   * @param string - groupId
+   * @param string - poolId
+   * @param array? - withData UserIdentifiers|UserNames|UserAttributes
+   * @param string? - query
+   * @param string? - sortBy name
+   * @param string? - sortDirection ascending|descending
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListUsersInGroup(
     groupId: string,
     poolId: string,
@@ -138,6 +207,16 @@ export class User {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param array? - withData eventRoles|PoolContacts|UserIdentifiers|UserNames|UserAttributes
+   * @param string? - query
+   * @param string? - sortBy name
+   * @param string? - sortDirection ascending|descending
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListUsersWithRolesForEvent(
     eventId: string,
     withData: any = null,
@@ -158,7 +237,13 @@ export class User {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - userId
+   * @param string - token
+   * @return Promise|Observable|any
+   */
   AccessUserForgotPasswordToken(userId: string, token: string): any {
     return this.restClient.post('User/UseCase/AccessUserForgotPasswordToken', {
       userId,
@@ -166,6 +251,11 @@ export class User {
     });
   }
 
+  /**
+   * @param string - userId
+   * @param string - groupId
+   * @return Promise|Observable|any
+   */
   AddUserAccessToGroup(userId: string, groupId: string): any {
     return this.restClient.post('User/UseCase/AddUserAccessToGroup', {
       userId,
@@ -173,6 +263,18 @@ export class User {
     });
   }
 
+  /**
+   * @param string? - email
+   * @param string? - firstName
+   * @param string? - lastName
+   * @param string? - company
+   * @param string? - position
+   * @param string? - phone
+   * @param string? - poolId
+   * @param string? - title
+   * @param string? - other
+   * @return Promise|Observable|any
+   */
   CreateAuthUser(
     email: string = null,
     firstName: string = null,
@@ -197,6 +299,19 @@ export class User {
     });
   }
 
+  /**
+   * @param string? - email
+   * @param string? - firstName
+   * @param string? - lastName
+   * @param string? - company
+   * @param string? - position
+   * @param string? - phone
+   * @param string? - title
+   * @param string? - other
+   * @param string? - userId
+   * @param string? - poolId
+   * @return Promise|Observable|any
+   */
   CreateCIOAccount(
     email: string = null,
     firstName: string = null,
@@ -223,12 +338,28 @@ export class User {
     });
   }
 
+  /**
+   * @param string - userId
+   * @return Promise|Observable|any
+   */
   CreateForgotPasswordToken(userId: string): any {
     return this.restClient.post('User/UseCase/CreateForgotPasswordToken', {
       userId,
     });
   }
 
+  /**
+   * @param string? - email
+   * @param string? - firstName
+   * @param string? - lastName
+   * @param string? - company
+   * @param string? - position
+   * @param string? - phone
+   * @param string? - poolId
+   * @param string? - title
+   * @param string? - other
+   * @return Promise|Observable|any
+   */
   CreateUser(
     email: string = null,
     firstName: string = null,
@@ -253,6 +384,13 @@ export class User {
     });
   }
 
+  /**
+   * @param string - userId
+   * @param string - poolId
+   * @param string - email
+   * @param string? - userContactAgentId
+   * @return Promise|Observable|any
+   */
   CreateUserContactAgent(
     userId: string,
     poolId: string,
@@ -267,6 +405,11 @@ export class User {
     });
   }
 
+  /**
+   * @param string - userId
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
   RemoveEventRoleForUser(userId: string, eventId: string): any {
     return this.restClient.post('User/UseCase/RemoveEventRoleForUser', {
       userId,
@@ -274,6 +417,11 @@ export class User {
     });
   }
 
+  /**
+   * @param string - userId
+   * @param string - groupId
+   * @return Promise|Observable|any
+   */
   RemoveUserAccessToGroup(userId: string, groupId: string): any {
     return this.restClient.post('User/UseCase/RemoveUserAccessToGroup', {
       userId,
@@ -281,12 +429,22 @@ export class User {
     });
   }
 
+  /**
+   * @param string - userContactAgentId
+   * @return Promise|Observable|any
+   */
   RemoveUserContactAgent(userContactAgentId: string): any {
     return this.restClient.post('User/UseCase/RemoveUserContactAgent', {
       userContactAgentId,
     });
   }
 
+  /**
+   * @param array - removeUserIds
+   * @param string - requestUserId
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
   RemoveUsersFromPool(
     removeUserIds: any,
     requestUserId: string,
@@ -299,6 +457,11 @@ export class User {
     });
   }
 
+  /**
+   * @param string - email
+   * @param string? - appName
+   * @return Promise|Observable|any
+   */
   SendForgotPasswordEmail(email: string, appName: string = null): any {
     return this.restClient.post('User/UseCase/SendForgotPasswordEmail', {
       email,
@@ -306,6 +469,11 @@ export class User {
     });
   }
 
+  /**
+   * @param string - email
+   * @param string? - appName
+   * @return Promise|Observable|any
+   */
   SendVerificationEmail(email: string, appName: string = null): any {
     return this.restClient.post('User/UseCase/SendVerificationEmail', {
       email,
@@ -313,6 +481,13 @@ export class User {
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @param string - authUserId
+   * @param string - changeUserId
+   * @param string - email
+   * @return Promise|Observable|any
+   */
   SetEmailForInvitation(
     invitationId: string,
     authUserId: string,
@@ -327,6 +502,13 @@ export class User {
     });
   }
 
+  /**
+   * @param string - userId
+   * @param string - eventId
+   * @param string - eventRole organizer|assistant|support|check-in-staff|read-only
+   * @param string - authenticatedUserId
+   * @return Promise|Observable|any
+   */
   SetEventRoleForUser(
     userId: string,
     eventId: string,
@@ -341,6 +523,11 @@ export class User {
     });
   }
 
+  /**
+   * @param string - userContactAgentId
+   * @param string - email
+   * @return Promise|Observable|any
+   */
   UpdateUserContactAgent(userContactAgentId: string, email: string): any {
     return this.restClient.post('User/UseCase/UpdateUserContactAgent', {
       userContactAgentId,

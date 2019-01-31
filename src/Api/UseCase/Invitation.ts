@@ -7,7 +7,12 @@ import { RestClientInterface } from '../../Interfaces';
 export class Invitation {
   constructor(private restClient: RestClientInterface) {}
 
-  // GET: Queries
+  // Queries
+
+  /**
+   * @param string - stackMethodType public-registration|public-purchase|invite-to-register|invite-to-purchase|invite-to-rsvp|invite-to-register-fcfs|invite-to-purchase-fcfs|invite-to-rsvp-fcfs
+   * @return Promise|Observable|any
+   */
   GetAllInvitationStatusTypesForStackMethodType(stackMethodType: string): any {
     return this.restClient.get(
       'Invitation/UseCase/GetAllInvitationStatusTypesForStackMethodType',
@@ -17,12 +22,20 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
   GetCheckInCountsForEvent(eventId: string): any {
     return this.restClient.get('Invitation/UseCase/GetCheckInCountsForEvent', {
       eventId,
     });
   }
 
+  /**
+   * @param string - ticketBlockId
+   * @return Promise|Observable|any
+   */
   GetCheckInCountsForTicketBlock(ticketBlockId: string): any {
     return this.restClient.get(
       'Invitation/UseCase/GetCheckInCountsForTicketBlock',
@@ -32,6 +45,11 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - invitationId
+   * @param array? - withData Event|UserName|User|UserIdentifier|Stack|TicketType|QuestionResponse|Answer
+   * @return Promise|Observable|any
+   */
   GetInvitation(invitationId: string, withData: any = null): any {
     return this.restClient.get('Invitation/UseCase/GetInvitation', {
       invitationId,
@@ -39,6 +57,10 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
   GetInvitationCountsForEvent(eventId: string): any {
     return this.restClient.get(
       'Invitation/UseCase/GetInvitationCountsForEvent',
@@ -48,6 +70,10 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - ticketBlockId
+   * @return Promise|Observable|any
+   */
   GetInvitationCountsForTicketBlock(ticketBlockId: string): any {
     return this.restClient.get(
       'Invitation/UseCase/GetInvitationCountsForTicketBlock',
@@ -57,6 +83,11 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - userId
+   * @param string? - poolId
+   * @return Promise|Observable|any
+   */
   GetInvitationCountsForUser(userId: string, poolId: string = null): any {
     return this.restClient.get(
       'Invitation/UseCase/GetInvitationCountsForUser',
@@ -67,6 +98,10 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
   GetInvitationLastActionCountsForEvent(eventId: string): any {
     return this.restClient.get(
       'Invitation/UseCase/GetInvitationLastActionCountsForEvent',
@@ -76,6 +111,10 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
   GetInvitationStatusTypeCountsForEvent(eventId: string): any {
     return this.restClient.get(
       'Invitation/UseCase/GetInvitationStatusTypeCountsForEvent',
@@ -85,6 +124,10 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - ticketBlockId
+   * @return Promise|Observable|any
+   */
   GetInvitationStatusTypeCountsForTicketBlock(ticketBlockId: string): any {
     return this.restClient.get(
       'Invitation/UseCase/GetInvitationStatusTypeCountsForTicketBlock',
@@ -94,6 +137,20 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @param array? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string? - query
+   * @param array? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param int? - lastModifiedTimestamp
+   * @param bool? - isCheckedIn true|false
+   * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
+   * @param string? - sortDirection ascending|descending
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-250
+   * @return Promise|Observable|any
+   */
   ListInvitationsForEvent(
     eventId: string,
     withData: any = null,
@@ -122,6 +179,21 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param string - stackId
+   * @param array? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string? - query
+   * @param array? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param int? - lastModifiedTimestamp
+   * @param bool? - isCheckedIn true|false
+   * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
+   * @param string? - sortDirection ascending|descending
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-250
+   * @return Promise|Observable|any
+   */
   ListInvitationsForStack(
     eventId: string,
     stackId: string,
@@ -152,6 +224,20 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - ticketBlockId
+   * @param array? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string? - query
+   * @param array? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param int? - lastModifiedTimestamp
+   * @param bool? - isCheckedIn true|false
+   * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
+   * @param string? - sortDirection ascending|descending
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-250
+   * @return Promise|Observable|any
+   */
   ListInvitationsForTicketBlock(
     ticketBlockId: string,
     withData: any = null,
@@ -183,6 +269,18 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - userId
+   * @param string? - poolId
+   * @param string? - eventId
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-250
+   * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
+   * @param string? - sortDirection
+   * @param array? - withData Event|Stack|StackAndTicketType
+   * @param array? - statusFilter
+   * @return Promise|Observable|any
+   */
   ListInvitationsForUser(
     userId: string,
     poolId: string = null,
@@ -207,6 +305,18 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - email
+   * @param string? - poolId
+   * @param string? - eventId
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-250
+   * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
+   * @param string? - sortDirection
+   * @param array? - withData Event|Stack|StackAndTicketType
+   * @param array? - statusFilter
+   * @return Promise|Observable|any
+   */
   ListInvitationsForUserByEmail(
     email: string,
     poolId: string = null,
@@ -234,6 +344,18 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - userId
+   * @param string - parentEventId
+   * @param string? - poolId
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
+   * @param string? - sortDirection
+   * @param array? - withData Event|Stack
+   * @param array? - statusFilter
+   * @return Promise|Observable|any
+   */
   ListInvitationsForUserForParent(
     userId: string,
     parentEventId: string,
@@ -261,6 +383,19 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @param array? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string? - query
+   * @param int? - lastModifiedTimestamp
+   * @param bool? - isCheckedIn true|false
+   * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
+   * @param string? - sortDirection ascending|descending
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListWaitlistForEvent(
     eventId: string,
     withData: any = null,
@@ -287,6 +422,21 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param string - stackId
+   * @param array? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string? - query
+   * @param array? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param int? - lastModifiedTimestamp
+   * @param bool? - isCheckedIn true|false
+   * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
+   * @param string? - sortDirection ascending|descending
+   * @param int? - page >= 1
+   * @param int? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
   ListWaitlistForStack(
     eventId: string,
     stackId: string,
@@ -317,13 +467,23 @@ export class Invitation {
     });
   }
 
-  // POST USE CASES: Commands
+  // Commands
+
+  /**
+   * @param string - invitationId
+   * @return Promise|Observable|any
+   */
   AddInvitationToWaitlist(invitationId: string): any {
     return this.restClient.post('Invitation/UseCase/AddInvitationToWaitlist', {
       invitationId,
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @param string - invitationStatus assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @return Promise|Observable|any
+   */
   ChangeInvitationStatus(invitationId: string, invitationStatus: string): any {
     return this.restClient.post('Invitation/UseCase/ChangeInvitationStatus', {
       invitationId,
@@ -331,6 +491,11 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @param int? - inviteCount
+   * @return Promise|Observable|any
+   */
   ChangeInviteCount(invitationId: string, inviteCount: number = null): any {
     return this.restClient.post('Invitation/UseCase/ChangeInviteCount', {
       invitationId,
@@ -338,6 +503,11 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @param int? - checkInAt
+   * @return Promise|Observable|any
+   */
   CheckIn(invitationId: string, checkInAt: number = null): any {
     return this.restClient.post('Invitation/UseCase/CheckIn', {
       invitationId,
@@ -345,6 +515,27 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param string - stackId
+   * @param string - invitationStatus assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param string - inviteSource direct-invite|api-addition|distribution|event-invite|group-invite|import|ios-leave-behind|leave-behind|mobile-leave-behind|mobile-purchase|outside-purchase|public-interface|transferred|import-salesforce|import-marketo
+   * @param bool - isCheckedIn true|false
+   * @param int - inviteCount >= 1
+   * @param string? - email
+   * @param string? - firstName
+   * @param string? - lastName
+   * @param string? - company
+   * @param string? - position
+   * @param string? - checkInNotes
+   * @param string? - invitationId
+   * @param bool? - shouldSendInvitation true|false
+   * @param string? - invitationNotes
+   * @param string? - title
+   * @param string? - telephone
+   * @param string? - other
+   * @return Promise|Observable|any
+   */
   CreateInvitation(
     eventId: string,
     stackId: string,
@@ -387,6 +578,28 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param string - stackId
+   * @param string - ticketBlockId
+   * @param string - invitationStatus assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param string - inviteSource direct-invite|api-addition|distribution|event-invite|group-invite|import|ios-leave-behind|leave-behind|mobile-leave-behind|mobile-purchase|outside-purchase|public-interface|transferred|import-salesforce|import-marketo
+   * @param bool - isCheckedIn true|false
+   * @param int - inviteCount >= 1
+   * @param string? - email
+   * @param string? - firstName
+   * @param string? - lastName
+   * @param string? - company
+   * @param string? - position
+   * @param string? - checkInNotes
+   * @param string? - invitationId
+   * @param bool? - shouldSendInvitation true|false
+   * @param string? - invitationNotes
+   * @param string? - title
+   * @param string? - telephone
+   * @param string? - other
+   * @return Promise|Observable|any
+   */
   CreateInvitationForTicketBlock(
     eventId: string,
     stackId: string,
@@ -434,6 +647,13 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - groupId
+   * @param string - stackId
+   * @param int - guestsPerInvitation >= 1
+   * @param string - invitationCreationType unconfirmed-no-email|confirmed-no-email|send-email
+   * @return Promise|Observable|any
+   */
   CreateInvitationsFromGroup(
     groupId: string,
     stackId: string,
@@ -451,6 +671,13 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @param string - groupId
+   * @param int - guestsPerInvitation >= 1
+   * @param string? - stackId
+   * @return Promise|Observable|any
+   */
   CreateInvitationsFromGroupForCIOEvent(
     eventId: string,
     groupId: string,
@@ -468,6 +695,14 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - groupId
+   * @param string - ticketBlockId
+   * @param string - stackId
+   * @param int - guestsPerInvitation >= 1
+   * @param string - invitationCreationType unconfirmed-no-email|confirmed-no-email|send-email
+   * @return Promise|Observable|any
+   */
   CreateInvitationsFromGroupForTicketBlock(
     groupId: string,
     ticketBlockId: string,
@@ -487,6 +722,13 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @param string - webhookType
+   * @param string - webhookMethod
+   * @param string - url
+   * @return Promise|Observable|any
+   */
   CreateWebhook(
     eventId: string,
     webhookType: string,
@@ -501,18 +743,32 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - webhookId
+   * @return Promise|Observable|any
+   */
   DeleteWebhook(webhookId: string): any {
     return this.restClient.post('Invitation/UseCase/DeleteWebhook', {
       webhookId,
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @return Promise|Observable|any
+   */
   DisableArrivalAlert(invitationId: string): any {
     return this.restClient.post('Invitation/UseCase/DisableArrivalAlert', {
       invitationId,
     });
   }
 
+  /**
+   * @param array - invitationIds
+   * @param string - newInvitationStatus
+   * @param bool? - shouldSendEmail true|false
+   * @return Promise|Observable|any
+   */
   PromoteInvitationsFromWaitlist(
     invitationIds: any,
     newInvitationStatus: string,
@@ -528,6 +784,12 @@ export class Invitation {
     );
   }
 
+  /**
+   * @param string - invitationId
+   * @param string - questionId
+   * @param string - questionResponseIdsWithAnswersJson
+   * @return Promise|Observable|any
+   */
   SetAllQuestionResponses(
     invitationId: string,
     questionId: string,
@@ -540,6 +802,13 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @param string - toEmail
+   * @param array? - ccEmails
+   * @param bool? - shouldSendArrivalAlert true|false
+   * @return Promise|Observable|any
+   */
   SetArrivalAlertEmail(
     invitationId: string,
     toEmail: string,
@@ -554,6 +823,11 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @param string? - checkInNotes
+   * @return Promise|Observable|any
+   */
   SetCheckInNotes(invitationId: string, checkInNotes: string = null): any {
     return this.restClient.post('Invitation/UseCase/SetCheckInNotes', {
       invitationId,
@@ -561,6 +835,11 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @param string? - invitationNotes
+   * @return Promise|Observable|any
+   */
   SetInvitationNotes(
     invitationId: string,
     invitationNotes: string = null,
@@ -571,6 +850,13 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @param string - questionId
+   * @param array? - answerIds
+   * @param string? - text
+   * @return Promise|Observable|any
+   */
   SetQuestionResponse(
     invitationId: string,
     questionId: string,
@@ -585,12 +871,29 @@ export class Invitation {
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @return Promise|Observable|any
+   */
   UndoCheckIn(invitationId: string): any {
     return this.restClient.post('Invitation/UseCase/UndoCheckIn', {
       invitationId,
     });
   }
 
+  /**
+   * @param string - invitationId
+   * @param string - stackId
+   * @param string - invitationStatus assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param string? - company
+   * @param string? - position
+   * @param string? - email
+   * @param string? - firstName
+   * @param string? - lastName
+   * @param string? - other
+   * @param string? - telephone
+   * @return Promise|Observable|any
+   */
   UpdateInvitation(
     invitationId: string,
     stackId: string,
