@@ -1545,8 +1545,8 @@ export class DateTimeZone {
       {
         identifier: 'Asia/Macau',
         countryCode: 'MO',
-        latitude: '22.19722',
-        longitude: '113.54166',
+        latitude: '22.23333',
+        longitude: '113.58333',
       },
       {
         identifier: 'Asia/Magadan',
