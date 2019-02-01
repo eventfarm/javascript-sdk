@@ -3,8 +3,6 @@
       	<br />Official Event Farm TypeScript SDK
 </h1>
 
-[Check us out on npm!](https://www.npmjs.com/package/@eventfarm/javascript-sdk)
-
 ### Installation
 
 ```bash
@@ -48,8 +46,8 @@ const client = new BackEndClient(
     'client_secret', // required string
     'email', // required string
     'password', // required string
-    'loginBaseUrl', // default: 'https://eventfarm.com/app/oauth/token'
-    'apiBaseUrl', // default: 'https://eventfarm.com/api/v2'
+    'loginBaseUrl', // default: 'https://app.eventfarm.com'
+    'apiBaseUrl', // default: 'https://app.eventfarm.com/api'
 );
 
 async function listEvents(userId: string): Promise<{}> {
