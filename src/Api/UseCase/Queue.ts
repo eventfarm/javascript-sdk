@@ -28,10 +28,10 @@ export class Queue {
 
   /**
    * @param string - commandId
-   * @param array? - withData QueueCommandErrors|QueueCommandMessages
+   * @param string[]? - withData QueueCommandErrors|QueueCommandMessages
    * @return Promise|Observable|any
    */
-  GetQueueCommand(commandId: string, withData: any = null): any {
+  GetQueueCommand(commandId: string, withData: string[] = null): any {
     return this.restClient.get('Queue/UseCase/GetQueueCommand', {
       commandId,
       withData,
@@ -40,10 +40,10 @@ export class Queue {
 
   /**
    * @param string - queueTaskId
-   * @param array? - withData QueueTaskErrors|QueueTaskMessages
+   * @param string[]? - withData QueueTaskErrors|QueueTaskMessages
    * @return Promise|Observable|any
    */
-  GetQueueTask(queueTaskId: string, withData: any = null): any {
+  GetQueueTask(queueTaskId: string, withData: string[] = null): any {
     return this.restClient.get('Queue/UseCase/GetQueueTask', {
       queueTaskId,
       withData,
@@ -52,10 +52,10 @@ export class Queue {
 
   /**
    * @param string - userId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
-   * @param bool? - isFinished true|false
-   * @param bool? - isSuccess true|false
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @param boolean? - isFinished true|false
+   * @param boolean? - isSuccess true|false
    * @return Promise|Observable|any
    */
   ListQueueCommandsForUser(

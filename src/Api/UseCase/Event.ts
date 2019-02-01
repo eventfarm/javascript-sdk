@@ -21,10 +21,10 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param array? - withData Answers|TicketType|QuestionContexts
+   * @param string[]? - withData Answers|TicketType|QuestionContexts
    * @return Promise|Observable|any
    */
-  GetAllQuestionsForEvent(eventId: string, withData: any = null): any {
+  GetAllQuestionsForEvent(eventId: string, withData: string[] = null): any {
     return this.restClient.get('Event/UseCase/GetAllQuestionsForEvent', {
       eventId,
       withData,
@@ -33,10 +33,10 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param array? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures
+   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures
    * @return Promise|Observable|any
    */
-  GetEvent(eventId: string, withData: any = null): any {
+  GetEvent(eventId: string, withData: string[] = null): any {
     return this.restClient.get('Event/UseCase/GetEvent', {
       eventId,
       withData,
@@ -45,7 +45,7 @@ export class Event {
 
   /**
    * @param string - poolId
-   * @param int? - earliestStartDate
+   * @param number? - earliestStartDate
    * @return Promise|Observable|any
    */
   GetEventCountsForPool(poolId: string, earliestStartDate: number = null): any {
@@ -57,10 +57,10 @@ export class Event {
 
   /**
    * @param string - questionId
-   * @param array? - withData Answers|TicketType|QuestionResponseCounts|AnswerQuestionResponseCounts|QuestionContexts
+   * @param string[]? - withData Answers|TicketType|QuestionResponseCounts|AnswerQuestionResponseCounts|QuestionContexts
    * @return Promise|Observable|any
    */
-  GetQuestion(questionId: string, withData: any = null): any {
+  GetQuestion(questionId: string, withData: string[] = null): any {
     return this.restClient.get('Event/UseCase/GetQuestion', {
       questionId,
       withData,
@@ -70,27 +70,27 @@ export class Event {
   /**
    * @param string - parentEventId
    * @param string? - query
-   * @param array? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|EventTexts|QuestionsAndAnswers|ThumbnailUrl
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|EventTexts|QuestionsAndAnswers|ThumbnailUrl
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @param string? - sortBy event-start|event-end|name|event-created
    * @param string? - sortDirection ascending|descending
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
    * @param string? - poolId
-   * @param array? - tags
+   * @param any[]? - tags
    * @return Promise|Observable|any
    */
   ListChildrenForEvent(
     parentEventId: string,
     query: string = null,
-    withData: any = null,
+    withData: string[] = null,
     page: number = null,
     itemsPerPage: number = null,
     sortBy: string = null,
     sortDirection: string = null,
     eventDateFilterType: string = null,
     poolId: string = null,
-    tags: any = null,
+    tags: any[] = null,
   ): any {
     return this.restClient.get('Event/UseCase/ListChildrenForEvent', {
       parentEventId,
@@ -110,28 +110,28 @@ export class Event {
    * @param string - parentEventId
    * @param string - userId
    * @param string? - query
-   * @param array? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @param string? - sortBy event-start|event-end|name|event-created
    * @param string? - sortDirection ascending|descending
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
    * @param string? - poolId
-   * @param array? - tags
+   * @param any[]? - tags
    * @return Promise|Observable|any
    */
   ListChildrenForEventForUser(
     parentEventId: string,
     userId: string,
     query: string = null,
-    withData: any = null,
+    withData: string[] = null,
     page: number = null,
     itemsPerPage: number = null,
     sortBy: string = null,
     sortDirection: string = null,
     eventDateFilterType: string = null,
     poolId: string = null,
-    tags: any = null,
+    tags: any[] = null,
   ): any {
     return this.restClient.get('Event/UseCase/ListChildrenForEventForUser', {
       parentEventId,
@@ -151,32 +151,32 @@ export class Event {
   /**
    * @param string - poolId
    * @param string? - query
-   * @param array? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar
-   * @param array? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar
-   * @param array? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl
-   * @param int? - lastModifiedTimestamp
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-500
+   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar
+   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar
+   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl
+   * @param number? - lastModifiedTimestamp
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
    * @param string? - sortBy event-start|event-end|name|event-created
    * @param string? - sortDirection ascending|descending
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
-   * @param array? - tags
-   * @param int? - earliestStartTimestamp >= 0
+   * @param any[]? - tags
+   * @param number? - earliestStartTimestamp >= 0
    * @return Promise|Observable|any
    */
   ListEventsForPool(
     poolId: string,
     query: string = null,
-    attributesFilter: any = null,
-    attributesExcludeFilter: any = null,
-    withData: any = null,
+    attributesFilter: any[] = null,
+    attributesExcludeFilter: any[] = null,
+    withData: string[] = null,
     lastModifiedTimestamp: number = null,
     page: number = null,
     itemsPerPage: number = null,
     sortBy: string = null,
     sortDirection: string = null,
     eventDateFilterType: string = null,
-    tags: any = null,
+    tags: any[] = null,
     earliestStartTimestamp: number = null,
   ): any {
     return this.restClient.get('Event/UseCase/ListEventsForPool', {
@@ -199,26 +199,26 @@ export class Event {
   /**
    * @param string - userId
    * @param string? - query
-   * @param array? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar
-   * @param array? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar
-   * @param array? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl
-   * @param int? - lastModifiedTimestamp
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-500
+   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar
+   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar
+   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl
+   * @param number? - lastModifiedTimestamp
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
    * @param string? - sortBy event-start|event-end|name|event-created
    * @param string? - sortDirection ascending|descending
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
    * @param string? - poolId
-   * @param array? - tags
-   * @param int? - earliestStartTimestamp >= 0
+   * @param any[]? - tags
+   * @param number? - earliestStartTimestamp >= 0
    * @return Promise|Observable|any
    */
   ListEventsForUser(
     userId: string,
     query: string = null,
-    attributesFilter: any = null,
-    attributesExcludeFilter: any = null,
-    withData: any = null,
+    attributesFilter: any[] = null,
+    attributesExcludeFilter: any[] = null,
+    withData: string[] = null,
     lastModifiedTimestamp: number = null,
     page: number = null,
     itemsPerPage: number = null,
@@ -226,7 +226,7 @@ export class Event {
     sortDirection: string = null,
     eventDateFilterType: string = null,
     poolId: string = null,
-    tags: any = null,
+    tags: any[] = null,
     earliestStartTimestamp: number = null,
   ): any {
     return this.restClient.get('Event/UseCase/ListEventsForUser', {
@@ -249,12 +249,12 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param array? - questionContextTypes registration|lead
+   * @param any[]? - questionContextTypes registration|lead
    * @return Promise|Observable|any
    */
   ListQuestionsByEventAndContext(
     eventId: string,
-    questionContextTypes: any = null,
+    questionContextTypes: any[] = null,
   ): any {
     return this.restClient.get('Event/UseCase/ListQuestionsByEventAndContext', {
       eventId,
@@ -338,15 +338,15 @@ export class Event {
   /**
    * @param string - fromEventId
    * @param string - toEventId
-   * @param bool? - shouldCopyUsers true|false
-   * @param bool? - shouldCopyEmailDesigns true|false
-   * @param bool? - shouldCopySettings true|false
-   * @param bool? - shouldCopyRegQuestions true|false
-   * @param bool? - shouldCopySitePages true|false
-   * @param bool? - shouldCopyTicketTypes true|false
-   * @param bool? - shouldCopyTicketBlocks true|false
-   * @param bool? - shouldCopyStacks true|false
-   * @param bool? - shouldCopyIntegrationSettings true|false
+   * @param boolean? - shouldCopyUsers true|false
+   * @param boolean? - shouldCopyEmailDesigns true|false
+   * @param boolean? - shouldCopySettings true|false
+   * @param boolean? - shouldCopyRegQuestions true|false
+   * @param boolean? - shouldCopySitePages true|false
+   * @param boolean? - shouldCopyTicketTypes true|false
+   * @param boolean? - shouldCopyTicketBlocks true|false
+   * @param boolean? - shouldCopyStacks true|false
+   * @param boolean? - shouldCopyIntegrationSettings true|false
    * @return Promise|Observable|any
    */
   CopyExistingEventConfiguration(
@@ -383,8 +383,8 @@ export class Event {
   /**
    * @param string - questionId
    * @param string - text
-   * @param int? - sortOrder
-   * @param bool? - isDefault true|false
+   * @param number? - sortOrder
+   * @param boolean? - isDefault true|false
    * @param string? - answerId
    * @return Promise|Observable|any
    */
@@ -474,12 +474,12 @@ export class Event {
    * @param string - eventId
    * @param string - text
    * @param string - questionType checkbox|radio|multi|text|select|date|waiver
-   * @param int? - sortOrder
-   * @param bool? - isRequired true|false
-   * @param bool? - isIndividual true|false
+   * @param number? - sortOrder
+   * @param boolean? - isRequired true|false
+   * @param boolean? - isIndividual true|false
    * @param string? - ticketTypeId
    * @param string? - questionId
-   * @param array? - questionContextTypes registration|lead
+   * @param any[]? - questionContextTypes registration|lead
    * @return Promise|Observable|any
    */
   CreateQuestion(
@@ -491,7 +491,7 @@ export class Event {
     isIndividual: boolean = null,
     ticketTypeId: string = null,
     questionId: string = null,
-    questionContextTypes: any = null,
+    questionContextTypes: any[] = null,
   ): any {
     return this.restClient.post('Event/UseCase/CreateQuestion', {
       eventId,
@@ -820,7 +820,7 @@ export class Event {
    * @param string - phoneNumber
    * @param string - howManyEvents fewer-than-5|between-5-and-30|more-than-30
    * @param string - industry consumer-goods|agency|education|finance|sports-and-entertainment|technology|other
-   * @param array - typeOfEvents brand-awareness-events|trade-shows|conferences|roadshows|internal-meetings|recruiting-events|fundraising-events
+   * @param any[] - typeOfEvents brand-awareness-events|trade-shows|conferences|roadshows|internal-meetings|recruiting-events|fundraising-events
    * @return Promise|Observable|any
    */
   IncrementCIOAndMessageCSM(
@@ -833,7 +833,7 @@ export class Event {
     phoneNumber: string,
     howManyEvents: string,
     industry: string,
-    typeOfEvents: any,
+    typeOfEvents: any[],
   ): any {
     return this.restClient.post('Event/UseCase/IncrementCIOAndMessageCSM', {
       poolId,
@@ -892,7 +892,7 @@ export class Event {
 
   /**
    * @param string - answerId
-   * @param int - sortOrder
+   * @param number - sortOrder
    * @return Promise|Observable|any
    */
   SetAnswerSortOrder(answerId: string, sortOrder: number): any {
@@ -916,7 +916,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param int - eventMaxInvitationCount
+   * @param number - eventMaxInvitationCount
    * @return Promise|Observable|any
    */
   SetEventMaxInvitationCount(
@@ -931,7 +931,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param int - eventMinInvitationCount
+   * @param number - eventMinInvitationCount
    * @return Promise|Observable|any
    */
   SetEventMinInvitationCount(
@@ -946,7 +946,7 @@ export class Event {
 
   /**
    * @param string - questionId
-   * @param int - sortOrder
+   * @param number - sortOrder
    * @return Promise|Observable|any
    */
   SetQuestionSortOrder(questionId: string, sortOrder: number): any {
@@ -969,7 +969,7 @@ export class Event {
   /**
    * @param string - answerId
    * @param string - text
-   * @param bool? - isDefault true|false
+   * @param boolean? - isDefault true|false
    * @return Promise|Observable|any
    */
   UpdateAnswer(answerId: string, text: string, isDefault: boolean = null): any {
@@ -984,9 +984,9 @@ export class Event {
    * @param string - questionId
    * @param string - text
    * @param string - questionType checkbox|radio|multi|text|select|date|waiver
-   * @param array? - questionContextTypes registration|lead
-   * @param bool? - isRequired true|false
-   * @param bool? - isIndividual true|false
+   * @param any[]? - questionContextTypes registration|lead
+   * @param boolean? - isRequired true|false
+   * @param boolean? - isIndividual true|false
    * @param string? - ticketTypeId
    * @return Promise|Observable|any
    */
@@ -994,7 +994,7 @@ export class Event {
     questionId: string,
     text: string,
     questionType: string,
-    questionContextTypes: any = null,
+    questionContextTypes: any[] = null,
     isRequired: boolean = null,
     isIndividual: boolean = null,
     ticketTypeId: string = null,

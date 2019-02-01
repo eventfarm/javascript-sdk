@@ -11,10 +11,10 @@ export class TicketBlock {
 
   /**
    * @param string - ticketBlockId
-   * @param array? - withData Event|Allotments|AllotmentsAndStack|AllotmentCounts
+   * @param string[]? - withData Event|Allotments|AllotmentsAndStack|AllotmentCounts
    * @return Promise|Observable|any
    */
-  GetTicketBlock(ticketBlockId: string, withData: any = null): any {
+  GetTicketBlock(ticketBlockId: string, withData: string[] = null): any {
     return this.restClient.get('TicketBlock/UseCase/GetTicketBlock', {
       ticketBlockId,
       withData,
@@ -24,19 +24,19 @@ export class TicketBlock {
   /**
    * @param string - eventId
    * @param string? - query
-   * @param array? - withData Event|Allotments|AllotmentsAndStack|AllotmentCounts
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-50
+   * @param string[]? - withData Event|Allotments|AllotmentsAndStack|AllotmentCounts
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-50
    * @param string? - sortBy name
    * @param string? - sortDirection ascending|descending
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
-   * @param bool? - shouldHideDeleted true|false
+   * @param boolean? - shouldHideDeleted true|false
    * @return Promise|Observable|any
    */
   ListTicketBlocksForEvent(
     eventId: string,
     query: string = null,
-    withData: any = null,
+    withData: string[] = null,
     page: number = null,
     itemsPerPage: number = null,
     sortBy: string = null,
@@ -60,9 +60,9 @@ export class TicketBlock {
   /**
    * @param string - userId
    * @param string? - query
-   * @param array? - withData Event
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-500
+   * @param string[]? - withData Event
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
    * @param string? - sortBy event-start|event-end
    * @param string? - sortDirection ascending|descending
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
@@ -72,7 +72,7 @@ export class TicketBlock {
   ListTicketBlocksForUser(
     userId: string,
     query: string = null,
-    withData: any = null,
+    withData: string[] = null,
     page: number = null,
     itemsPerPage: number = null,
     sortBy: string = null,
@@ -125,7 +125,7 @@ export class TicketBlock {
   /**
    * @param string - eventId
    * @param string - name
-   * @param bool? - isBlacklistEnabled true|false
+   * @param boolean? - isBlacklistEnabled true|false
    * @param string? - emailText
    * @param string? - ticketBlockId
    * @return Promise|Observable|any

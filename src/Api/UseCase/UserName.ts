@@ -12,8 +12,8 @@ export class UserName {
   /**
    * @param string - poolId
    * @param string - userId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListNamesForUser(

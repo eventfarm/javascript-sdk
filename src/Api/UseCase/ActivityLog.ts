@@ -11,8 +11,8 @@ export class ActivityLog {
 
   /**
    * @param string - eventId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListEntriesForEvent(
@@ -29,8 +29,8 @@ export class ActivityLog {
 
   /**
    * @param string - invitationId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListEntriesForInvitation(
@@ -51,7 +51,7 @@ export class ActivityLog {
    * @param string - eventId
    * @param string - action
    * @param string - actionValue
-   * @param int - actionTime
+   * @param number - actionTime
    * @param string? - invitationId
    * @param string? - userId
    * @param string? - actionUserId
@@ -84,7 +84,7 @@ export class ActivityLog {
    * @param string - eventId
    * @param string - action
    * @param string - actionValue
-   * @param int - actionTime
+   * @param number - actionTime
    * @param string - content
    * @param string? - invitationId
    * @param string? - userId

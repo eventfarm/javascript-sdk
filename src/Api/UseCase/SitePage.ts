@@ -21,8 +21,8 @@ export class SitePage {
 
   /**
    * @param string - eventId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListSitePagesForEvent(
@@ -39,9 +39,9 @@ export class SitePage {
 
   /**
    * @param string - poolId
-   * @param bool? - shouldIncludeSharedTemplates true|false
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-500
+   * @param boolean? - shouldIncludeSharedTemplates true|false
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
    * @return Promise|Observable|any
    */
   ListTemplatesForPool(
@@ -64,7 +64,7 @@ export class SitePage {
    * @param string - eventId
    * @param string - title
    * @param string - content
-   * @param int? - displayOrder
+   * @param number? - displayOrder
    * @param string? - sitePageId
    * @param string? - styles
    * @param string? - scripts
@@ -269,7 +269,7 @@ export class SitePage {
    * @param string - eventId
    * @param string - title
    * @param string - content
-   * @param int? - displayOrder
+   * @param number? - displayOrder
    * @return Promise|Observable|any
    */
   UpdateSitePage(

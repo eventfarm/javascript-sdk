@@ -11,7 +11,7 @@ export class TicketType {
 
   /**
    * @param string - eventId
-   * @param bool? - shouldHideDeleted true|false
+   * @param boolean? - shouldHideDeleted true|false
    * @return Promise|Observable|any
    */
   ListTicketTypesForEvent(
@@ -30,9 +30,9 @@ export class TicketType {
    * @param string - eventId
    * @param string - name
    * @param string - code
-   * @param int - quantity
-   * @param int - sortOrder
-   * @param bool? - isDeleted true|false
+   * @param number - quantity
+   * @param number - sortOrder
+   * @param boolean? - isDeleted true|false
    * @param string? - description
    * @param string? - ticketTypeId
    * @return Promise|Observable|any
@@ -89,7 +89,7 @@ export class TicketType {
 
   /**
    * @param string - ticketTypeId
-   * @param int - displayOrder
+   * @param number - displayOrder
    * @return Promise|Observable|any
    */
   SetDisplayOrderForTicketType(
@@ -119,7 +119,7 @@ export class TicketType {
 
   /**
    * @param string - ticketTypeId
-   * @param int - quantity
+   * @param number - quantity
    * @return Promise|Observable|any
    */
   SetQuantityForTicketType(ticketTypeId: string, quantity: number): any {

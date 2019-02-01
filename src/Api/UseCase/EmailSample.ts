@@ -21,12 +21,12 @@ export class EmailSample {
 
   /**
    * @param string - emailDesignId
-   * @param array? - withData EmailPreview|EmailSpamResult
+   * @param string[]? - withData EmailPreview|EmailSpamResult
    * @return Promise|Observable|any
    */
   GetLatestEmailSampleForDesign(
     emailDesignId: string,
-    withData: any = null,
+    withData: string[] = null,
   ): any {
     return this.restClient.get(
       'EmailSample/UseCase/GetLatestEmailSampleForDesign',
@@ -72,7 +72,7 @@ export class EmailSample {
   /**
    * @param string - htmlContent
    * @param string - emailDesignId
-   * @param bool - overrideMinimumInterval true|false
+   * @param boolean - overrideMinimumInterval true|false
    * @param string? - emailSampleId
    * @return Promise|Observable|any
    */
@@ -94,7 +94,7 @@ export class EmailSample {
    * @param string - spamClient
    * @param string - testType
    * @param string - testDetails
-   * @param int - isSpam
+   * @param number - isSpam
    * @param string - emailSampleId
    * @param string? - emailSpamResultId
    * @return Promise|Observable|any

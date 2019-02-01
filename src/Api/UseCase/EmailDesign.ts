@@ -31,8 +31,8 @@ export class EmailDesign {
 
   /**
    * @param string - eventId
-   * @param int? - page
-   * @param int? - itemsPerPage
+   * @param number? - page
+   * @param number? - itemsPerPage
    * @return Promise|Observable|any
    */
   ListEmailDesignsByEvent(
@@ -60,8 +60,8 @@ export class EmailDesign {
    * @param string - eventId
    * @param string? - fromEmail
    * @param string? - replyEmail
-   * @param array? - ccEmail
-   * @param array? - bccEmail
+   * @param any[]? - ccEmail
+   * @param any[]? - bccEmail
    * @param string? - domainMaskId
    * @param string? - domainMaskEmail
    * @param string? - emailDesignId
@@ -78,8 +78,8 @@ export class EmailDesign {
     eventId: string,
     fromEmail: string = null,
     replyEmail: string = null,
-    ccEmail: any = null,
-    bccEmail: any = null,
+    ccEmail: any[] = null,
+    bccEmail: any[] = null,
     domainMaskId: string = null,
     domainMaskEmail: string = null,
     emailDesignId: string = null,
@@ -114,8 +114,8 @@ export class EmailDesign {
    * @param string - emailTemplateType simple-template|simple-header|simple-template-border|default-invite|full-width-header
    * @param string? - fromEmail
    * @param string? - replyEmail
-   * @param array? - ccEmails
-   * @param array? - bccEmails
+   * @param any[]? - ccEmails
+   * @param any[]? - bccEmails
    * @param string? - domainMaskId
    * @param string? - domainMaskEmail
    * @param string? - emailDesignId
@@ -132,8 +132,8 @@ export class EmailDesign {
     emailTemplateType: string,
     fromEmail: string = null,
     replyEmail: string = null,
-    ccEmails: any = null,
-    bccEmails: any = null,
+    ccEmails: any[] = null,
+    bccEmails: any[] = null,
     domainMaskId: string = null,
     domainMaskEmail: string = null,
     emailDesignId: string = null,
@@ -162,7 +162,7 @@ export class EmailDesign {
 
   /**
    * @param string - eventId
-   * @param string - image image/jpeg|image/png
+   * @param any - image image/jpeg|image/png
    * @param string? - emailDesignImageId
    * @return Promise|Observable|any
    */
@@ -221,8 +221,8 @@ export class EmailDesign {
    * @param string - eventId
    * @param string? - fromEmail
    * @param string? - replyEmail
-   * @param array? - ccEmail
-   * @param array? - bccEmail
+   * @param any[]? - ccEmail
+   * @param any[]? - bccEmail
    * @param string? - domainMaskId
    * @param string? - domainMaskEmail
    * @return Promise|Observable|any
@@ -239,8 +239,8 @@ export class EmailDesign {
     eventId: string,
     fromEmail: string = null,
     replyEmail: string = null,
-    ccEmail: any = null,
-    bccEmail: any = null,
+    ccEmail: any[] = null,
+    bccEmail: any[] = null,
     domainMaskId: string = null,
     domainMaskEmail: string = null,
   ): any {

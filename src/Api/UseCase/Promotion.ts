@@ -15,13 +15,13 @@ export class Promotion {
    * @param string - eventId
    * @param string - promotionType
    * @param string - code
-   * @param int - startTime
-   * @param int - endTime
-   * @param float - amount
-   * @param int - used
-   * @param int - maximum
+   * @param number - startTime
+   * @param number - endTime
+   * @param number - amount
+   * @param number - used
+   * @param number - maximum
    * @param string - message
-   * @param bool? - isEnabled true|false
+   * @param boolean? - isEnabled true|false
    * @param string? - promotionId
    * @return Promise|Observable|any
    */
@@ -85,7 +85,7 @@ export class Promotion {
 
   /**
    * @param string - promotionId
-   * @param float - amount
+   * @param number - amount
    * @return Promise|Observable|any
    */
   SetAmount(promotionId: string, amount: number): any {
@@ -109,7 +109,7 @@ export class Promotion {
 
   /**
    * @param string - promotionId
-   * @param int - endTime
+   * @param number - endTime
    * @return Promise|Observable|any
    */
   SetEndTime(promotionId: string, endTime: number): any {
@@ -121,7 +121,7 @@ export class Promotion {
 
   /**
    * @param string - promotionId
-   * @param int - maximum
+   * @param number - maximum
    * @return Promise|Observable|any
    */
   SetMaximum(promotionId: string, maximum: number): any {
@@ -157,7 +157,7 @@ export class Promotion {
 
   /**
    * @param string - promotionId
-   * @param int - startTime
+   * @param number - startTime
    * @return Promise|Observable|any
    */
   SetStartTime(promotionId: string, startTime: number): any {

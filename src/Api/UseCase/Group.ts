@@ -11,10 +11,10 @@ export class Group {
 
   /**
    * @param string - groupId
-   * @param array? - withData totalUsersInGroup|creatorUser
+   * @param string[]? - withData totalUsersInGroup|creatorUser
    * @return Promise|Observable|any
    */
-  GetGroup(groupId: string, withData: any = null): any {
+  GetGroup(groupId: string, withData: string[] = null): any {
     return this.restClient.get('Group/UseCase/GetGroup', {
       groupId,
       withData,
@@ -25,8 +25,8 @@ export class Group {
    * @param string - poolId
    * @param string - userId
    * @param string? - groupOwnerUserId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-500
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
    * @param string? - sortBy
    * @param string? - sortDirection ascending|descending
    * @return Promise|Observable|any
@@ -54,8 +54,8 @@ export class Group {
   /**
    * @param string - userId
    * @param string? - query
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-500
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
    * @param string? - sortBy
    * @param string? - sortDirection ascending|descending
    * @return Promise|Observable|any
@@ -82,10 +82,10 @@ export class Group {
 
   /**
    * @param string - groupId
-   * @param array - userIds
+   * @param any[] - userIds
    * @return Promise|Observable|any
    */
-  AddUsersToGroup(groupId: string, userIds: any): any {
+  AddUsersToGroup(groupId: string, userIds: any[]): any {
     return this.restClient.post('Group/UseCase/AddUsersToGroup', {
       groupId,
       userIds,
@@ -122,10 +122,10 @@ export class Group {
 
   /**
    * @param string - destinationGroupId
-   * @param array - fromGroupIds
+   * @param any[] - fromGroupIds
    * @return Promise|Observable|any
    */
-  MergeGroups(destinationGroupId: string, fromGroupIds: any): any {
+  MergeGroups(destinationGroupId: string, fromGroupIds: any[]): any {
     return this.restClient.post('Group/UseCase/MergeGroups', {
       destinationGroupId,
       fromGroupIds,
@@ -134,10 +134,10 @@ export class Group {
 
   /**
    * @param string - groupId
-   * @param array - userIds
+   * @param any[] - userIds
    * @return Promise|Observable|any
    */
-  RemoveUsersFromGroup(groupId: string, userIds: any): any {
+  RemoveUsersFromGroup(groupId: string, userIds: any[]): any {
     return this.restClient.post('Group/UseCase/RemoveUsersFromGroup', {
       groupId,
       userIds,

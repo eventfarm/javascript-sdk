@@ -49,9 +49,9 @@ export class IntegrationFieldMapping {
    * @param string - fieldType question|user-attribute|user-name|user-identifier
    * @param string - fieldId
    * @param string - integrationFieldValue
-   * @param bool - canUpdateEventFarmField true|false
-   * @param bool - canUpdateIntegrationField true|false
-   * @param bool - canDeleteMapping true|false
+   * @param boolean - canUpdateEventFarmField true|false
+   * @param boolean - canUpdateIntegrationField true|false
+   * @param boolean - canDeleteMapping true|false
    * @param string? - updateRule never|different|blank
    * @param string? - fieldName
    * @return Promise|Observable|any

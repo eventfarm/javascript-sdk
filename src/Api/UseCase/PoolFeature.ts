@@ -24,7 +24,7 @@ export class PoolFeature {
   /**
    * @param string - poolId
    * @param string - featureId
-   * @param bool? - enabled true|false
+   * @param boolean? - enabled true|false
    * @return Promise|Observable|any
    */
   AddFeatureForPool(

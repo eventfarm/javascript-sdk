@@ -11,10 +11,10 @@ export class BugReport {
 
   /**
    * @param string - bugReportId
-   * @param array? - withData User
+   * @param string[]? - withData User
    * @return Promise|Observable|any
    */
-  GetBugReport(bugReportId: string, withData: any = null): any {
+  GetBugReport(bugReportId: string, withData: string[] = null): any {
     return this.restClient.get('BugReport/UseCase/GetBugReport', {
       bugReportId,
       withData,
@@ -22,8 +22,8 @@ export class BugReport {
   }
 
   /**
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-500
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
    * @return Promise|Observable|any
    */
   ListBugReports(page: number = null, itemsPerPage: number = null): any {

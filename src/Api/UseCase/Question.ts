@@ -11,18 +11,18 @@ export class Question {
 
   /**
    * @param string - eventId
-   * @param array? - withData TicketType|Answers
-   * @param bool? - shouldHideDeleted true|false
+   * @param string[]? - withData TicketType|Answers
+   * @param boolean? - shouldHideDeleted true|false
    * @param string? - query
    * @param string? - sortBy
    * @param string? - sortDirection
-   * @param int? - page
-   * @param int? - itemsPerPage
+   * @param number? - page
+   * @param number? - itemsPerPage
    * @return Promise|Observable|any
    */
   ListQuestionsForEvent(
     eventId: string,
-    withData: any = null,
+    withData: string[] = null,
     shouldHideDeleted: boolean = null,
     query: string = null,
     sortBy: string = null,

@@ -116,7 +116,7 @@ export class SalesforceEventSetting {
 
   /**
    * @param string - salesforceEventSettingId
-   * @param int - invitationCount 1-100
+   * @param number - invitationCount 1-100
    * @return Promise|Observable|any
    */
   SetInvitationCountForSalesforceEventSetting(

@@ -13,14 +13,14 @@ export class OAuth2 {
 
   /**
    * @param string - name
-   * @param array - redirectUrls
+   * @param any[] - redirectUrls
    * @param string? - identifier
    * @param string? - secret
    * @return Promise|Observable|any
    */
   CreateOAuthClient(
     name: string,
-    redirectUrls: any,
+    redirectUrls: any[],
     identifier: string = null,
     secret: string = null,
   ): any {
@@ -44,10 +44,10 @@ export class OAuth2 {
 
   /**
    * @param string - identifier
-   * @param array - redirectUrls
+   * @param any[] - redirectUrls
    * @return Promise|Observable|any
    */
-  SetRedirectUrlsForOAuthClient(identifier: string, redirectUrls: any): any {
+  SetRedirectUrlsForOAuthClient(identifier: string, redirectUrls: any[]): any {
     return this.restClient.post(
       'OAuth2/UseCase/SetRedirectUrlsForOAuthClient',
       {

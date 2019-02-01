@@ -29,15 +29,15 @@ export class User {
 
   /**
    * @param string - userId
-   * @param array? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName
-   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string[]? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
    * @param string? - poolId
    * @return Promise|Observable|any
    */
   GetUser(
     userId: string,
-    withData: any = null,
-    withUserAttributes: any = null,
+    withData: string[] = null,
+    withUserAttributes: any[] = null,
     poolId: string = null,
   ): any {
     return this.restClient.get('User/UseCase/GetUser', {
@@ -50,15 +50,15 @@ export class User {
 
   /**
    * @param string - email
-   * @param array? - withData UserName|UserAddress|UserToken|isEFAdmin|internalUserName
-   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string[]? - withData UserName|UserAddress|UserToken|isEFAdmin|internalUserName
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
    * @param string? - poolId
    * @return Promise|Observable|any
    */
   GetUserByEmail(
     email: string,
-    withData: any = null,
-    withUserAttributes: any = null,
+    withData: string[] = null,
+    withUserAttributes: any[] = null,
     poolId: string = null,
   ): any {
     return this.restClient.get('User/UseCase/GetUserByEmail', {
@@ -72,15 +72,15 @@ export class User {
   /**
    * @param string - poolId
    * @param string - userId
-   * @param array? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName
-   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string[]? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
    * @return Promise|Observable|any
    */
   GetUserInPool(
     poolId: string,
     userId: string,
-    withData: any = null,
-    withUserAttributes: any = null,
+    withData: string[] = null,
+    withUserAttributes: any[] = null,
   ): any {
     return this.restClient.get('User/UseCase/GetUserInPool', {
       poolId,
@@ -115,18 +115,18 @@ export class User {
   }
 
   /**
-   * @param array - poolIds
-   * @param array? - withData UserIdentifiers|UserNames|UserAttributes
+   * @param any[] - poolIds
+   * @param string[]? - withData UserIdentifiers|UserNames|UserAttributes
    * @param string? - query
    * @param string? - sortBy name
    * @param string? - sortDirection ascending|descending
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListUsersForPools(
-    poolIds: any,
-    withData: any = null,
+    poolIds: any[],
+    withData: string[] = null,
     query: string = null,
     sortBy: string = null,
     sortDirection: string = null,
@@ -146,17 +146,17 @@ export class User {
 
   /**
    * @param string - ticketBlockId
-   * @param array? - withData UserIdentifiers|UserNames|UserAttributes
+   * @param string[]? - withData UserIdentifiers|UserNames|UserAttributes
    * @param string? - query
    * @param string? - sortBy name
    * @param string? - sortDirection ascending|descending
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListUsersForTicketBlock(
     ticketBlockId: string,
-    withData: any = null,
+    withData: string[] = null,
     query: string = null,
     sortBy: string = null,
     sortDirection: string = null,
@@ -177,18 +177,18 @@ export class User {
   /**
    * @param string - groupId
    * @param string - poolId
-   * @param array? - withData UserIdentifiers|UserNames|UserAttributes
+   * @param string[]? - withData UserIdentifiers|UserNames|UserAttributes
    * @param string? - query
    * @param string? - sortBy name
    * @param string? - sortDirection ascending|descending
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListUsersInGroup(
     groupId: string,
     poolId: string,
-    withData: any = null,
+    withData: string[] = null,
     query: string = null,
     sortBy: string = null,
     sortDirection: string = null,
@@ -209,17 +209,17 @@ export class User {
 
   /**
    * @param string - eventId
-   * @param array? - withData eventRoles|PoolContacts|UserIdentifiers|UserNames|UserAttributes
+   * @param string[]? - withData eventRoles|PoolContacts|UserIdentifiers|UserNames|UserAttributes
    * @param string? - query
    * @param string? - sortBy name
    * @param string? - sortDirection ascending|descending
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListUsersWithRolesForEvent(
     eventId: string,
-    withData: any = null,
+    withData: string[] = null,
     query: string = null,
     sortBy: string = null,
     sortDirection: string = null,
@@ -440,13 +440,13 @@ export class User {
   }
 
   /**
-   * @param array - removeUserIds
+   * @param any[] - removeUserIds
    * @param string - requestUserId
    * @param string - poolId
    * @return Promise|Observable|any
    */
   RemoveUsersFromPool(
-    removeUserIds: any,
+    removeUserIds: any[],
     requestUserId: string,
     poolId: string,
   ): any {

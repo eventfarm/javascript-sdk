@@ -31,8 +31,8 @@ export class Pool {
 
   /**
    * @param string - userId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-500
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
    * @param string? - sortBy
    * @param string? - sortDirection ascending|descending
    * @return Promise|Observable|any
@@ -57,8 +57,8 @@ export class Pool {
    * @param string - poolId
    * @param string? - sortBy name
    * @param string? - sortDirection ascending|descending
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListPoolAllotmentsForPool(
@@ -79,8 +79,8 @@ export class Pool {
 
   /**
    * @param string - poolId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-500
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
    * @return Promise|Observable|any
    */
   ListPoolContactsByPoolId(
@@ -99,8 +99,8 @@ export class Pool {
    * @param string? - name
    * @param string? - sortBy name
    * @param string? - sortDirection ascending|descending
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListPools(
@@ -123,8 +123,8 @@ export class Pool {
    * @param string - poolId
    * @param string? - sortBy name|slug
    * @param string? - sortDirection ascending|descending
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-500
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
    * @return Promise|Observable|any
    */
   ListTagsForPool(
@@ -148,8 +148,8 @@ export class Pool {
   /**
    * @param string - poolId
    * @param string - poolContractType cio|intro|trial|pro|premier|premierPlus|custom|internal
-   * @param int - startDate
-   * @param int - endDate
+   * @param number - startDate
+   * @param number - endDate
    * @param string? - poolContractId
    * @return Promise|Observable|any
    */
@@ -210,7 +210,7 @@ export class Pool {
    * @param string - poolId
    * @param string - userId
    * @param string? - slackUserId
-   * @param array? - requestedFeatureSlugs
+   * @param any[]? - requestedFeatureSlugs
    * @param string? - other
    * @return Promise|Observable|any
    */
@@ -218,7 +218,7 @@ export class Pool {
     poolId: string,
     userId: string,
     slackUserId: string = null,
-    requestedFeatureSlugs: any = null,
+    requestedFeatureSlugs: any[] = null,
     other: string = null,
   ): any {
     return this.restClient.post('Pool/UseCase/SendUpgradeRequestToCsm', {
@@ -260,8 +260,8 @@ export class Pool {
   /**
    * @param string - poolContractId
    * @param string? - poolContractType cio|intro|trial|pro|premier|premierPlus|custom|internal
-   * @param int? - startDate
-   * @param int? - endDate
+   * @param number? - startDate
+   * @param number? - endDate
    * @return Promise|Observable|any
    */
   UpdatePoolContract(

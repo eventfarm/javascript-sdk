@@ -11,10 +11,10 @@ export class Import {
 
   /**
    * @param string - userImportId
-   * @param array? - withData GoodRecords|DuplicateRecords|ErrorRecords|ImportFailureRecords
+   * @param string[]? - withData GoodRecords|DuplicateRecords|ErrorRecords|ImportFailureRecords
    * @return Promise|Observable|any
    */
-  GetUserImport(userImportId: string, withData: any = null): any {
+  GetUserImport(userImportId: string, withData: string[] = null): any {
     return this.restClient.get('Import/UseCase/GetUserImport', {
       userImportId,
       withData,
@@ -46,7 +46,7 @@ export class Import {
    * @param string - userImportId
    * @param string - eventId
    * @param string? - stackId
-   * @param int? - guestsPerInvitation >= 1
+   * @param number? - guestsPerInvitation >= 1
    * @param string? - invitationCreationType unconfirmed-no-email|confirmed-no-email|send-email
    * @param string? - groupName
    * @param string? - groupId
@@ -102,7 +102,7 @@ export class Import {
   /**
    * @param string - userId
    * @param string - poolId
-   * @param string - spreadsheet
+   * @param any - spreadsheet
    * @return Promise|Observable|any
    */
   PreProcessSpreadsheetForUserImport(

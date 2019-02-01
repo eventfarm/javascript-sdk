@@ -11,8 +11,8 @@ export class Region {
 
   /**
    * @param string - query
-   * @param int? - page
-   * @param int? - itemsPerPage 1-200
+   * @param number? - page
+   * @param number? - itemsPerPage 1-200
    * @return Promise|Observable|any
    */
   ListTimezonesForRegion(

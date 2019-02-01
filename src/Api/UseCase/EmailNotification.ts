@@ -27,7 +27,7 @@ export class EmailNotification {
   /**
    * @param string - emailMessageId
    * @param string - type
-   * @param int - createdAt
+   * @param number - createdAt
    * @param string? - eventId
    * @param string? - emailNotificationId
    * @return Promise|Observable|any
@@ -53,7 +53,7 @@ export class EmailNotification {
 
   /**
    * @param string - eventId
-   * @param int? - totalRecords
+   * @param number? - totalRecords
    * @return Promise|Observable|any
    */
   SimulateEmailNotificationsForEvent(

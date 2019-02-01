@@ -11,8 +11,8 @@ export class Report {
 
   /**
    * @param string - eventId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @param string? - sortBy createdAt
    * @param string? - sortDirection ascending|descending
    * @return Promise|Observable|any
@@ -34,8 +34,8 @@ export class Report {
   }
 
   /**
-   * @param int - startTime
-   * @param int - endTime
+   * @param number - startTime
+   * @param number - endTime
    * @return Promise|Observable|any
    */
   ReportTotalEventsRunningBetweenDates(

@@ -11,8 +11,8 @@ export class Allotment {
 
   /**
    * @param string - stackId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListAllotmentsForStack(
@@ -32,7 +32,7 @@ export class Allotment {
   /**
    * @param string - ticketBlockId
    * @param string - stackId
-   * @param int - quantity
+   * @param number - quantity
    * @param string? - allotmentId
    * @return Promise|Observable|any
    */
@@ -62,7 +62,7 @@ export class Allotment {
 
   /**
    * @param string - allotmentId
-   * @param int - quantity >= 1
+   * @param number - quantity >= 1
    * @return Promise|Observable|any
    */
   SetAllotmentQuantity(allotmentId: string, quantity: number): any {

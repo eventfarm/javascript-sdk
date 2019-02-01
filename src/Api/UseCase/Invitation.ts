@@ -47,10 +47,10 @@ export class Invitation {
 
   /**
    * @param string - invitationId
-   * @param array? - withData Event|UserName|User|UserIdentifier|Stack|TicketType|QuestionResponse|Answer
+   * @param string[]? - withData Event|UserName|User|UserIdentifier|Stack|TicketType|QuestionResponse|Answer
    * @return Promise|Observable|any
    */
-  GetInvitation(invitationId: string, withData: any = null): any {
+  GetInvitation(invitationId: string, withData: string[] = null): any {
     return this.restClient.get('Invitation/UseCase/GetInvitation', {
       invitationId,
       withData,
@@ -139,24 +139,24 @@ export class Invitation {
 
   /**
    * @param string - eventId
-   * @param array? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
    * @param string? - query
-   * @param array? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
-   * @param int? - lastModifiedTimestamp
-   * @param bool? - isCheckedIn true|false
+   * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param number? - lastModifiedTimestamp
+   * @param boolean? - isCheckedIn true|false
    * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
    * @param string? - sortDirection ascending|descending
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-250
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-250
    * @return Promise|Observable|any
    */
   ListInvitationsForEvent(
     eventId: string,
-    withData: any = null,
-    withUserAttributes: any = null,
+    withData: string[] = null,
+    withUserAttributes: any[] = null,
     query: string = null,
-    statusFilter: any = null,
+    statusFilter: any[] = null,
     lastModifiedTimestamp: number = null,
     isCheckedIn: boolean = null,
     sortBy: string = null,
@@ -182,25 +182,25 @@ export class Invitation {
   /**
    * @param string - eventId
    * @param string - stackId
-   * @param array? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
    * @param string? - query
-   * @param array? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
-   * @param int? - lastModifiedTimestamp
-   * @param bool? - isCheckedIn true|false
+   * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param number? - lastModifiedTimestamp
+   * @param boolean? - isCheckedIn true|false
    * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
    * @param string? - sortDirection ascending|descending
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-250
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-250
    * @return Promise|Observable|any
    */
   ListInvitationsForStack(
     eventId: string,
     stackId: string,
-    withData: any = null,
-    withUserAttributes: any = null,
+    withData: string[] = null,
+    withUserAttributes: any[] = null,
     query: string = null,
-    statusFilter: any = null,
+    statusFilter: any[] = null,
     lastModifiedTimestamp: number = null,
     isCheckedIn: boolean = null,
     sortBy: string = null,
@@ -226,24 +226,24 @@ export class Invitation {
 
   /**
    * @param string - ticketBlockId
-   * @param array? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
    * @param string? - query
-   * @param array? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
-   * @param int? - lastModifiedTimestamp
-   * @param bool? - isCheckedIn true|false
+   * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param number? - lastModifiedTimestamp
+   * @param boolean? - isCheckedIn true|false
    * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
    * @param string? - sortDirection ascending|descending
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-250
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-250
    * @return Promise|Observable|any
    */
   ListInvitationsForTicketBlock(
     ticketBlockId: string,
-    withData: any = null,
-    withUserAttributes: any = null,
+    withData: string[] = null,
+    withUserAttributes: any[] = null,
     query: string = null,
-    statusFilter: any = null,
+    statusFilter: any[] = null,
     lastModifiedTimestamp: number = null,
     isCheckedIn: boolean = null,
     sortBy: string = null,
@@ -273,12 +273,12 @@ export class Invitation {
    * @param string - userId
    * @param string? - poolId
    * @param string? - eventId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-250
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-250
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
    * @param string? - sortDirection
-   * @param array? - withData Event|Stack|StackAndTicketType
-   * @param array? - statusFilter
+   * @param string[]? - withData Event|Stack|StackAndTicketType
+   * @param any[]? - statusFilter
    * @return Promise|Observable|any
    */
   ListInvitationsForUser(
@@ -289,8 +289,8 @@ export class Invitation {
     itemsPerPage: number = null,
     eventDateFilterType: string = null,
     sortDirection: string = null,
-    withData: any = null,
-    statusFilter: any = null,
+    withData: string[] = null,
+    statusFilter: any[] = null,
   ): any {
     return this.restClient.get('Invitation/UseCase/ListInvitationsForUser', {
       userId,
@@ -309,12 +309,12 @@ export class Invitation {
    * @param string - email
    * @param string? - poolId
    * @param string? - eventId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-250
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-250
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
    * @param string? - sortDirection
-   * @param array? - withData Event|Stack|StackAndTicketType
-   * @param array? - statusFilter
+   * @param string[]? - withData Event|Stack|StackAndTicketType
+   * @param any[]? - statusFilter
    * @return Promise|Observable|any
    */
   ListInvitationsForUserByEmail(
@@ -325,8 +325,8 @@ export class Invitation {
     itemsPerPage: number = null,
     eventDateFilterType: string = null,
     sortDirection: string = null,
-    withData: any = null,
-    statusFilter: any = null,
+    withData: string[] = null,
+    statusFilter: any[] = null,
   ): any {
     return this.restClient.get(
       'Invitation/UseCase/ListInvitationsForUserByEmail',
@@ -348,12 +348,12 @@ export class Invitation {
    * @param string - userId
    * @param string - parentEventId
    * @param string? - poolId
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
    * @param string? - sortDirection
-   * @param array? - withData Event|Stack
-   * @param array? - statusFilter
+   * @param string[]? - withData Event|Stack
+   * @param any[]? - statusFilter
    * @return Promise|Observable|any
    */
   ListInvitationsForUserForParent(
@@ -364,8 +364,8 @@ export class Invitation {
     itemsPerPage: number = null,
     eventDateFilterType: string = null,
     sortDirection: string = null,
-    withData: any = null,
-    statusFilter: any = null,
+    withData: string[] = null,
+    statusFilter: any[] = null,
   ): any {
     return this.restClient.get(
       'Invitation/UseCase/ListInvitationsForUserForParent',
@@ -385,21 +385,21 @@ export class Invitation {
 
   /**
    * @param string - eventId
-   * @param array? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
    * @param string? - query
-   * @param int? - lastModifiedTimestamp
-   * @param bool? - isCheckedIn true|false
+   * @param number? - lastModifiedTimestamp
+   * @param boolean? - isCheckedIn true|false
    * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
    * @param string? - sortDirection ascending|descending
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListWaitlistForEvent(
     eventId: string,
-    withData: any = null,
-    withUserAttributes: any = null,
+    withData: string[] = null,
+    withUserAttributes: any[] = null,
     query: string = null,
     lastModifiedTimestamp: number = null,
     isCheckedIn: boolean = null,
@@ -425,25 +425,25 @@ export class Invitation {
   /**
    * @param string - eventId
    * @param string - stackId
-   * @param array? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param array? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
    * @param string? - query
-   * @param array? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
-   * @param int? - lastModifiedTimestamp
-   * @param bool? - isCheckedIn true|false
+   * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param number? - lastModifiedTimestamp
+   * @param boolean? - isCheckedIn true|false
    * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
    * @param string? - sortDirection ascending|descending
-   * @param int? - page >= 1
-   * @param int? - itemsPerPage 1-100
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
    * @return Promise|Observable|any
    */
   ListWaitlistForStack(
     eventId: string,
     stackId: string,
-    withData: any = null,
-    withUserAttributes: any = null,
+    withData: string[] = null,
+    withUserAttributes: any[] = null,
     query: string = null,
-    statusFilter: any = null,
+    statusFilter: any[] = null,
     lastModifiedTimestamp: number = null,
     isCheckedIn: boolean = null,
     sortBy: string = null,
@@ -493,7 +493,7 @@ export class Invitation {
 
   /**
    * @param string - invitationId
-   * @param int? - inviteCount
+   * @param number? - inviteCount
    * @return Promise|Observable|any
    */
   ChangeInviteCount(invitationId: string, inviteCount: number = null): any {
@@ -505,7 +505,7 @@ export class Invitation {
 
   /**
    * @param string - invitationId
-   * @param int? - checkInAt
+   * @param number? - checkInAt
    * @return Promise|Observable|any
    */
   CheckIn(invitationId: string, checkInAt: number = null): any {
@@ -520,8 +520,8 @@ export class Invitation {
    * @param string - stackId
    * @param string - invitationStatus assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param string - inviteSource direct-invite|api-addition|distribution|event-invite|group-invite|import|ios-leave-behind|leave-behind|mobile-leave-behind|mobile-purchase|outside-purchase|public-interface|transferred|import-salesforce|import-marketo
-   * @param bool - isCheckedIn true|false
-   * @param int - inviteCount >= 1
+   * @param boolean - isCheckedIn true|false
+   * @param number - inviteCount >= 1
    * @param string? - email
    * @param string? - firstName
    * @param string? - lastName
@@ -529,7 +529,7 @@ export class Invitation {
    * @param string? - position
    * @param string? - checkInNotes
    * @param string? - invitationId
-   * @param bool? - shouldSendInvitation true|false
+   * @param boolean? - shouldSendInvitation true|false
    * @param string? - invitationNotes
    * @param string? - title
    * @param string? - telephone
@@ -584,8 +584,8 @@ export class Invitation {
    * @param string - ticketBlockId
    * @param string - invitationStatus assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param string - inviteSource direct-invite|api-addition|distribution|event-invite|group-invite|import|ios-leave-behind|leave-behind|mobile-leave-behind|mobile-purchase|outside-purchase|public-interface|transferred|import-salesforce|import-marketo
-   * @param bool - isCheckedIn true|false
-   * @param int - inviteCount >= 1
+   * @param boolean - isCheckedIn true|false
+   * @param number - inviteCount >= 1
    * @param string? - email
    * @param string? - firstName
    * @param string? - lastName
@@ -593,7 +593,7 @@ export class Invitation {
    * @param string? - position
    * @param string? - checkInNotes
    * @param string? - invitationId
-   * @param bool? - shouldSendInvitation true|false
+   * @param boolean? - shouldSendInvitation true|false
    * @param string? - invitationNotes
    * @param string? - title
    * @param string? - telephone
@@ -650,7 +650,7 @@ export class Invitation {
   /**
    * @param string - groupId
    * @param string - stackId
-   * @param int - guestsPerInvitation >= 1
+   * @param number - guestsPerInvitation >= 1
    * @param string - invitationCreationType unconfirmed-no-email|confirmed-no-email|send-email
    * @return Promise|Observable|any
    */
@@ -674,7 +674,7 @@ export class Invitation {
   /**
    * @param string - eventId
    * @param string - groupId
-   * @param int - guestsPerInvitation >= 1
+   * @param number - guestsPerInvitation >= 1
    * @param string? - stackId
    * @return Promise|Observable|any
    */
@@ -699,7 +699,7 @@ export class Invitation {
    * @param string - groupId
    * @param string - ticketBlockId
    * @param string - stackId
-   * @param int - guestsPerInvitation >= 1
+   * @param number - guestsPerInvitation >= 1
    * @param string - invitationCreationType unconfirmed-no-email|confirmed-no-email|send-email
    * @return Promise|Observable|any
    */
@@ -764,13 +764,13 @@ export class Invitation {
   }
 
   /**
-   * @param array - invitationIds
+   * @param any[] - invitationIds
    * @param string - newInvitationStatus
-   * @param bool? - shouldSendEmail true|false
+   * @param boolean? - shouldSendEmail true|false
    * @return Promise|Observable|any
    */
   PromoteInvitationsFromWaitlist(
-    invitationIds: any,
+    invitationIds: any[],
     newInvitationStatus: string,
     shouldSendEmail: boolean = null,
   ): any {
@@ -805,14 +805,14 @@ export class Invitation {
   /**
    * @param string - invitationId
    * @param string - toEmail
-   * @param array? - ccEmails
-   * @param bool? - shouldSendArrivalAlert true|false
+   * @param any[]? - ccEmails
+   * @param boolean? - shouldSendArrivalAlert true|false
    * @return Promise|Observable|any
    */
   SetArrivalAlertEmail(
     invitationId: string,
     toEmail: string,
-    ccEmails: any = null,
+    ccEmails: any[] = null,
     shouldSendArrivalAlert: boolean = null,
   ): any {
     return this.restClient.post('Invitation/UseCase/SetArrivalAlertEmail', {
@@ -853,14 +853,14 @@ export class Invitation {
   /**
    * @param string - invitationId
    * @param string - questionId
-   * @param array? - answerIds
+   * @param any[]? - answerIds
    * @param string? - text
    * @return Promise|Observable|any
    */
   SetQuestionResponse(
     invitationId: string,
     questionId: string,
-    answerIds: any = null,
+    answerIds: any[] = null,
     text: string = null,
   ): any {
     return this.restClient.post('Invitation/UseCase/SetQuestionResponse', {
