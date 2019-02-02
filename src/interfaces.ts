@@ -1,5 +1,5 @@
 export interface StringField {
-  [key: string]: string | number | boolean;
+  [key: string]: any;
 }
 
 export interface RestClientInterface {
