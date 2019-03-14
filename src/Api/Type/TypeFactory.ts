@@ -1,4 +1,5 @@
 import { AppVersion } from './AppVersion';
+import { EFx } from './EFx';
 import { EmailDesign } from './EmailDesign';
 import { EmailMessage } from './EmailMessage';
 import { EmailTemplate } from './EmailTemplate';
@@ -22,6 +23,10 @@ import { User } from './User';
 export class TypeFactory {
   AppVersion(): AppVersion {
     return new AppVersion();
+  }
+
+  EFx(): EFx {
+    return new EFx();
   }
 
   EmailDesign(): EmailDesign {

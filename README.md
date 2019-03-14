@@ -1,6 +1,6 @@
 <h1 align="center">
-      	<img height="100" src="https://i.imgur.com/yiv5YMX.png" alt="Event Farm Logo" /> 
-      	<br />Official Event Farm TypeScript SDK
+        <img height="100" src="https://i.imgur.com/yiv5YMX.png" alt="Event Farm Logo" /> 
+        <br />Official Event Farm TypeScript SDK
 </h1>
 
 ### Installation

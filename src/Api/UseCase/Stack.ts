@@ -11,7 +11,7 @@ export class Stack {
 
   /**
    * @param string - stackId
-   * @param string[]? - withData Event|TicketType|AvailabilityCounts
+   * @param string[]? - withData Event|TicketType|availabilityCounts|AvailabilityCounts
    * @return Promise|Observable|any
    */
   GetStack(stackId: string, withData: string[] = null): any {
@@ -23,14 +23,14 @@ export class Stack {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData TicketType|Event|availibilityCounts
+   * @param string[]? - withData TicketType|Event|availabilityCounts|AvailabilityCounts|availibilityCounts
    * @param any[]? - excludeStackMethodFilter
    * @param boolean? - shouldHideDeleted true|false
    * @param string? - query
    * @param string? - sortBy
    * @param string? - sortDirection
    * @param number? - page
-   * @param number? - itemsPerPage
+   * @param number? - itemsPerPage 1-200
    * @return Promise|Observable|any
    */
   ListStacksForEvent(
@@ -58,15 +58,51 @@ export class Stack {
   }
 
   /**
-   * @param string - promotionId
-   * @param string[]? - withData TicketType|Event
+   * @param any[] - eventIds
+   * @param string[]? - withData TicketType|Event|availabilityCounts|AvailabilityCounts|availibilityCounts
    * @param any[]? - excludeStackMethodFilter
    * @param boolean? - shouldHideDeleted true|false
    * @param string? - query
    * @param string? - sortBy
    * @param string? - sortDirection
    * @param number? - page
-   * @param number? - itemsPerPage
+   * @param number? - itemsPerPage 1-200
+   * @return Promise|Observable|any
+   */
+  ListStacksForEvents(
+    eventIds: any[],
+    withData: string[] = null,
+    excludeStackMethodFilter: any[] = null,
+    shouldHideDeleted: boolean = null,
+    query: string = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    page: number = null,
+    itemsPerPage: number = null,
+  ): any {
+    return this.restClient.get('Stack/UseCase/ListStacksForEvents', {
+      eventIds,
+      withData,
+      excludeStackMethodFilter,
+      shouldHideDeleted,
+      query,
+      sortBy,
+      sortDirection,
+      page,
+      itemsPerPage,
+    });
+  }
+
+  /**
+   * @param string - promotionId
+   * @param string[]? - withData TicketType|Event|availabilityCounts|AvailabilityCounts|availibilityCounts
+   * @param any[]? - excludeStackMethodFilter
+   * @param boolean? - shouldHideDeleted true|false
+   * @param string? - query
+   * @param string? - sortBy
+   * @param string? - sortDirection
+   * @param number? - page
+   * @param number? - itemsPerPage 1-200
    * @return Promise|Observable|any
    */
   ListStacksForPromotion(
@@ -185,8 +221,8 @@ export class Stack {
    * @param number - maxQty
    * @param number? - price
    * @param number? - serviceFee
-   * @param number? - openingTime
-   * @param number? - closingTime
+   * @param string? - openingTime
+   * @param string? - closingTime
    * @param boolean? - transferable true|false
    * @param string? - inviteDesignId
    * @param string? - confirmDesignId
@@ -203,8 +239,8 @@ export class Stack {
     maxQty: number,
     price: number = null,
     serviceFee: number = null,
-    openingTime: number = null,
-    closingTime: number = null,
+    openingTime: string = null,
+    closingTime: string = null,
     transferable: boolean = null,
     inviteDesignId: string = null,
     confirmDesignId: string = null,
@@ -266,37 +302,22 @@ export class Stack {
 
   /**
    * @param string - stackId
-   * @param string - confirmDesignId
+   * @param string? - inviteDesignId
+   * @param string? - confirmDesignId
+   * @param string? - declineDesignId
    * @return Promise|Observable|any
    */
-  SetConfirmDesignForStack(stackId: string, confirmDesignId: string): any {
-    return this.restClient.post('Stack/UseCase/SetConfirmDesignForStack', {
-      stackId,
-      confirmDesignId,
-    });
-  }
-
-  /**
-   * @param string - stackId
-   * @param string - declineDesignId
-   * @return Promise|Observable|any
-   */
-  SetDeclineDesignForStack(stackId: string, declineDesignId: string): any {
-    return this.restClient.post('Stack/UseCase/SetDeclineDesignForStack', {
-      stackId,
-      declineDesignId,
-    });
-  }
-
-  /**
-   * @param string - stackId
-   * @param string - inviteDesignId
-   * @return Promise|Observable|any
-   */
-  SetInviteDesignForStack(stackId: string, inviteDesignId: string): any {
-    return this.restClient.post('Stack/UseCase/SetInviteDesignForStack', {
+  SetEmailDesignsForStack(
+    stackId: string,
+    inviteDesignId: string = null,
+    confirmDesignId: string = null,
+    declineDesignId: string = null,
+  ): any {
+    return this.restClient.post('Stack/UseCase/SetEmailDesignsForStack', {
       stackId,
       inviteDesignId,
+      confirmDesignId,
+      declineDesignId,
     });
   }
 
@@ -424,8 +445,8 @@ export class Stack {
    * @param number? - maxQty
    * @param number? - price
    * @param number? - serviceFee
-   * @param number? - openingTime
-   * @param number? - closingTime
+   * @param string? - openingTime
+   * @param string? - closingTime
    * @param boolean? - transferable true|false
    * @param string? - inviteDesignId
    * @param string? - confirmDesignId
@@ -442,8 +463,8 @@ export class Stack {
     maxQty: number = null,
     price: number = null,
     serviceFee: number = null,
-    openingTime: number = null,
-    closingTime: number = null,
+    openingTime: string = null,
+    closingTime: string = null,
     transferable: boolean = null,
     inviteDesignId: string = null,
     confirmDesignId: string = null,

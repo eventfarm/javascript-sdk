@@ -1,6 +1,14 @@
 /**
  * This file was auto generated, please do not edit it directly.
  **/
+export interface EmailSendTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isConfirm: boolean;
+  isDecline: boolean;
+  isInvite: boolean;
+}
 export interface StackMethodTypeInterface {
   slug: string;
   name: string;
@@ -21,6 +29,35 @@ export interface StackMethodTypeInterface {
 }
 
 export class Stack {
+  EmailSendType(): EmailSendTypeInterface[] {
+    return [
+      {
+        slug: 'confirm',
+        name: 'Confirmation Email',
+        description: null,
+        isConfirm: true,
+        isDecline: false,
+        isInvite: false,
+      },
+      {
+        slug: 'decline',
+        name: 'Declination Email',
+        description: null,
+        isConfirm: false,
+        isDecline: true,
+        isInvite: false,
+      },
+      {
+        slug: 'invite',
+        name: 'Invitation Email',
+        description: null,
+        isConfirm: false,
+        isDecline: false,
+        isInvite: true,
+      },
+    ];
+  }
+
   StackMethodType(): StackMethodTypeInterface[] {
     return [
       {

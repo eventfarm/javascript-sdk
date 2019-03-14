@@ -6,6 +6,7 @@ import { AppVersion } from './AppVersion';
 import { BugReport } from './BugReport';
 import { Canvas } from './Canvas';
 import { DomainMask } from './DomainMask';
+import { EFx } from './EFx';
 import { EmailDesign } from './EmailDesign';
 import { EmailDesignType } from './EmailDesignType';
 import { EmailMessage } from './EmailMessage';
@@ -71,6 +72,10 @@ export class UseCaseFactory {
 
   DomainMask(): DomainMask {
     return new DomainMask(this.restClient);
+  }
+
+  EFx(): EFx {
+    return new EFx(this.restClient);
   }
 
   EmailDesign(): EmailDesign {

@@ -14,7 +14,7 @@ export class Question {
    * @param string[]? - withData TicketType|Answers
    * @param boolean? - shouldHideDeleted true|false
    * @param string? - query
-   * @param string? - sortBy
+   * @param string? - sortBy createdAt|sortOrder
    * @param string? - sortDirection
    * @param number? - page
    * @param number? - itemsPerPage

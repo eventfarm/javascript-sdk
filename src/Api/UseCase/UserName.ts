@@ -10,6 +10,16 @@ export class UserName {
   // Queries
 
   /**
+   * @param string - userNameId
+   * @return Promise|Observable|any
+   */
+  GetUserName(userNameId: string): any {
+    return this.restClient.get('UserName/UseCase/GetUserName', {
+      userNameId,
+    });
+  }
+
+  /**
    * @param string - poolId
    * @param string - userId
    * @param number? - page >= 1

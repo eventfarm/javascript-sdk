@@ -143,6 +143,16 @@ export class Pool {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
+  ListUniqueTagNamesForPool(poolId: string): any {
+    return this.restClient.get('Pool/UseCase/ListUniqueTagNamesForPool', {
+      poolId,
+    });
+  }
+
   // Commands
 
   /**
