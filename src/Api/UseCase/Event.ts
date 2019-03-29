@@ -875,6 +875,18 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @param string - messageType introduction|before-opening|after-closing|confirmation|declination|sold-out|reveal|disclaimer|response-restriction
+   * @return Promise|Observable|any
+   */
+  RemoveMessageForEvent(eventId: string, messageType: string): any {
+    return this.restClient.post('Event/UseCase/RemoveMessageForEvent', {
+      eventId,
+      messageType,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @return Promise|Observable|any
    */
   RemoveParentFromEvent(eventId: string): any {
@@ -892,6 +904,21 @@ export class Event {
     return this.restClient.post('Event/UseCase/RemoveTagFromEvent', {
       eventId,
       tagSlug,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - trackingScriptType registration|confirmation
+   * @return Promise|Observable|any
+   */
+  RemoveTrackingScriptForEvent(
+    eventId: string,
+    trackingScriptType: string,
+  ): any {
+    return this.restClient.post('Event/UseCase/RemoveTrackingScriptForEvent', {
+      eventId,
+      trackingScriptType,
     });
   }
 
@@ -1027,6 +1054,24 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @param string - messageType introduction|before-opening|after-closing|confirmation|declination|sold-out|reveal|disclaimer|response-restriction
+   * @param string - message
+   * @return Promise|Observable|any
+   */
+  SetMessageForEvent(
+    eventId: string,
+    messageType: string,
+    message: string,
+  ): any {
+    return this.restClient.post('Event/UseCase/SetMessageForEvent', {
+      eventId,
+      messageType,
+      message,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param number - minInvitationCount
    * @return Promise|Observable|any
    */
@@ -1082,6 +1127,24 @@ export class Event {
       startTime,
       endTime,
       timezone,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - trackingScriptType registration|confirmation
+   * @param string - trackingScript
+   * @return Promise|Observable|any
+   */
+  SetTrackingScriptForEvent(
+    eventId: string,
+    trackingScriptType: string,
+    trackingScript: string,
+  ): any {
+    return this.restClient.post('Event/UseCase/SetTrackingScriptForEvent', {
+      eventId,
+      trackingScriptType,
+      trackingScript,
     });
   }
 

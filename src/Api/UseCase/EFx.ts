@@ -48,7 +48,7 @@ export class EFx {
 
   /**
    * @param string - eventId
-   * @param string - moduleType access-control|concierge|digital-memory-bank|messaging|smsquiz|product-pickup|raffle|reservation|roaming-photographer|smart-bar|teams
+   * @param string - moduleType access-control|athletes-bag|concierge|digital-memory-bank|guest-info|messaging|smsquiz|product-pickup|raffle|reservation|roaming-photographer|smart-bar|teams
    * @return Promise|Observable|any
    */
   DisableModuleForEvent(eventId: string, moduleType: string): any {
@@ -90,7 +90,7 @@ export class EFx {
 
   /**
    * @param string - eventId
-   * @param string - moduleType access-control|concierge|digital-memory-bank|messaging|smsquiz|product-pickup|raffle|reservation|roaming-photographer|smart-bar|teams
+   * @param string - moduleType access-control|athletes-bag|concierge|digital-memory-bank|guest-info|messaging|smsquiz|product-pickup|raffle|reservation|roaming-photographer|smart-bar|teams
    * @return Promise|Observable|any
    */
   EnableModuleForEvent(eventId: string, moduleType: string): any {
@@ -123,7 +123,7 @@ export class EFx {
   /**
    * @param string - eventId
    * @param string - userId
-   * @param any[]? - requestedEFxModules access-control|concierge|digital-memory-bank|messaging|smsquiz|product-pickup|raffle|reservation|roaming-photographer|smart-bar|teams
+   * @param any[]? - requestedEFxModules access-control|athletes-bag|concierge|digital-memory-bank|guest-info|messaging|smsquiz|product-pickup|raffle|reservation|roaming-photographer|smart-bar|teams
    * @return Promise|Observable|any
    */
   RequestForEvent(

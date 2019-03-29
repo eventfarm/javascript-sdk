@@ -31,6 +31,7 @@ import { PoolFeature } from './PoolFeature';
 import { Promotion } from './Promotion';
 import { Question } from './Question';
 import { Queue } from './Queue';
+import { Refund } from './Refund';
 import { Region } from './Region';
 import { Report } from './Report';
 import { Salesforce } from './Salesforce';
@@ -41,11 +42,14 @@ import { SitePage } from './SitePage';
 import { Stack } from './Stack';
 import { TicketBlock } from './TicketBlock';
 import { TicketType } from './TicketType';
+import { Transaction } from './Transaction';
+import { Transfer } from './Transfer';
 import { User } from './User';
 import { UserAddress } from './UserAddress';
 import { UserAttribute } from './UserAttribute';
 import { UserIdentifier } from './UserIdentifier';
 import { UserName } from './UserName';
+import { Withdrawal } from './Withdrawal';
 
 export class UseCaseFactory {
   constructor(private restClient: RestClientInterface) {}
@@ -174,6 +178,10 @@ export class UseCaseFactory {
     return new Queue(this.restClient);
   }
 
+  Refund(): Refund {
+    return new Refund(this.restClient);
+  }
+
   Region(): Region {
     return new Region(this.restClient);
   }
@@ -214,6 +222,14 @@ export class UseCaseFactory {
     return new TicketType(this.restClient);
   }
 
+  Transaction(): Transaction {
+    return new Transaction(this.restClient);
+  }
+
+  Transfer(): Transfer {
+    return new Transfer(this.restClient);
+  }
+
   User(): User {
     return new User(this.restClient);
   }
@@ -232,5 +248,9 @@ export class UseCaseFactory {
 
   UserName(): UserName {
     return new UserName(this.restClient);
+  }
+
+  Withdrawal(): Withdrawal {
+    return new Withdrawal(this.restClient);
   }
 }

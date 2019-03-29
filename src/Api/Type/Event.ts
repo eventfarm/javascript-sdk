@@ -42,6 +42,20 @@ export interface EventDateFilterTypeInterface {
   isPast3MonthsAndFuture: boolean;
   isPast6Months: boolean;
 }
+export interface EventMessageTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isDescription: boolean;
+  isOpening: boolean;
+  isClosing: boolean;
+  isConfirmation: boolean;
+  isDeclination: boolean;
+  isSoldOut: boolean;
+  isReveal: boolean;
+  isDisclaimer: boolean;
+  isResponseRestriction: boolean;
+}
 export interface EventTypeInterface {
   slug: string;
   name: string;
@@ -80,6 +94,13 @@ export interface QuestionTypeInterface {
   isSelect: boolean;
   isDate: boolean;
   isWaiver: boolean;
+}
+export interface TrackingScriptTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isRegistration: boolean;
+  isConfirmation: boolean;
 }
 
 export class Event {
@@ -339,6 +360,146 @@ export class Event {
     ];
   }
 
+  EventMessageType(): EventMessageTypeInterface[] {
+    return [
+      {
+        slug: 'introduction',
+        name: 'Registration Introduction',
+        description:
+          'The Introduction Message is displayed to the user at the beginning of the purchase/registration/RSVP process.',
+        isDescription: true,
+        isOpening: false,
+        isClosing: false,
+        isConfirmation: false,
+        isDeclination: false,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+      },
+      {
+        slug: 'before-opening',
+        name: 'Prior To Opening',
+        description:
+          'The Prior to Opening Message is displayed as a placeholder for the registration or purchase form before the event goes live and tickets become available.',
+        isDescription: false,
+        isOpening: true,
+        isClosing: false,
+        isConfirmation: false,
+        isDeclination: false,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+      },
+      {
+        slug: 'after-closing',
+        name: 'After Closing',
+        description:
+          'The After Closing Message is displayed as a placeholder for the registration or purchase form once registration has closed for an event.',
+        isDescription: false,
+        isOpening: false,
+        isClosing: true,
+        isConfirmation: false,
+        isDeclination: false,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+      },
+      {
+        slug: 'confirmation',
+        name: 'Confirmation',
+        description:
+          'This message will display on the confirmation screen after a successful purchase, registration or RSVP.',
+        isDescription: false,
+        isOpening: false,
+        isClosing: false,
+        isConfirmation: true,
+        isDeclination: false,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+      },
+      {
+        slug: 'declination',
+        name: 'Declination',
+        description:
+          'This message will display on the confirmation screen after a guest declines their RSVP.',
+        isDescription: false,
+        isOpening: false,
+        isClosing: false,
+        isConfirmation: false,
+        isDeclination: true,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+      },
+      {
+        slug: 'sold-out',
+        name: 'Sold-Out',
+        description:
+          'The Sold-Out Message is displayed when the specific ticket stack or ticket type is no longer available (either sold out or at capacity).',
+        isDescription: false,
+        isOpening: false,
+        isClosing: false,
+        isConfirmation: false,
+        isDeclination: false,
+        isSoldOut: true,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+      },
+      {
+        slug: 'reveal',
+        name: 'Reveal',
+        description:
+          'If Invitation Reveal is enabled, the &quot;Reveal Message&quot; will display when a guest begins the registration process.',
+        isDescription: false,
+        isOpening: false,
+        isClosing: false,
+        isConfirmation: false,
+        isDeclination: false,
+        isSoldOut: false,
+        isReveal: true,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+      },
+      {
+        slug: 'disclaimer',
+        name: 'Disclaimer',
+        description:
+          'If you have created a Waiver question, the Disclaimer Message will display as part of the purchase, registration, and RSVP process. Guest must check the disclaimer box to complete registration.',
+        isDescription: false,
+        isOpening: false,
+        isClosing: false,
+        isConfirmation: false,
+        isDeclination: false,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: true,
+        isResponseRestriction: false,
+      },
+      {
+        slug: 'response-restriction',
+        name: 'Response Restriction',
+        description:
+          'If the Event Setting “Guest can change response” is “NO”, this message will display for any registered guest who clicks the invitation link again.',
+        isDescription: false,
+        isOpening: false,
+        isClosing: false,
+        isConfirmation: false,
+        isDeclination: false,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: true,
+      },
+    ];
+  }
+
   EventType(): EventTypeInterface[] {
     return [
       {
@@ -561,6 +722,25 @@ export class Event {
         isSelect: false,
         isDate: false,
         isWaiver: true,
+      },
+    ];
+  }
+
+  TrackingScriptType(): TrackingScriptTypeInterface[] {
+    return [
+      {
+        slug: 'registration',
+        name: 'Registration Tracking Script',
+        description: null,
+        isRegistration: true,
+        isConfirmation: false,
+      },
+      {
+        slug: 'confirmation',
+        name: 'Confirmation Tracking Script',
+        description: null,
+        isRegistration: false,
+        isConfirmation: true,
       },
     ];
   }
