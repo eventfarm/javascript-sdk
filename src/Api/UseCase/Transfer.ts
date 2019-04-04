@@ -80,12 +80,18 @@ export class Transfer {
   /**
    * @param string - transferId
    * @param string - code
+   * @param boolean? - shouldSendEmail true|false
    * @return Promise|Observable|any
    */
-  ConfirmTransfer(transferId: string, code: string): any {
+  ConfirmTransfer(
+    transferId: string,
+    code: string,
+    shouldSendEmail: boolean = null,
+  ): any {
     return this.restClient.post('Transfer/UseCase/ConfirmTransfer', {
       transferId,
       code,
+      shouldSendEmail,
     });
   }
 
@@ -96,6 +102,7 @@ export class Transfer {
    * @param string - lastName
    * @param string - email
    * @param number - transferQty
+   * @param boolean? - shouldSendEmail true|false
    * @param string? - transferId
    * @return Promise|Observable|any
    */
@@ -106,6 +113,7 @@ export class Transfer {
     lastName: string,
     email: string,
     transferQty: number,
+    shouldSendEmail: boolean = null,
     transferId: string = null,
   ): any {
     return this.restClient.post('Transfer/UseCase/CreateTransfer', {
@@ -115,6 +123,7 @@ export class Transfer {
       lastName,
       email,
       transferQty,
+      shouldSendEmail,
       transferId,
     });
   }
@@ -131,11 +140,13 @@ export class Transfer {
 
   /**
    * @param string - transferId
+   * @param boolean? - shouldSendEmail true|false
    * @return Promise|Observable|any
    */
-  ForceTransfer(transferId: string): any {
+  ForceTransfer(transferId: string, shouldSendEmail: boolean = null): any {
     return this.restClient.post('Transfer/UseCase/ForceTransfer', {
       transferId,
+      shouldSendEmail,
     });
   }
 
