@@ -13,6 +13,7 @@ export interface FeatureTypeInterface {
   isAgents: boolean;
   isVisaCheckout: boolean;
   isCanvas: boolean;
+  isHarvesterPPP: boolean;
 }
 export interface PoolAllotmentTypeInterface {
   slug: string;
@@ -64,6 +65,7 @@ export class Pool {
         isAgents: false,
         isVisaCheckout: false,
         isCanvas: false,
+        isHarvesterPPP: false,
       },
       {
         slug: 'apiaccess',
@@ -77,6 +79,7 @@ export class Pool {
         isAgents: false,
         isVisaCheckout: false,
         isCanvas: false,
+        isHarvesterPPP: false,
       },
       {
         slug: 'marketo',
@@ -90,6 +93,7 @@ export class Pool {
         isAgents: false,
         isVisaCheckout: false,
         isCanvas: false,
+        isHarvesterPPP: false,
       },
       {
         slug: 'emailmasking',
@@ -103,6 +107,7 @@ export class Pool {
         isAgents: false,
         isVisaCheckout: false,
         isCanvas: false,
+        isHarvesterPPP: false,
       },
       {
         slug: 'whitelabeling',
@@ -116,6 +121,7 @@ export class Pool {
         isAgents: false,
         isVisaCheckout: false,
         isCanvas: false,
+        isHarvesterPPP: false,
       },
       {
         slug: 'agents',
@@ -129,6 +135,7 @@ export class Pool {
         isAgents: true,
         isVisaCheckout: false,
         isCanvas: false,
+        isHarvesterPPP: false,
       },
       {
         slug: 'visacheckout',
@@ -142,6 +149,7 @@ export class Pool {
         isAgents: false,
         isVisaCheckout: true,
         isCanvas: false,
+        isHarvesterPPP: false,
       },
       {
         slug: 'canvas',
@@ -155,6 +163,21 @@ export class Pool {
         isAgents: false,
         isVisaCheckout: false,
         isCanvas: true,
+        isHarvesterPPP: false,
+      },
+      {
+        slug: 'harvester',
+        name: 'Harvester (PPP)',
+        description: null,
+        isSalesforce: false,
+        isApiAccess: false,
+        isMarketo: false,
+        isEmailMasking: false,
+        isWhiteLabeling: false,
+        isAgents: false,
+        isVisaCheckout: false,
+        isCanvas: false,
+        isHarvesterPPP: true,
       },
     ];
   }

@@ -534,6 +534,7 @@ export class Invitation {
    * @param string? - title
    * @param string? - telephone
    * @param string? - other
+   * @param boolean? - forceDuplicateInvitations true|false
    * @return Promise|Observable|any
    */
   CreateInvitation(
@@ -555,6 +556,7 @@ export class Invitation {
     title: string = null,
     telephone: string = null,
     other: string = null,
+    forceDuplicateInvitations: boolean = null,
   ): any {
     return this.restClient.post('Invitation/UseCase/CreateInvitation', {
       eventId,
@@ -575,6 +577,7 @@ export class Invitation {
       title,
       telephone,
       other,
+      forceDuplicateInvitations,
     });
   }
 
@@ -892,6 +895,7 @@ export class Invitation {
    * @param string? - lastName
    * @param string? - other
    * @param string? - telephone
+   * @param boolean? - forceDuplicateInvitations true|false
    * @return Promise|Observable|any
    */
   UpdateInvitation(
@@ -905,6 +909,7 @@ export class Invitation {
     lastName: string = null,
     other: string = null,
     telephone: string = null,
+    forceDuplicateInvitations: boolean = null,
   ): any {
     return this.restClient.post('Invitation/UseCase/UpdateInvitation', {
       invitationId,
@@ -917,6 +922,7 @@ export class Invitation {
       lastName,
       other,
       telephone,
+      forceDuplicateInvitations,
     });
   }
 }
