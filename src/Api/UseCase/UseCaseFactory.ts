@@ -14,6 +14,7 @@ import { EmailNotification } from './EmailNotification';
 import { EmailSample } from './EmailSample';
 import { EmailTemplate } from './EmailTemplate';
 import { Event } from './Event';
+import { EventTheme } from './EventTheme';
 import { Feature } from './Feature';
 import { FeatureToggle } from './FeatureToggle';
 import { Group } from './Group';
@@ -108,6 +109,10 @@ export class UseCaseFactory {
 
   Event(): Event {
     return new Event(this.restClient);
+  }
+
+  EventTheme(): EventTheme {
+    return new EventTheme(this.restClient);
   }
 
   Feature(): Feature {

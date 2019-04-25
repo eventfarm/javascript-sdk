@@ -33,7 +33,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures
+   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme
    * @return Promise|Observable|any
    */
   GetEvent(eventId: string, withData: string[] = null): any {
@@ -875,7 +875,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - messageType introduction|before-opening|after-closing|confirmation|declination|sold-out|reveal|disclaimer|response-restriction
+   * @param string - messageType additional|before-opening|after-closing|confirmation|declination|sold-out|reveal|disclaimer|response-restriction
    * @return Promise|Observable|any
    */
   RemoveMessageForEvent(eventId: string, messageType: string): any {
@@ -909,7 +909,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - trackingScriptType registration|confirmation
+   * @param string - trackingScriptType registration_tracking_script|confirmation_tracking_script
    * @return Promise|Observable|any
    */
   RemoveTrackingScriptForEvent(
@@ -1054,7 +1054,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - messageType introduction|before-opening|after-closing|confirmation|declination|sold-out|reveal|disclaimer|response-restriction
+   * @param string - messageType additional|before-opening|after-closing|confirmation|declination|sold-out|reveal|disclaimer|response-restriction
    * @param string - message
    * @return Promise|Observable|any
    */
@@ -1132,7 +1132,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - trackingScriptType registration|confirmation
+   * @param string - trackingScriptType registration_tracking_script|confirmation_tracking_script
    * @param string - trackingScript
    * @return Promise|Observable|any
    */
