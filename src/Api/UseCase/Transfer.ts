@@ -103,6 +103,7 @@ export class Transfer {
    * @param string - email
    * @param number - transferQty
    * @param boolean? - shouldSendEmail true|false
+   * @param boolean? - forceTransfer true|false
    * @param string? - transferId
    * @return Promise|Observable|any
    */
@@ -114,6 +115,7 @@ export class Transfer {
     email: string,
     transferQty: number,
     shouldSendEmail: boolean = null,
+    forceTransfer: boolean = null,
     transferId: string = null,
   ): any {
     return this.restClient.post('Transfer/UseCase/CreateTransfer', {
@@ -124,6 +126,7 @@ export class Transfer {
       email,
       transferQty,
       shouldSendEmail,
+      forceTransfer,
       transferId,
     });
   }

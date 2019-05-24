@@ -9,34 +9,63 @@ export class Promotion {
 
   // Queries
 
+  /**
+   * @param string - eventId
+   * @param string[]? - withData StackAndTicketType
+   * @param string? - sortBy createdAt
+   * @param string? - sortDirection ascending|descending
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
+  ListPromotionsForEvent(
+    eventId: string,
+    withData: string[] = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    page: number = null,
+    itemsPerPage: number = null,
+  ): any {
+    return this.restClient.get('Promotion/UseCase/ListPromotionsForEvent', {
+      eventId,
+      withData,
+      sortBy,
+      sortDirection,
+      page,
+      itemsPerPage,
+    });
+  }
+
   // Commands
 
   /**
    * @param string - eventId
    * @param string - promotionType
    * @param string - code
-   * @param number - startTime
-   * @param number - endTime
+   * @param string - startTime
+   * @param string - endTime
    * @param number - amount
    * @param number - used
-   * @param number - maximum
    * @param string - message
+   * @param number? - maximum
    * @param boolean? - isEnabled true|false
    * @param string? - promotionId
+   * @param boolean? - isDeleted true|false
    * @return Promise|Observable|any
    */
   CreatePromotion(
     eventId: string,
     promotionType: string,
     code: string,
-    startTime: number,
-    endTime: number,
+    startTime: string,
+    endTime: string,
     amount: number,
     used: number,
-    maximum: number,
     message: string,
+    maximum: number = null,
     isEnabled: boolean = null,
     promotionId: string = null,
+    isDeleted: boolean = null,
   ): any {
     return this.restClient.post('Promotion/UseCase/CreatePromotion', {
       eventId,
@@ -46,10 +75,11 @@ export class Promotion {
       endTime,
       amount,
       used,
-      maximum,
       message,
+      maximum,
       isEnabled,
       promotionId,
+      isDeleted,
     });
   }
 
@@ -157,6 +187,18 @@ export class Promotion {
 
   /**
    * @param string - promotionId
+   * @param any[] - stackIds
+   * @return Promise|Observable|any
+   */
+  SetStacksForPromotion(promotionId: string, stackIds: any[]): any {
+    return this.restClient.post('Promotion/UseCase/SetStacksForPromotion', {
+      promotionId,
+      stackIds,
+    });
+  }
+
+  /**
+   * @param string - promotionId
    * @param number - startTime
    * @return Promise|Observable|any
    */
@@ -164,6 +206,45 @@ export class Promotion {
     return this.restClient.post('Promotion/UseCase/SetStartTime', {
       promotionId,
       startTime,
+    });
+  }
+
+  /**
+   * @param string - promotionId
+   * @param string? - promotionType
+   * @param string? - code
+   * @param string? - startTime
+   * @param string? - endTime
+   * @param number? - amount
+   * @param number? - used
+   * @param string? - message
+   * @param number? - maximum
+   * @param boolean? - isEnabled true|false
+   * @return Promise|Observable|any
+   */
+  UpdatePromotion(
+    promotionId: string,
+    promotionType: string = null,
+    code: string = null,
+    startTime: string = null,
+    endTime: string = null,
+    amount: number = null,
+    used: number = null,
+    message: string = null,
+    maximum: number = null,
+    isEnabled: boolean = null,
+  ): any {
+    return this.restClient.post('Promotion/UseCase/UpdatePromotion', {
+      promotionId,
+      promotionType,
+      code,
+      startTime,
+      endTime,
+      amount,
+      used,
+      message,
+      maximum,
+      isEnabled,
     });
   }
 }

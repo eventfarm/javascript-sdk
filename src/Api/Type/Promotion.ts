@@ -18,7 +18,7 @@ export class Promotion {
       {
         slug: 'discount',
         name: 'Discount',
-        description: null,
+        description: '$ Off',
         isDiscount: true,
         isOffer: false,
         isPercentage: false,
@@ -28,7 +28,7 @@ export class Promotion {
       {
         slug: 'offer',
         name: 'Offer',
-        description: null,
+        description: 'Reveal Access Types',
         isDiscount: false,
         isOffer: true,
         isPercentage: false,
@@ -38,7 +38,7 @@ export class Promotion {
       {
         slug: 'percentage',
         name: 'Percentage',
-        description: null,
+        description: '% Off',
         isDiscount: false,
         isOffer: false,
         isPercentage: true,
@@ -48,7 +48,7 @@ export class Promotion {
       {
         slug: 'quantity',
         name: 'Quantity',
-        description: null,
+        description: 'Free Tickets',
         isDiscount: false,
         isOffer: false,
         isPercentage: false,

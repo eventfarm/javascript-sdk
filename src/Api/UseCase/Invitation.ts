@@ -145,7 +145,7 @@ export class Invitation {
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
    * @param boolean? - isCheckedIn true|false
-   * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
+   * @param string? - sortBy name|last-action|last-action-name|last-notified|created-at|modified-at|checked-in-at
    * @param string? - sortDirection ascending|descending
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-250
@@ -188,7 +188,7 @@ export class Invitation {
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
    * @param boolean? - isCheckedIn true|false
-   * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
+   * @param string? - sortBy name|last-action|last-action-name|last-notified|created-at|modified-at|checked-in-at
    * @param string? - sortDirection ascending|descending
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-250
@@ -232,7 +232,7 @@ export class Invitation {
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
    * @param boolean? - isCheckedIn true|false
-   * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
+   * @param string? - sortBy name|last-action|last-action-name|last-notified|created-at|modified-at|checked-in-at
    * @param string? - sortDirection ascending|descending
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-250
@@ -390,7 +390,7 @@ export class Invitation {
    * @param string? - query
    * @param number? - lastModifiedTimestamp
    * @param boolean? - isCheckedIn true|false
-   * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
+   * @param string? - sortBy name|last-action|last-action-name|last-notified|created-at|modified-at|checked-in-at
    * @param string? - sortDirection ascending|descending
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
@@ -431,7 +431,7 @@ export class Invitation {
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
    * @param boolean? - isCheckedIn true|false
-   * @param string? - sortBy name|last-action|last-notified|created-at|modified-at|checked-in-at
+   * @param string? - sortBy name|last-action|last-action-name|last-notified|created-at|modified-at|checked-in-at
    * @param string? - sortDirection ascending|descending
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
@@ -788,6 +788,26 @@ export class Invitation {
         shouldSendEmail,
       },
     );
+  }
+
+  /**
+   * @param string - invitationId
+   * @return Promise|Observable|any
+   */
+  ResendConfirmationEmail(invitationId: string): any {
+    return this.restClient.post('Invitation/UseCase/ResendConfirmationEmail', {
+      invitationId,
+    });
+  }
+
+  /**
+   * @param string - invitationId
+   * @return Promise|Observable|any
+   */
+  ResendInvitationEmail(invitationId: string): any {
+    return this.restClient.post('Invitation/UseCase/ResendInvitationEmail', {
+      invitationId,
+    });
   }
 
   /**

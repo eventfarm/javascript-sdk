@@ -44,6 +44,18 @@ export class Event {
   }
 
   /**
+   * @param string - altKeyword
+   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme
+   * @return Promise|Observable|any
+   */
+  GetEventByAltKeyword(altKeyword: string, withData: string[] = null): any {
+    return this.restClient.get('Event/UseCase/GetEventByAltKeyword', {
+      altKeyword,
+      withData,
+    });
+  }
+
+  /**
    * @param string - poolId
    * @param number? - earliestStartDate
    * @return Promise|Observable|any
