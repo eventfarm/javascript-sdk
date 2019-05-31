@@ -163,8 +163,8 @@ export class Event {
   /**
    * @param string - poolId
    * @param string? - query
-   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar
-   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar
+   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation
+   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation
    * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl
    * @param number? - lastModifiedTimestamp
    * @param number? - page >= 1
@@ -211,8 +211,8 @@ export class Event {
   /**
    * @param string - userId
    * @param string? - query
-   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar
-   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar
+   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation
+   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation
    * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl
    * @param number? - lastModifiedTimestamp
    * @param number? - page >= 1
@@ -661,6 +661,16 @@ export class Event {
   }
 
   /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  DisableQRCodeConfirmation(eventId: string): any {
+    return this.restClient.post('Event/UseCase/DisableQRCodeConfirmation', {
+      eventId,
+    });
+  }
+
+  /**
    * @param string - questionId
    * @return Promise|Observable|any
    */
@@ -803,6 +813,16 @@ export class Event {
   }
 
   /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  EnableQRCodeConfirmation(eventId: string): any {
+    return this.restClient.post('Event/UseCase/EnableQRCodeConfirmation', {
+      eventId,
+    });
+  }
+
+  /**
    * @param string - questionId
    * @return Promise|Observable|any
    */
@@ -931,6 +951,30 @@ export class Event {
     return this.restClient.post('Event/UseCase/RemoveTrackingScriptForEvent', {
       eventId,
       trackingScriptType,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - fromName
+   * @param string - fromEmail
+   * @param string - emailSubject
+   * @param string - emailBody
+   * @return Promise|Observable|any
+   */
+  SendContactEmail(
+    eventId: string,
+    fromName: string,
+    fromEmail: string,
+    emailSubject: string,
+    emailBody: string,
+  ): any {
+    return this.restClient.post('Event/UseCase/SendContactEmail', {
+      eventId,
+      fromName,
+      fromEmail,
+      emailSubject,
+      emailBody,
     });
   }
 

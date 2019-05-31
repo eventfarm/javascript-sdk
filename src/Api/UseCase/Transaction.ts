@@ -39,6 +39,7 @@ export class Transaction {
    * @param string[]? - withData
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
+   * @param string? - query
    * @param string? - sortBy
    * @param string? - sortDirection
    * @return Promise|Observable|any
@@ -48,6 +49,7 @@ export class Transaction {
     withData: string[] = null,
     page: number = null,
     itemsPerPage: number = null,
+    query: string = null,
     sortBy: string = null,
     sortDirection: string = null,
   ): any {
@@ -56,6 +58,7 @@ export class Transaction {
       withData,
       page,
       itemsPerPage,
+      query,
       sortBy,
       sortDirection,
     });

@@ -358,7 +358,7 @@ export class EFx {
       {
         id: 'Teams',
         slug: 'teams',
-        name: 'Teams ',
+        name: 'Teams',
         description:
           'Build attendee teams for competition, collaboration, and networking; track scores on the leaderboard',
         isAccessControl: false,

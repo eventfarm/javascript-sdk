@@ -1337,8 +1337,7 @@ export class Event {
         isReveal: false,
         isDisclaimer: false,
         isResponseRestriction: false,
-        defaultValue:
-          'Tickets for {{eventName}} are no longer available through this website. Please check with the event organizers to find out if tickets are available elsewhere.',
+        defaultValue: null,
         value: null,
       },
       {
@@ -1391,14 +1390,15 @@ export class Event {
         isReveal: false,
         isDisclaimer: false,
         isResponseRestriction: false,
-        defaultValue: '',
+        defaultValue:
+          'Tickets for {{eventName}} are no longer available through this website. Please check with the event organizers to find out if tickets are available elsewhere.',
         value: null,
       },
       {
         slug: 'reveal',
         name: 'Reveal',
         description:
-          'If Invitation Reveal is enabled, the &quot;Reveal Message&quot; will display when a guest begins the registration process.',
+          'If Invitation Reveal is enabled, the “Reveal Message“ will display when a guest begins the registration process.',
         isIntroduction: false,
         isOpening: false,
         isClosing: false,
@@ -1408,8 +1408,7 @@ export class Event {
         isReveal: true,
         isDisclaimer: false,
         isResponseRestriction: false,
-        defaultValue:
-          'Tickets for {{eventName}} are no longer available. If you feel you have reached this page in error, please contact the event organizers for more information.',
+        defaultValue: null,
         value: null,
       },
       {
@@ -1719,8 +1718,8 @@ export class Event {
       },
       {
         slug: 'primaryAlt',
-        name: 'Primary Alt Color',
-        description: '#A2AEBB',
+        name: 'Secondary Color',
+        description: '#ffffff',
         isAlert: false,
         isBackground: false,
         isFont: false,
