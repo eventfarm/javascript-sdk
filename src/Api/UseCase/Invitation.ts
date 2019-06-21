@@ -771,20 +771,20 @@ export class Invitation {
 
   /**
    * @param any[] - invitationIds
-   * @param string - newInvitationStatus
+   * @param boolean - isConfirmed true|false
    * @param boolean? - shouldSendEmail true|false
    * @return Promise|Observable|any
    */
   PromoteInvitationsFromWaitlist(
     invitationIds: any[],
-    newInvitationStatus: string,
+    isConfirmed: boolean,
     shouldSendEmail: boolean = null,
   ): any {
     return this.restClient.post(
       'Invitation/UseCase/PromoteInvitationsFromWaitlist',
       {
         invitationIds,
-        newInvitationStatus,
+        isConfirmed,
         shouldSendEmail,
       },
     );

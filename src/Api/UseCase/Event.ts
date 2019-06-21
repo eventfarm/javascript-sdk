@@ -223,6 +223,8 @@ export class Event {
    * @param string? - poolId
    * @param any[]? - tags
    * @param number? - earliestStartTimestamp >= 0
+   * @param boolean? - organizerOnly true|false
+   * @param boolean? - parentEventsOnly true|false
    * @return Promise|Observable|any
    */
   ListEventsForUser(
@@ -240,6 +242,8 @@ export class Event {
     poolId: string = null,
     tags: any[] = null,
     earliestStartTimestamp: number = null,
+    organizerOnly: boolean = null,
+    parentEventsOnly: boolean = null,
   ): any {
     return this.restClient.get('Event/UseCase/ListEventsForUser', {
       userId,
@@ -256,6 +260,8 @@ export class Event {
       poolId,
       tags,
       earliestStartTimestamp,
+      organizerOnly,
+      parentEventsOnly,
     });
   }
 

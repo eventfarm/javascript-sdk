@@ -18,7 +18,7 @@ export class Promotion {
       {
         slug: 'discount',
         name: 'Discount',
-        description: '$ Off',
+        description: 'Amount Off',
         isDiscount: true,
         isOffer: false,
         isPercentage: false,
