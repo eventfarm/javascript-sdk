@@ -22,7 +22,7 @@ export class Refund {
   }
 
   /**
-   * @param string - transactionId
+   * @param string - paymentId
    * @param string[]? - withData
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
@@ -30,16 +30,16 @@ export class Refund {
    * @param string? - sortDirection
    * @return Promise|Observable|any
    */
-  ListRefundsForTransaction(
-    transactionId: string,
+  ListRefundsForPayment(
+    paymentId: string,
     withData: string[] = null,
     page: number = null,
     itemsPerPage: number = null,
     sortBy: string = null,
     sortDirection: string = null,
   ): any {
-    return this.restClient.get('Refund/UseCase/ListRefundsForTransaction', {
-      transactionId,
+    return this.restClient.get('Refund/UseCase/ListRefundsForPayment', {
+      paymentId,
       withData,
       page,
       itemsPerPage,
@@ -51,20 +51,20 @@ export class Refund {
   // Commands
 
   /**
-   * @param string - transactionId
+   * @param string - paymentId
    * @param string - refundTransId
    * @param number - amount
    * @param string? - refundId
    * @return Promise|Observable|any
    */
   CreateRefund(
-    transactionId: string,
+    paymentId: string,
     refundTransId: string,
     amount: number,
     refundId: string = null,
   ): any {
     return this.restClient.post('Refund/UseCase/CreateRefund', {
-      transactionId,
+      paymentId,
       refundTransId,
       amount,
       refundId,

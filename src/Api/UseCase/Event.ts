@@ -372,6 +372,48 @@ export class Event {
   }
 
   /**
+   * @param string - eventId
+   * @param string - poolId
+   * @param boolean? - shouldCopyUsers true|false
+   * @param boolean? - shouldCopyEmailDesigns true|false
+   * @param boolean? - shouldCopySettings true|false
+   * @param boolean? - shouldCopyRegQuestions true|false
+   * @param boolean? - shouldCopySitePages true|false
+   * @param boolean? - shouldCopyTicketTypes true|false
+   * @param boolean? - shouldCopyTicketBlocks true|false
+   * @param boolean? - shouldCopyStacks true|false
+   * @param boolean? - shouldCopyIntegrationSettings true|false
+   * @return Promise|Observable|any
+   */
+  CopyEventConfigurationToPool(
+    eventId: string,
+    poolId: string,
+    shouldCopyUsers: boolean = null,
+    shouldCopyEmailDesigns: boolean = null,
+    shouldCopySettings: boolean = null,
+    shouldCopyRegQuestions: boolean = null,
+    shouldCopySitePages: boolean = null,
+    shouldCopyTicketTypes: boolean = null,
+    shouldCopyTicketBlocks: boolean = null,
+    shouldCopyStacks: boolean = null,
+    shouldCopyIntegrationSettings: boolean = null,
+  ): any {
+    return this.restClient.post('Event/UseCase/CopyEventConfigurationToPool', {
+      eventId,
+      poolId,
+      shouldCopyUsers,
+      shouldCopyEmailDesigns,
+      shouldCopySettings,
+      shouldCopyRegQuestions,
+      shouldCopySitePages,
+      shouldCopyTicketTypes,
+      shouldCopyTicketBlocks,
+      shouldCopyStacks,
+      shouldCopyIntegrationSettings,
+    });
+  }
+
+  /**
    * @param string - fromEventId
    * @param string - toEventId
    * @param boolean? - shouldCopyUsers true|false
@@ -939,7 +981,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - messageType additional|before-opening|after-closing|confirmation|declination|sold-out|reveal|disclaimer|response-restriction
+   * @param string - messageType additional|opening|closing|confirmation|declination|soldout|reveal|disclaimer|response_restriction
    * @return Promise|Observable|any
    */
   RemoveMessageForEvent(eventId: string, messageType: string): any {
@@ -1142,7 +1184,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - messageType additional|before-opening|after-closing|confirmation|declination|sold-out|reveal|disclaimer|response-restriction
+   * @param string - messageType additional|opening|closing|confirmation|declination|soldout|reveal|disclaimer|response_restriction
    * @param string - message
    * @return Promise|Observable|any
    */

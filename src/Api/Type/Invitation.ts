@@ -50,6 +50,7 @@ export interface InvitationStatusTypeInterface {
   isSendToPurchasedTypeIds: boolean;
   isSendToAssignedTypeIds: boolean;
   isSendToUnconfirmedTypeIds: boolean;
+  isSendToDeclinedTypeIds: boolean;
 }
 export interface InviteSourceTypeInterface {
   slug: string;
@@ -417,6 +418,7 @@ export class Invitation {
         isSendToPurchasedTypeIds: false,
         isSendToAssignedTypeIds: true,
         isSendToUnconfirmedTypeIds: false,
+        isSendToDeclinedTypeIds: false,
       },
       {
         slug: 'purchased',
@@ -439,6 +441,7 @@ export class Invitation {
         isSendToPurchasedTypeIds: true,
         isSendToAssignedTypeIds: false,
         isSendToUnconfirmedTypeIds: false,
+        isSendToDeclinedTypeIds: false,
       },
       {
         slug: 'confirmed-by-rsvp',
@@ -461,6 +464,7 @@ export class Invitation {
         isSendToPurchasedTypeIds: false,
         isSendToAssignedTypeIds: false,
         isSendToUnconfirmedTypeIds: false,
+        isSendToDeclinedTypeIds: false,
       },
       {
         slug: 'declined-by-rsvp',
@@ -483,6 +487,7 @@ export class Invitation {
         isSendToPurchasedTypeIds: false,
         isSendToAssignedTypeIds: false,
         isSendToUnconfirmedTypeIds: false,
+        isSendToDeclinedTypeIds: true,
       },
       {
         slug: 'left-behind',
@@ -505,6 +510,7 @@ export class Invitation {
         isSendToPurchasedTypeIds: false,
         isSendToAssignedTypeIds: false,
         isSendToUnconfirmedTypeIds: false,
+        isSendToDeclinedTypeIds: false,
       },
       {
         slug: 'not-yet-purchased',
@@ -527,6 +533,7 @@ export class Invitation {
         isSendToPurchasedTypeIds: false,
         isSendToAssignedTypeIds: false,
         isSendToUnconfirmedTypeIds: true,
+        isSendToDeclinedTypeIds: false,
       },
       {
         slug: 'registered',
@@ -549,6 +556,7 @@ export class Invitation {
         isSendToPurchasedTypeIds: false,
         isSendToAssignedTypeIds: false,
         isSendToUnconfirmedTypeIds: false,
+        isSendToDeclinedTypeIds: false,
       },
       {
         slug: 'unconfirmed',
@@ -571,6 +579,7 @@ export class Invitation {
         isSendToPurchasedTypeIds: false,
         isSendToAssignedTypeIds: false,
         isSendToUnconfirmedTypeIds: true,
+        isSendToDeclinedTypeIds: false,
       },
       {
         slug: 'recycled',
@@ -593,6 +602,7 @@ export class Invitation {
         isSendToPurchasedTypeIds: false,
         isSendToAssignedTypeIds: false,
         isSendToUnconfirmedTypeIds: false,
+        isSendToDeclinedTypeIds: false,
       },
       {
         slug: 'not-yet-registered',
@@ -615,6 +625,7 @@ export class Invitation {
         isSendToPurchasedTypeIds: false,
         isSendToAssignedTypeIds: false,
         isSendToUnconfirmedTypeIds: true,
+        isSendToDeclinedTypeIds: false,
       },
       {
         slug: 'waitlisted',
@@ -637,6 +648,7 @@ export class Invitation {
         isSendToPurchasedTypeIds: false,
         isSendToAssignedTypeIds: false,
         isSendToUnconfirmedTypeIds: false,
+        isSendToDeclinedTypeIds: false,
       },
     ];
   }

@@ -1,7 +1,7 @@
 {
   "name": "@eventfarm/javascript-sdk",
   "description": "Official Event Farm Javascript SDK",
-  "version": "2.1.5",
+  "version": "3.0.0",
   "main": "./dist",
   "types": "./dist",
   "authors": [
@@ -31,7 +31,7 @@
     "push": "npm publish --access public"
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.18.0",
     "jwt-decode": "^2.2.0"
   },
   "devDependencies": {

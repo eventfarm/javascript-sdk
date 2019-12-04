@@ -25,6 +25,7 @@ import { IntegrationStatusMapping } from './IntegrationStatusMapping';
 import { Invitation } from './Invitation';
 import { OAuth } from './OAuth';
 import { OAuth2 } from './OAuth2';
+import { Payment } from './Payment';
 import { Pool } from './Pool';
 import { PoolContact } from './PoolContact';
 import { PoolContract } from './PoolContract';
@@ -153,6 +154,10 @@ export class UseCaseFactory {
 
   OAuth2(): OAuth2 {
     return new OAuth2(this.restClient);
+  }
+
+  Payment(): Payment {
+    return new Payment(this.restClient);
   }
 
   Pool(): Pool {

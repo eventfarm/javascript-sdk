@@ -1327,7 +1327,7 @@ export class Event {
         value: null,
       },
       {
-        slug: 'before-opening',
+        slug: 'opening',
         name: 'Prior To Opening',
         description:
           'Displayed as a placeholder for the registration or purchase form before the event goes live and tickets become available.',
@@ -1345,7 +1345,7 @@ export class Event {
         value: null,
       },
       {
-        slug: 'after-closing',
+        slug: 'closing',
         name: 'After Closing',
         description:
           'Displayed as a placeholder for the registration or purchase form once registration has closed for an event.',
@@ -1398,7 +1398,7 @@ export class Event {
         value: null,
       },
       {
-        slug: 'sold-out',
+        slug: 'soldout',
         name: 'Sold-Out',
         description:
           'Displayed for any event access type (General Admission, VIP, etc.) that is either sold out or at capacity.',
@@ -1450,7 +1450,7 @@ export class Event {
         value: null,
       },
       {
-        slug: 'response-restriction',
+        slug: 'response_restriction',
         name: 'Response Restriction',
         description:
           'If the Event Setting “Guest can change response” is “NO”, this message will display for any registered guest who clicks the invitation link again.',

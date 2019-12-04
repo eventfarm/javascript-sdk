@@ -47,7 +47,7 @@ export class Invitation {
 
   /**
    * @param string - invitationId
-   * @param string[]? - withData Event|UserName|User|UserIdentifier|Stack|TicketType|QuestionResponse|Answer
+   * @param string[]? - withData Event|UserName|User|UserIdentifier|Stack|TicketType|QuestionResponse|Answer|Purchase
    * @return Promise|Observable|any
    */
   GetInvitation(invitationId: string, withData: string[] = null): any {
@@ -255,6 +255,51 @@ export class Invitation {
       'Invitation/UseCase/ListInvitationsForTicketBlock',
       {
         ticketBlockId,
+        withData,
+        withUserAttributes,
+        query,
+        statusFilter,
+        lastModifiedTimestamp,
+        isCheckedIn,
+        sortBy,
+        sortDirection,
+        page,
+        itemsPerPage,
+      },
+    );
+  }
+
+  /**
+   * @param string - transactionId
+   * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param string? - query
+   * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param number? - lastModifiedTimestamp
+   * @param boolean? - isCheckedIn true|false
+   * @param string? - sortBy name|last-action|last-action-name|last-notified|created-at|modified-at|checked-in-at
+   * @param string? - sortDirection ascending|descending
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-250
+   * @return Promise|Observable|any
+   */
+  ListInvitationsForTransaction(
+    transactionId: string,
+    withData: string[] = null,
+    withUserAttributes: any[] = null,
+    query: string = null,
+    statusFilter: any[] = null,
+    lastModifiedTimestamp: number = null,
+    isCheckedIn: boolean = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    page: number = null,
+    itemsPerPage: number = null,
+  ): any {
+    return this.restClient.get(
+      'Invitation/UseCase/ListInvitationsForTransaction',
+      {
+        transactionId,
         withData,
         withUserAttributes,
         query,
@@ -920,6 +965,7 @@ export class Invitation {
    * @param string? - telephone
    * @param number? - updatedTime
    * @param boolean? - forceDuplicateInvitations true|false
+   * @param number? - inviteCount
    * @return Promise|Observable|any
    */
   UpdateInvitation(
@@ -935,6 +981,7 @@ export class Invitation {
     telephone: string = null,
     updatedTime: number = null,
     forceDuplicateInvitations: boolean = null,
+    inviteCount: number = null,
   ): any {
     return this.restClient.post('Invitation/UseCase/UpdateInvitation', {
       invitationId,
@@ -949,6 +996,7 @@ export class Invitation {
       telephone,
       updatedTime,
       forceDuplicateInvitations,
+      inviteCount,
     });
   }
 }
