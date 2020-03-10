@@ -87,6 +87,7 @@ export interface EventMessageTypeInterface {
   isReveal: boolean;
   isDisclaimer: boolean;
   isResponseRestriction: boolean;
+  isWaitListSMS: boolean;
   defaultValue: any;
   value: any;
 }
@@ -1323,6 +1324,7 @@ export class Event {
         isReveal: false,
         isDisclaimer: false,
         isResponseRestriction: false,
+        isWaitListSMS: false,
         defaultValue: null,
         value: null,
       },
@@ -1340,6 +1342,7 @@ export class Event {
         isReveal: false,
         isDisclaimer: false,
         isResponseRestriction: false,
+        isWaitListSMS: false,
         defaultValue:
           'Tickets for {{eventName}} are not yet available—please check back in the near future!',
         value: null,
@@ -1358,6 +1361,7 @@ export class Event {
         isReveal: false,
         isDisclaimer: false,
         isResponseRestriction: false,
+        isWaitListSMS: false,
         defaultValue: null,
         value: null,
       },
@@ -1375,6 +1379,7 @@ export class Event {
         isReveal: false,
         isDisclaimer: false,
         isResponseRestriction: false,
+        isWaitListSMS: false,
         defaultValue:
           'You&#039;re all set. We look forward to seeing you soon!',
         value: null,
@@ -1393,6 +1398,7 @@ export class Event {
         isReveal: false,
         isDisclaimer: false,
         isResponseRestriction: false,
+        isWaitListSMS: false,
         defaultValue:
           'Thanks for your response. We&#039;re sorry we&#039;ll miss you!',
         value: null,
@@ -1411,6 +1417,7 @@ export class Event {
         isReveal: false,
         isDisclaimer: false,
         isResponseRestriction: false,
+        isWaitListSMS: false,
         defaultValue:
           'Tickets for {{eventName}} are no longer available through this website. Please check with the event organizers to find out if tickets are available elsewhere.',
         value: null,
@@ -1429,6 +1436,7 @@ export class Event {
         isReveal: true,
         isDisclaimer: false,
         isResponseRestriction: false,
+        isWaitListSMS: false,
         defaultValue: null,
         value: null,
       },
@@ -1446,6 +1454,7 @@ export class Event {
         isReveal: false,
         isDisclaimer: true,
         isResponseRestriction: false,
+        isWaitListSMS: false,
         defaultValue: null,
         value: null,
       },
@@ -1463,7 +1472,27 @@ export class Event {
         isReveal: false,
         isDisclaimer: false,
         isResponseRestriction: true,
+        isWaitListSMS: false,
         defaultValue: null,
+        value: null,
+      },
+      {
+        slug: 'wait_list_sms',
+        name: 'Wait List SMS',
+        description:
+          'This sms will be sent to the attendee once they are promoted off the event waitlist.',
+        isIntroduction: false,
+        isOpening: false,
+        isClosing: false,
+        isConfirmation: false,
+        isDeclination: false,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+        isWaitListSMS: true,
+        defaultValue:
+          'You’re off the waitlist! Your are confirmed for [event_name]',
         value: null,
       },
     ];

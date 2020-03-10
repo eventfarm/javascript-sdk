@@ -1627,6 +1627,12 @@ export class DateTimeZone {
         longitude: '51.53333',
       },
       {
+        identifier: 'Asia/Qostanay',
+        countryCode: 'KZ',
+        latitude: '53.19999',
+        longitude: '63.61666',
+      },
+      {
         identifier: 'Asia/Qyzylorda',
         countryCode: 'KZ',
         latitude: '44.8',

@@ -390,6 +390,45 @@ export class Invitation {
   }
 
   /**
+   * @param string - email
+   * @param any[] - eventIds
+   * @param string - poolId
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-250
+   * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
+   * @param string? - sortDirection
+   * @param string[]? - withData Event|Stack|StackAndTicketType
+   * @param any[]? - statusFilter
+   * @return Promise|Observable|any
+   */
+  ListInvitationsForUserByEmailForEvents(
+    email: string,
+    eventIds: any[],
+    poolId: string,
+    page: number = null,
+    itemsPerPage: number = null,
+    eventDateFilterType: string = null,
+    sortDirection: string = null,
+    withData: string[] = null,
+    statusFilter: any[] = null,
+  ): any {
+    return this.restClient.get(
+      'Invitation/UseCase/ListInvitationsForUserByEmailForEvents',
+      {
+        email,
+        eventIds,
+        poolId,
+        page,
+        itemsPerPage,
+        eventDateFilterType,
+        sortDirection,
+        withData,
+        statusFilter,
+      },
+    );
+  }
+
+  /**
    * @param string - userId
    * @param string - parentEventId
    * @param string? - poolId
