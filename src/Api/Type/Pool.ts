@@ -30,6 +30,7 @@ export interface FeatureTypeInterface {
   isEventApp: boolean;
   isChildEvents: boolean;
   isWaitlist: boolean;
+  isVirbela: boolean;
 }
 export interface PoolAllotmentTypeInterface {
   slug: string;
@@ -98,6 +99,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'apiaccess',
@@ -128,6 +130,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'marketo',
@@ -158,6 +161,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'emailmasking',
@@ -188,6 +192,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'whitelabeling',
@@ -218,6 +223,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'agents',
@@ -248,6 +254,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'visacheckout',
@@ -278,6 +285,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'canvas',
@@ -308,6 +316,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'harvester',
@@ -338,6 +347,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'accesscontrol-efx',
@@ -368,6 +378,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'athletebag-efx',
@@ -398,6 +409,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'concierge-efx',
@@ -428,6 +440,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'digitalmemorybank-efx',
@@ -458,6 +471,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'guestinfo-efx',
@@ -488,6 +502,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'messaging-efx',
@@ -518,6 +533,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'smsquiz-efx',
@@ -548,6 +564,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'productpickup-efx',
@@ -578,6 +595,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'raffle-efx',
@@ -608,6 +626,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'reservation-efx',
@@ -638,6 +657,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'roamingphotog-efx',
@@ -668,6 +688,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'smartbar-efx',
@@ -698,6 +719,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'teams-efx',
@@ -728,6 +750,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'event-app',
@@ -758,6 +781,7 @@ export class Pool {
         isEventApp: true,
         isChildEvents: false,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'child-events',
@@ -788,6 +812,7 @@ export class Pool {
         isEventApp: false,
         isChildEvents: true,
         isWaitlist: false,
+        isVirbela: false,
       },
       {
         slug: 'waitlist',
@@ -818,6 +843,38 @@ export class Pool {
         isEventApp: false,
         isChildEvents: false,
         isWaitlist: true,
+        isVirbela: false,
+      },
+      {
+        slug: 'virbela',
+        name: 'Virbela',
+        description: null,
+        isSalesforce: false,
+        isApiAccess: false,
+        isMarketo: false,
+        isEmailMasking: false,
+        isWhiteLabeling: false,
+        isAgents: false,
+        isVisaCheckout: false,
+        isCanvas: false,
+        isHarvesterPPP: false,
+        isAccessControlEFx: false,
+        isAthleteBagEFx: false,
+        isConciergeEFx: false,
+        isDigitalMemoryBankEFx: false,
+        isGuestInfoEFx: false,
+        isMessagingEFx: false,
+        isSmsQuizEFx: false,
+        isProductPickupEFx: false,
+        isRaffleEFx: false,
+        isReservationEFx: false,
+        isRoamingPhotogEFx: false,
+        isSmartBarEFx: false,
+        isTeamsEFx: false,
+        isEventApp: false,
+        isChildEvents: false,
+        isWaitlist: false,
+        isVirbela: true,
       },
     ];
   }

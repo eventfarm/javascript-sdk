@@ -51,6 +51,9 @@ import { UserAddress } from './UserAddress';
 import { UserAttribute } from './UserAttribute';
 import { UserIdentifier } from './UserIdentifier';
 import { UserName } from './UserName';
+import { UserUnsubscribe } from './UserUnsubscribe';
+import { Virbela } from './Virbela';
+import { VirbelaPoolSetting } from './VirbelaPoolSetting';
 import { Withdrawal } from './Withdrawal';
 
 export class UseCaseFactory {
@@ -258,6 +261,18 @@ export class UseCaseFactory {
 
   UserName(): UserName {
     return new UserName(this.restClient);
+  }
+
+  UserUnsubscribe(): UserUnsubscribe {
+    return new UserUnsubscribe(this.restClient);
+  }
+
+  Virbela(): Virbela {
+    return new Virbela(this.restClient);
+  }
+
+  VirbelaPoolSetting(): VirbelaPoolSetting {
+    return new VirbelaPoolSetting(this.restClient);
   }
 
   Withdrawal(): Withdrawal {

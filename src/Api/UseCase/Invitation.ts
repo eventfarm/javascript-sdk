@@ -140,7 +140,7 @@ export class Invitation {
   /**
    * @param string - eventId
    * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
@@ -183,7 +183,7 @@ export class Invitation {
    * @param string - eventId
    * @param string - stackId
    * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
@@ -227,7 +227,7 @@ export class Invitation {
   /**
    * @param string - ticketBlockId
    * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
@@ -272,7 +272,7 @@ export class Invitation {
   /**
    * @param string - transactionId
    * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
@@ -390,6 +390,45 @@ export class Invitation {
   }
 
   /**
+   * @param string - email
+   * @param any[] - eventIds
+   * @param string - poolId
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-250
+   * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
+   * @param string? - sortDirection
+   * @param string[]? - withData Event|Stack|StackAndTicketType
+   * @param any[]? - statusFilter
+   * @return Promise|Observable|any
+   */
+  ListInvitationsForUserByEmailForEvents(
+    email: string,
+    eventIds: any[],
+    poolId: string,
+    page: number = null,
+    itemsPerPage: number = null,
+    eventDateFilterType: string = null,
+    sortDirection: string = null,
+    withData: string[] = null,
+    statusFilter: any[] = null,
+  ): any {
+    return this.restClient.get(
+      'Invitation/UseCase/ListInvitationsForUserByEmailForEvents',
+      {
+        email,
+        eventIds,
+        poolId,
+        page,
+        itemsPerPage,
+        eventDateFilterType,
+        sortDirection,
+        withData,
+        statusFilter,
+      },
+    );
+  }
+
+  /**
    * @param string - userId
    * @param string - parentEventId
    * @param string? - poolId
@@ -431,7 +470,7 @@ export class Invitation {
   /**
    * @param string - eventId
    * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela
    * @param string? - query
    * @param number? - lastModifiedTimestamp
    * @param boolean? - isCheckedIn true|false
@@ -471,7 +510,7 @@ export class Invitation {
    * @param string - eventId
    * @param string - stackId
    * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
@@ -551,12 +590,18 @@ export class Invitation {
   /**
    * @param string - invitationId
    * @param number? - checkInAt
+   * @param boolean? - isWebCheckIn true|false
    * @return Promise|Observable|any
    */
-  CheckIn(invitationId: string, checkInAt: number = null): any {
+  CheckIn(
+    invitationId: string,
+    checkInAt: number = null,
+    isWebCheckIn: boolean = null,
+  ): any {
     return this.restClient.post('Invitation/UseCase/CheckIn', {
       invitationId,
       checkInAt,
+      isWebCheckIn,
     });
   }
 
@@ -831,6 +876,31 @@ export class Invitation {
         invitationIds,
         isConfirmed,
         shouldSendEmail,
+      },
+    );
+  }
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  RescindAllInvitations(eventId: string): any {
+    return this.restClient.post('Invitation/UseCase/RescindAllInvitations', {
+      eventId,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param number - dayCount 0-90
+   * @return Promise|Observable|any
+   */
+  ResendAllInvitationEmails(eventId: string, dayCount: number): any {
+    return this.restClient.post(
+      'Invitation/UseCase/ResendAllInvitationEmails',
+      {
+        eventId,
+        dayCount,
       },
     );
   }

@@ -71,6 +71,7 @@ export interface UserAttributeNamespaceTypeInterface {
   isConvio: boolean;
   isGoogle: boolean;
   isCustom: boolean;
+  isVirbela: boolean;
 }
 export interface UserIdentifierTypeInterface {
   slug: string;
@@ -95,6 +96,15 @@ export interface UserRoleTypeInterface {
   isEvents: boolean;
   isTicketblocks: boolean;
   isPools: boolean;
+}
+export interface UserUnsubscribePreferenceTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isGlobal: boolean;
+  isPool: boolean;
+  isEvent: boolean;
+  isTicketblock: boolean;
 }
 
 export class User {
@@ -944,6 +954,7 @@ export class User {
         isConvio: false,
         isGoogle: false,
         isCustom: false,
+        isVirbela: false,
       },
       {
         slug: 'info',
@@ -959,6 +970,7 @@ export class User {
         isConvio: false,
         isGoogle: false,
         isCustom: false,
+        isVirbela: false,
       },
       {
         slug: 'hover',
@@ -974,6 +986,7 @@ export class User {
         isConvio: false,
         isGoogle: false,
         isCustom: false,
+        isVirbela: false,
       },
       {
         slug: 'facebook',
@@ -989,6 +1002,7 @@ export class User {
         isConvio: false,
         isGoogle: false,
         isCustom: false,
+        isVirbela: false,
       },
       {
         slug: 'linked-in',
@@ -1004,6 +1018,7 @@ export class User {
         isConvio: false,
         isGoogle: false,
         isCustom: false,
+        isVirbela: false,
       },
       {
         slug: 'salesforce',
@@ -1019,6 +1034,7 @@ export class User {
         isConvio: false,
         isGoogle: false,
         isCustom: false,
+        isVirbela: false,
       },
       {
         slug: 'twitter',
@@ -1034,6 +1050,7 @@ export class User {
         isConvio: false,
         isGoogle: false,
         isCustom: false,
+        isVirbela: false,
       },
       {
         slug: 'convio',
@@ -1049,6 +1066,7 @@ export class User {
         isConvio: true,
         isGoogle: false,
         isCustom: false,
+        isVirbela: false,
       },
       {
         slug: 'google',
@@ -1064,6 +1082,7 @@ export class User {
         isConvio: false,
         isGoogle: true,
         isCustom: false,
+        isVirbela: false,
       },
       {
         slug: 'custom',
@@ -1079,6 +1098,23 @@ export class User {
         isConvio: false,
         isGoogle: false,
         isCustom: true,
+        isVirbela: false,
+      },
+      {
+        slug: 'virbela',
+        name: 'Virbela',
+        description: null,
+        isInternal: false,
+        isInfo: false,
+        isHover: false,
+        isSpamReport: false,
+        isLinkedin: false,
+        isSalesforce: false,
+        isTwitter: false,
+        isConvio: false,
+        isGoogle: false,
+        isCustom: false,
+        isVirbela: true,
       },
     ];
   }
@@ -1172,6 +1208,47 @@ export class User {
         isEvents: false,
         isTicketblocks: false,
         isPools: true,
+      },
+    ];
+  }
+
+  UserUnsubscribePreferenceType(): UserUnsubscribePreferenceTypeInterface[] {
+    return [
+      {
+        slug: 'global',
+        name: 'Global',
+        description: null,
+        isGlobal: true,
+        isPool: false,
+        isEvent: false,
+        isTicketblock: false,
+      },
+      {
+        slug: 'pool',
+        name: 'Pool',
+        description: null,
+        isGlobal: false,
+        isPool: true,
+        isEvent: false,
+        isTicketblock: false,
+      },
+      {
+        slug: 'event',
+        name: 'Event',
+        description: null,
+        isGlobal: false,
+        isPool: false,
+        isEvent: true,
+        isTicketblock: false,
+      },
+      {
+        slug: 'ticketblock',
+        name: 'Ticketblock',
+        description: null,
+        isGlobal: false,
+        isPool: false,
+        isEvent: false,
+        isTicketblock: true,
       },
     ];
   }

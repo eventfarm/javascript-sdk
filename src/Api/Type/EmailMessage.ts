@@ -42,6 +42,7 @@ export interface EmailMessageTypeInterface {
   isSendAMessage: boolean;
   isSendGroupMessage: boolean;
   isDeclination: boolean;
+  isSendPreviewMessage: boolean;
 }
 
 export class EmailMessage {
@@ -405,6 +406,7 @@ export class EmailMessage {
         isSendAMessage: false,
         isSendGroupMessage: false,
         isDeclination: false,
+        isSendPreviewMessage: false,
       },
       {
         slug: 'donation',
@@ -416,6 +418,7 @@ export class EmailMessage {
         isSendAMessage: false,
         isSendGroupMessage: false,
         isDeclination: false,
+        isSendPreviewMessage: false,
       },
       {
         slug: 'invitation',
@@ -427,6 +430,7 @@ export class EmailMessage {
         isSendAMessage: false,
         isSendGroupMessage: false,
         isDeclination: false,
+        isSendPreviewMessage: false,
       },
       {
         slug: 'sendamessage',
@@ -438,6 +442,7 @@ export class EmailMessage {
         isSendAMessage: true,
         isSendGroupMessage: false,
         isDeclination: false,
+        isSendPreviewMessage: false,
       },
       {
         slug: 'sendgroupmessage',
@@ -449,6 +454,7 @@ export class EmailMessage {
         isSendAMessage: false,
         isSendGroupMessage: true,
         isDeclination: false,
+        isSendPreviewMessage: false,
       },
     ];
   }

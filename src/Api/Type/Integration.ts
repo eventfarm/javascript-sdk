@@ -82,6 +82,11 @@ export class Integration {
         name: 'Telephone',
         description: null,
       },
+      {
+        slug: 'newCustomField',
+        name: 'New Custom Field',
+        description: null,
+      },
     ];
   }
 }
