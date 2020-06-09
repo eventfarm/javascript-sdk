@@ -373,6 +373,16 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  ClearVirbelaSitePageForEvent(eventId: string): any {
+    return this.restClient.post('Event/UseCase/ClearVirbelaSitePageForEvent', {
+      eventId,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param string - poolId
    * @param boolean? - shouldCopyUsers true|false
    * @param boolean? - shouldCopyEmailDesigns true|false
@@ -1380,6 +1390,18 @@ export class Event {
       eventId,
       venueName,
       venueAddress,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - sitePageId
+   * @return Promise|Observable|any
+   */
+  SetVirbelaSitePageForEvent(eventId: string, sitePageId: string): any {
+    return this.restClient.post('Event/UseCase/SetVirbelaSitePageForEvent', {
+      eventId,
+      sitePageId,
     });
   }
 
