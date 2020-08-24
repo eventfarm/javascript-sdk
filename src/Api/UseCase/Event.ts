@@ -1066,7 +1066,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - messageType additional|opening|closing|confirmation|declination|soldout|reveal|disclaimer|response_restriction|wait_list_sms
+   * @param string - messageType additional|opening|closing|confirmation|wait_list_confirmation|declination|soldout|reveal|disclaimer|response_restriction|wait_list_sms
    * @return Promise|Observable|any
    */
   RemoveMessageForEvent(eventId: string, messageType: string): any {
@@ -1269,7 +1269,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - messageType additional|opening|closing|confirmation|declination|soldout|reveal|disclaimer|response_restriction|wait_list_sms
+   * @param string - messageType additional|opening|closing|confirmation|wait_list_confirmation|declination|soldout|reveal|disclaimer|response_restriction|wait_list_sms
    * @param string - message
    * @return Promise|Observable|any
    */

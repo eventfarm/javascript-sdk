@@ -176,6 +176,8 @@ export class Stack {
    * @param string? - confirmDesignId
    * @param string? - declineDesignId
    * @param string? - stackId
+   * @param number? - virbelaTeamId
+   * @param string? - virbelaRole
    * @return Promise|Observable|any
    */
   CreateStack(
@@ -193,6 +195,8 @@ export class Stack {
     confirmDesignId: string = null,
     declineDesignId: string = null,
     stackId: string = null,
+    virbelaTeamId: number = null,
+    virbelaRole: string = null,
   ): any {
     return this.restClient.post('Stack/UseCase/CreateStack', {
       eventId,
@@ -209,6 +213,8 @@ export class Stack {
       confirmDesignId,
       declineDesignId,
       stackId,
+      virbelaTeamId,
+      virbelaRole,
     });
   }
 
@@ -228,6 +234,8 @@ export class Stack {
    * @param string? - confirmDesignId
    * @param string? - declineDesignId
    * @param string? - stackId
+   * @param number? - virbelaTeamId
+   * @param string? - virbelaRole
    * @return Promise|Observable|any
    */
   CreateStackFromSettings(
@@ -246,6 +254,8 @@ export class Stack {
     confirmDesignId: string = null,
     declineDesignId: string = null,
     stackId: string = null,
+    virbelaTeamId: number = null,
+    virbelaRole: string = null,
   ): any {
     return this.restClient.post('Stack/UseCase/CreateStackFromSettings', {
       eventId,
@@ -263,6 +273,8 @@ export class Stack {
       confirmDesignId,
       declineDesignId,
       stackId,
+      virbelaTeamId,
+      virbelaRole,
     });
   }
 
@@ -413,6 +425,8 @@ export class Stack {
    * @param number? - quantity
    * @param number? - maxQuantity
    * @param boolean? - transferable true|false
+   * @param number? - virbelaTeamId
+   * @param string? - virbelaRole
    * @return Promise|Observable|any
    */
   UpdateStack(
@@ -423,6 +437,8 @@ export class Stack {
     quantity: number = null,
     maxQuantity: number = null,
     transferable: boolean = null,
+    virbelaTeamId: number = null,
+    virbelaRole: string = null,
   ): any {
     return this.restClient.post('Stack/UseCase/UpdateStack', {
       stackId,
@@ -432,6 +448,8 @@ export class Stack {
       quantity,
       maxQuantity,
       transferable,
+      virbelaTeamId,
+      virbelaRole,
     });
   }
 
@@ -451,6 +469,8 @@ export class Stack {
    * @param string? - inviteDesignId
    * @param string? - confirmDesignId
    * @param string? - declineDesignId
+   * @param number? - virbelaTeamId
+   * @param string? - virbelaRole
    * @return Promise|Observable|any
    */
   UpdateStackFromSettings(
@@ -469,6 +489,8 @@ export class Stack {
     inviteDesignId: string = null,
     confirmDesignId: string = null,
     declineDesignId: string = null,
+    virbelaTeamId: number = null,
+    virbelaRole: string = null,
   ): any {
     return this.restClient.post('Stack/UseCase/UpdateStackFromSettings', {
       stackId,
@@ -486,6 +508,8 @@ export class Stack {
       inviteDesignId,
       confirmDesignId,
       declineDesignId,
+      virbelaTeamId,
+      virbelaRole,
     });
   }
 }

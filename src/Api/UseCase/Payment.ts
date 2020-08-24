@@ -33,7 +33,7 @@ export class Payment {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData
+   * @param string[]? - withData Refund|Purchase
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
    * @param string? - query

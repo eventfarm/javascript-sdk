@@ -82,6 +82,7 @@ export interface EventMessageTypeInterface {
   isOpening: boolean;
   isClosing: boolean;
   isConfirmation: boolean;
+  isWaitListConfirmation: boolean;
   isDeclination: boolean;
   isSoldOut: boolean;
   isReveal: boolean;
@@ -1319,6 +1320,7 @@ export class Event {
         isOpening: false,
         isClosing: false,
         isConfirmation: false,
+        isWaitListConfirmation: false,
         isDeclination: false,
         isSoldOut: false,
         isReveal: false,
@@ -1337,6 +1339,7 @@ export class Event {
         isOpening: true,
         isClosing: false,
         isConfirmation: false,
+        isWaitListConfirmation: false,
         isDeclination: false,
         isSoldOut: false,
         isReveal: false,
@@ -1356,6 +1359,7 @@ export class Event {
         isOpening: false,
         isClosing: true,
         isConfirmation: false,
+        isWaitListConfirmation: false,
         isDeclination: false,
         isSoldOut: false,
         isReveal: false,
@@ -1374,6 +1378,27 @@ export class Event {
         isOpening: false,
         isClosing: false,
         isConfirmation: true,
+        isWaitListConfirmation: false,
+        isDeclination: false,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+        isWaitListSMS: false,
+        defaultValue:
+          'You&#039;re all set. We look forward to seeing you soon!',
+        value: null,
+      },
+      {
+        slug: 'wait_list_confirmation',
+        name: 'Waitlist Confirmation',
+        description:
+          'Displayed as a part of the waitlist confirmation screen after a user has been added to the waitlist, by way of either the registration or RSVP process.',
+        isIntroduction: false,
+        isOpening: false,
+        isClosing: false,
+        isConfirmation: false,
+        isWaitListConfirmation: true,
         isDeclination: false,
         isSoldOut: false,
         isReveal: false,
@@ -1393,6 +1418,7 @@ export class Event {
         isOpening: false,
         isClosing: false,
         isConfirmation: false,
+        isWaitListConfirmation: false,
         isDeclination: true,
         isSoldOut: false,
         isReveal: false,
@@ -1412,6 +1438,7 @@ export class Event {
         isOpening: false,
         isClosing: false,
         isConfirmation: false,
+        isWaitListConfirmation: false,
         isDeclination: false,
         isSoldOut: true,
         isReveal: false,
@@ -1426,11 +1453,12 @@ export class Event {
         slug: 'reveal',
         name: 'Reveal',
         description:
-          'If Invitation Reveal is enabled, the “Reveal Message“ will display when a guest begins the registration process.',
+          'If Invitation Reveal is toggled ON, then this message will display when a guest searches for their invitation.',
         isIntroduction: false,
         isOpening: false,
         isClosing: false,
         isConfirmation: false,
+        isWaitListConfirmation: false,
         isDeclination: false,
         isSoldOut: false,
         isReveal: true,
@@ -1449,6 +1477,7 @@ export class Event {
         isOpening: false,
         isClosing: false,
         isConfirmation: false,
+        isWaitListConfirmation: false,
         isDeclination: false,
         isSoldOut: false,
         isReveal: false,
@@ -1462,11 +1491,12 @@ export class Event {
         slug: 'response_restriction',
         name: 'Response Restriction',
         description:
-          'If the Event Setting “Guest can change response” is “NO”, this message will display for any registered guest who clicks the invitation link again.',
+          'If Editable RSVP Responses is toggled OFF, then this message will display for any registered guest who clicks the invitation link again.',
         isIntroduction: false,
         isOpening: false,
         isClosing: false,
         isConfirmation: false,
+        isWaitListConfirmation: false,
         isDeclination: false,
         isSoldOut: false,
         isReveal: false,
@@ -1485,6 +1515,7 @@ export class Event {
         isOpening: false,
         isClosing: false,
         isConfirmation: false,
+        isWaitListConfirmation: false,
         isDeclination: false,
         isSoldOut: false,
         isReveal: false,
@@ -1492,7 +1523,7 @@ export class Event {
         isResponseRestriction: false,
         isWaitListSMS: true,
         defaultValue:
-          'You’re off the waitlist! Your are confirmed for [event_name]',
+          'You’re off the waitlist! You are confirmed for [event_name]',
         value: null,
       },
     ];

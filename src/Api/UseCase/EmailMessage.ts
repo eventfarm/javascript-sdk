@@ -272,6 +272,16 @@ export class EmailMessage {
   }
 
   /**
+   * @param string - paymentId
+   * @return Promise|Observable|any
+   */
+  ResendReceipt(paymentId: string): any {
+    return this.restClient.post('EmailMessage/UseCase/ResendReceipt', {
+      paymentId,
+    });
+  }
+
+  /**
    * @param string - eventId
    * @param string - ownerUserId
    * @param string - messageContents

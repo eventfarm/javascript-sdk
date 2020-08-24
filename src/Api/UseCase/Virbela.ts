@@ -31,5 +31,26 @@ export class Virbela {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param string? - worldName
+   * @param string? - worldId
+   * @return Promise|Observable|any
+   */
+  ListVirbelaWorldsForEventFarm(
+    poolId: string,
+    worldName: string = null,
+    worldId: string = null,
+  ): any {
+    return this.restClient.get(
+      'Virbela/UseCase/ListVirbelaWorldsForEventFarm',
+      {
+        poolId,
+        worldName,
+        worldId,
+      },
+    );
+  }
+
   // Commands
 }

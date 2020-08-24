@@ -27,29 +27,35 @@ export class VirbelaPoolSetting {
   /**
    * @param string - poolId
    * @param string - worldId
-   * @param string - worldStringId
+   * @param string - worldName
    * @param string - displayName
    * @param string - titleMapping
-   * @param number - teamId 1-51
+   * @param number - teamId 0-51
+   * @param string - macDownloadURL
+   * @param string - windowsDownloadURL
    * @return Promise|Observable|any
    */
   CreateVirbelaPoolSetting(
     poolId: string,
     worldId: string,
-    worldStringId: string,
+    worldName: string,
     displayName: string,
     titleMapping: string,
     teamId: number,
+    macDownloadURL: string,
+    windowsDownloadURL: string,
   ): any {
     return this.restClient.post(
       'VirbelaPoolSetting/UseCase/CreateVirbelaPoolSetting',
       {
         poolId,
         worldId,
-        worldStringId,
+        worldName,
         displayName,
         titleMapping,
         teamId,
+        macDownloadURL,
+        windowsDownloadURL,
       },
     );
   }
@@ -70,29 +76,35 @@ export class VirbelaPoolSetting {
   /**
    * @param string - virbelaPoolSettingId
    * @param string - worldId
-   * @param string - worldStringId
-   * @param string? - displayName
-   * @param string? - titleMapping
-   * @param number? - teamId 1-51
+   * @param string - worldName
+   * @param string - displayName
+   * @param string - titleMapping
+   * @param number - teamId 0-51
+   * @param string - macDownloadURL
+   * @param string - windowsDownloadURL
    * @return Promise|Observable|any
    */
   UpdateVirbelaPoolSetting(
     virbelaPoolSettingId: string,
     worldId: string,
-    worldStringId: string,
-    displayName: string = null,
-    titleMapping: string = null,
-    teamId: number = null,
+    worldName: string,
+    displayName: string,
+    titleMapping: string,
+    teamId: number,
+    macDownloadURL: string,
+    windowsDownloadURL: string,
   ): any {
     return this.restClient.post(
       'VirbelaPoolSetting/UseCase/UpdateVirbelaPoolSetting',
       {
         virbelaPoolSettingId,
         worldId,
-        worldStringId,
+        worldName,
         displayName,
         titleMapping,
         teamId,
+        macDownloadURL,
+        windowsDownloadURL,
       },
     );
   }
