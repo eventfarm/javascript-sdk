@@ -1,14 +1,10 @@
 {
   "name": "@eventfarm/javascript-sdk",
   "description": "Official Event Farm Javascript SDK",
-  "version": "3.1.5",
+  "version": "2.0.5",
   "main": "./dist",
   "types": "./dist",
   "authors": [
-    {
-      "name": "Todd Cornett",
-      "email": "tcornett@gmail.com"
-    },
     {
       "name": "Jason Raimondi",
       "email": "jason@raimondi.us"
@@ -24,13 +20,11 @@
   ],
   "license": "MIT",
   "scripts": {
-    "package-next": "run-s clean build push-next",
-    "package": "run-s clean build",
+    "package": "run-s clean build push",
     "build": "tsc",
     "pretty": "prettier --single-quote --trailing-comma all --write 'src/**/*.ts'",
     "clean": "rm -rf dist/*",
-    "push": "npm publish --access public",
-    "push-next": "npm publish --access public --tag next"
+    "push": "npm publish --access public"
   },
   "dependencies": {
     "axios": "^0.18.0",

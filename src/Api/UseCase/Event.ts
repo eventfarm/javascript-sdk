@@ -33,7 +33,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme
+   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme|VirbelaWorld
    * @return Promise|Observable|any
    */
   GetEvent(eventId: string, withData: string[] = null): any {
@@ -219,7 +219,7 @@ export class Event {
    * @param string? - query
    * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled
    * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled
-   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl
+   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl|VirbelaWorld
    * @param number? - lastModifiedTimestamp
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-500
@@ -1242,6 +1242,30 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @param string? - locationName
+   * @param string? - locationAddress
+   * @param string? - locationType live|virbela|virtual
+   * @param string? - locationDetails
+   * @return Promise|Observable|any
+   */
+  SetLocationForEvent(
+    eventId: string,
+    locationName: string = null,
+    locationAddress: string = null,
+    locationType: string = null,
+    locationDetails: string = null,
+  ): any {
+    return this.restClient.post('Event/UseCase/SetLocationForEvent', {
+      eventId,
+      locationName,
+      locationAddress,
+      locationType,
+      locationDetails,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param string - mapSource google|yahoo|bing
    * @return Promise|Observable|any
    */
@@ -1372,24 +1396,6 @@ export class Event {
     return this.restClient.post('Event/UseCase/SetTwitterHandleForEvent', {
       eventId,
       twitterHandle,
-    });
-  }
-
-  /**
-   * @param string - eventId
-   * @param string - venueName
-   * @param string - venueAddress
-   * @return Promise|Observable|any
-   */
-  SetVenueForEvent(
-    eventId: string,
-    venueName: string,
-    venueAddress: string,
-  ): any {
-    return this.restClient.post('Event/UseCase/SetVenueForEvent', {
-      eventId,
-      venueName,
-      venueAddress,
     });
   }
 
