@@ -51,7 +51,6 @@ export interface EventMessageSlugTypeInterface {
   isEventEmail: boolean;
   isEventLocationName: boolean;
   isEventLocationAddress: boolean;
-  isEventLocationDetails: boolean;
   isEventDescription: boolean;
   isEventFacebook: boolean;
   isEventTwitter: boolean;
@@ -104,14 +103,6 @@ export interface EventTypeInterface {
   isRnc: boolean;
   isRslc: boolean;
   isSundance: boolean;
-}
-export interface LocationTypeInterface {
-  slug: string;
-  name: string;
-  description?: string;
-  isLive: boolean;
-  isVirbela: boolean;
-  isVirtual: boolean;
 }
 export interface MapSourceTypeInterface {
   slug: string;
@@ -460,7 +451,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -493,7 +483,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -526,7 +515,6 @@ export class Event {
         isEventEmail: true,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -559,7 +547,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: true,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -592,40 +579,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: true,
-        isEventLocationDetails: false,
-        isEventDescription: false,
-        isEventFacebook: false,
-        isEventTwitter: false,
-        isEventInstagram: false,
-        isEventStartDateTime: false,
-        isEventStartDate: false,
-        isEventStartTime: false,
-        isEventStartDateTimeShort: false,
-        isEventStartDateShort: false,
-        isEventStartTimeShort: false,
-        isEventStartDateTimeLong: false,
-        isEventStartDateLong: false,
-        isEventStartTimeLong: false,
-        isEventEndDateTime: false,
-        isEventEndDate: false,
-        isEventEndTime: false,
-        isEventEndDateTimeShort: false,
-        isEventEndDateShort: false,
-        isEventEndTimeShort: false,
-        isEventEndDateTimeLong: false,
-        isEventEndDateLong: false,
-        isEventEndTimeLong: false,
-      },
-      {
-        slug: '{{eventLocationDetails}}',
-        name: 'Event Location Details',
-        description: null,
-        isEventPublicURL: false,
-        isEventName: false,
-        isEventEmail: false,
-        isEventLocationName: false,
-        isEventLocationAddress: false,
-        isEventLocationDetails: true,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -658,7 +611,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: true,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -691,7 +643,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: true,
         isEventTwitter: false,
@@ -724,7 +675,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: true,
@@ -757,7 +707,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -790,7 +739,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -823,7 +771,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -856,7 +803,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -889,7 +835,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -922,7 +867,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -955,7 +899,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -988,7 +931,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -1021,7 +963,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -1054,7 +995,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -1087,7 +1027,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -1120,7 +1059,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -1153,7 +1091,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -1186,7 +1123,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -1219,7 +1155,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -1252,7 +1187,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -1285,7 +1219,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -1318,7 +1251,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -1351,7 +1283,6 @@ export class Event {
         isEventEmail: false,
         isEventLocationName: false,
         isEventLocationAddress: false,
-        isEventLocationDetails: false,
         isEventDescription: false,
         isEventFacebook: false,
         isEventTwitter: false,
@@ -1455,7 +1386,7 @@ export class Event {
         isResponseRestriction: false,
         isWaitListSMS: false,
         defaultValue:
-          '&lt;h1&gt;See you there&lt;/h1&gt;&lt;p&gt;{{guestFirst}} {{guestLast}} you are on the list!&lt;/p&gt;&lt;p&gt;You&#039;re all set. We look forward to seeing you soon!&lt;/p&gt;',
+          'You&#039;re all set. We look forward to seeing you soon!',
         value: null,
       },
       {
@@ -1475,7 +1406,7 @@ export class Event {
         isResponseRestriction: false,
         isWaitListSMS: false,
         defaultValue:
-          '&lt;h1&gt;Waitlisted&lt;/h1&gt;&lt;p&gt;{{guestFirst}} {{guestLast}} you will be notified if space opens up!&lt;/p&gt;',
+          'You&#039;re all set. We look forward to seeing you soon!',
         value: null,
       },
       {
@@ -1683,35 +1614,6 @@ export class Event {
         isRnc: false,
         isRslc: false,
         isSundance: true,
-      },
-    ];
-  }
-
-  LocationType(): LocationTypeInterface[] {
-    return [
-      {
-        slug: 'live',
-        name: 'live',
-        description: null,
-        isLive: true,
-        isVirbela: false,
-        isVirtual: false,
-      },
-      {
-        slug: 'virbela',
-        name: 'virbela',
-        description: null,
-        isLive: false,
-        isVirbela: true,
-        isVirtual: false,
-      },
-      {
-        slug: 'virtual',
-        name: 'virtual',
-        description: null,
-        isLive: false,
-        isVirbela: false,
-        isVirtual: true,
       },
     ];
   }
