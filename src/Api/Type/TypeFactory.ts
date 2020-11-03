@@ -19,6 +19,7 @@ import { Salutation } from './Salutation';
 import { SitePage } from './SitePage';
 import { Stack } from './Stack';
 import { User } from './User';
+import { Virbela } from './Virbela';
 
 export class TypeFactory {
   AppVersion(): AppVersion {
@@ -103,5 +104,9 @@ export class TypeFactory {
 
   User(): User {
     return new User();
+  }
+
+  Virbela(): Virbela {
+    return new Virbela();
   }
 }

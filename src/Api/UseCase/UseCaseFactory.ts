@@ -30,6 +30,7 @@ import { Pool } from './Pool';
 import { PoolContact } from './PoolContact';
 import { PoolContract } from './PoolContract';
 import { PoolFeature } from './PoolFeature';
+import { PoolWorld } from './PoolWorld';
 import { Promotion } from './Promotion';
 import { Question } from './Question';
 import { Queue } from './Queue';
@@ -53,7 +54,7 @@ import { UserIdentifier } from './UserIdentifier';
 import { UserName } from './UserName';
 import { UserUnsubscribe } from './UserUnsubscribe';
 import { Virbela } from './Virbela';
-import { VirbelaPoolSetting } from './VirbelaPoolSetting';
+import { VirbelaWorld } from './VirbelaWorld';
 import { Withdrawal } from './Withdrawal';
 
 export class UseCaseFactory {
@@ -179,6 +180,10 @@ export class UseCaseFactory {
     return new PoolFeature(this.restClient);
   }
 
+  PoolWorld(): PoolWorld {
+    return new PoolWorld(this.restClient);
+  }
+
   Promotion(): Promotion {
     return new Promotion(this.restClient);
   }
@@ -271,8 +276,8 @@ export class UseCaseFactory {
     return new Virbela(this.restClient);
   }
 
-  VirbelaPoolSetting(): VirbelaPoolSetting {
-    return new VirbelaPoolSetting(this.restClient);
+  VirbelaWorld(): VirbelaWorld {
+    return new VirbelaWorld(this.restClient);
   }
 
   Withdrawal(): Withdrawal {
