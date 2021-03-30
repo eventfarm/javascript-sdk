@@ -1066,7 +1066,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - messageType additional|opening|closing|confirmation|wait_list_confirmation|declination|soldout|reveal|disclaimer|response_restriction|wait_list_sms
+   * @param string - messageType additional_invitation|confirmation_invitation|declination|wait_list_confirmation_invitation|additional|confirmation|wait_list_confirmation|soldout|opening|closing|disclaimer|response_restriction|reveal|wait_list_sms
    * @return Promise|Observable|any
    */
   RemoveMessageForEvent(eventId: string, messageType: string): any {
@@ -1111,6 +1111,19 @@ export class Event {
       eventId,
       trackingScriptType,
     });
+  }
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  RemoveWebConferenceAttributesFromEvent(eventId: string): any {
+    return this.restClient.post(
+      'Event/UseCase/RemoveWebConferenceAttributesFromEvent',
+      {
+        eventId,
+      },
+    );
   }
 
   /**
@@ -1244,7 +1257,7 @@ export class Event {
    * @param string - eventId
    * @param string? - locationName
    * @param string? - locationAddress
-   * @param string? - locationType live|virbela|virtual
+   * @param string? - locationType in-person|virbela|virtual
    * @param string? - locationDetails
    * @return Promise|Observable|any
    */
@@ -1293,7 +1306,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - messageType additional|opening|closing|confirmation|wait_list_confirmation|declination|soldout|reveal|disclaimer|response_restriction|wait_list_sms
+   * @param string - messageType additional_invitation|confirmation_invitation|declination|wait_list_confirmation_invitation|additional|confirmation|wait_list_confirmation|soldout|opening|closing|disclaimer|response_restriction|reveal|wait_list_sms
    * @param string - message
    * @return Promise|Observable|any
    */
@@ -1401,6 +1414,30 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @param string? - locationName
+   * @param string? - locationAddress
+   * @param string? - locationType in-person|virbela|virtual
+   * @param string? - locationDetails
+   * @return Promise|Observable|any
+   */
+  SetVenueForEvent(
+    eventId: string,
+    locationName: string = null,
+    locationAddress: string = null,
+    locationType: string = null,
+    locationDetails: string = null,
+  ): any {
+    return this.restClient.post('Event/UseCase/SetVenueForEvent', {
+      eventId,
+      locationName,
+      locationAddress,
+      locationType,
+      locationDetails,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param string - sitePageId
    * @return Promise|Observable|any
    */
@@ -1409,6 +1446,33 @@ export class Event {
       eventId,
       sitePageId,
     });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - sourceType zoom|none
+   * @param string - authUserId
+   * @param string - webConferenceId
+   * @param string - format webinar|meeting|none
+   * @return Promise|Observable|any
+   */
+  SetWebConferenceAttributesForEvent(
+    eventId: string,
+    sourceType: string,
+    authUserId: string,
+    webConferenceId: string,
+    format: string,
+  ): any {
+    return this.restClient.post(
+      'Event/UseCase/SetWebConferenceAttributesForEvent',
+      {
+        eventId,
+        sourceType,
+        authUserId,
+        webConferenceId,
+        format,
+      },
+    );
   }
 
   /**

@@ -606,6 +606,19 @@ export class Invitation {
   }
 
   /**
+   * @param string - registrantId
+   * @return Promise|Observable|any
+   */
+  CheckInWebConferenceRegistrant(registrantId: string): any {
+    return this.restClient.post(
+      'Invitation/UseCase/CheckInWebConferenceRegistrant',
+      {
+        registrantId,
+      },
+    );
+  }
+
+  /**
    * @param string - eventId
    * @param string - stackId
    * @param string - invitationStatus assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted

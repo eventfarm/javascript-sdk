@@ -55,6 +55,7 @@ import { UserName } from './UserName';
 import { UserUnsubscribe } from './UserUnsubscribe';
 import { Virbela } from './Virbela';
 import { VirbelaWorld } from './VirbelaWorld';
+import { WebConference } from './WebConference';
 import { Withdrawal } from './Withdrawal';
 
 export class UseCaseFactory {
@@ -278,6 +279,10 @@ export class UseCaseFactory {
 
   VirbelaWorld(): VirbelaWorld {
     return new VirbelaWorld(this.restClient);
+  }
+
+  WebConference(): WebConference {
+    return new WebConference(this.restClient);
   }
 
   Withdrawal(): Withdrawal {

@@ -194,6 +194,18 @@ export class Pool {
   }
 
   /**
+   * @param string - userId
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
+  RemoveAllUserRolesFromPool(userId: string, poolId: string): any {
+    return this.restClient.post('Pool/UseCase/RemoveAllUserRolesFromPool', {
+      userId,
+      poolId,
+    });
+  }
+
+  /**
    * @param string - poolId
    * @return Promise|Observable|any
    */

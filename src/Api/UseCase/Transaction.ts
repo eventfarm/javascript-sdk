@@ -49,6 +49,8 @@ export class Transaction {
    * @param string? - transactionId
    * @param any[]? - invitations
    * @param any[]? - payment
+   * @param any[]? - requestedPromotionIds
+   * @param string? - primaryInvitationId
    * @return Promise|Observable|any
    */
   CreateTransaction(
@@ -56,12 +58,16 @@ export class Transaction {
     transactionId: string = null,
     invitations: any[] = null,
     payment: any[] = null,
+    requestedPromotionIds: any[] = null,
+    primaryInvitationId: string = null,
   ): any {
     return this.restClient.post('Transaction/UseCase/CreateTransaction', {
       poolId,
       transactionId,
       invitations,
       payment,
+      requestedPromotionIds,
+      primaryInvitationId,
     });
   }
 }

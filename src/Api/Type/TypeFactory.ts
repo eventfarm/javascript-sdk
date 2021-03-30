@@ -20,6 +20,7 @@ import { SitePage } from './SitePage';
 import { Stack } from './Stack';
 import { User } from './User';
 import { Virbela } from './Virbela';
+import { WebConference } from './WebConference';
 
 export class TypeFactory {
   AppVersion(): AppVersion {
@@ -108,5 +109,9 @@ export class TypeFactory {
 
   Virbela(): Virbela {
     return new Virbela();
+  }
+
+  WebConference(): WebConference {
+    return new WebConference();
   }
 }

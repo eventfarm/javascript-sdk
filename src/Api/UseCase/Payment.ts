@@ -39,6 +39,7 @@ export class Payment {
    * @param string? - query
    * @param string? - sortBy
    * @param string? - sortDirection
+   * @param any[]? - typeFilter transaction|ticket
    * @return Promise|Observable|any
    */
   ListPaymentsForEvent(
@@ -49,6 +50,7 @@ export class Payment {
     query: string = null,
     sortBy: string = null,
     sortDirection: string = null,
+    typeFilter: any[] = null,
   ): any {
     return this.restClient.get('Payment/UseCase/ListPaymentsForEvent', {
       eventId,
@@ -58,6 +60,7 @@ export class Payment {
       query,
       sortBy,
       sortDirection,
+      typeFilter,
     });
   }
 

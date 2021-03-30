@@ -19,6 +19,7 @@ export interface ProviderTypeInterface {
   isMarketo: boolean;
   isLinkedIn: boolean;
   isSalesforce: boolean;
+  isZoom: boolean;
 }
 export interface RoleTypeInterface {
   slug: string;
@@ -177,6 +178,7 @@ export class User {
         isMarketo: false,
         isLinkedIn: false,
         isSalesforce: false,
+        isZoom: false,
       },
       {
         slug: 'marketo',
@@ -186,6 +188,7 @@ export class User {
         isMarketo: true,
         isLinkedIn: false,
         isSalesforce: false,
+        isZoom: false,
       },
       {
         slug: 'linked_in',
@@ -195,6 +198,7 @@ export class User {
         isMarketo: false,
         isLinkedIn: true,
         isSalesforce: false,
+        isZoom: false,
       },
       {
         slug: 'salesforce',
@@ -204,6 +208,17 @@ export class User {
         isMarketo: false,
         isLinkedIn: false,
         isSalesforce: true,
+        isZoom: false,
+      },
+      {
+        slug: 'zoom',
+        name: 'Zoom',
+        description: null,
+        isGoogle: false,
+        isMarketo: false,
+        isLinkedIn: false,
+        isSalesforce: false,
+        isZoom: true,
       },
     ];
   }

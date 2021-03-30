@@ -36,6 +36,24 @@ export class Promotion {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param string - promoCode
+   * @param string[]? - withData PromotionStack
+   * @return Promise|Observable|any
+   */
+  ValidatePromotion(
+    eventId: string,
+    promoCode: string,
+    withData: string[] = null,
+  ): any {
+    return this.restClient.get('Promotion/UseCase/ValidatePromotion', {
+      eventId,
+      promoCode,
+      withData,
+    });
+  }
+
   // Commands
 
   /**

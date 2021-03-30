@@ -32,6 +32,14 @@ export interface CIOMarketingIndustryTypeInterface {
   isTechnology: boolean;
   isOther: boolean;
 }
+export interface CalendarTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isICal: boolean;
+  isGoogle: boolean;
+  isYahoo: boolean;
+}
 export interface EventDateFilterTypeInterface {
   slug: string;
   name: string;
@@ -79,12 +87,15 @@ export interface EventMessageTypeInterface {
   slug: string;
   name: string;
   description?: string;
-  isIntroduction: boolean;
+  isIntroductionRegistration: boolean;
+  isConfirmationRegistration: boolean;
+  isWaitListConfirmationRegistration: boolean;
+  isIntroductionInvitation: boolean;
+  isConfirmationInvitation: boolean;
+  isDeclinationInvitation: boolean;
+  isWaitListConfirmationInvitation: boolean;
   isOpening: boolean;
   isClosing: boolean;
-  isConfirmation: boolean;
-  isWaitListConfirmation: boolean;
-  isDeclination: boolean;
   isSoldOut: boolean;
   isReveal: boolean;
   isDisclaimer: boolean;
@@ -109,7 +120,7 @@ export interface LocationTypeInterface {
   slug: string;
   name: string;
   description?: string;
-  isLive: boolean;
+  isInPerson: boolean;
   isVirbela: boolean;
   isVirtual: boolean;
 }
@@ -389,6 +400,35 @@ export class Event {
         isSportsAndEntertainment: false,
         isTechnology: false,
         isOther: true,
+      },
+    ];
+  }
+
+  CalendarType(): CalendarTypeInterface[] {
+    return [
+      {
+        slug: 'ical',
+        name: 'iCal',
+        description: null,
+        isICal: true,
+        isGoogle: false,
+        isYahoo: false,
+      },
+      {
+        slug: 'google',
+        name: 'Google',
+        description: null,
+        isICal: false,
+        isGoogle: true,
+        isYahoo: false,
+      },
+      {
+        slug: 'yahoo',
+        name: 'Yahoo',
+        description: null,
+        isICal: false,
+        isGoogle: false,
+        isYahoo: true,
       },
     ];
   }
@@ -1381,55 +1421,111 @@ export class Event {
   EventMessageType(): EventMessageTypeInterface[] {
     return [
       {
-        slug: 'additional',
-        name: 'Registration Introduction',
+        slug: 'additional_invitation',
+        name: 'Invitation Introduction',
         description:
-          'Displayed to guests at the beginning of the purchase/registration/RSVP process.',
-        isIntroduction: true,
+          'Displayed to guests at the beginning of the RSVP process.',
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: true,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: false,
         isOpening: false,
         isClosing: false,
-        isConfirmation: false,
-        isWaitListConfirmation: false,
-        isDeclination: false,
-        isSoldOut: false,
-        isReveal: false,
-        isDisclaimer: false,
-        isResponseRestriction: false,
-        isWaitListSMS: false,
-        defaultValue: null,
-        value: null,
-      },
-      {
-        slug: 'opening',
-        name: 'Prior To Opening',
-        description:
-          'Displayed as a placeholder for the registration or purchase form before the event goes live and tickets become available.',
-        isIntroduction: false,
-        isOpening: true,
-        isClosing: false,
-        isConfirmation: false,
-        isWaitListConfirmation: false,
-        isDeclination: false,
         isSoldOut: false,
         isReveal: false,
         isDisclaimer: false,
         isResponseRestriction: false,
         isWaitListSMS: false,
         defaultValue:
-          'Tickets for {{eventName}} are not yet available—please check back in the near future!',
+          '&lt;p style=&quot;text-align: center; font-size: 48px; font-family: Helvetica, sans-serif; color: inherit; line-height:1; margin-bottom: 12px&quot;&gt;RSVP&lt;/p&gt;&lt;p style=&quot;text-align: center; font-size: 16px; font-family: Helvetica, sans-serif; color: inherit; line-height:1;&quot;&gt;for&lt;/p&gt;&lt;p style=&quot;text-align: center; font-size: 24px; font-family: Helvetica, sans-serif; color: inherit; line-height:2;&quot;&gt;{{guestFirst}} {{guestLast}}&lt;/p&gt;',
         value: null,
       },
       {
-        slug: 'closing',
-        name: 'After Closing',
+        slug: 'confirmation_invitation',
+        name: 'Invitation Confirmation',
         description:
-          'Displayed as a placeholder for the registration or purchase form once registration has closed for an event.',
-        isIntroduction: false,
+          'Displayed on the confirmation screen after a successful RSVP.',
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: true,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: false,
         isOpening: false,
-        isClosing: true,
-        isConfirmation: false,
-        isWaitListConfirmation: false,
-        isDeclination: false,
+        isClosing: false,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+        isWaitListSMS: false,
+        defaultValue:
+          '&lt;p style=&quot;text-align: center; font-size: 30px; font-family: Helvetica, sans-serif; color: inherit; line-height:1; padding-bottom:24px;&quot;&gt;{{guestFirst}}, you&amp;#39;re on the list!&lt;/p&gt;&lt;p style=&quot;text-align: center; font-size: 16px; font-family: Helvetica, sans-serif; color: inherit;&quot;&gt;We look forward to having you join us {{eventStartDateLong}}.&lt;/p&gt;',
+        value: null,
+      },
+      {
+        slug: 'declination',
+        name: 'Invitation Declination',
+        description:
+          'Displayed on the confirmation screen after a guest declines their RSVP.',
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: true,
+        isWaitListConfirmationInvitation: false,
+        isOpening: false,
+        isClosing: false,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+        isWaitListSMS: false,
+        defaultValue:
+          '&lt;p style=&quot;text-align: center; font-size: 30px; font-family: Helvetica, sans-serif; color: inherit; line-height:1; padding-bottom:24px;&quot;&gt;{{guestFirst}}, thanks for letting us know.&lt;/p&gt;&lt;p style=&quot;text-align: center; font-size: 16px; font-family: Helvetica, sans-serif; color: inherit;&quot;&gt;We hope to see you at our next event!&lt;/p&gt;',
+        value: null,
+      },
+      {
+        slug: 'wait_list_confirmation_invitation',
+        name: 'Invitation Waitlisted',
+        description:
+          'Displayed as a part of the waitlist confirmation screen after a user has been added to the waitlist, by way of either the registration or RSVP process.',
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: true,
+        isOpening: false,
+        isClosing: false,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+        isWaitListSMS: false,
+        defaultValue:
+          '&lt;p style=&quot;text-align: center; font-size: 30px; font-family: Helvetica, sans-serif; color: inherit; line-height:1; padding-bottom:24px;&quot;&gt;{{guestFirst}}, you&amp;#39;re on the waitlist!&lt;/p&gt;&lt;p style=&quot;text-align: center; font-size: 16px; font-family: Helvetica, sans-serif; color: inherit;&quot;&gt;We will notify you soon if spots become available.&lt;/p&gt;',
+        value: null,
+      },
+      {
+        slug: 'additional',
+        name: 'Registration Introduction',
+        description:
+          'Displayed to guests at the beginning of the purchase or registration process.',
+        isIntroductionRegistration: true,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: false,
+        isOpening: false,
+        isClosing: false,
         isSoldOut: false,
         isReveal: false,
         isDisclaimer: false,
@@ -1440,15 +1536,18 @@ export class Event {
       },
       {
         slug: 'confirmation',
-        name: 'Confirmation',
+        name: 'Registration Confirmation',
         description:
-          'Displayed on the confirmation screen after a successful purchase, registration or RSVP.',
-        isIntroduction: false,
+          'Displayed on the confirmation screen after a successful purchase or registration.',
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: true,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: false,
         isOpening: false,
         isClosing: false,
-        isConfirmation: true,
-        isWaitListConfirmation: false,
-        isDeclination: false,
         isSoldOut: false,
         isReveal: false,
         isDisclaimer: false,
@@ -1460,15 +1559,18 @@ export class Event {
       },
       {
         slug: 'wait_list_confirmation',
-        name: 'Waitlist Confirmation',
+        name: 'Registration Waitlisted',
         description:
           'Displayed as a part of the waitlist confirmation screen after a user has been added to the waitlist, by way of either the registration or RSVP process.',
-        isIntroduction: false,
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: true,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: false,
         isOpening: false,
         isClosing: false,
-        isConfirmation: false,
-        isWaitListConfirmation: true,
-        isDeclination: false,
         isSoldOut: false,
         isReveal: false,
         isDisclaimer: false,
@@ -1479,62 +1581,72 @@ export class Event {
         value: null,
       },
       {
-        slug: 'declination',
-        name: 'Declination',
-        description:
-          'Displayed on the confirmation screen after a guest declines their RSVP.',
-        isIntroduction: false,
-        isOpening: false,
-        isClosing: false,
-        isConfirmation: false,
-        isWaitListConfirmation: false,
-        isDeclination: true,
-        isSoldOut: false,
-        isReveal: false,
-        isDisclaimer: false,
-        isResponseRestriction: false,
-        isWaitListSMS: false,
-        defaultValue:
-          'Thanks for your response. We&#039;re sorry we&#039;ll miss you!',
-        value: null,
-      },
-      {
         slug: 'soldout',
-        name: 'Sold-Out',
+        name: 'Registration Sold-Out',
         description:
           'Displayed for any event access type (General Admission, VIP, etc.) that is either sold out or at capacity.',
-        isIntroduction: false,
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: false,
         isOpening: false,
         isClosing: false,
-        isConfirmation: false,
-        isWaitListConfirmation: false,
-        isDeclination: false,
         isSoldOut: true,
         isReveal: false,
         isDisclaimer: false,
         isResponseRestriction: false,
         isWaitListSMS: false,
         defaultValue:
-          'Tickets for {{eventName}} are no longer available through this website. Please check with the event organizers to find out if tickets are available elsewhere.',
+          '&lt;p style=&quot;text-align: center; font-size: 16px; font-family: Helvetica, sans-serif; color: inherit;&quot;&gt;Tickets for {{eventName}} are no longer available through this website. Please check with the event organizers to find out if tickets are available elsewhere.&lt;/p&gt;',
         value: null,
       },
       {
-        slug: 'reveal',
-        name: 'Reveal',
+        slug: 'opening',
+        name: 'Prior To Opening',
         description:
-          'If Invitation Reveal is toggled ON, then this message will display when a guest searches for their invitation.',
-        isIntroduction: false,
-        isOpening: false,
+          'Displayed as a placeholder for the registration or purchase form before the event goes live and tickets become available.',
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: false,
+        isOpening: true,
         isClosing: false,
-        isConfirmation: false,
-        isWaitListConfirmation: false,
-        isDeclination: false,
         isSoldOut: false,
-        isReveal: true,
+        isReveal: false,
         isDisclaimer: false,
         isResponseRestriction: false,
         isWaitListSMS: false,
-        defaultValue: null,
+        defaultValue:
+          '&lt;p style=&quot;text-align: center; font-size: 16px; font-family: Helvetica, sans-serif; color: inherit;&quot;&gt;{{eventName}} is not yet available through this website.  Please check back in the near future for further updates and availability.&lt;/p&gt;',
+        value: null,
+      },
+      {
+        slug: 'closing',
+        name: 'After Closing',
+        description:
+          'Displayed as a placeholder for the registration or purchase form once registration has closed for an event.',
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: false,
+        isOpening: false,
+        isClosing: true,
+        isSoldOut: false,
+        isReveal: false,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+        isWaitListSMS: false,
+        defaultValue:
+          '&lt;p style=&quot;text-align: center; font-size: 16px; font-family: Helvetica, sans-serif; color: inherit;&quot;&gt;Registration for {{eventName}} has closed.&lt;/p&gt;',
         value: null,
       },
       {
@@ -1542,12 +1654,15 @@ export class Event {
         name: 'Disclaimer',
         description:
           'If you have created a Waiver question, this message will display as part of the purchase, registration, and RSVP process. The guest must check the disclaimer box to complete registration.',
-        isIntroduction: false,
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: false,
         isOpening: false,
         isClosing: false,
-        isConfirmation: false,
-        isWaitListConfirmation: false,
-        isDeclination: false,
         isSoldOut: false,
         isReveal: false,
         isDisclaimer: true,
@@ -1561,12 +1676,15 @@ export class Event {
         name: 'Response Restriction',
         description:
           'If Editable RSVP Responses is toggled OFF, then this message will display for any registered guest who clicks the invitation link again.',
-        isIntroduction: false,
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: false,
         isOpening: false,
         isClosing: false,
-        isConfirmation: false,
-        isWaitListConfirmation: false,
-        isDeclination: false,
         isSoldOut: false,
         isReveal: false,
         isDisclaimer: false,
@@ -1576,16 +1694,41 @@ export class Event {
         value: null,
       },
       {
+        slug: 'reveal',
+        name: 'Reveal',
+        description:
+          'If Invitation Reveal is toggled ON, then this message will display when a guest searches for their invitation.',
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: false,
+        isOpening: false,
+        isClosing: false,
+        isSoldOut: false,
+        isReveal: true,
+        isDisclaimer: false,
+        isResponseRestriction: false,
+        isWaitListSMS: false,
+        defaultValue: null,
+        value: null,
+      },
+      {
         slug: 'wait_list_sms',
         name: 'Wait List SMS',
         description:
           'This sms will be sent to the attendee once they are promoted off the event waitlist.',
-        isIntroduction: false,
+        isIntroductionRegistration: false,
+        isConfirmationRegistration: false,
+        isWaitListConfirmationRegistration: false,
+        isIntroductionInvitation: false,
+        isConfirmationInvitation: false,
+        isDeclinationInvitation: false,
+        isWaitListConfirmationInvitation: false,
         isOpening: false,
         isClosing: false,
-        isConfirmation: false,
-        isWaitListConfirmation: false,
-        isDeclination: false,
         isSoldOut: false,
         isReveal: false,
         isDisclaimer: false,
@@ -1690,10 +1833,10 @@ export class Event {
   LocationType(): LocationTypeInterface[] {
     return [
       {
-        slug: 'live',
-        name: 'live',
+        slug: 'in-person',
+        name: 'in-person',
         description: null,
-        isLive: true,
+        isInPerson: true,
         isVirbela: false,
         isVirtual: false,
       },
@@ -1701,7 +1844,7 @@ export class Event {
         slug: 'virbela',
         name: 'virbela',
         description: null,
-        isLive: false,
+        isInPerson: false,
         isVirbela: true,
         isVirtual: false,
       },
@@ -1709,7 +1852,7 @@ export class Event {
         slug: 'virtual',
         name: 'virtual',
         description: null,
-        isLive: false,
+        isInPerson: false,
         isVirbela: false,
         isVirtual: true,
       },

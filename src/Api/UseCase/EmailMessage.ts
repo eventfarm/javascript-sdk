@@ -546,6 +546,111 @@ export class EmailMessage {
   }
 
   /**
+   * @param string - toEmail
+   * @param string - subject
+   * @param string - templateName
+   * @param any[] - templateVariables
+   * @param any[]? - ccEmails
+   * @param any[]? - bccEmails
+   * @return Promise|Observable|any
+   */
+  SendAlertUserEmail(
+    toEmail: string,
+    subject: string,
+    templateName: string,
+    templateVariables: any[],
+    ccEmails: any[] = null,
+    bccEmails: any[] = null,
+  ): any {
+    return this.restClient.post('EmailMessage/UseCase/SendAlertUserEmail', {
+      toEmail,
+      subject,
+      templateName,
+      templateVariables,
+      ccEmails,
+      bccEmails,
+    });
+  }
+
+  /**
+   * @param string - toEmail
+   * @param string - subject
+   * @param string - messageContents
+   * @param string - eventEmail
+   * @param string - layout
+   * @param any[]? - associations
+   * @param any[]? - emailMessageDetails
+   * @param string? - invitationId
+   * @param string? - ownerUserId
+   * @param boolean? - containsEchoLink true|false
+   * @param string? - eventId
+   * @param string? - recipientUserId
+   * @return Promise|Observable|any
+   */
+  SendEmailMessage(
+    toEmail: string,
+    subject: string,
+    messageContents: string,
+    eventEmail: string,
+    layout: string,
+    associations: any[] = null,
+    emailMessageDetails: any[] = null,
+    invitationId: string = null,
+    ownerUserId: string = null,
+    containsEchoLink: boolean = null,
+    eventId: string = null,
+    recipientUserId: string = null,
+  ): any {
+    return this.restClient.post('EmailMessage/UseCase/SendEmailMessage', {
+      toEmail,
+      subject,
+      messageContents,
+      eventEmail,
+      layout,
+      associations,
+      emailMessageDetails,
+      invitationId,
+      ownerUserId,
+      containsEchoLink,
+      eventId,
+      recipientUserId,
+    });
+  }
+
+  /**
+   * @param string - toEmail
+   * @param string - subject
+   * @param string - templateName
+   * @param any[] - templateVariables
+   * @param string - fromEmail
+   * @param string - replyEmail
+   * @param any[]? - ccEmails
+   * @param any[]? - bccEmails
+   * @return Promise|Observable|any
+   */
+  SendGenericEmail(
+    toEmail: string,
+    subject: string,
+    templateName: string,
+    templateVariables: any[],
+    fromEmail: string,
+    replyEmail: string,
+    ccEmails: any[] = null,
+    bccEmails: any[] = null,
+  ): any {
+    return this.restClient.post('EmailMessage/UseCase/SendGenericEmail', {
+      toEmail,
+      subject,
+      templateName,
+      templateVariables,
+      fromEmail,
+      replyEmail,
+      ccEmails,
+      bccEmails,
+    });
+  }
+
+  /**
    * @param string - scheduledBatchEmailMessageId
    * @param string? - userId
    * @return Promise|Observable|any
@@ -561,6 +666,63 @@ export class EmailMessage {
         userId,
       },
     );
+  }
+
+  /**
+   * @param string - toEmail
+   * @param string - subject
+   * @param string - templateName
+   * @param any[] - templateVariables
+   * @param any[]? - ccEmails
+   * @param any[]? - bccEmails
+   * @return Promise|Observable|any
+   */
+  SendSystemEmail(
+    toEmail: string,
+    subject: string,
+    templateName: string,
+    templateVariables: any[],
+    ccEmails: any[] = null,
+    bccEmails: any[] = null,
+  ): any {
+    return this.restClient.post('EmailMessage/UseCase/SendSystemEmail', {
+      toEmail,
+      subject,
+      templateName,
+      templateVariables,
+      ccEmails,
+      bccEmails,
+    });
+  }
+
+  /**
+   * @param string - toEmail
+   * @param string - subject
+   * @param string - templateName
+   * @param any[] - templateVariables
+   * @param any[]? - ccEmails
+   * @param any[]? - bccEmails
+   * @param string? - appName
+   * @return Promise|Observable|any
+   */
+  SendVerifyEmail(
+    toEmail: string,
+    subject: string,
+    templateName: string,
+    templateVariables: any[],
+    ccEmails: any[] = null,
+    bccEmails: any[] = null,
+    appName: string = null,
+  ): any {
+    return this.restClient.post('EmailMessage/UseCase/SendVerifyEmail', {
+      toEmail,
+      subject,
+      templateName,
+      templateVariables,
+      ccEmails,
+      bccEmails,
+      appName,
+    });
   }
 
   /**

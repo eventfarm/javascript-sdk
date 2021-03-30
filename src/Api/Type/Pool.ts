@@ -31,6 +31,7 @@ export interface FeatureTypeInterface {
   isChildEvents: boolean;
   isWaitlist: boolean;
   isVirbela: boolean;
+  isWebConference: boolean;
 }
 export interface PoolAllotmentTypeInterface {
   slug: string;
@@ -100,6 +101,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'apiaccess',
@@ -131,6 +133,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'marketo',
@@ -162,6 +165,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'emailmasking',
@@ -193,6 +197,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'whitelabeling',
@@ -224,6 +229,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'agents',
@@ -255,6 +261,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'visacheckout',
@@ -286,6 +293,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'canvas',
@@ -317,6 +325,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'harvester',
@@ -348,6 +357,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'accesscontrol-efx',
@@ -379,6 +389,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'athletebag-efx',
@@ -410,6 +421,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'concierge-efx',
@@ -441,6 +453,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'digitalmemorybank-efx',
@@ -472,6 +485,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'guestinfo-efx',
@@ -503,6 +517,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'messaging-efx',
@@ -534,6 +549,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'smsquiz-efx',
@@ -565,6 +581,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'productpickup-efx',
@@ -596,6 +613,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'raffle-efx',
@@ -627,6 +645,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'reservation-efx',
@@ -658,6 +677,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'roamingphotog-efx',
@@ -689,6 +709,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'smartbar-efx',
@@ -720,6 +741,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'teams-efx',
@@ -751,6 +773,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'event-app',
@@ -782,6 +805,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'child-events',
@@ -813,6 +837,7 @@ export class Pool {
         isChildEvents: true,
         isWaitlist: false,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'waitlist',
@@ -844,6 +869,7 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: true,
         isVirbela: false,
+        isWebConference: false,
       },
       {
         slug: 'virbela',
@@ -875,6 +901,39 @@ export class Pool {
         isChildEvents: false,
         isWaitlist: false,
         isVirbela: true,
+        isWebConference: false,
+      },
+      {
+        slug: 'web-conference',
+        name: 'Web Conference',
+        description: null,
+        isSalesforce: false,
+        isApiAccess: false,
+        isMarketo: false,
+        isEmailMasking: false,
+        isWhiteLabeling: false,
+        isAgents: false,
+        isVisaCheckout: false,
+        isCanvas: false,
+        isHarvesterPPP: false,
+        isAccessControlEFx: false,
+        isAthleteBagEFx: false,
+        isConciergeEFx: false,
+        isDigitalMemoryBankEFx: false,
+        isGuestInfoEFx: false,
+        isMessagingEFx: false,
+        isSmsQuizEFx: false,
+        isProductPickupEFx: false,
+        isRaffleEFx: false,
+        isReservationEFx: false,
+        isRoamingPhotogEFx: false,
+        isSmartBarEFx: false,
+        isTeamsEFx: false,
+        isEventApp: false,
+        isChildEvents: false,
+        isWaitlist: false,
+        isVirbela: false,
+        isWebConference: true,
       },
     ];
   }
