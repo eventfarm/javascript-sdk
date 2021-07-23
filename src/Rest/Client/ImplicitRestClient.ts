@@ -1,10 +1,9 @@
-import { ClientAccessToken } from './ClientAccessToken';
 import { RestClientInterface, StringField } from '../../Interfaces';
 
 export class ImplicitRestClient implements RestClientInterface {
   constructor(
     private restClient: RestClientInterface,
-    private accessToken: ClientAccessToken,
+    private accessToken: string,
   ) {}
 
   get(requestPath: string, queryParameters: any, headers?: any) {
@@ -33,7 +32,7 @@ export class ImplicitRestClient implements RestClientInterface {
 
   private getAuthorizationHeaders(): StringField {
     const headers = {};
-    headers['Authorization'] = this.accessToken.tokenString;
+    headers['Authorization'] = this.accessToken;
     return headers;
   }
 }

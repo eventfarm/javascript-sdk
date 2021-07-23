@@ -156,6 +156,20 @@ export class Pool {
   // Commands
 
   /**
+   * @param string - name
+   * @param string - shortName
+   * @param string? - poolId
+   * @return Promise|Observable|any
+   */
+  CreatePool(name: string, shortName: string, poolId: string = null): any {
+    return this.restClient.post('Pool/UseCase/CreatePool', {
+      name,
+      shortName,
+      poolId,
+    });
+  }
+
+  /**
    * @param string - poolId
    * @param string - poolContractType cio|intro|trial|pro|premier|premierPlus|custom|internal
    * @param number - startDate
@@ -269,6 +283,18 @@ export class Pool {
 
   /**
    * @param string - poolId
+   * @param string - name
+   * @return Promise|Observable|any
+   */
+  SetNameForPool(poolId: string, name: string): any {
+    return this.restClient.post('Pool/UseCase/SetNameForPool', {
+      poolId,
+      name,
+    });
+  }
+
+  /**
+   * @param string - poolId
    * @param string - privacyPolicyLink
    * @return Promise|Observable|any
    */
@@ -276,6 +302,18 @@ export class Pool {
     return this.restClient.post('Pool/UseCase/SetPrivacyPolicyLinkForPool', {
       poolId,
       privacyPolicyLink,
+    });
+  }
+
+  /**
+   * @param string - poolId
+   * @param string - shortName
+   * @return Promise|Observable|any
+   */
+  SetShortNameForPool(poolId: string, shortName: string): any {
+    return this.restClient.post('Pool/UseCase/SetShortNameForPool', {
+      poolId,
+      shortName,
     });
   }
 

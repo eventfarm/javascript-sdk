@@ -756,6 +756,36 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  DisableShield(eventId: string): any {
+    return this.restClient.post('Event/UseCase/DisableShield', {
+      eventId,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  DisableShowCalendar(eventId: string): any {
+    return this.restClient.post('Event/UseCase/DisableShowCalendar', {
+      eventId,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  DisableSocialMediaBar(eventId: string): any {
+    return this.restClient.post('Event/UseCase/DisableSocialMediaBar', {
+      eventId,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param string - field address|company|phone|title|country|position
    * @return Promise|Observable|any
    */
@@ -952,6 +982,36 @@ export class Event {
   EnableQuestion(questionId: string): any {
     return this.restClient.post('Event/UseCase/EnableQuestion', {
       questionId,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  EnableShield(eventId: string): any {
+    return this.restClient.post('Event/UseCase/EnableShield', {
+      eventId,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  EnableShowCalendar(eventId: string): any {
+    return this.restClient.post('Event/UseCase/EnableShowCalendar', {
+      eventId,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  EnableSocialMediaBar(eventId: string): any {
+    return this.restClient.post('Event/UseCase/EnableSocialMediaBar', {
+      eventId,
     });
   }
 
@@ -1159,6 +1219,30 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @param string - altEmailLayout
+   * @return Promise|Observable|any
+   */
+  SetAltEmailLayoutForEvent(eventId: string, altEmailLayout: string): any {
+    return this.restClient.post('Event/UseCase/SetAltEmailLayoutForEvent', {
+      eventId,
+      altEmailLayout,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - altFormStyleVars
+   * @return Promise|Observable|any
+   */
+  SetAltFormStyleVarsForEvent(eventId: string, altFormStyleVars: string): any {
+    return this.restClient.post('Event/UseCase/SetAltFormStyleVarsForEvent', {
+      eventId,
+      altFormStyleVars,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param string - altKeyword
    * @return Promise|Observable|any
    */
@@ -1167,6 +1251,60 @@ export class Event {
       eventId,
       altKeyword,
     });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - altLayout
+   * @return Promise|Observable|any
+   */
+  SetAltLayoutForEvent(eventId: string, altLayout: string): any {
+    return this.restClient.post('Event/UseCase/SetAltLayoutForEvent', {
+      eventId,
+      altLayout,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - altPayee
+   * @return Promise|Observable|any
+   */
+  SetAltPayeeForEvent(eventId: string, altPayee: string): any {
+    return this.restClient.post('Event/UseCase/SetAltPayeeForEvent', {
+      eventId,
+      altPayee,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - altPaymentFile
+   * @return Promise|Observable|any
+   */
+  SetAltPaymentFileForEvent(eventId: string, altPaymentFile: string): any {
+    return this.restClient.post('Event/UseCase/SetAltPaymentFileForEvent', {
+      eventId,
+      altPaymentFile,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - altPaymentProcessType
+   * @return Promise|Observable|any
+   */
+  SetAltPaymentProcessorForEvent(
+    eventId: string,
+    altPaymentProcessType: string,
+  ): any {
+    return this.restClient.post(
+      'Event/UseCase/SetAltPaymentProcessorForEvent',
+      {
+        eventId,
+        altPaymentProcessType,
+      },
+    );
   }
 
   /**
@@ -1214,6 +1352,18 @@ export class Event {
     return this.restClient.post('Event/UseCase/SetDescriptionForEvent', {
       eventId,
       description,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - eventType eventfarm|cio|listly|dnc|rnc|rslc|sundance
+   * @return Promise|Observable|any
+   */
+  SetEventType(eventId: string, eventType: string): any {
+    return this.restClient.post('Event/UseCase/SetEventType', {
+      eventId,
+      eventType,
     });
   }
 
@@ -1346,6 +1496,54 @@ export class Event {
     return this.restClient.post('Event/UseCase/SetNameForEvent', {
       eventId,
       name,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - processingCurrency aud|brl|gbp|cad|dkk|eur|ils|jpy|mxn|nzd|php|rub|sek|chf|thb|usd
+   * @return Promise|Observable|any
+   */
+  SetProcessingCurrency(eventId: string, processingCurrency: string): any {
+    return this.restClient.post('Event/UseCase/SetProcessingCurrency', {
+      eventId,
+      processingCurrency,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param number - processingFee >= 0
+   * @return Promise|Observable|any
+   */
+  SetProcessingFee(eventId: string, processingFee: number): any {
+    return this.restClient.post('Event/UseCase/SetProcessingFee', {
+      eventId,
+      processingFee,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param number - processingPercentage 0-1
+   * @return Promise|Observable|any
+   */
+  SetProcessingPercentage(eventId: string, processingPercentage: number): any {
+    return this.restClient.post('Event/UseCase/SetProcessingPercentage', {
+      eventId,
+      processingPercentage,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param number - processingRefund >= 0
+   * @return Promise|Observable|any
+   */
+  SetProcessingRefund(eventId: string, processingRefund: number): any {
+    return this.restClient.post('Event/UseCase/SetProcessingRefund', {
+      eventId,
+      processingRefund,
     });
   }
 

@@ -28,4 +28,58 @@ export class PoolContact {
   }
 
   // Commands
+
+  /**
+   * @param string - poolId
+   * @param string - email
+   * @param string - poolContactType full|create
+   * @return Promise|Observable|any
+   */
+  CreatePoolContact(
+    poolId: string,
+    email: string,
+    poolContactType: string,
+  ): any {
+    return this.restClient.post('PoolContact/UseCase/CreatePoolContact', {
+      poolId,
+      email,
+      poolContactType,
+    });
+  }
+
+  /**
+   * @param string - poolId
+   * @param string - poolContactId
+   * @param string - userId
+   * @return Promise|Observable|any
+   */
+  RemovePoolContact(
+    poolId: string,
+    poolContactId: string,
+    userId: string,
+  ): any {
+    return this.restClient.post('PoolContact/UseCase/RemovePoolContact', {
+      poolId,
+      poolContactId,
+      userId,
+    });
+  }
+
+  /**
+   * @param string - poolContactId
+   * @param string - poolContactType full|create
+   * @return Promise|Observable|any
+   */
+  UpdateTypeForPoolContact(
+    poolContactId: string,
+    poolContactType: string,
+  ): any {
+    return this.restClient.post(
+      'PoolContact/UseCase/UpdateTypeForPoolContact',
+      {
+        poolContactId,
+        poolContactType,
+      },
+    );
+  }
 }

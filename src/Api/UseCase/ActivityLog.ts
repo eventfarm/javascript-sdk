@@ -49,7 +49,7 @@ export class ActivityLog {
 
   /**
    * @param string - eventId
-   * @param string - action
+   * @param string - action added|created|added-to-transaction|added-to-web-conference|added-to-world|updated-for-world|changed-role-for-world|changed-team-id-for-world|changed-title-for-world|check-in|interacted|email|removed|responded|updated|transferred
    * @param string - actionValue
    * @param number - actionTime
    * @param string? - invitationId
@@ -82,7 +82,7 @@ export class ActivityLog {
 
   /**
    * @param string - eventId
-   * @param string - action
+   * @param string - action added|created|added-to-transaction|added-to-web-conference|added-to-world|updated-for-world|changed-role-for-world|changed-team-id-for-world|changed-title-for-world|check-in|interacted|email|removed|responded|updated|transferred
    * @param string - actionValue
    * @param number - actionTime
    * @param string - content

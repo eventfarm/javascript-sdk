@@ -10,6 +10,24 @@ export class Invitation {
   // Queries
 
   /**
+   * @param string - eventId
+   * @param string - clearId
+   * @return Promise|Observable|any
+   */
+  CheckIfInvitationExistsForEventFromClearQRCode(
+    eventId: string,
+    clearId: string,
+  ): any {
+    return this.restClient.get(
+      'Invitation/UseCase/CheckIfInvitationExistsForEventFromClearQRCode',
+      {
+        eventId,
+        clearId,
+      },
+    );
+  }
+
+  /**
    * @param string - stackMethodType public-registration|public-purchase|invite-to-register|invite-to-purchase|invite-to-rsvp|invite-to-register-fcfs|invite-to-purchase-fcfs|invite-to-rsvp-fcfs
    * @return Promise|Observable|any
    */
@@ -757,6 +775,33 @@ export class Invitation {
   }
 
   /**
+   * @param string - userId
+   * @param number - guestsPerInvitation >= 1
+   * @param string - stackId
+   * @param string - invitationStatusType assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param boolean? - shouldSendEmail true|false
+   * @param string? - ticketBlockId
+   * @return Promise|Observable|any
+   */
+  CreateInvitationForUser(
+    userId: string,
+    guestsPerInvitation: number,
+    stackId: string,
+    invitationStatusType: string,
+    shouldSendEmail: boolean = null,
+    ticketBlockId: string = null,
+  ): any {
+    return this.restClient.post('Invitation/UseCase/CreateInvitationForUser', {
+      userId,
+      guestsPerInvitation,
+      stackId,
+      invitationStatusType,
+      shouldSendEmail,
+      ticketBlockId,
+    });
+  }
+
+  /**
    * @param string - groupId
    * @param string - stackId
    * @param number - guestsPerInvitation >= 1
@@ -900,6 +945,16 @@ export class Invitation {
   RescindAllInvitations(eventId: string): any {
     return this.restClient.post('Invitation/UseCase/RescindAllInvitations', {
       eventId,
+    });
+  }
+
+  /**
+   * @param string - invitationId
+   * @return Promise|Observable|any
+   */
+  RescindInvitation(invitationId: string): any {
+    return this.restClient.post('Invitation/UseCase/RescindInvitation', {
+      invitationId,
     });
   }
 

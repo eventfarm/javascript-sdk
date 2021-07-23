@@ -66,6 +66,19 @@ export class WebConference {
     );
   }
 
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  VerifyWebConferenceSettingsAndCapacityForEvent(eventId: string): any {
+    return this.restClient.get(
+      'WebConference/UseCase/VerifyWebConferenceSettingsAndCapacityForEvent',
+      {
+        eventId,
+      },
+    );
+  }
+
   // Commands
 
   /**
@@ -100,6 +113,43 @@ export class WebConference {
         code,
         state,
         type,
+      },
+    );
+  }
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  FixWebConferenceSettingsForEvent(eventId: string): any {
+    return this.restClient.post(
+      'WebConference/UseCase/FixWebConferenceSettingsForEvent',
+      {
+        eventId,
+      },
+    );
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - userId
+   * @param string - type
+   * @param string - format webinar|meeting|none
+   * @return Promise|Observable|any
+   */
+  QuickCreateWebConferenceForEvent(
+    eventId: string,
+    userId: string,
+    type: string,
+    format: string,
+  ): any {
+    return this.restClient.post(
+      'WebConference/UseCase/QuickCreateWebConferenceForEvent',
+      {
+        eventId,
+        userId,
+        type,
+        format,
       },
     );
   }

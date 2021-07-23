@@ -1,3 +1,4 @@
+import { ActivityLog } from './ActivityLog';
 import { AppVersion } from './AppVersion';
 import { EFx } from './EFx';
 import { EmailDesign } from './EmailDesign';
@@ -23,6 +24,10 @@ import { Virbela } from './Virbela';
 import { WebConference } from './WebConference';
 
 export class TypeFactory {
+  ActivityLog(): ActivityLog {
+    return new ActivityLog();
+  }
+
   AppVersion(): AppVersion {
     return new AppVersion();
   }

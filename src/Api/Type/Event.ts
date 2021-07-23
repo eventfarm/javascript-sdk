@@ -132,6 +132,15 @@ export interface MapSourceTypeInterface {
   isYahoo: boolean;
   isBing: boolean;
 }
+export interface PaymentProcessorTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isStripe: boolean;
+  isPaypal: boolean;
+  isAuthorizeNet: boolean;
+  isSpreedly: boolean;
+}
 export interface ProcessingCurrencyTypeInterface {
   slug: string;
   name: string;
@@ -1884,6 +1893,47 @@ export class Event {
         isGoogle: false,
         isYahoo: false,
         isBing: true,
+      },
+    ];
+  }
+
+  PaymentProcessorType(): PaymentProcessorTypeInterface[] {
+    return [
+      {
+        slug: 'STRIPE',
+        name: 'STRIPE',
+        description: 'STRIPE',
+        isStripe: true,
+        isPaypal: false,
+        isAuthorizeNet: false,
+        isSpreedly: false,
+      },
+      {
+        slug: 'PAYPAL',
+        name: 'PAYPAL',
+        description: 'PAYPAL',
+        isStripe: false,
+        isPaypal: true,
+        isAuthorizeNet: false,
+        isSpreedly: false,
+      },
+      {
+        slug: 'AUTHORIZENET',
+        name: 'AUTHORIZENET',
+        description: 'AUTHORIZENET',
+        isStripe: false,
+        isPaypal: false,
+        isAuthorizeNet: true,
+        isSpreedly: false,
+      },
+      {
+        slug: 'SPREEDLY',
+        name: 'SPREEDLY',
+        description: 'SPREEDLY',
+        isStripe: false,
+        isPaypal: false,
+        isAuthorizeNet: false,
+        isSpreedly: true,
       },
     ];
   }

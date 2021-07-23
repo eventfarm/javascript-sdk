@@ -1,6 +1,16 @@
 /**
  * This file was auto generated, please do not edit it directly.
  **/
+export interface CampaignMemberImportTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isNewMember: boolean;
+  isUpdatedMember: boolean;
+  isSkippedMemberAsRemoved: boolean;
+  isDuplicateInvitation: boolean;
+  isDuplicateEmail: boolean;
+}
 export interface CampaignMemberTypeInterface {
   slug: string;
   name: string;
@@ -18,6 +28,61 @@ export interface NewContactRuleTypeInterface {
 }
 
 export class Salesforce {
+  CampaignMemberImportType(): CampaignMemberImportTypeInterface[] {
+    return [
+      {
+        slug: 'new-member',
+        name: 'New Member',
+        description: null,
+        isNewMember: true,
+        isUpdatedMember: false,
+        isSkippedMemberAsRemoved: false,
+        isDuplicateInvitation: false,
+        isDuplicateEmail: false,
+      },
+      {
+        slug: 'updated-member',
+        name: 'Updated Member',
+        description: null,
+        isNewMember: false,
+        isUpdatedMember: true,
+        isSkippedMemberAsRemoved: false,
+        isDuplicateInvitation: false,
+        isDuplicateEmail: false,
+      },
+      {
+        slug: 'skipped-member-as-removed',
+        name: 'Skipped Member As Removed',
+        description: null,
+        isNewMember: false,
+        isUpdatedMember: false,
+        isSkippedMemberAsRemoved: true,
+        isDuplicateInvitation: false,
+        isDuplicateEmail: false,
+      },
+      {
+        slug: 'duplicate-invitation',
+        name: 'Duplicate Invitation',
+        description: null,
+        isNewMember: false,
+        isUpdatedMember: false,
+        isSkippedMemberAsRemoved: false,
+        isDuplicateInvitation: true,
+        isDuplicateEmail: false,
+      },
+      {
+        slug: 'duplicate-email',
+        name: 'Duplicate Email',
+        description: null,
+        isNewMember: false,
+        isUpdatedMember: false,
+        isSkippedMemberAsRemoved: false,
+        isDuplicateInvitation: false,
+        isDuplicateEmail: true,
+      },
+    ];
+  }
+
   CampaignMemberType(): CampaignMemberTypeInterface[] {
     return [
       {

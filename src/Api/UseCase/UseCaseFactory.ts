@@ -27,6 +27,7 @@ import { OAuth } from './OAuth';
 import { OAuth2 } from './OAuth2';
 import { Payment } from './Payment';
 import { Pool } from './Pool';
+import { PoolAllotment } from './PoolAllotment';
 import { PoolContact } from './PoolContact';
 import { PoolContract } from './PoolContract';
 import { PoolFeature } from './PoolFeature';
@@ -167,6 +168,10 @@ export class UseCaseFactory {
 
   Pool(): Pool {
     return new Pool(this.restClient);
+  }
+
+  PoolAllotment(): PoolAllotment {
+    return new PoolAllotment(this.restClient);
   }
 
   PoolContact(): PoolContact {

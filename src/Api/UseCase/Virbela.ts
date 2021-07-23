@@ -65,6 +65,16 @@ export class Virbela {
    * @param string - invitationId
    * @return Promise|Observable|any
    */
+  SuspendInvitationForVirbela(invitationId: string): any {
+    return this.restClient.post('Virbela/UseCase/SuspendInvitationForVirbela', {
+      invitationId,
+    });
+  }
+
+  /**
+   * @param string - invitationId
+   * @return Promise|Observable|any
+   */
   SuspendUserForVirbela(invitationId: string): any {
     return this.restClient.post('Virbela/UseCase/SuspendUserForVirbela', {
       invitationId,
@@ -73,7 +83,7 @@ export class Virbela {
 
   /**
    * @param string - invitationId
-   * @param string - role admin|member|moderator
+   * @param string - role admin|member|moderator|leader
    * @return Promise|Observable|any
    */
   UpdateUserRoleForVirbela(invitationId: string, role: string): any {

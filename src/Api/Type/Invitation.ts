@@ -1,6 +1,15 @@
 /**
  * This file was auto generated, please do not edit it directly.
  **/
+export interface ClearFailureTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isExpired: boolean;
+  isNonUnique: boolean;
+  isNotFound: boolean;
+  isInvalidName: boolean;
+}
 export interface InvitationActionTypeInterface {
   slug: string;
   name: string;
@@ -92,6 +101,47 @@ export interface WebhookTypeInterface {
 }
 
 export class Invitation {
+  ClearFailureType(): ClearFailureTypeInterface[] {
+    return [
+      {
+        slug: 'expired',
+        name: 'Expired',
+        description: null,
+        isExpired: true,
+        isNonUnique: false,
+        isNotFound: false,
+        isInvalidName: false,
+      },
+      {
+        slug: 'non-unique',
+        name: 'Non Unique',
+        description: null,
+        isExpired: false,
+        isNonUnique: true,
+        isNotFound: false,
+        isInvalidName: false,
+      },
+      {
+        slug: 'not-found',
+        name: 'Not Found',
+        description: null,
+        isExpired: false,
+        isNonUnique: false,
+        isNotFound: true,
+        isInvalidName: false,
+      },
+      {
+        slug: 'invalid-name',
+        name: 'Invalid Name',
+        description: null,
+        isExpired: false,
+        isNonUnique: false,
+        isNotFound: false,
+        isInvalidName: true,
+      },
+    ];
+  }
+
   InvitationActionType(): InvitationActionTypeInterface[] {
     return [
       {

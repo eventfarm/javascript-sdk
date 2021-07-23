@@ -9,6 +9,7 @@ export interface VirbelaRoleTypeInterface {
   isAdmin: boolean;
   isSuspended: boolean;
   isModerator: boolean;
+  isLeader: boolean;
 }
 
 export class Virbela {
@@ -22,6 +23,7 @@ export class Virbela {
         isAdmin: false,
         isSuspended: false,
         isModerator: false,
+        isLeader: false,
       },
       {
         slug: 'moderator',
@@ -31,6 +33,7 @@ export class Virbela {
         isAdmin: false,
         isSuspended: false,
         isModerator: true,
+        isLeader: false,
       },
       {
         slug: 'admin',
@@ -40,6 +43,7 @@ export class Virbela {
         isAdmin: true,
         isSuspended: false,
         isModerator: false,
+        isLeader: false,
       },
       {
         slug: 'suspended',
@@ -49,6 +53,17 @@ export class Virbela {
         isAdmin: false,
         isSuspended: true,
         isModerator: false,
+        isLeader: false,
+      },
+      {
+        slug: 'leader',
+        name: 'Leader',
+        description: null,
+        isMember: false,
+        isAdmin: false,
+        isSuspended: false,
+        isModerator: false,
+        isLeader: true,
       },
     ];
   }

@@ -177,7 +177,7 @@ export class Stack {
    * @param string? - declineDesignId
    * @param string? - stackId
    * @param number? - virbelaTeamId
-   * @param string? - virbelaRole member|moderator
+   * @param string? - virbelaRole member|moderator|leader
    * @return Promise|Observable|any
    */
   CreateStack(
@@ -235,7 +235,7 @@ export class Stack {
    * @param string? - declineDesignId
    * @param string? - stackId
    * @param number? - virbelaTeamId
-   * @param string? - virbelaRole member|moderator
+   * @param string? - virbelaRole member|moderator|leader
    * @return Promise|Observable|any
    */
   CreateStackFromSettings(
@@ -426,7 +426,7 @@ export class Stack {
    * @param number? - maxQuantity
    * @param boolean? - transferable true|false
    * @param number? - virbelaTeamId
-   * @param string? - virbelaRole member|moderator
+   * @param string? - virbelaRole member|moderator|leader
    * @return Promise|Observable|any
    */
   UpdateStack(
@@ -470,7 +470,7 @@ export class Stack {
    * @param string? - confirmDesignId
    * @param string? - declineDesignId
    * @param number? - virbelaTeamId
-   * @param string? - virbelaRole member|moderator
+   * @param string? - virbelaRole member|moderator|leader
    * @return Promise|Observable|any
    */
   UpdateStackFromSettings(
