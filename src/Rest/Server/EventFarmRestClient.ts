@@ -4,7 +4,7 @@ import { ServerAccessToken } from './ServerAccessToken';
 import { JWTAccessToken, JWTAccessTokenInterface } from '../JWTAccessToken';
 import { RestClientInterface } from '../../Interfaces';
 
-export class PasswordGrantRestClient implements RestClientInterface {
+export class EventFarmRestClient implements RestClientInterface {
   private oAuthAccessToken: ServerAccessToken = null;
 
   constructor(
@@ -12,9 +12,10 @@ export class PasswordGrantRestClient implements RestClientInterface {
     private accessTokenRestClient: RestClientInterface,
     private clientId: string,
     private clientSecret: string,
-    private email: string,
-    private password: string,
-  ) {}
+    private audience: string,
+  ) {
+    console.log('ClientCredentialsGrantRestClient constructor');
+  }
 
   async get(
     path: string,
@@ -35,6 +36,7 @@ export class PasswordGrantRestClient implements RestClientInterface {
     timeoutSeconds = 5000,
   ) {
     const authorizeHeaders = await this.getAuthorizationHeaders(headers);
+    console.log('authorizeHeaders', authorizeHeaders);
     return this.restClient.post(path, formParameters, authorizeHeaders);
   }
 
@@ -60,20 +62,22 @@ export class PasswordGrantRestClient implements RestClientInterface {
   }
 
   private async getOAuthAccessToken(): Promise<ServerAccessToken> {
+    console.log('this inside getOAuthAccessToken  ', this);
+    console.log(
+      'getOAuthAccessToken: this.oAuthAccessToken',
+      this.oAuthAccessToken,
+    );
+
     if (this.oAuthAccessToken === null) {
-      this.oAuthAccessToken = await this.getPasswordCredentialsAccessToken();
+      const res = await this.getPasswordCredentialsAccessToken();
+      console.log('res from getPasswordCredentialsAccessToken ', res);
+      this.oAuthAccessToken = res;
     }
 
-    if (this.oAuthAccessToken.isExpired) {
-      const refreshToken = this.oAuthAccessToken.refreshToken;
-
-      if (refreshToken !== null) {
-        try {
-          this.oAuthAccessToken = await this.getRefreshToken(refreshToken);
-        } catch (OAuthRestClientException) {
-          this.oAuthAccessToken = await this.getPasswordCredentialsAccessToken();
-        }
-      } else {
+    if (this.oAuthAccessToken && this.oAuthAccessToken.isExpired) {
+      try {
+        this.oAuthAccessToken = await this.getRefreshToken();
+      } catch (OAuthRestClientException) {
         this.oAuthAccessToken = await this.getPasswordCredentialsAccessToken();
       }
     }
@@ -82,22 +86,22 @@ export class PasswordGrantRestClient implements RestClientInterface {
   }
 
   private async getPasswordCredentialsAccessToken() {
-    const response = await this.accessTokenRestClient.post('oauth2/token', {
-      grant_type: 'password',
+    const response = await this.accessTokenRestClient.post('oauth/token', {
+      grant_type: 'client_credentials',
       client_id: this.clientId,
       client_secret: this.clientSecret,
-      username: this.email,
-      password: this.password,
+      audience: this.audience,
     });
+    console.log('response from auth0', response);
     return this.getOAuthAccessTokenFromResponse(response.data);
   }
 
-  private async getRefreshToken(refreshToken: string) {
-    const response = await this.accessTokenRestClient.post('oauth2/token', {
-      grant_type: 'refresh_token',
-      refresh_token: refreshToken,
+  private async getRefreshToken() {
+    const response = await this.accessTokenRestClient.post('oauth/token', {
+      grant_type: 'client_credentials',
       client_id: this.clientId,
       client_secret: this.clientSecret,
+      audience: this.audience,
     });
     return this.getOAuthAccessTokenFromResponse(response.data);
   }
@@ -106,6 +110,7 @@ export class PasswordGrantRestClient implements RestClientInterface {
     const accessTokenData: JWTAccessTokenInterface = jwtDecode(
       data.access_token,
     );
+    console.log('accessTokenData', accessTokenData);
     const accessToken = new JWTAccessToken(
       accessTokenData.aud,
       accessTokenData.jti,
@@ -114,8 +119,8 @@ export class PasswordGrantRestClient implements RestClientInterface {
     );
     return new ServerAccessToken(
       data.token_type,
-      accessToken.tokenString,
-      data.expires_at,
+      data.access_token,
+      accessTokenData.exp,
       data.refresh_token,
       data.user_id,
     );

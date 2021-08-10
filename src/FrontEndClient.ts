@@ -9,7 +9,7 @@ export class FrontEndClient extends AbstractApi
     super(apiBaseUri);
   }
 
-  get restClient(): RestClientInterface {
+  get eventFarmRestClient(): RestClientInterface {
     return new ImplicitRestClient(
       new AxiosRestClient(this.apiBaseUri),
       this.accessToken,

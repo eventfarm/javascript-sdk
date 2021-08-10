@@ -24,8 +24,8 @@ export abstract class AbstractApi {
   ) {}
 
   get useCaseFactory() {
-    return new UseCaseFactory(this.restClient);
+    return new UseCaseFactory(this.eventFarmRestClient);
   }
 
-  abstract get restClient(): RestClientInterface;
+  abstract get eventFarmRestClient(): RestClientInterface;
 }

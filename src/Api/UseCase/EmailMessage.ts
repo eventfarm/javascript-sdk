@@ -703,6 +703,8 @@ export class EmailMessage {
    * @param any[]? - ccEmails
    * @param any[]? - bccEmails
    * @param string? - appName
+   * @param string? - fromEmail
+   * @param string? - replyToEmail
    * @return Promise|Observable|any
    */
   SendVerifyEmail(
@@ -713,6 +715,8 @@ export class EmailMessage {
     ccEmails: any[] = null,
     bccEmails: any[] = null,
     appName: string = null,
+    fromEmail: string = null,
+    replyToEmail: string = null,
   ): any {
     return this.restClient.post('EmailMessage/UseCase/SendVerifyEmail', {
       toEmail,
@@ -722,6 +726,8 @@ export class EmailMessage {
       ccEmails,
       bccEmails,
       appName,
+      fromEmail,
+      replyToEmail,
     });
   }
 

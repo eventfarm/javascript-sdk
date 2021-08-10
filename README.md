@@ -44,9 +44,8 @@ import { BackEndClient } from '@eventfarm/javascript-sdk/dist/BackEndClient';
 const client = new BackEndClient(
     'client_id', // required string
     'client_secret', // required string
-    'email', // required string
-    'password', // required string
-    'loginBaseUrl', // default: 'https://app.eventfarm.com'
+    'audience', // required string
+    'loginBaseUrl', // default: ''https://eventfarm.us.auth0.com/api/v2/oauth/token'
     'apiBaseUrl', // default: 'https://app.eventfarm.com/api'
 );
 
