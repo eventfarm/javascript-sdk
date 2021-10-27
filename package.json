@@ -1,7 +1,7 @@
 {
   "name": "@eventfarm/javascript-sdk",
   "description": "Official Event Farm Javascript SDK",
-  "version": "3.2.1-BETA2",
+  "version": "3.2.2",
   "main": "./dist",
   "types": "./dist",
   "authors": [
@@ -24,14 +24,16 @@
   ],
   "license": "MIT",
   "scripts": {
-    "package": "run-s clean build push",
+    "package-next": "run-s clean build push-next",
+    "package": "run-s clean build",
     "build": "tsc",
     "pretty": "prettier --single-quote --trailing-comma all --write 'src/**/*.ts'",
     "clean": "rm -rf dist/*",
-    "push": "npm publish --access public"
+    "push": "npm publish --access public",
+    "push-next": "npm publish --access public --tag next"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "jwt-decode": "^2.2.0"
   },
   "devDependencies": {

@@ -157,11 +157,15 @@ export class Pool {
 
   /**
    * @param string - name
-   * @param string - shortName
+   * @param string? - shortName
    * @param string? - poolId
    * @return Promise|Observable|any
    */
-  CreatePool(name: string, shortName: string, poolId: string = null): any {
+  CreatePool(
+    name: string,
+    shortName: string = null,
+    poolId: string = null,
+  ): any {
     return this.restClient.post('Pool/UseCase/CreatePool', {
       name,
       shortName,

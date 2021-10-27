@@ -643,12 +643,6 @@ export class DateTimeZone {
         longitude: '-59.95',
       },
       {
-        identifier: 'America/Godthab',
-        countryCode: 'GL',
-        latitude: '64.18333',
-        longitude: '-51.73334',
-      },
-      {
         identifier: 'America/Goose_Bay',
         countryCode: 'CA',
         latitude: '53.33333',
@@ -965,6 +959,12 @@ export class DateTimeZone {
         countryCode: 'US',
         latitude: '46.845',
         longitude: '-101.41084',
+      },
+      {
+        identifier: 'America/Nuuk',
+        countryCode: 'GL',
+        latitude: '64.18333',
+        longitude: '-51.73334',
       },
       {
         identifier: 'America/Ojinaga',
@@ -2168,7 +2168,7 @@ export class DateTimeZone {
       },
       {
         identifier: 'Europe/Simferopol',
-        countryCode: 'RU',
+        countryCode: 'UA',
         latitude: '44.94999',
         longitude: '34.1',
       },

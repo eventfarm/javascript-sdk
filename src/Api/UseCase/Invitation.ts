@@ -340,7 +340,7 @@ export class Invitation {
    * @param number? - itemsPerPage 1-250
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
    * @param string? - sortDirection
-   * @param string[]? - withData Event|Stack|StackAndTicketType
+   * @param string[]? - withData Event|EventWithTags|Stack|StackAndTicketType
    * @param any[]? - statusFilter
    * @return Promise|Observable|any
    */
