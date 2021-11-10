@@ -43,6 +43,19 @@ export class Import {
   // Commands
 
   /**
+   * @param string - healthPassImportId
+   * @return Promise|Observable|any
+   */
+  PostProcessAndImportHealthPass(healthPassImportId: string): any {
+    return this.restClient.post(
+      'Import/UseCase/PostProcessAndImportHealthPass',
+      {
+        healthPassImportId,
+      },
+    );
+  }
+
+  /**
    * @param string - userImportId
    * @param string - eventId
    * @param string? - stackId
@@ -97,6 +110,19 @@ export class Import {
       groupId,
       redirectUrl,
     });
+  }
+
+  /**
+   * @param any - spreadsheet
+   * @return Promise|Observable|any
+   */
+  PreProcessSpreadsheetForHealthPassImport(spreadsheet: any): any {
+    return this.restClient.postMultipart(
+      'Import/UseCase/PreProcessSpreadsheetForHealthPassImport',
+      {
+        spreadsheet,
+      },
+    );
   }
 
   /**

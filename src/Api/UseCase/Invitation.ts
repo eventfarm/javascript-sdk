@@ -158,7 +158,7 @@ export class Invitation {
   /**
    * @param string - eventId
    * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
@@ -167,6 +167,8 @@ export class Invitation {
    * @param string? - sortDirection ascending|descending
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-250
+   * @param any[]? - healthPassScoreFilter green|red|amber|unknown
+   * @param any[]? - excludeHealthPassScoreFilter green|red|amber|unknown
    * @return Promise|Observable|any
    */
   ListInvitationsForEvent(
@@ -181,6 +183,8 @@ export class Invitation {
     sortDirection: string = null,
     page: number = null,
     itemsPerPage: number = null,
+    healthPassScoreFilter: any[] = null,
+    excludeHealthPassScoreFilter: any[] = null,
   ): any {
     return this.restClient.get('Invitation/UseCase/ListInvitationsForEvent', {
       eventId,
@@ -194,6 +198,8 @@ export class Invitation {
       sortDirection,
       page,
       itemsPerPage,
+      healthPassScoreFilter,
+      excludeHealthPassScoreFilter,
     });
   }
 
@@ -201,7 +207,7 @@ export class Invitation {
    * @param string - eventId
    * @param string - stackId
    * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
@@ -245,7 +251,7 @@ export class Invitation {
   /**
    * @param string - ticketBlockId
    * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
@@ -290,7 +296,7 @@ export class Invitation {
   /**
    * @param string - transactionId
    * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
@@ -488,7 +494,7 @@ export class Invitation {
   /**
    * @param string - eventId
    * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param number? - lastModifiedTimestamp
    * @param boolean? - isCheckedIn true|false
@@ -528,7 +534,7 @@ export class Invitation {
    * @param string - eventId
    * @param string - stackId
    * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
    * @param number? - lastModifiedTimestamp
