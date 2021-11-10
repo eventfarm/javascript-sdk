@@ -7,7 +7,7 @@ export interface EFxModuleTypeInterface {
   name: string;
   description?: string;
   isAccessControl: boolean;
-  isActivation: boolean;
+  isGuestManagement: boolean;
   isConcierge: boolean;
   isAthleteBag: boolean;
   isDigitalMemoryBank: boolean;
@@ -32,13 +32,40 @@ export class EFx {
   EFxModuleType(): EFxModuleTypeInterface[] {
     return [
       {
+        id: 'Activation',
+        slug: 'guest-management',
+        name: 'Guest Management',
+        description: 'Activate a user in EFx via QR or NFC',
+        isAccessControl: false,
+        isGuestManagement: true,
+        isConcierge: false,
+        isAthleteBag: false,
+        isDigitalMemoryBank: false,
+        isGuestInfo: false,
+        isMessaging: false,
+        isProductPickup: false,
+        isRaffle: false,
+        isReservation: false,
+        isRoamingPhotographer: false,
+        isSmartBar: false,
+        isSmsQuiz: false,
+        isTeams: false,
+        isAdminOnly: false,
+        iconURL:
+          'https://cdn.eventfarm.com/platform/img/icons/guest-management.png',
+        dependencyNFC: true,
+        dependencySMS: false,
+        compatibilityNFC: true,
+        compatibilitySMS: false,
+      },
+      {
         id: 'AccessControl',
         slug: 'access-control',
         name: 'Access Control',
         description:
           'Scan assets to grant access to exclusive event experiences',
         isAccessControl: true,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: false,
         isAthleteBag: false,
         isDigitalMemoryBank: false,
@@ -64,7 +91,7 @@ export class EFx {
         name: 'Athletes Bag',
         description: 'Custom module for Nike',
         isAccessControl: false,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: false,
         isAthleteBag: true,
         isDigitalMemoryBank: false,
@@ -91,7 +118,7 @@ export class EFx {
         description:
           'Deliver key information to attendees when they scan assets at kiosk',
         isAccessControl: false,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: true,
         isAthleteBag: false,
         isDigitalMemoryBank: false,
@@ -118,7 +145,7 @@ export class EFx {
         description:
           'Create and share a personalized post-event content hub with your attendees',
         isAccessControl: false,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: false,
         isAthleteBag: false,
         isDigitalMemoryBank: true,
@@ -145,7 +172,7 @@ export class EFx {
         name: 'Guest Info',
         description: 'Custom diagnostic tool',
         isAccessControl: false,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: false,
         isAthleteBag: false,
         isDigitalMemoryBank: false,
@@ -171,7 +198,7 @@ export class EFx {
         name: 'Messaging',
         description: 'Engage attendees via SMS messaging',
         isAccessControl: false,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: false,
         isAthleteBag: false,
         isDigitalMemoryBank: false,
@@ -198,7 +225,7 @@ export class EFx {
         description:
           'Text guests via SMS. View responses in EFx mobile app and Apple TV app',
         isAccessControl: false,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: false,
         isAthleteBag: false,
         isDigitalMemoryBank: false,
@@ -225,7 +252,7 @@ export class EFx {
         description:
           'Scan asset to confirm attendees&#039; eligibility to receive or purchase products',
         isAccessControl: false,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: false,
         isAthleteBag: false,
         isDigitalMemoryBank: false,
@@ -252,7 +279,7 @@ export class EFx {
         name: 'Raffle',
         description: 'Select prize winners and notify them via SMS',
         isAccessControl: false,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: false,
         isAthleteBag: false,
         isDigitalMemoryBank: false,
@@ -279,7 +306,7 @@ export class EFx {
         description:
           'Queue attendees in a virtual line and notify them via SMS when availability opens',
         isAccessControl: false,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: false,
         isAthleteBag: false,
         isDigitalMemoryBank: false,
@@ -306,7 +333,7 @@ export class EFx {
         description:
           'Take photo and apply custom event filters. Deliver images via SMS',
         isAccessControl: false,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: false,
         isAthleteBag: false,
         isDigitalMemoryBank: false,
@@ -328,13 +355,13 @@ export class EFx {
         compatibilitySMS: true,
       },
       {
-        id: 'Smart Bar',
+        id: 'SmartBar',
         slug: 'smart-bar',
         name: 'Smart Bar',
         description:
           'Attendees scan assets at bar kiosks to place orders in bartender queue',
         isAccessControl: false,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: false,
         isAthleteBag: false,
         isDigitalMemoryBank: false,
@@ -362,7 +389,7 @@ export class EFx {
         description:
           'Build attendee teams for competition, collaboration, and networking; track scores on the leaderboard',
         isAccessControl: false,
-        isActivation: false,
+        isGuestManagement: false,
         isConcierge: false,
         isAthleteBag: false,
         isDigitalMemoryBank: false,

@@ -12,6 +12,7 @@ import { IntegrationStatusMapping } from './IntegrationStatusMapping';
 import { Invitation } from './Invitation';
 import { Pool } from './Pool';
 import { Promotion } from './Promotion';
+import { Question } from './Question';
 import { Queue } from './Queue';
 import { Region } from './Region';
 import { Report } from './Report';
@@ -78,6 +79,10 @@ export class TypeFactory {
 
   Promotion(): Promotion {
     return new Promotion();
+  }
+
+  Question(): Question {
+    return new Question();
   }
 
   Queue(): Queue {

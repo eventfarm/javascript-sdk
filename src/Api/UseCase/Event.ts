@@ -69,7 +69,7 @@ export class Event {
 
   /**
    * @param string - questionId
-   * @param string[]? - withData Answers|TicketType|QuestionResponseCounts|AnswerQuestionResponseCounts|QuestionContexts
+   * @param string[]? - withData Answers|TicketType|QuestionResponseCounts|AnswerQuestionResponseCounts|QuestionContexts|AnswerBindings
    * @return Promise|Observable|any
    */
   GetQuestion(questionId: string, withData: string[] = null): any {
@@ -1377,6 +1377,24 @@ export class Event {
       eventId,
       facebookHandle,
     });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - healthPassShortCode
+   * @return Promise|Observable|any
+   */
+  SetHealthPassShortCodeForEvent(
+    eventId: string,
+    healthPassShortCode: string,
+  ): any {
+    return this.restClient.post(
+      'Event/UseCase/SetHealthPassShortCodeForEvent',
+      {
+        eventId,
+        healthPassShortCode,
+      },
+    );
   }
 
   /**

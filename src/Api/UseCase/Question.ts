@@ -11,7 +11,7 @@ export class Question {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData TicketType|Answers
+   * @param string[]? - withData TicketType|Answers|AnswerBindings
    * @param boolean? - shouldHideDeleted true|false
    * @param string? - query
    * @param string? - sortBy createdAt|sortOrder
@@ -43,4 +43,43 @@ export class Question {
   }
 
   // Commands
+
+  /**
+   * @param string - questionId
+   * @param string - answerId
+   * @param string - answerBindingType equal_to|not_equal_to
+   * @return Promise|Observable|any
+   */
+  CreateAnswerBindingForQuestion(
+    questionId: string,
+    answerId: string,
+    answerBindingType: string,
+  ): any {
+    return this.restClient.post(
+      'Question/UseCase/CreateAnswerBindingForQuestion',
+      {
+        questionId,
+        answerId,
+        answerBindingType,
+      },
+    );
+  }
+
+  /**
+   * @param string - answerBindingId
+   * @param string - questionId
+   * @return Promise|Observable|any
+   */
+  RemoveAnswerBindingForQuestion(
+    answerBindingId: string,
+    questionId: string,
+  ): any {
+    return this.restClient.post(
+      'Question/UseCase/RemoveAnswerBindingForQuestion',
+      {
+        answerBindingId,
+        questionId,
+      },
+    );
+  }
 }
