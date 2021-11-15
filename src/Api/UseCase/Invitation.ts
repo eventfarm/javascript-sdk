@@ -66,12 +66,18 @@ export class Invitation {
   /**
    * @param string - invitationId
    * @param string[]? - withData Event|UserName|User|UserIdentifier|Stack|TicketType|QuestionResponse|Answer|Purchase
+   * @param any[]? - withUserAttributes
    * @return Promise|Observable|any
    */
-  GetInvitation(invitationId: string, withData: string[] = null): any {
+  GetInvitation(
+    invitationId: string,
+    withData: string[] = null,
+    withUserAttributes: any[] = null,
+  ): any {
     return this.restClient.get('Invitation/UseCase/GetInvitation', {
       invitationId,
       withData,
+      withUserAttributes,
     });
   }
 
