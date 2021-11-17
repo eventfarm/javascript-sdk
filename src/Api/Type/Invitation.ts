@@ -80,6 +80,7 @@ export interface InviteSourceTypeInterface {
   isOutsidePurchase: boolean;
   isPublicInterface: boolean;
   isTransferred: boolean;
+  isWalkIn: boolean;
 }
 export interface WebhookTypeInterface {
   slug: string;
@@ -724,6 +725,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'api-addition',
@@ -744,6 +746,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'distribution',
@@ -764,6 +767,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'event-invite',
@@ -784,6 +788,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'group-invite',
@@ -804,6 +809,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'import',
@@ -824,6 +830,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'ios-leave-behind',
@@ -844,6 +851,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'leave-behind',
@@ -864,6 +872,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'mobile-leave-behind',
@@ -884,6 +893,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'mobile-purchase',
@@ -904,6 +914,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'outside-purchase',
@@ -924,6 +935,7 @@ export class Invitation {
         isOutsidePurchase: true,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'public-interface',
@@ -944,6 +956,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: true,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'transferred',
@@ -964,6 +977,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: true,
+        isWalkIn: false,
       },
       {
         slug: 'import-salesforce',
@@ -984,6 +998,7 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
       },
       {
         slug: 'import-marketo',
@@ -1004,6 +1019,28 @@ export class Invitation {
         isOutsidePurchase: false,
         isPublicInterface: false,
         isTransferred: false,
+        isWalkIn: false,
+      },
+      {
+        slug: 'walk-in',
+        name: 'Walk In Addition',
+        description: null,
+        isDirectInvite: false,
+        isApiAddition: false,
+        isDistribution: false,
+        isEventInvite: false,
+        isGroupInvite: false,
+        isImport: false,
+        isImportMarketo: false,
+        isImportSalesforce: false,
+        isIosLeaveBehind: false,
+        isLeaveBehind: false,
+        isMobileLeaveBehind: false,
+        isMobilePurchase: false,
+        isOutsidePurchase: false,
+        isPublicInterface: false,
+        isTransferred: false,
+        isWalkIn: true,
       },
     ];
   }

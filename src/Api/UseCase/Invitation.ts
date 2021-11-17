@@ -667,7 +667,7 @@ export class Invitation {
    * @param string - eventId
    * @param string - stackId
    * @param string - invitationStatus assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
-   * @param string - inviteSource direct-invite|api-addition|distribution|event-invite|group-invite|import|ios-leave-behind|leave-behind|mobile-leave-behind|mobile-purchase|outside-purchase|public-interface|transferred|import-salesforce|import-marketo
+   * @param string - inviteSource direct-invite|api-addition|distribution|event-invite|group-invite|import|ios-leave-behind|leave-behind|mobile-leave-behind|mobile-purchase|outside-purchase|public-interface|transferred|import-salesforce|import-marketo|walk-in
    * @param boolean - isCheckedIn true|false
    * @param number - inviteCount >= 1
    * @param string? - email
@@ -737,7 +737,7 @@ export class Invitation {
    * @param string - stackId
    * @param string - ticketBlockId
    * @param string - invitationStatus assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
-   * @param string - inviteSource direct-invite|api-addition|distribution|event-invite|group-invite|import|ios-leave-behind|leave-behind|mobile-leave-behind|mobile-purchase|outside-purchase|public-interface|transferred|import-salesforce|import-marketo
+   * @param string - inviteSource direct-invite|api-addition|distribution|event-invite|group-invite|import|ios-leave-behind|leave-behind|mobile-leave-behind|mobile-purchase|outside-purchase|public-interface|transferred|import-salesforce|import-marketo|walk-in
    * @param boolean - isCheckedIn true|false
    * @param number - inviteCount >= 1
    * @param string? - email
