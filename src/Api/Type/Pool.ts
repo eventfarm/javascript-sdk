@@ -32,6 +32,7 @@ export interface FeatureTypeInterface {
   isWaitlist: boolean;
   isVirbela: boolean;
   isWebConference: boolean;
+  isHealthPass: boolean;
 }
 export interface PoolAllotmentTypeInterface {
   slug: string;
@@ -102,6 +103,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'apiaccess',
@@ -134,6 +136,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'marketo',
@@ -166,6 +169,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'emailmasking',
@@ -198,6 +202,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'whitelabeling',
@@ -230,6 +235,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'agents',
@@ -262,6 +268,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'visacheckout',
@@ -294,6 +301,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'canvas',
@@ -326,6 +334,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'harvester',
@@ -358,6 +367,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'accesscontrol-efx',
@@ -390,6 +400,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'athletebag-efx',
@@ -422,6 +433,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'concierge-efx',
@@ -454,6 +466,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'digitalmemorybank-efx',
@@ -486,6 +499,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'guestinfo-efx',
@@ -518,6 +532,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'messaging-efx',
@@ -550,6 +565,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'smsquiz-efx',
@@ -582,6 +598,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'productpickup-efx',
@@ -614,6 +631,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'raffle-efx',
@@ -646,6 +664,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'reservation-efx',
@@ -678,6 +697,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'roamingphotog-efx',
@@ -710,6 +730,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'smartbar-efx',
@@ -742,6 +763,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'teams-efx',
@@ -774,6 +796,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'event-app',
@@ -806,6 +829,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'child-events',
@@ -838,6 +862,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'waitlist',
@@ -870,6 +895,7 @@ export class Pool {
         isWaitlist: true,
         isVirbela: false,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'virbela',
@@ -902,6 +928,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: true,
         isWebConference: false,
+        isHealthPass: false,
       },
       {
         slug: 'web-conference',
@@ -934,6 +961,40 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: true,
+        isHealthPass: false,
+      },
+      {
+        slug: 'health-pass',
+        name: 'Health Pass',
+        description: null,
+        isSalesforce: false,
+        isApiAccess: false,
+        isMarketo: false,
+        isEmailMasking: false,
+        isWhiteLabeling: false,
+        isAgents: false,
+        isVisaCheckout: false,
+        isCanvas: false,
+        isHarvesterPPP: false,
+        isAccessControlEFx: false,
+        isAthleteBagEFx: false,
+        isConciergeEFx: false,
+        isDigitalMemoryBankEFx: false,
+        isGuestInfoEFx: false,
+        isMessagingEFx: false,
+        isSmsQuizEFx: false,
+        isProductPickupEFx: false,
+        isRaffleEFx: false,
+        isReservationEFx: false,
+        isRoamingPhotogEFx: false,
+        isSmartBarEFx: false,
+        isTeamsEFx: false,
+        isEventApp: false,
+        isChildEvents: false,
+        isWaitlist: false,
+        isVirbela: false,
+        isWebConference: false,
+        isHealthPass: true,
       },
     ];
   }
