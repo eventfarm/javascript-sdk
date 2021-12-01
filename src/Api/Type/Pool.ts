@@ -32,6 +32,7 @@ export interface FeatureTypeInterface {
   isWaitlist: boolean;
   isVirbela: boolean;
   isWebConference: boolean;
+  isQuestionLogic: boolean;
   isHealthPass: boolean;
 }
 export interface PoolAllotmentTypeInterface {
@@ -103,6 +104,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -136,6 +138,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -169,6 +172,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -202,6 +206,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -235,6 +240,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -268,6 +274,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -301,6 +308,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -334,6 +342,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -367,6 +376,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -400,6 +410,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -433,6 +444,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -466,6 +478,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -499,6 +512,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -532,6 +546,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -565,6 +580,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -598,6 +614,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -631,6 +648,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -664,6 +682,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -697,6 +716,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -730,6 +750,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -763,6 +784,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -796,6 +818,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -829,6 +852,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -862,6 +886,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -895,6 +920,7 @@ export class Pool {
         isWaitlist: true,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -928,6 +954,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: true,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -961,6 +988,7 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: true,
+        isQuestionLogic: false,
         isHealthPass: false,
       },
       {
@@ -994,7 +1022,42 @@ export class Pool {
         isWaitlist: false,
         isVirbela: false,
         isWebConference: false,
+        isQuestionLogic: false,
         isHealthPass: true,
+      },
+      {
+        slug: 'question-logic',
+        name: 'Question Logic',
+        description: null,
+        isSalesforce: false,
+        isApiAccess: false,
+        isMarketo: false,
+        isEmailMasking: false,
+        isWhiteLabeling: false,
+        isAgents: false,
+        isVisaCheckout: false,
+        isCanvas: false,
+        isHarvesterPPP: false,
+        isAccessControlEFx: false,
+        isAthleteBagEFx: false,
+        isConciergeEFx: false,
+        isDigitalMemoryBankEFx: false,
+        isGuestInfoEFx: false,
+        isMessagingEFx: false,
+        isSmsQuizEFx: false,
+        isProductPickupEFx: false,
+        isRaffleEFx: false,
+        isReservationEFx: false,
+        isRoamingPhotogEFx: false,
+        isSmartBarEFx: false,
+        isTeamsEFx: false,
+        isEventApp: false,
+        isChildEvents: false,
+        isWaitlist: false,
+        isVirbela: false,
+        isWebConference: false,
+        isQuestionLogic: true,
+        isHealthPass: false,
       },
     ];
   }

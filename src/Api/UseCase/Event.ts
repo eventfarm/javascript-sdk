@@ -33,7 +33,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme|VirbelaWorld
+   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme|VirbelaWorld|AnswerBindings
    * @return Promise|Observable|any
    */
   GetEvent(eventId: string, withData: string[] = null): any {
@@ -561,7 +561,7 @@ export class Event {
   /**
    * @param string - eventId
    * @param string - text
-   * @param string - questionType checkbox|radio|multi|text|select|date|waiver
+   * @param string - questionType checkbox|radio|multi|text|select|date|waiver|address
    * @param number? - sortOrder
    * @param boolean? - isRequired true|false
    * @param boolean? - isIndividual true|false
@@ -1718,7 +1718,7 @@ export class Event {
   /**
    * @param string - questionId
    * @param string - text
-   * @param string - questionType checkbox|radio|multi|text|select|date|waiver
+   * @param string - questionType checkbox|radio|multi|text|select|date|waiver|address
    * @param any[]? - questionContextTypes registration|lead
    * @param boolean? - isRequired true|false
    * @param boolean? - isIndividual true|false

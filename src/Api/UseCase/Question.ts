@@ -67,18 +67,34 @@ export class Question {
 
   /**
    * @param string - answerBindingId
-   * @param string - questionId
    * @return Promise|Observable|any
    */
-  RemoveAnswerBindingForQuestion(
-    answerBindingId: string,
-    questionId: string,
-  ): any {
+  RemoveAnswerBindingForQuestion(answerBindingId: string): any {
     return this.restClient.post(
       'Question/UseCase/RemoveAnswerBindingForQuestion',
       {
         answerBindingId,
-        questionId,
+      },
+    );
+  }
+
+  /**
+   * @param string - answerId
+   * @param string - answerBindingType equal_to|not_equal_to
+   * @param string - answerBindingId
+   * @return Promise|Observable|any
+   */
+  UpdateAnswerBindingForQuestion(
+    answerId: string,
+    answerBindingType: string,
+    answerBindingId: string,
+  ): any {
+    return this.restClient.post(
+      'Question/UseCase/UpdateAnswerBindingForQuestion',
+      {
+        answerId,
+        answerBindingType,
+        answerBindingId,
       },
     );
   }
