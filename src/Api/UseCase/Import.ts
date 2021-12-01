@@ -10,6 +10,40 @@ export class Import {
   // Queries
 
   /**
+   * @param string - healthPassImportId
+   * @param string[]? - withData GoodRecords|DuplicateRecords|ErrorRecords|ImportFailureRecords
+   * @return Promise|Observable|any
+   */
+  GetHealthPassImport(
+    healthPassImportId: string,
+    withData: string[] = null,
+  ): any {
+    return this.restClient.get('Import/UseCase/GetHealthPassImport', {
+      healthPassImportId,
+      withData,
+    });
+  }
+
+  /**
+   * @param string - healthPassImportId
+   * @param string - fileId
+   * @return Promise|Observable|any
+   */
+  GetHealthPassImportFile(healthPassImportId: string, fileId: string): any {
+    return this.restClient.get(
+      'Import/UseCase/GetHealthPassImportFile',
+      {
+        healthPassImportId,
+        fileId,
+      },
+      null,
+      {
+        responseType: 'text',
+      },
+    );
+  }
+
+  /**
    * @param string - userImportId
    * @param string[]? - withData GoodRecords|DuplicateRecords|ErrorRecords|ImportFailureRecords
    * @return Promise|Observable|any
