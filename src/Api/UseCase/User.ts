@@ -72,7 +72,7 @@ export class User {
   /**
    * @param string - poolId
    * @param string - userId
-   * @param string[]? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName
+   * @param string[]? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName|UserHealthPass
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @return Promise|Observable|any
    */

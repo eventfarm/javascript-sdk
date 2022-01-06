@@ -5,6 +5,7 @@ import { EmailDesign } from './EmailDesign';
 import { EmailMessage } from './EmailMessage';
 import { EmailTemplate } from './EmailTemplate';
 import { Event } from './Event';
+import { HealthPass } from './HealthPass';
 import { Import } from './Import';
 import { Integration } from './Integration';
 import { IntegrationFieldMapping } from './IntegrationFieldMapping';
@@ -51,6 +52,10 @@ export class TypeFactory {
 
   Event(): Event {
     return new Event();
+  }
+
+  HealthPass(): HealthPass {
+    return new HealthPass();
   }
 
   Import(): Import {

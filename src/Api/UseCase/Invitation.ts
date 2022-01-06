@@ -65,7 +65,7 @@ export class Invitation {
 
   /**
    * @param string - invitationId
-   * @param string[]? - withData Event|UserName|User|UserIdentifier|Stack|TicketType|QuestionResponse|Answer|Purchase
+   * @param string[]? - withData UserHealthPass|Event|UserName|User|UserIdentifier|Stack|TicketType|QuestionResponse|Answer|Purchase
    * @param any[]? - withUserAttributes
    * @return Promise|Observable|any
    */
@@ -178,7 +178,7 @@ export class Invitation {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
@@ -227,7 +227,7 @@ export class Invitation {
   /**
    * @param string - eventId
    * @param string - stackId
-   * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
@@ -271,7 +271,7 @@ export class Invitation {
 
   /**
    * @param string - ticketBlockId
-   * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
@@ -316,7 +316,7 @@ export class Invitation {
 
   /**
    * @param string - transactionId
-   * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
@@ -514,7 +514,7 @@ export class Invitation {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param number? - lastModifiedTimestamp
@@ -554,7 +554,7 @@ export class Invitation {
   /**
    * @param string - eventId
    * @param string - stackId
-   * @param string[]? - withData UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted

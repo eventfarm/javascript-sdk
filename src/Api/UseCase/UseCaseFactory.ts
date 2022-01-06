@@ -18,6 +18,7 @@ import { EventTheme } from './EventTheme';
 import { Feature } from './Feature';
 import { FeatureToggle } from './FeatureToggle';
 import { Group } from './Group';
+import { HealthPass } from './HealthPass';
 import { Import } from './Import';
 import { Integration } from './Integration';
 import { IntegrationFieldMapping } from './IntegrationFieldMapping';
@@ -132,6 +133,10 @@ export class UseCaseFactory {
 
   Group(): Group {
     return new Group(this.restClient);
+  }
+
+  HealthPass(): HealthPass {
+    return new HealthPass(this.restClient);
   }
 
   Import(): Import {
