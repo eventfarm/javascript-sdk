@@ -34,6 +34,7 @@ export interface FeatureTypeInterface {
   isWebConference: boolean;
   isQuestionLogic: boolean;
   isHealthPass: boolean;
+  isLogi: boolean;
 }
 export interface PoolAllotmentTypeInterface {
   slug: string;
@@ -106,6 +107,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'apiaccess',
@@ -140,6 +142,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'marketo',
@@ -174,6 +177,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'emailmasking',
@@ -208,6 +212,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'whitelabeling',
@@ -242,6 +247,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'agents',
@@ -276,6 +282,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'visacheckout',
@@ -310,6 +317,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'canvas',
@@ -344,6 +352,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'harvester',
@@ -378,6 +387,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'accesscontrol-efx',
@@ -412,6 +422,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'athletebag-efx',
@@ -446,6 +457,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'concierge-efx',
@@ -480,6 +492,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'digitalmemorybank-efx',
@@ -514,6 +527,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'guestinfo-efx',
@@ -548,6 +562,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'messaging-efx',
@@ -582,6 +597,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'smsquiz-efx',
@@ -616,6 +632,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'productpickup-efx',
@@ -650,6 +667,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'raffle-efx',
@@ -684,6 +702,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'reservation-efx',
@@ -718,6 +737,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'roamingphotog-efx',
@@ -752,6 +772,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'smartbar-efx',
@@ -786,6 +807,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'teams-efx',
@@ -820,6 +842,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'event-app',
@@ -854,6 +877,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'child-events',
@@ -888,6 +912,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'waitlist',
@@ -922,6 +947,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'virbela',
@@ -956,6 +982,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'web-conference',
@@ -990,6 +1017,7 @@ export class Pool {
         isWebConference: true,
         isQuestionLogic: false,
         isHealthPass: false,
+        isLogi: false,
       },
       {
         slug: 'health-pass',
@@ -1024,6 +1052,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: true,
+        isLogi: false,
       },
       {
         slug: 'question-logic',
@@ -1058,6 +1087,42 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: true,
         isHealthPass: false,
+        isLogi: false,
+      },
+      {
+        slug: 'logi',
+        name: 'Logi',
+        description: null,
+        isSalesforce: false,
+        isApiAccess: false,
+        isMarketo: false,
+        isEmailMasking: false,
+        isWhiteLabeling: false,
+        isAgents: false,
+        isVisaCheckout: false,
+        isCanvas: false,
+        isHarvesterPPP: false,
+        isAccessControlEFx: false,
+        isAthleteBagEFx: false,
+        isConciergeEFx: false,
+        isDigitalMemoryBankEFx: false,
+        isGuestInfoEFx: false,
+        isMessagingEFx: false,
+        isSmsQuizEFx: false,
+        isProductPickupEFx: false,
+        isRaffleEFx: false,
+        isReservationEFx: false,
+        isRoamingPhotogEFx: false,
+        isSmartBarEFx: false,
+        isTeamsEFx: false,
+        isEventApp: false,
+        isChildEvents: false,
+        isWaitlist: false,
+        isVirbela: false,
+        isWebConference: false,
+        isQuestionLogic: false,
+        isHealthPass: false,
+        isLogi: true,
       },
     ];
   }

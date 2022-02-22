@@ -15,6 +15,7 @@ import { EmailSample } from './EmailSample';
 import { EmailTemplate } from './EmailTemplate';
 import { Event } from './Event';
 import { EventTheme } from './EventTheme';
+import { Exhibitor } from './Exhibitor';
 import { Feature } from './Feature';
 import { FeatureToggle } from './FeatureToggle';
 import { Group } from './Group';
@@ -24,9 +25,12 @@ import { Integration } from './Integration';
 import { IntegrationFieldMapping } from './IntegrationFieldMapping';
 import { IntegrationStatusMapping } from './IntegrationStatusMapping';
 import { Invitation } from './Invitation';
+import { Lead } from './Lead';
+import { Logi } from './Logi';
 import { OAuth } from './OAuth';
 import { OAuth2 } from './OAuth2';
 import { Payment } from './Payment';
+import { PaymentGateway } from './PaymentGateway';
 import { Pool } from './Pool';
 import { PoolAllotment } from './PoolAllotment';
 import { PoolContact } from './PoolContact';
@@ -123,6 +127,10 @@ export class UseCaseFactory {
     return new EventTheme(this.restClient);
   }
 
+  Exhibitor(): Exhibitor {
+    return new Exhibitor(this.restClient);
+  }
+
   Feature(): Feature {
     return new Feature(this.restClient);
   }
@@ -159,6 +167,14 @@ export class UseCaseFactory {
     return new Invitation(this.restClient);
   }
 
+  Lead(): Lead {
+    return new Lead(this.restClient);
+  }
+
+  Logi(): Logi {
+    return new Logi(this.restClient);
+  }
+
   OAuth(): OAuth {
     return new OAuth(this.restClient);
   }
@@ -169,6 +185,10 @@ export class UseCaseFactory {
 
   Payment(): Payment {
     return new Payment(this.restClient);
+  }
+
+  PaymentGateway(): PaymentGateway {
+    return new PaymentGateway(this.restClient);
   }
 
   Pool(): Pool {
