@@ -34,6 +34,7 @@ export interface FeatureTypeInterface {
   isWebConference: boolean;
   isQuestionLogic: boolean;
   isHealthPass: boolean;
+  isExhibitors: boolean;
   isLogi: boolean;
 }
 export interface PoolAllotmentTypeInterface {
@@ -107,6 +108,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -142,6 +144,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -177,6 +180,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -212,6 +216,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -247,6 +252,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -282,6 +288,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -317,6 +324,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -352,6 +360,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -387,6 +396,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -422,6 +432,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -457,6 +468,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -492,6 +504,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -527,6 +540,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -562,6 +576,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -597,6 +612,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -632,6 +648,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -667,6 +684,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -702,6 +720,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -737,6 +756,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -772,6 +792,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -807,6 +828,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -842,6 +864,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -877,6 +900,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -912,6 +936,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -947,6 +972,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -982,6 +1008,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -1017,6 +1044,7 @@ export class Pool {
         isWebConference: true,
         isQuestionLogic: false,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -1052,6 +1080,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: true,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -1087,6 +1116,7 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: true,
         isHealthPass: false,
+        isExhibitors: false,
         isLogi: false,
       },
       {
@@ -1122,7 +1152,44 @@ export class Pool {
         isWebConference: false,
         isQuestionLogic: false,
         isHealthPass: false,
-        isLogi: true,
+        isExhibitors: true,
+        isLogi: false,
+      },
+      {
+        slug: 'logi',
+        name: 'Logi',
+        description: null,
+        isSalesforce: false,
+        isApiAccess: false,
+        isMarketo: false,
+        isEmailMasking: false,
+        isWhiteLabeling: false,
+        isAgents: false,
+        isVisaCheckout: false,
+        isCanvas: false,
+        isHarvesterPPP: false,
+        isAccessControlEFx: false,
+        isAthleteBagEFx: false,
+        isConciergeEFx: false,
+        isDigitalMemoryBankEFx: false,
+        isGuestInfoEFx: false,
+        isMessagingEFx: false,
+        isSmsQuizEFx: false,
+        isProductPickupEFx: false,
+        isRaffleEFx: false,
+        isReservationEFx: false,
+        isRoamingPhotogEFx: false,
+        isSmartBarEFx: false,
+        isTeamsEFx: false,
+        isEventApp: false,
+        isChildEvents: false,
+        isWaitlist: false,
+        isVirbela: false,
+        isWebConference: false,
+        isQuestionLogic: false,
+        isHealthPass: false,
+        isExhibitors: true,
+        isLogi: false,
       },
     ];
   }

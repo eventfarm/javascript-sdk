@@ -11,16 +11,20 @@ export class Exhibitor {
 
   /**
    * @param string - exhibitorId
+   * @param string[]? - withData
    * @return Promise|Observable|any
    */
-  GetExhibitor(exhibitorId: string): any {
+  GetExhibitor(exhibitorId: string, withData: string[] = null): any {
     return this.restClient.get('Exhibitor/UseCase/GetExhibitor', {
       exhibitorId,
+      withData,
     });
   }
 
   /**
    * @param string - eventId
+   * @param string[]? - withData
+   * @param boolean? - shouldHideDeleted true|false
    * @param string? - query
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-500
@@ -30,6 +34,8 @@ export class Exhibitor {
    */
   ListExhibitorsForEvent(
     eventId: string,
+    withData: string[] = null,
+    shouldHideDeleted: boolean = null,
     query: string = null,
     page: number = null,
     itemsPerPage: number = null,
@@ -38,6 +44,8 @@ export class Exhibitor {
   ): any {
     return this.restClient.get('Exhibitor/UseCase/ListExhibitorsForEvent', {
       eventId,
+      withData,
+      shouldHideDeleted,
       query,
       page,
       itemsPerPage,
