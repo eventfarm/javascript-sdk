@@ -55,32 +55,38 @@ export class Exhibitor {
   }
 
   /**
-   * @param string - poolId
    * @param string - userId
-   * @param string? - groupOwnerUserId
+   * @param string? - query
+   * @param string[]? - withData
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-500
    * @param string? - sortBy
    * @param string? - sortDirection ascending|descending
+   * @param string? - eventDateFilterType
+   * @param string? - poolId
    * @return Promise|Observable|any
    */
   ListExhibitorsForUser(
-    poolId: string,
     userId: string,
-    groupOwnerUserId: string = null,
+    query: string = null,
+    withData: string[] = null,
     page: number = null,
     itemsPerPage: number = null,
     sortBy: string = null,
     sortDirection: string = null,
+    eventDateFilterType: string = null,
+    poolId: string = null,
   ): any {
     return this.restClient.get('Exhibitor/UseCase/ListExhibitorsForUser', {
-      poolId,
       userId,
-      groupOwnerUserId,
+      query,
+      withData,
       page,
       itemsPerPage,
       sortBy,
       sortDirection,
+      eventDateFilterType,
+      poolId,
     });
   }
 
@@ -88,13 +94,25 @@ export class Exhibitor {
 
   /**
    * @param string - exhibitorId
-   * @param any[] - userIds
+   * @param string - email
+   * @param string - firstName
+   * @param string - lastName
+   * @param string? - authenticatedUserId
    * @return Promise|Observable|any
    */
-  AddUsersToExhibitor(exhibitorId: string, userIds: any[]): any {
-    return this.restClient.post('Exhibitor/UseCase/AddUsersToExhibitor', {
+  AddUserToExhibitor(
+    exhibitorId: string,
+    email: string,
+    firstName: string,
+    lastName: string,
+    authenticatedUserId: string = null,
+  ): any {
+    return this.restClient.post('Exhibitor/UseCase/AddUserToExhibitor', {
       exhibitorId,
-      userIds,
+      email,
+      firstName,
+      lastName,
+      authenticatedUserId,
     });
   }
 
@@ -143,14 +161,14 @@ export class Exhibitor {
   }
 
   /**
+   * @param string - userId
    * @param string - exhibitorId
-   * @param any[] - userIds
    * @return Promise|Observable|any
    */
-  RemoveUsersFromExhibitor(exhibitorId: string, userIds: any[]): any {
-    return this.restClient.post('Exhibitor/UseCase/RemoveUsersFromExhibitor', {
+  RemoveUserFromExhibitor(userId: string, exhibitorId: string): any {
+    return this.restClient.post('Exhibitor/UseCase/RemoveUserFromExhibitor', {
+      userId,
       exhibitorId,
-      userIds,
     });
   }
 
