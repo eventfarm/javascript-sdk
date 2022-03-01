@@ -23,7 +23,7 @@ export class Exhibitor {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData
+   * @param string[]? - withData totalUserRolesForExhibitor
    * @param boolean? - shouldHideDeleted true|false
    * @param string? - query
    * @param number? - page >= 1

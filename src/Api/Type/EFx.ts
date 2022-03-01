@@ -20,6 +20,7 @@ export interface EFxModuleTypeInterface {
   isSmartBar: boolean;
   isSmsQuiz: boolean;
   isTeams: boolean;
+  isLeadRetrieval: boolean;
   isAdminOnly: boolean;
   iconURL: any;
   dependencyNFC: any;
@@ -50,6 +51,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/guest-management.png',
@@ -78,6 +80,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/access.png',
         dependencyNFC: true,
@@ -104,6 +107,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: true,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/nike.png',
         dependencyNFC: true,
@@ -131,6 +135,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/concierge.png',
         dependencyNFC: true,
@@ -158,6 +163,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/digital-memory-bank.png',
@@ -185,6 +191,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: true,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/access.png',
         dependencyNFC: true,
@@ -211,6 +218,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/messaging.png',
         dependencyNFC: false,
@@ -238,6 +246,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: true,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/polling.png',
         dependencyNFC: false,
@@ -265,6 +274,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/product-pickup.png',
@@ -292,6 +302,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/raffle.png',
         dependencyNFC: true,
@@ -319,6 +330,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/reservation.png',
         dependencyNFC: true,
@@ -346,6 +358,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/photographer.png',
@@ -374,6 +387,7 @@ export class EFx {
         isSmartBar: true,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/smartbar-vertical.png',
@@ -402,12 +416,41 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: true,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/teams.png',
         dependencyNFC: false,
         dependencySMS: false,
         compatibilityNFC: false,
         compatibilitySMS: true,
+      },
+      {
+        id: 'LeadRetrieval',
+        slug: 'lead-retrieval',
+        name: 'Lead Retrieval',
+        description: 'Get leads for your events',
+        isAccessControl: false,
+        isGuestManagement: false,
+        isConcierge: false,
+        isAthleteBag: false,
+        isDigitalMemoryBank: false,
+        isGuestInfo: false,
+        isMessaging: false,
+        isProductPickup: false,
+        isRaffle: false,
+        isReservation: false,
+        isRoamingPhotographer: false,
+        isSmartBar: false,
+        isSmsQuiz: false,
+        isTeams: false,
+        isLeadRetrieval: true,
+        isAdminOnly: false,
+        iconURL:
+          'https://cdn.eventfarm.com/platform/img/icons/lead-retrieval.png',
+        dependencyNFC: false,
+        dependencySMS: false,
+        compatibilityNFC: true,
+        compatibilitySMS: false,
       },
     ];
   }

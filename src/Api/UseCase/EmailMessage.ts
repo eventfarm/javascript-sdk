@@ -151,7 +151,7 @@ export class EmailMessage {
    * @param string - emailDesignId
    * @param string - invitationId
    * @param string - category alert|invitation|receipts|forgotpassword|changepassword|transferauthorization|transferconfirmation|eventmessage|eventmessagepreview|reportnotification|account|verify|system
-   * @param string - subCategory ticketblock|group|eventcheckedin|tickettype|preview|noshow|waitlist|None
+   * @param string - subCategory ticketblock|group|eventcheckedin|tickettype|preview|noshow|waitlist|None|exhibitor
    * @return Promise|Observable|any
    */
   CreateEmailMessage(
