@@ -141,6 +141,19 @@ export class Exhibitor {
   }
 
   /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  DeleteAllExhibitorsAndLeadsForEvent(eventId: string): any {
+    return this.restClient.post(
+      'Exhibitor/UseCase/DeleteAllExhibitorsAndLeadsForEvent',
+      {
+        eventId,
+      },
+    );
+  }
+
+  /**
    * @param string - exhibitorId
    * @return Promise|Observable|any
    */
