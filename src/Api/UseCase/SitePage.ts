@@ -232,6 +232,7 @@ export class SitePage {
    * @param string? - keywords
    * @param string? - imageUrl
    * @param string? - name
+   * @param boolean? - isSearchEngineIndexingEnabled true|false
    * @return Promise|Observable|any
    */
   SetMetaInfoForSitePage(
@@ -241,6 +242,7 @@ export class SitePage {
     keywords: string = null,
     imageUrl: string = null,
     name: string = null,
+    isSearchEngineIndexingEnabled: boolean = null,
   ): any {
     return this.restClient.post('SitePage/UseCase/SetMetaInfoForSitePage', {
       sitePageId,
@@ -249,6 +251,7 @@ export class SitePage {
       keywords,
       imageUrl,
       name,
+      isSearchEngineIndexingEnabled,
     });
   }
 

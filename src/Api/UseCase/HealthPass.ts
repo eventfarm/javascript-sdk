@@ -9,6 +9,19 @@ export class HealthPass {
 
   // Queries
 
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  GetHealthPassScoreCountsForEvent(eventId: string): any {
+    return this.restClient.get(
+      'HealthPass/UseCase/GetHealthPassScoreCountsForEvent',
+      {
+        eventId,
+      },
+    );
+  }
+
   // Commands
 
   /**
@@ -17,6 +30,7 @@ export class HealthPass {
    * @param string - email
    * @param string - score
    * @param string - finalScoringTime
+   * @param string - expiresAt
    * @param string - healthPassShortCode
    * @param string - externalUserId
    * @return Promise|Observable|any
@@ -27,6 +41,7 @@ export class HealthPass {
     email: string,
     score: string,
     finalScoringTime: string,
+    expiresAt: string,
     healthPassShortCode: string,
     externalUserId: string,
   ): any {
@@ -38,6 +53,7 @@ export class HealthPass {
         email,
         score,
         finalScoringTime,
+        expiresAt,
         healthPassShortCode,
         externalUserId,
       },
