@@ -1,10 +1,14 @@
 {
   "name": "@eventfarm/javascript-sdk",
   "description": "Official Event Farm Javascript SDK",
-  "version": "3.2.2-BETA.0",
+  "version": "10.3.1-1",
   "main": "./dist",
   "types": "./dist",
   "authors": [
+    {
+      "name": "Todd Cornett",
+      "email": "tcornett@gmail.com"
+    },
     {
       "name": "Jason Raimondi",
       "email": "jason@raimondi.us"
