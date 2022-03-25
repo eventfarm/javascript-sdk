@@ -156,6 +156,16 @@ export class Pool {
   // Commands
 
   /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
+  ArchivePool(poolId: string): any {
+    return this.restClient.post('Pool/UseCase/ArchivePool', {
+      poolId,
+    });
+  }
+
+  /**
    * @param string - name
    * @param string? - shortName
    * @param string? - poolId
@@ -208,6 +218,16 @@ export class Pool {
       poolId,
       poolWebhookType,
       url,
+    });
+  }
+
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
+  DeletePool(poolId: string): any {
+    return this.restClient.post('Pool/UseCase/DeletePool', {
+      poolId,
     });
   }
 
