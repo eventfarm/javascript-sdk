@@ -128,6 +128,19 @@ export class SitePage {
 
   /**
    * @param string - sitePageId
+   * @return Promise|Observable|any
+   */
+  DisableSearchEngineIndexingForSitePage(sitePageId: string): any {
+    return this.restClient.post(
+      'SitePage/UseCase/DisableSearchEngineIndexingForSitePage',
+      {
+        sitePageId,
+      },
+    );
+  }
+
+  /**
+   * @param string - sitePageId
    * @param string? - newSitePageId
    * @param string? - toEventId
    * @return Promise|Observable|any
@@ -160,6 +173,19 @@ export class SitePage {
       newTemplateId,
       toPoolId,
     });
+  }
+
+  /**
+   * @param string - sitePageId
+   * @return Promise|Observable|any
+   */
+  EnableSearchEngineIndexingForSitePage(sitePageId: string): any {
+    return this.restClient.post(
+      'SitePage/UseCase/EnableSearchEngineIndexingForSitePage',
+      {
+        sitePageId,
+      },
+    );
   }
 
   /**
@@ -232,7 +258,6 @@ export class SitePage {
    * @param string? - keywords
    * @param string? - imageUrl
    * @param string? - name
-   * @param boolean? - isSearchEngineIndexingEnabled true|false
    * @return Promise|Observable|any
    */
   SetMetaInfoForSitePage(
@@ -242,7 +267,6 @@ export class SitePage {
     keywords: string = null,
     imageUrl: string = null,
     name: string = null,
-    isSearchEngineIndexingEnabled: boolean = null,
   ): any {
     return this.restClient.post('SitePage/UseCase/SetMetaInfoForSitePage', {
       sitePageId,
@@ -251,7 +275,6 @@ export class SitePage {
       keywords,
       imageUrl,
       name,
-      isSearchEngineIndexingEnabled,
     });
   }
 
