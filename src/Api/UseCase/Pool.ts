@@ -101,6 +101,7 @@ export class Pool {
    * @param string? - sortDirection ascending|descending
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
+   * @param boolean? - shouldHideDeleted true|false
    * @return Promise|Observable|any
    */
   ListPools(
@@ -109,6 +110,7 @@ export class Pool {
     sortDirection: string = null,
     page: number = null,
     itemsPerPage: number = null,
+    shouldHideDeleted: boolean = null,
   ): any {
     return this.restClient.get('Pool/UseCase/ListPools', {
       name,
@@ -116,6 +118,7 @@ export class Pool {
       sortDirection,
       page,
       itemsPerPage,
+      shouldHideDeleted,
     });
   }
 
