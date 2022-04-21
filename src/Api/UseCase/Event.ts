@@ -1188,6 +1188,27 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @param string - userId
+   * @param string - eventRole organizer|assistant|support|check-in-staff|read-only
+   * @param string? - authenticatedUserId
+   * @return Promise|Observable|any
+   */
+  ResendEventUserRoleEmail(
+    eventId: string,
+    userId: string,
+    eventRole: string,
+    authenticatedUserId: string = null,
+  ): any {
+    return this.restClient.post('Event/UseCase/ResendEventUserRoleEmail', {
+      eventId,
+      userId,
+      eventRole,
+      authenticatedUserId,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param string - fromName
    * @param string - fromEmail
    * @param string - emailSubject

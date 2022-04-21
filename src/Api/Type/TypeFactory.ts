@@ -12,6 +12,7 @@ import { Integration } from './Integration';
 import { IntegrationFieldMapping } from './IntegrationFieldMapping';
 import { IntegrationStatusMapping } from './IntegrationStatusMapping';
 import { Invitation } from './Invitation';
+import { Lead } from './Lead';
 import { PaymentGateway } from './PaymentGateway';
 import { Pool } from './Pool';
 import { Promotion } from './Promotion';
@@ -82,6 +83,10 @@ export class TypeFactory {
 
   Invitation(): Invitation {
     return new Invitation();
+  }
+
+  Lead(): Lead {
+    return new Lead();
   }
 
   PaymentGateway(): PaymentGateway {

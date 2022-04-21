@@ -187,6 +187,27 @@ export class Exhibitor {
 
   /**
    * @param string - exhibitorId
+   * @param string - userId
+   * @param string? - authenticatedUserId
+   * @return Promise|Observable|any
+   */
+  ResendExhibitorTeamMemberEmail(
+    exhibitorId: string,
+    userId: string,
+    authenticatedUserId: string = null,
+  ): any {
+    return this.restClient.post(
+      'Exhibitor/UseCase/ResendExhibitorTeamMemberEmail',
+      {
+        exhibitorId,
+        userId,
+        authenticatedUserId,
+      },
+    );
+  }
+
+  /**
+   * @param string - exhibitorId
    * @param string - exhibitorDescription
    * @return Promise|Observable|any
    */

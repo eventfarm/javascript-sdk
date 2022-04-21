@@ -49,11 +49,12 @@ export class Lead {
    * @param string - exhibitorId
    * @param string - firstName
    * @param string - lastName
+   * @param string - sourceUserId
    * @param string? - emailAddress
    * @param string? - phoneNumber
    * @param number? - score
    * @param string? - notes
-   * @param string? - sourceUserId
+   * @param string? - temperature not-set|cold|warm|hot
    * @param string? - leadId
    * @return Promise|Observable|any
    */
@@ -61,22 +62,24 @@ export class Lead {
     exhibitorId: string,
     firstName: string,
     lastName: string,
+    sourceUserId: string,
     emailAddress: string = null,
     phoneNumber: string = null,
     score: number = null,
     notes: string = null,
-    sourceUserId: string = null,
+    temperature: string = null,
     leadId: string = null,
   ): any {
     return this.restClient.post('Lead/UseCase/CreateLead', {
       exhibitorId,
       firstName,
       lastName,
+      sourceUserId,
       emailAddress,
       phoneNumber,
       score,
       notes,
-      sourceUserId,
+      temperature,
       leadId,
     });
   }
@@ -170,6 +173,51 @@ export class Lead {
     return this.restClient.post('Lead/UseCase/SetLeadScore', {
       leadId,
       leadScore,
+    });
+  }
+
+  /**
+   * @param string - leadId
+   * @param string - leadTemperature not-set|cold|warm|hot
+   * @return Promise|Observable|any
+   */
+  SetLeadTemperature(leadId: string, leadTemperature: string): any {
+    return this.restClient.post('Lead/UseCase/SetLeadTemperature', {
+      leadId,
+      leadTemperature,
+    });
+  }
+
+  /**
+   * @param string - leadId
+   * @param string? - firstName
+   * @param string? - lastName
+   * @param string? - emailAddress
+   * @param string? - phoneNumber
+   * @param number? - score
+   * @param string? - notes
+   * @param string? - temperature not-set|cold|warm|hot
+   * @return Promise|Observable|any
+   */
+  UpdateLead(
+    leadId: string,
+    firstName: string = null,
+    lastName: string = null,
+    emailAddress: string = null,
+    phoneNumber: string = null,
+    score: number = null,
+    notes: string = null,
+    temperature: string = null,
+  ): any {
+    return this.restClient.post('Lead/UseCase/UpdateLead', {
+      leadId,
+      firstName,
+      lastName,
+      emailAddress,
+      phoneNumber,
+      score,
+      notes,
+      temperature,
     });
   }
 }
