@@ -25,6 +25,7 @@ export class Lead {
    * @param number? - itemsPerPage 1-500
    * @param string? - sortBy
    * @param string? - sortDirection ascending|descending
+   * @param string? - sourceUserId
    * @return Promise|Observable|any
    */
   ListLeadsForExhibitor(
@@ -33,6 +34,7 @@ export class Lead {
     itemsPerPage: number = null,
     sortBy: string = null,
     sortDirection: string = null,
+    sourceUserId: string = null,
   ): any {
     return this.restClient.get('Lead/UseCase/ListLeadsForExhibitor', {
       exhibitorId,
@@ -40,6 +42,7 @@ export class Lead {
       itemsPerPage,
       sortBy,
       sortDirection,
+      sourceUserId,
     });
   }
 

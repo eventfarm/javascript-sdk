@@ -4,6 +4,7 @@ import { ActivityLog } from './ActivityLog';
 import { Allotment } from './Allotment';
 import { AppVersion } from './AppVersion';
 import { BugReport } from './BugReport';
+import { Campaign } from './Campaign';
 import { Canvas } from './Canvas';
 import { DomainMask } from './DomainMask';
 import { EFx } from './EFx';
@@ -81,6 +82,10 @@ export class UseCaseFactory {
 
   BugReport(): BugReport {
     return new BugReport(this.restClient);
+  }
+
+  Campaign(): Campaign {
+    return new Campaign(this.restClient);
   }
 
   Canvas(): Canvas {

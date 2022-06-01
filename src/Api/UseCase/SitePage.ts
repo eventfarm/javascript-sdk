@@ -220,19 +220,22 @@ export class SitePage {
 
   /**
    * @param string - sitePageId
-   * @param string - content
+   * @param string - editorJson
+   * @param string? - content
    * @param string? - styles
    * @param string? - scripts
    * @return Promise|Observable|any
    */
   SetContentForSitePage(
     sitePageId: string,
-    content: string,
+    editorJson: string,
+    content: string = null,
     styles: string = null,
     scripts: string = null,
   ): any {
     return this.restClient.post('SitePage/UseCase/SetContentForSitePage', {
       sitePageId,
+      editorJson,
       content,
       styles,
       scripts,

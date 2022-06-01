@@ -62,7 +62,7 @@ export class Exhibitor {
    * @param number? - itemsPerPage 1-500
    * @param string? - sortBy
    * @param string? - sortDirection ascending|descending
-   * @param string? - eventDateFilterType
+   * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
    * @param string? - poolId
    * @return Promise|Observable|any
    */

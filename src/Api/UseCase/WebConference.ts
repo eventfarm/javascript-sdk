@@ -25,6 +25,27 @@ export class WebConference {
   }
 
   /**
+   * @param string - userId
+   * @param string - eventId
+   * @param string - type
+   * @return Promise|Observable|any
+   */
+  GetWebConferenceSettingsForUser(
+    userId: string,
+    eventId: string,
+    type: string,
+  ): any {
+    return this.restClient.get(
+      'WebConference/UseCase/GetWebConferenceSettingsForUser',
+      {
+        userId,
+        eventId,
+        type,
+      },
+    );
+  }
+
+  /**
    * @param string - poolId
    * @param string? - type
    * @return Promise|Observable|any
