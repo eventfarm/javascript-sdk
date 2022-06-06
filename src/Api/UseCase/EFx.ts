@@ -34,7 +34,76 @@ export class EFx {
     });
   }
 
+  /**
+   * @param string - stationId
+   * @param string[]? - withData StackAndTicketType|EFxScreens
+   * @return Promise|Observable|any
+   */
+  GetEFxStation(stationId: string, withData: string[] = null): any {
+    return this.restClient.get('EFx/UseCase/GetEFxStation', {
+      stationId,
+      withData,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string[]? - withData StackAndTicketType|EFxScreens
+   * @param string? - sortBy createdAt
+   * @param string? - sortDirection ascending|descending
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @param any[]? - moduleFilter guest-management|access-control|athletes-bag|concierge|digital-memory-bank|guest-info|messaging|smsquiz|product-pickup|raffle|reservation|roaming-photographer|smart-bar|teams|lead-retrieval
+   * @param string? - query
+   * @return Promise|Observable|any
+   */
+  ListEFxStationsForEvent(
+    eventId: string,
+    withData: string[] = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    moduleFilter: any[] = null,
+    query: string = null,
+  ): any {
+    return this.restClient.get('EFx/UseCase/ListEFxStationsForEvent', {
+      eventId,
+      withData,
+      sortBy,
+      sortDirection,
+      page,
+      itemsPerPage,
+      moduleFilter,
+      query,
+    });
+  }
+
   // Commands
+
+  /**
+   * @param string - eventId
+   * @param string - stationName
+   * @param string - moduleType access-control
+   * @param string - stationType check-in|check-in-out
+   * @param string? - stationId
+   * @return Promise|Observable|any
+   */
+  CreateEFxStation(
+    eventId: string,
+    stationName: string,
+    moduleType: string,
+    stationType: string,
+    stationId: string = null,
+  ): any {
+    return this.restClient.post('EFx/UseCase/CreateEFxStation', {
+      eventId,
+      stationName,
+      moduleType,
+      stationType,
+      stationId,
+    });
+  }
 
   /**
    * @param string - eventId
@@ -121,6 +190,16 @@ export class EFx {
   }
 
   /**
+   * @param string - stationId
+   * @return Promise|Observable|any
+   */
+  RemoveEFxStation(stationId: string): any {
+    return this.restClient.post('EFx/UseCase/RemoveEFxStation', {
+      stationId,
+    });
+  }
+
+  /**
    * @param string - eventId
    * @param string - userId
    * @param any[]? - requestedEFxModules guest-management|access-control|athletes-bag|concierge|digital-memory-bank|guest-info|messaging|smsquiz|product-pickup|raffle|reservation|roaming-photographer|smart-bar|teams|lead-retrieval
@@ -169,6 +248,36 @@ export class EFx {
     return this.restClient.post('EFx/UseCase/SetSMSForEvent', {
       eventId,
       message,
+    });
+  }
+
+  /**
+   * @param string - stationId
+   * @param any[]? - stackIds
+   * @return Promise|Observable|any
+   */
+  SetStacksForEFxStation(stationId: string, stackIds: any[] = null): any {
+    return this.restClient.post('EFx/UseCase/SetStacksForEFxStation', {
+      stationId,
+      stackIds,
+    });
+  }
+
+  /**
+   * @param string - stationId
+   * @param string - stationName
+   * @param string - stationType check-in|check-in-out
+   * @return Promise|Observable|any
+   */
+  UpdateEFxStation(
+    stationId: string,
+    stationName: string,
+    stationType: string,
+  ): any {
+    return this.restClient.post('EFx/UseCase/UpdateEFxStation', {
+      stationId,
+      stationName,
+      stationType,
     });
   }
 }

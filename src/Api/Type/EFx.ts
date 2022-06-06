@@ -28,6 +28,25 @@ export interface EFxModuleTypeInterface {
   compatibilityNFC: any;
   compatibilitySMS: any;
 }
+export interface EFxScreenTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isScanView: boolean;
+  isFailureView: boolean;
+  isCheckOutView: boolean;
+  isSuccessView: boolean;
+  isRegisterSuccessView: boolean;
+  isRegisterScanView: boolean;
+  isRegisterFailureView: boolean;
+}
+export interface EFxStationTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isCheckIn: boolean;
+  isCheckInOut: boolean;
+}
 
 export class EFx {
   EFxModuleType(): EFxModuleTypeInterface[] {
@@ -451,6 +470,114 @@ export class EFx {
         dependencySMS: false,
         compatibilityNFC: true,
         compatibilitySMS: false,
+      },
+    ];
+  }
+
+  EFxScreenType(): EFxScreenTypeInterface[] {
+    return [
+      {
+        slug: 'scan-view',
+        name: 'Scan View',
+        description: null,
+        isScanView: true,
+        isFailureView: false,
+        isCheckOutView: false,
+        isSuccessView: false,
+        isRegisterSuccessView: false,
+        isRegisterScanView: false,
+        isRegisterFailureView: false,
+      },
+      {
+        slug: 'failure-view',
+        name: 'Failure View',
+        description: null,
+        isScanView: false,
+        isFailureView: true,
+        isCheckOutView: false,
+        isSuccessView: false,
+        isRegisterSuccessView: false,
+        isRegisterScanView: false,
+        isRegisterFailureView: false,
+      },
+      {
+        slug: 'check-out-view',
+        name: 'Check Out View',
+        description: null,
+        isScanView: false,
+        isFailureView: false,
+        isCheckOutView: true,
+        isSuccessView: false,
+        isRegisterSuccessView: false,
+        isRegisterScanView: false,
+        isRegisterFailureView: false,
+      },
+      {
+        slug: 'success-view',
+        name: 'Success View',
+        description: null,
+        isScanView: false,
+        isFailureView: false,
+        isCheckOutView: false,
+        isSuccessView: true,
+        isRegisterSuccessView: false,
+        isRegisterScanView: false,
+        isRegisterFailureView: false,
+      },
+      {
+        slug: 'register-success-view',
+        name: 'Register Success View',
+        description: null,
+        isScanView: false,
+        isFailureView: false,
+        isCheckOutView: false,
+        isSuccessView: false,
+        isRegisterSuccessView: true,
+        isRegisterScanView: false,
+        isRegisterFailureView: false,
+      },
+      {
+        slug: 'register-scan-view',
+        name: 'Register Scan View',
+        description: null,
+        isScanView: false,
+        isFailureView: false,
+        isCheckOutView: false,
+        isSuccessView: false,
+        isRegisterSuccessView: false,
+        isRegisterScanView: true,
+        isRegisterFailureView: false,
+      },
+      {
+        slug: 'register-failure-view',
+        name: 'Register Failure View',
+        description: null,
+        isScanView: false,
+        isFailureView: false,
+        isCheckOutView: false,
+        isSuccessView: false,
+        isRegisterSuccessView: false,
+        isRegisterScanView: false,
+        isRegisterFailureView: true,
+      },
+    ];
+  }
+
+  EFxStationType(): EFxStationTypeInterface[] {
+    return [
+      {
+        slug: 'check-in',
+        name: 'CheckIn',
+        description: null,
+        isCheckIn: true,
+        isCheckInOut: false,
+      },
+      {
+        slug: 'check-in-out',
+        name: 'CheckInOut',
+        description: null,
+        isCheckIn: false,
+        isCheckInOut: true,
       },
     ];
   }
