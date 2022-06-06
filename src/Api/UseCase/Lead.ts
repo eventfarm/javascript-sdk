@@ -58,6 +58,8 @@ export class Lead {
    * @param number? - score
    * @param string? - notes
    * @param string? - temperature not-set|cold|warm|hot
+   * @param string? - title
+   * @param string? - company
    * @param string? - leadId
    * @return Promise|Observable|any
    */
@@ -71,6 +73,8 @@ export class Lead {
     score: number = null,
     notes: string = null,
     temperature: string = null,
+    title: string = null,
+    company: string = null,
     leadId: string = null,
   ): any {
     return this.restClient.post('Lead/UseCase/CreateLead', {
@@ -83,6 +87,8 @@ export class Lead {
       score,
       notes,
       temperature,
+      title,
+      company,
       leadId,
     });
   }
@@ -104,6 +110,18 @@ export class Lead {
   RemoveLead(leadId: string): any {
     return this.restClient.post('Lead/UseCase/RemoveLead', {
       leadId,
+    });
+  }
+
+  /**
+   * @param string - leadId
+   * @param string - company
+   * @return Promise|Observable|any
+   */
+  SetLeadCompany(leadId: string, company: string): any {
+    return this.restClient.post('Lead/UseCase/SetLeadCompany', {
+      leadId,
+      company,
     });
   }
 
@@ -193,6 +211,18 @@ export class Lead {
 
   /**
    * @param string - leadId
+   * @param string - leadNotes
+   * @return Promise|Observable|any
+   */
+  SetLeadTitle(leadId: string, leadNotes: string): any {
+    return this.restClient.post('Lead/UseCase/SetLeadTitle', {
+      leadId,
+      leadNotes,
+    });
+  }
+
+  /**
+   * @param string - leadId
    * @param string? - firstName
    * @param string? - lastName
    * @param string? - emailAddress
@@ -200,6 +230,8 @@ export class Lead {
    * @param number? - score
    * @param string? - notes
    * @param string? - temperature not-set|cold|warm|hot
+   * @param string? - title
+   * @param string? - company
    * @return Promise|Observable|any
    */
   UpdateLead(
@@ -211,6 +243,8 @@ export class Lead {
     score: number = null,
     notes: string = null,
     temperature: string = null,
+    title: string = null,
+    company: string = null,
   ): any {
     return this.restClient.post('Lead/UseCase/UpdateLead', {
       leadId,
@@ -221,6 +255,8 @@ export class Lead {
       score,
       notes,
       temperature,
+      title,
+      company,
     });
   }
 }

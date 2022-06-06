@@ -19,7 +19,41 @@ export class Campaign {
     });
   }
 
+  /**
+   * @param string - poolId
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
+   * @param string? - sortBy
+   * @param string? - sortDirection ascending|descending
+   * @return Promise|Observable|any
+   */
+  ListCampaignsForPool(
+    poolId: string,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+  ): any {
+    return this.restClient.get('Campaign/UseCase/ListCampaignsForPool', {
+      poolId,
+      page,
+      itemsPerPage,
+      sortBy,
+      sortDirection,
+    });
+  }
+
   // Commands
+
+  /**
+   * @param string - campaignId
+   * @return Promise|Observable|any
+   */
+  ArchiveCampaign(campaignId: string): any {
+    return this.restClient.post('Campaign/UseCase/ArchiveCampaign', {
+      campaignId,
+    });
+  }
 
   /**
    * @param string - name
