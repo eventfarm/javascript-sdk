@@ -1,7 +1,7 @@
 {
   "name": "@eventfarm/javascript-sdk",
   "description": "Official Event Farm Javascript SDK",
-  "version": "10.3.2-2",
+  "version": "10.3.2",
   "main": "./dist",
   "types": "./dist",
   "authors": [
