@@ -33,7 +33,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme|VirbelaWorld
+   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme|VirbelaWorld|AnswerBindings
    * @return Promise|Observable|any
    */
   GetEvent(eventId: string, withData: string[] = null): any {
@@ -561,7 +561,7 @@ export class Event {
   /**
    * @param string - eventId
    * @param string - text
-   * @param string - questionType checkbox|radio|multi|text|select|date|waiver
+   * @param string - questionType checkbox|radio|multi|text|select|date|waiver|address
    * @param number? - sortOrder
    * @param boolean? - isRequired true|false
    * @param boolean? - isIndividual true|false
@@ -1188,6 +1188,27 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @param string - userId
+   * @param string - eventRole organizer|assistant|support|check-in-staff|read-only
+   * @param string? - authenticatedUserId
+   * @return Promise|Observable|any
+   */
+  ResendEventUserRoleEmail(
+    eventId: string,
+    userId: string,
+    eventRole: string,
+    authenticatedUserId: string = null,
+  ): any {
+    return this.restClient.post('Event/UseCase/ResendEventUserRoleEmail', {
+      eventId,
+      userId,
+      eventRole,
+      authenticatedUserId,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param string - fromName
    * @param string - fromEmail
    * @param string - emailSubject
@@ -1519,6 +1540,18 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @param string - paymentGatewayId
+   * @return Promise|Observable|any
+   */
+  SetPaymentGatewayForEvent(eventId: string, paymentGatewayId: string): any {
+    return this.restClient.post('Event/UseCase/SetPaymentGatewayForEvent', {
+      eventId,
+      paymentGatewayId,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param string - processingCurrency aud|brl|gbp|cad|dkk|eur|ils|jpy|mxn|nzd|php|rub|sek|chf|thb|usd
    * @return Promise|Observable|any
    */
@@ -1702,6 +1735,16 @@ export class Event {
   }
 
   /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  UnsetPaymentGatewayForEvent(eventId: string): any {
+    return this.restClient.post('Event/UseCase/UnsetPaymentGatewayForEvent', {
+      eventId,
+    });
+  }
+
+  /**
    * @param string - answerId
    * @param string - text
    * @param boolean? - isDefault true|false
@@ -1718,7 +1761,7 @@ export class Event {
   /**
    * @param string - questionId
    * @param string - text
-   * @param string - questionType checkbox|radio|multi|text|select|date|waiver
+   * @param string - questionType checkbox|radio|multi|text|select|date|waiver|address
    * @param any[]? - questionContextTypes registration|lead
    * @param boolean? - isRequired true|false
    * @param boolean? - isIndividual true|false

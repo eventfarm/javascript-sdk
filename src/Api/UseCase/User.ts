@@ -72,7 +72,7 @@ export class User {
   /**
    * @param string - poolId
    * @param string - userId
-   * @param string[]? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName
+   * @param string[]? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName|UserHealthPass
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @return Promise|Observable|any
    */
@@ -111,6 +111,39 @@ export class User {
     return this.restClient.get('User/UseCase/GetUserRolesForTicketBlock', {
       userId,
       ticketBlockId,
+    });
+  }
+
+  /**
+   * @param string - exhibitorId
+   * @param string - poolId
+   * @param string[]? - withData UserIdentifiers|UserNames|UserAttributes
+   * @param string? - query
+   * @param string? - sortBy name
+   * @param string? - sortDirection ascending|descending
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
+  ListUsersForExhibitor(
+    exhibitorId: string,
+    poolId: string,
+    withData: string[] = null,
+    query: string = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    page: number = null,
+    itemsPerPage: number = null,
+  ): any {
+    return this.restClient.get('User/UseCase/ListUsersForExhibitor', {
+      exhibitorId,
+      poolId,
+      withData,
+      query,
+      sortBy,
+      sortDirection,
+      page,
+      itemsPerPage,
     });
   }
 

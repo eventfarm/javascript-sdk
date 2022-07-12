@@ -31,6 +31,7 @@ export interface EmailArchiveSubCategoryTypeInterface {
   isNoShow: boolean;
   isWaitList: boolean;
   isNone: boolean;
+  isExhibitor: boolean;
 }
 export interface EmailMessageTypeInterface {
   slug: string;
@@ -299,6 +300,7 @@ export class EmailMessage {
         isNoShow: false,
         isWaitList: false,
         isNone: false,
+        isExhibitor: false,
       },
       {
         slug: 'group',
@@ -312,6 +314,7 @@ export class EmailMessage {
         isNoShow: false,
         isWaitList: false,
         isNone: false,
+        isExhibitor: false,
       },
       {
         slug: 'eventcheckedin',
@@ -325,6 +328,7 @@ export class EmailMessage {
         isNoShow: false,
         isWaitList: false,
         isNone: false,
+        isExhibitor: false,
       },
       {
         slug: 'tickettype',
@@ -338,6 +342,7 @@ export class EmailMessage {
         isNoShow: false,
         isWaitList: false,
         isNone: false,
+        isExhibitor: false,
       },
       {
         slug: 'preview',
@@ -351,6 +356,7 @@ export class EmailMessage {
         isNoShow: false,
         isWaitList: false,
         isNone: false,
+        isExhibitor: false,
       },
       {
         slug: 'noshow',
@@ -364,6 +370,7 @@ export class EmailMessage {
         isNoShow: true,
         isWaitList: false,
         isNone: false,
+        isExhibitor: false,
       },
       {
         slug: 'waitlist',
@@ -377,6 +384,7 @@ export class EmailMessage {
         isNoShow: false,
         isWaitList: true,
         isNone: false,
+        isExhibitor: false,
       },
       {
         slug: 'None',
@@ -390,6 +398,21 @@ export class EmailMessage {
         isNoShow: false,
         isWaitList: false,
         isNone: true,
+        isExhibitor: false,
+      },
+      {
+        slug: 'exhibitor',
+        name: 'Exhibitor',
+        description: null,
+        isTicketBlock: false,
+        isGroup: false,
+        isEventCheckedIn: false,
+        isTicketType: false,
+        isPreview: false,
+        isNoShow: false,
+        isWaitList: false,
+        isNone: false,
+        isExhibitor: true,
       },
     ];
   }

@@ -180,6 +180,7 @@ export interface QuestionTypeInterface {
   isSelect: boolean;
   isDate: boolean;
   isWaiver: boolean;
+  isAddress: boolean;
 }
 export interface ThemeColorTypeInterface {
   slug: string;
@@ -2302,7 +2303,7 @@ export class Event {
     return [
       {
         slug: 'checkbox',
-        name: 'Checkbox',
+        name: 'Checkboxes',
         description: null,
         isCheckbox: true,
         isRadio: false,
@@ -2311,10 +2312,11 @@ export class Event {
         isSelect: false,
         isDate: false,
         isWaiver: false,
+        isAddress: false,
       },
       {
         slug: 'radio',
-        name: 'Radio',
+        name: 'Radio Buttons',
         description: null,
         isCheckbox: false,
         isRadio: true,
@@ -2323,10 +2325,11 @@ export class Event {
         isSelect: false,
         isDate: false,
         isWaiver: false,
+        isAddress: false,
       },
       {
         slug: 'multi',
-        name: 'Multi',
+        name: 'Paragraph',
         description: null,
         isCheckbox: false,
         isRadio: false,
@@ -2335,10 +2338,11 @@ export class Event {
         isSelect: false,
         isDate: false,
         isWaiver: false,
+        isAddress: false,
       },
       {
         slug: 'text',
-        name: 'Text',
+        name: 'Short Answer',
         description: null,
         isCheckbox: false,
         isRadio: false,
@@ -2347,10 +2351,11 @@ export class Event {
         isSelect: false,
         isDate: false,
         isWaiver: false,
+        isAddress: false,
       },
       {
         slug: 'select',
-        name: 'Select',
+        name: 'Dropdown Select',
         description: null,
         isCheckbox: false,
         isRadio: false,
@@ -2359,10 +2364,11 @@ export class Event {
         isSelect: true,
         isDate: false,
         isWaiver: false,
+        isAddress: false,
       },
       {
         slug: 'date',
-        name: 'Date',
+        name: 'Select Date',
         description: null,
         isCheckbox: false,
         isRadio: false,
@@ -2371,10 +2377,11 @@ export class Event {
         isSelect: false,
         isDate: true,
         isWaiver: false,
+        isAddress: false,
       },
       {
         slug: 'waiver',
-        name: 'Waiver',
+        name: 'Sign Waiver',
         description: null,
         isCheckbox: false,
         isRadio: false,
@@ -2383,6 +2390,20 @@ export class Event {
         isSelect: false,
         isDate: false,
         isWaiver: true,
+        isAddress: false,
+      },
+      {
+        slug: 'address',
+        name: 'Address',
+        description: null,
+        isCheckbox: false,
+        isRadio: false,
+        isMulti: false,
+        isText: false,
+        isSelect: false,
+        isDate: false,
+        isWaiver: false,
+        isAddress: true,
       },
     ];
   }

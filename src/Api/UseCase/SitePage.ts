@@ -128,6 +128,19 @@ export class SitePage {
 
   /**
    * @param string - sitePageId
+   * @return Promise|Observable|any
+   */
+  DisableSearchEngineIndexingForSitePage(sitePageId: string): any {
+    return this.restClient.post(
+      'SitePage/UseCase/DisableSearchEngineIndexingForSitePage',
+      {
+        sitePageId,
+      },
+    );
+  }
+
+  /**
+   * @param string - sitePageId
    * @param string? - newSitePageId
    * @param string? - toEventId
    * @return Promise|Observable|any
@@ -163,6 +176,19 @@ export class SitePage {
   }
 
   /**
+   * @param string - sitePageId
+   * @return Promise|Observable|any
+   */
+  EnableSearchEngineIndexingForSitePage(sitePageId: string): any {
+    return this.restClient.post(
+      'SitePage/UseCase/EnableSearchEngineIndexingForSitePage',
+      {
+        sitePageId,
+      },
+    );
+  }
+
+  /**
    * @return Promise|Observable|any
    */
   GenerateSitePageTemplates(): any {
@@ -194,19 +220,22 @@ export class SitePage {
 
   /**
    * @param string - sitePageId
-   * @param string - content
+   * @param string - editorJson
+   * @param string? - content
    * @param string? - styles
    * @param string? - scripts
    * @return Promise|Observable|any
    */
   SetContentForSitePage(
     sitePageId: string,
-    content: string,
+    editorJson: string,
+    content: string = null,
     styles: string = null,
     scripts: string = null,
   ): any {
     return this.restClient.post('SitePage/UseCase/SetContentForSitePage', {
       sitePageId,
+      editorJson,
       content,
       styles,
       scripts,

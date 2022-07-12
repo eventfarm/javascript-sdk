@@ -151,7 +151,7 @@ export class EmailMessage {
    * @param string - emailDesignId
    * @param string - invitationId
    * @param string - category alert|invitation|receipts|forgotpassword|changepassword|transferauthorization|transferconfirmation|eventmessage|eventmessagepreview|reportnotification|account|verify|system
-   * @param string - subCategory ticketblock|group|eventcheckedin|tickettype|preview|noshow|waitlist|None
+   * @param string - subCategory ticketblock|group|eventcheckedin|tickettype|preview|noshow|waitlist|None|exhibitor
    * @return Promise|Observable|any
    */
   CreateEmailMessage(
@@ -420,6 +420,7 @@ export class EmailMessage {
    * @param boolean? - useEventSpecificLayout true|false
    * @param string? - backgroundColor
    * @param string? - domainMaskEmail
+   * @param string? - eventGroupStatusFilterType has_invitation|does_not_have_invitation
    * @return Promise|Observable|any
    */
   SendAMessageToGroup(
@@ -435,6 +436,7 @@ export class EmailMessage {
     useEventSpecificLayout: boolean = null,
     backgroundColor: string = null,
     domainMaskEmail: string = null,
+    eventGroupStatusFilterType: string = null,
   ): any {
     return this.restClient.post('EmailMessage/UseCase/SendAMessageToGroup', {
       groupId,
@@ -449,6 +451,7 @@ export class EmailMessage {
       useEventSpecificLayout,
       backgroundColor,
       domainMaskEmail,
+      eventGroupStatusFilterType,
     });
   }
 

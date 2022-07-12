@@ -96,7 +96,7 @@ export class UserAttribute {
   /**
    * @param string - poolId
    * @param string - userId
-   * @param string - attributeKey company|position|title|telephone|newCustomField
+   * @param string - attributeKey company|position|title|telephone|user-email-unsubscribe|newCustomField
    * @param string - attributeValue
    * @return Promise|Observable|any
    */

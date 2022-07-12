@@ -4,6 +4,7 @@ import { ActivityLog } from './ActivityLog';
 import { Allotment } from './Allotment';
 import { AppVersion } from './AppVersion';
 import { BugReport } from './BugReport';
+import { Campaign } from './Campaign';
 import { Canvas } from './Canvas';
 import { DomainMask } from './DomainMask';
 import { EFx } from './EFx';
@@ -15,23 +16,30 @@ import { EmailSample } from './EmailSample';
 import { EmailTemplate } from './EmailTemplate';
 import { Event } from './Event';
 import { EventTheme } from './EventTheme';
+import { Exhibitor } from './Exhibitor';
 import { Feature } from './Feature';
 import { FeatureToggle } from './FeatureToggle';
 import { Group } from './Group';
+import { HealthPass } from './HealthPass';
 import { Import } from './Import';
 import { Integration } from './Integration';
 import { IntegrationFieldMapping } from './IntegrationFieldMapping';
 import { IntegrationStatusMapping } from './IntegrationStatusMapping';
 import { Invitation } from './Invitation';
+import { Lead } from './Lead';
+import { Link } from './Link';
+import { Logi } from './Logi';
 import { OAuth } from './OAuth';
 import { OAuth2 } from './OAuth2';
 import { Payment } from './Payment';
+import { PaymentGateway } from './PaymentGateway';
 import { Pool } from './Pool';
 import { PoolAllotment } from './PoolAllotment';
 import { PoolContact } from './PoolContact';
 import { PoolContract } from './PoolContract';
 import { PoolFeature } from './PoolFeature';
 import { PoolWorld } from './PoolWorld';
+import { Profile } from './Profile';
 import { Promotion } from './Promotion';
 import { Question } from './Question';
 import { Queue } from './Queue';
@@ -78,6 +86,10 @@ export class UseCaseFactory {
     return new BugReport(this.restClient);
   }
 
+  Campaign(): Campaign {
+    return new Campaign(this.restClient);
+  }
+
   Canvas(): Canvas {
     return new Canvas(this.restClient);
   }
@@ -122,6 +134,10 @@ export class UseCaseFactory {
     return new EventTheme(this.restClient);
   }
 
+  Exhibitor(): Exhibitor {
+    return new Exhibitor(this.restClient);
+  }
+
   Feature(): Feature {
     return new Feature(this.restClient);
   }
@@ -132,6 +148,10 @@ export class UseCaseFactory {
 
   Group(): Group {
     return new Group(this.restClient);
+  }
+
+  HealthPass(): HealthPass {
+    return new HealthPass(this.restClient);
   }
 
   Import(): Import {
@@ -154,6 +174,18 @@ export class UseCaseFactory {
     return new Invitation(this.restClient);
   }
 
+  Lead(): Lead {
+    return new Lead(this.restClient);
+  }
+
+  Link(): Link {
+    return new Link(this.restClient);
+  }
+
+  Logi(): Logi {
+    return new Logi(this.restClient);
+  }
+
   OAuth(): OAuth {
     return new OAuth(this.restClient);
   }
@@ -164,6 +196,10 @@ export class UseCaseFactory {
 
   Payment(): Payment {
     return new Payment(this.restClient);
+  }
+
+  PaymentGateway(): PaymentGateway {
+    return new PaymentGateway(this.restClient);
   }
 
   Pool(): Pool {
@@ -188,6 +224,10 @@ export class UseCaseFactory {
 
   PoolWorld(): PoolWorld {
     return new PoolWorld(this.restClient);
+  }
+
+  Profile(): Profile {
+    return new Profile(this.restClient);
   }
 
   Promotion(): Promotion {

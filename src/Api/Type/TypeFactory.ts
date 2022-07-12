@@ -5,12 +5,17 @@ import { EmailDesign } from './EmailDesign';
 import { EmailMessage } from './EmailMessage';
 import { EmailTemplate } from './EmailTemplate';
 import { Event } from './Event';
+import { Group } from './Group';
+import { HealthPass } from './HealthPass';
 import { Import } from './Import';
 import { Integration } from './Integration';
 import { IntegrationFieldMapping } from './IntegrationFieldMapping';
 import { IntegrationStatusMapping } from './IntegrationStatusMapping';
 import { Invitation } from './Invitation';
+import { Lead } from './Lead';
+import { PaymentGateway } from './PaymentGateway';
 import { Pool } from './Pool';
+import { Profile } from './Profile';
 import { Promotion } from './Promotion';
 import { Question } from './Question';
 import { Queue } from './Queue';
@@ -53,6 +58,14 @@ export class TypeFactory {
     return new Event();
   }
 
+  Group(): Group {
+    return new Group();
+  }
+
+  HealthPass(): HealthPass {
+    return new HealthPass();
+  }
+
   Import(): Import {
     return new Import();
   }
@@ -73,8 +86,20 @@ export class TypeFactory {
     return new Invitation();
   }
 
+  Lead(): Lead {
+    return new Lead();
+  }
+
+  PaymentGateway(): PaymentGateway {
+    return new PaymentGateway();
+  }
+
   Pool(): Pool {
     return new Pool();
+  }
+
+  Profile(): Profile {
+    return new Profile();
   }
 
   Promotion(): Promotion {
