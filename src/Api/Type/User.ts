@@ -49,6 +49,7 @@ export interface RoleTypeInterface {
   isInventoryRecords: boolean;
   isContestScores: boolean;
   isPoolContact: boolean;
+  isExhibitorTeamMember: boolean;
 }
 export interface TokenStateTypeInterface {
   slug: string;
@@ -98,6 +99,7 @@ export interface UserRoleTypeInterface {
   isEvents: boolean;
   isTicketblocks: boolean;
   isPools: boolean;
+  isExhibitors: boolean;
 }
 export interface UserUnsubscribePreferenceTypeInterface {
   slug: string;
@@ -254,6 +256,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'user',
@@ -283,6 +286,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'admin',
@@ -312,6 +316,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'event-crud',
@@ -341,6 +346,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'event-view',
@@ -370,6 +376,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'ticket-block-crud',
@@ -399,6 +406,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'ticket-block-view',
@@ -428,6 +436,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'address-book-crud',
@@ -457,6 +466,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'address-book-view',
@@ -486,6 +496,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'user-crud',
@@ -515,6 +526,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'user-view',
@@ -544,6 +556,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'list-view',
@@ -573,6 +586,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'list-crud',
@@ -602,6 +616,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'upload',
@@ -631,6 +646,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'email',
@@ -660,6 +676,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'reports',
@@ -689,6 +706,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'mass-remove',
@@ -718,6 +736,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'custom-layout',
@@ -747,6 +766,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'payments',
@@ -776,6 +796,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'will-call',
@@ -805,6 +826,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'partner',
@@ -834,6 +856,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'inventory-records',
@@ -863,6 +886,7 @@ export class User {
         isInventoryRecords: true,
         isContestScores: false,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'contest-scores',
@@ -892,6 +916,7 @@ export class User {
         isInventoryRecords: false,
         isContestScores: true,
         isPoolContact: false,
+        isExhibitorTeamMember: false,
       },
       {
         slug: 'pool-contact',
@@ -921,6 +946,37 @@ export class User {
         isInventoryRecords: false,
         isContestScores: false,
         isPoolContact: true,
+        isExhibitorTeamMember: false,
+      },
+      {
+        slug: 'exhibitor-team-member',
+        name: 'Exhibitor Team Member',
+        description: null,
+        isNone: false,
+        isUser: false,
+        isAdmin: false,
+        isEventCrud: false,
+        isEventView: false,
+        isTicketBlockCrud: false,
+        isTicketBlockView: false,
+        isAddressBookCrud: false,
+        isAddressBookView: false,
+        isUserCrud: false,
+        isUserView: false,
+        isListView: false,
+        isListCrud: false,
+        isUpload: false,
+        isEmail: false,
+        isReports: false,
+        isMassRemove: false,
+        isCustomLayout: false,
+        isPayments: false,
+        isWillCall: false,
+        isPartner: false,
+        isInventoryRecords: false,
+        isContestScores: false,
+        isPoolContact: false,
+        isExhibitorTeamMember: true,
       },
     ];
   }
@@ -1225,6 +1281,7 @@ export class User {
         isEvents: false,
         isTicketblocks: false,
         isPools: false,
+        isExhibitors: false,
       },
       {
         slug: 'events',
@@ -1234,6 +1291,7 @@ export class User {
         isEvents: true,
         isTicketblocks: false,
         isPools: false,
+        isExhibitors: false,
       },
       {
         slug: 'ticketblocks',
@@ -1243,6 +1301,7 @@ export class User {
         isEvents: false,
         isTicketblocks: true,
         isPools: false,
+        isExhibitors: false,
       },
       {
         slug: 'pools',
@@ -1252,6 +1311,17 @@ export class User {
         isEvents: false,
         isTicketblocks: false,
         isPools: true,
+        isExhibitors: false,
+      },
+      {
+        slug: 'exhibitors',
+        name: 'Exhibitors',
+        description: null,
+        isGlobal: false,
+        isEvents: false,
+        isTicketblocks: false,
+        isPools: false,
+        isExhibitors: true,
       },
     ];
   }

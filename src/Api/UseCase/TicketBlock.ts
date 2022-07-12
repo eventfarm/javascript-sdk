@@ -202,6 +202,27 @@ export class TicketBlock {
 
   /**
    * @param string - ticketBlockId
+   * @param string - userId
+   * @param string? - authenticatedUserId
+   * @return Promise|Observable|any
+   */
+  ResendTicketBlockUserRoleEmail(
+    ticketBlockId: string,
+    userId: string,
+    authenticatedUserId: string = null,
+  ): any {
+    return this.restClient.post(
+      'TicketBlock/UseCase/ResendTicketBlockUserRoleEmail',
+      {
+        ticketBlockId,
+        userId,
+        authenticatedUserId,
+      },
+    );
+  }
+
+  /**
+   * @param string - ticketBlockId
    * @param string - emailText
    * @return Promise|Observable|any
    */

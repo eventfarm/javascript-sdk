@@ -115,6 +115,39 @@ export class User {
   }
 
   /**
+   * @param string - exhibitorId
+   * @param string - poolId
+   * @param string[]? - withData UserIdentifiers|UserNames|UserAttributes
+   * @param string? - query
+   * @param string? - sortBy name
+   * @param string? - sortDirection ascending|descending
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
+  ListUsersForExhibitor(
+    exhibitorId: string,
+    poolId: string,
+    withData: string[] = null,
+    query: string = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    page: number = null,
+    itemsPerPage: number = null,
+  ): any {
+    return this.restClient.get('User/UseCase/ListUsersForExhibitor', {
+      exhibitorId,
+      poolId,
+      withData,
+      query,
+      sortBy,
+      sortDirection,
+      page,
+      itemsPerPage,
+    });
+  }
+
+  /**
    * @param any[] - poolIds
    * @param string[]? - withData UserIdentifiers|UserNames|UserAttributes
    * @param string? - query
@@ -165,39 +198,6 @@ export class User {
   ): any {
     return this.restClient.get('User/UseCase/ListUsersForTicketBlock', {
       ticketBlockId,
-      withData,
-      query,
-      sortBy,
-      sortDirection,
-      page,
-      itemsPerPage,
-    });
-  }
-
-  /**
-   * @param string - exhibitorId
-   * @param string - poolId
-   * @param string[]? - withData UserIdentifiers|UserNames|UserAttributes
-   * @param string? - query
-   * @param string? - sortBy name
-   * @param string? - sortDirection ascending|descending
-   * @param number? - page >= 1
-   * @param number? - itemsPerPage 1-100
-   * @return Promise|Observable|any
-   */
-  ListUsersInExhibitor(
-    exhibitorId: string,
-    poolId: string,
-    withData: string[] = null,
-    query: string = null,
-    sortBy: string = null,
-    sortDirection: string = null,
-    page: number = null,
-    itemsPerPage: number = null,
-  ): any {
-    return this.restClient.get('User/UseCase/ListUsersInExhibitor', {
-      exhibitorId,
-      poolId,
       withData,
       query,
       sortBy,
