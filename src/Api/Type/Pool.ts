@@ -65,6 +65,14 @@ export interface PoolContractTypeInterface {
   isCustom: boolean;
   isInternal: boolean;
 }
+export interface PoolImageTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isProfile: boolean;
+  isEFx: boolean;
+  isOther: boolean;
+}
 export interface PoolWebhookTypeInterface {
   slug: string;
   name: string;
@@ -1347,6 +1355,35 @@ export class Pool {
         isPremierPlus: false,
         isCustom: false,
         isInternal: true,
+      },
+    ];
+  }
+
+  PoolImageType(): PoolImageTypeInterface[] {
+    return [
+      {
+        slug: 'profile',
+        name: 'Profile',
+        description: null,
+        isProfile: true,
+        isEFx: false,
+        isOther: false,
+      },
+      {
+        slug: 'efx',
+        name: 'EFx',
+        description: null,
+        isProfile: false,
+        isEFx: true,
+        isOther: false,
+      },
+      {
+        slug: 'other',
+        name: 'Other',
+        description: null,
+        isProfile: false,
+        isEFx: false,
+        isOther: true,
       },
     ];
   }

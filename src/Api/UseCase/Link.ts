@@ -47,21 +47,24 @@ export class Link {
 
   /**
    * @param string - poolId
-   * @param string? - url
+   * @param string - url
    * @param string? - shownText
+   * @param string? - linkType
    * @param string? - linkId
    * @return Promise|Observable|any
    */
   CreateLink(
     poolId: string,
-    url: string = null,
+    url: string,
     shownText: string = null,
+    linkType: string = null,
     linkId: string = null,
   ): any {
     return this.restClient.post('Link/UseCase/CreateLink', {
       poolId,
       url,
       shownText,
+      linkType,
       linkId,
     });
   }
@@ -112,6 +115,18 @@ export class Link {
 
   /**
    * @param string - linkId
+   * @param string - linkType
+   * @return Promise|Observable|any
+   */
+  SetLinkType(linkId: string, linkType: string): any {
+    return this.restClient.post('Link/UseCase/SetLinkType', {
+      linkId,
+      linkType,
+    });
+  }
+
+  /**
+   * @param string - linkId
    * @param string - shownText
    * @return Promise|Observable|any
    */
@@ -139,6 +154,7 @@ export class Link {
    * @param string - poolId
    * @param string? - url
    * @param string? - shownText
+   * @param string? - linkType
    * @return Promise|Observable|any
    */
   UpdateLink(
@@ -146,12 +162,14 @@ export class Link {
     poolId: string,
     url: string = null,
     shownText: string = null,
+    linkType: string = null,
   ): any {
     return this.restClient.post('Link/UseCase/UpdateLink', {
       linkId,
       poolId,
       url,
       shownText,
+      linkType,
     });
   }
 }

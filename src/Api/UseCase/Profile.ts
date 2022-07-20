@@ -23,7 +23,7 @@ export class Profile {
    * @param string - eventId
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-500
-   * @param string? - sortBy
+   * @param string? - sortBy name|title|company|created
    * @param string? - sortDirection ascending|descending
    * @return Promise|Observable|any
    */

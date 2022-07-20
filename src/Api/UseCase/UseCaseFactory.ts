@@ -6,6 +6,7 @@ import { AppVersion } from './AppVersion';
 import { BugReport } from './BugReport';
 import { Campaign } from './Campaign';
 import { Canvas } from './Canvas';
+import { Country } from './Country';
 import { DomainMask } from './DomainMask';
 import { EFx } from './EFx';
 import { EmailDesign } from './EmailDesign';
@@ -38,6 +39,7 @@ import { PoolAllotment } from './PoolAllotment';
 import { PoolContact } from './PoolContact';
 import { PoolContract } from './PoolContract';
 import { PoolFeature } from './PoolFeature';
+import { PoolImage } from './PoolImage';
 import { PoolWorld } from './PoolWorld';
 import { Profile } from './Profile';
 import { Promotion } from './Promotion';
@@ -54,6 +56,7 @@ import { SitePage } from './SitePage';
 import { Stack } from './Stack';
 import { TicketBlock } from './TicketBlock';
 import { TicketType } from './TicketType';
+import { Track } from './Track';
 import { Transaction } from './Transaction';
 import { Transfer } from './Transfer';
 import { User } from './User';
@@ -62,6 +65,7 @@ import { UserAttribute } from './UserAttribute';
 import { UserIdentifier } from './UserIdentifier';
 import { UserName } from './UserName';
 import { UserUnsubscribe } from './UserUnsubscribe';
+import { Venue } from './Venue';
 import { Virbela } from './Virbela';
 import { VirbelaWorld } from './VirbelaWorld';
 import { WebConference } from './WebConference';
@@ -92,6 +96,10 @@ export class UseCaseFactory {
 
   Canvas(): Canvas {
     return new Canvas(this.restClient);
+  }
+
+  Country(): Country {
+    return new Country(this.restClient);
   }
 
   DomainMask(): DomainMask {
@@ -222,6 +230,10 @@ export class UseCaseFactory {
     return new PoolFeature(this.restClient);
   }
 
+  PoolImage(): PoolImage {
+    return new PoolImage(this.restClient);
+  }
+
   PoolWorld(): PoolWorld {
     return new PoolWorld(this.restClient);
   }
@@ -286,6 +298,10 @@ export class UseCaseFactory {
     return new TicketType(this.restClient);
   }
 
+  Track(): Track {
+    return new Track(this.restClient);
+  }
+
   Transaction(): Transaction {
     return new Transaction(this.restClient);
   }
@@ -316,6 +332,10 @@ export class UseCaseFactory {
 
   UserUnsubscribe(): UserUnsubscribe {
     return new UserUnsubscribe(this.restClient);
+  }
+
+  Venue(): Venue {
+    return new Venue(this.restClient);
   }
 
   Virbela(): Virbela {
