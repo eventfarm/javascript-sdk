@@ -13,6 +13,7 @@ import { IntegrationFieldMapping } from './IntegrationFieldMapping';
 import { IntegrationStatusMapping } from './IntegrationStatusMapping';
 import { Invitation } from './Invitation';
 import { Lead } from './Lead';
+import { Link } from './Link';
 import { PaymentGateway } from './PaymentGateway';
 import { Pool } from './Pool';
 import { Profile } from './Profile';
@@ -26,6 +27,7 @@ import { Salutation } from './Salutation';
 import { SitePage } from './SitePage';
 import { Stack } from './Stack';
 import { User } from './User';
+import { Venue } from './Venue';
 import { Virbela } from './Virbela';
 import { WebConference } from './WebConference';
 
@@ -90,6 +92,10 @@ export class TypeFactory {
     return new Lead();
   }
 
+  Link(): Link {
+    return new Link();
+  }
+
   PaymentGateway(): PaymentGateway {
     return new PaymentGateway();
   }
@@ -140,6 +146,10 @@ export class TypeFactory {
 
   User(): User {
     return new User();
+  }
+
+  Venue(): Venue {
+    return new Venue();
   }
 
   Virbela(): Virbela {

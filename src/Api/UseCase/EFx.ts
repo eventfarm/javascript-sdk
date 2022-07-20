@@ -35,6 +35,16 @@ export class EFx {
   }
 
   /**
+   * @param string - screenId
+   * @return Promise|Observable|any
+   */
+  GetEFxScreen(screenId: string): any {
+    return this.restClient.get('EFx/UseCase/GetEFxScreen', {
+      screenId,
+    });
+  }
+
+  /**
    * @param string - stationId
    * @param string[]? - withData StackAndTicketType|EFxScreens
    * @return Promise|Observable|any
@@ -48,12 +58,39 @@ export class EFx {
 
   /**
    * @param string - eventId
+   * @param string? - sortBy createdAt
+   * @param string? - sortDirection ascending|descending
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @param any[]? - screenTypeFilter
+   * @return Promise|Observable|any
+   */
+  ListEFxScreensForEvent(
+    eventId: string,
+    sortBy: string = null,
+    sortDirection: string = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    screenTypeFilter: any[] = null,
+  ): any {
+    return this.restClient.get('EFx/UseCase/ListEFxScreensForEvent', {
+      eventId,
+      sortBy,
+      sortDirection,
+      page,
+      itemsPerPage,
+      screenTypeFilter,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param string[]? - withData StackAndTicketType|EFxScreens
    * @param string? - sortBy createdAt
    * @param string? - sortDirection ascending|descending
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
-   * @param any[]? - moduleFilter guest-management|access-control|athletes-bag|concierge|digital-memory-bank|guest-info|messaging|smsquiz|product-pickup|raffle|reservation|roaming-photographer|smart-bar|teams|lead-retrieval
+   * @param any[]? - moduleFilter
    * @param string? - query
    * @return Promise|Observable|any
    */
@@ -80,6 +117,33 @@ export class EFx {
   }
 
   // Commands
+
+  /**
+   * @param string - eventId
+   * @param string - backgroundUrl
+   * @param string - textColor
+   * @param string - screenType scan-view|failure-view|check-out-view|success-view|register-success-view|register-scan-view|register-failure-view
+   * @param string - text
+   * @param string? - screenId
+   * @return Promise|Observable|any
+   */
+  CreateEFxScreen(
+    eventId: string,
+    backgroundUrl: string,
+    textColor: string,
+    screenType: string,
+    text: string,
+    screenId: string = null,
+  ): any {
+    return this.restClient.post('EFx/UseCase/CreateEFxScreen', {
+      eventId,
+      backgroundUrl,
+      textColor,
+      screenType,
+      text,
+      screenId,
+    });
+  }
 
   /**
    * @param string - eventId
@@ -253,6 +317,18 @@ export class EFx {
 
   /**
    * @param string - stationId
+   * @param any[]? - screenIds
+   * @return Promise|Observable|any
+   */
+  SetScreensForEFxStation(stationId: string, screenIds: any[] = null): any {
+    return this.restClient.post('EFx/UseCase/SetScreensForEFxStation', {
+      stationId,
+      screenIds,
+    });
+  }
+
+  /**
+   * @param string - stationId
    * @param any[]? - stackIds
    * @return Promise|Observable|any
    */
@@ -260,6 +336,27 @@ export class EFx {
     return this.restClient.post('EFx/UseCase/SetStacksForEFxStation', {
       stationId,
       stackIds,
+    });
+  }
+
+  /**
+   * @param string - screenId
+   * @param string - text
+   * @param string - textColor
+   * @param string - backgroundUrl
+   * @return Promise|Observable|any
+   */
+  UpdateEFxScreen(
+    screenId: string,
+    text: string,
+    textColor: string,
+    backgroundUrl: string,
+  ): any {
+    return this.restClient.post('EFx/UseCase/UpdateEFxScreen', {
+      screenId,
+      text,
+      textColor,
+      backgroundUrl,
     });
   }
 
