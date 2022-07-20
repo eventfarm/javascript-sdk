@@ -52,6 +52,19 @@ export class PaymentGateway {
    * @param string - paymentGatewayId
    * @return Promise|Observable|any
    */
+  DeletePaymentGatewayForPool(paymentGatewayId: string): any {
+    return this.restClient.post(
+      'PaymentGateway/UseCase/DeletePaymentGatewayForPool',
+      {
+        paymentGatewayId,
+      },
+    );
+  }
+
+  /**
+   * @param string - paymentGatewayId
+   * @return Promise|Observable|any
+   */
   RemovePaymentGatewayForPool(paymentGatewayId: string): any {
     return this.restClient.post(
       'PaymentGateway/UseCase/RemovePaymentGatewayForPool',

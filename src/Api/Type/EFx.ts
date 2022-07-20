@@ -20,12 +20,32 @@ export interface EFxModuleTypeInterface {
   isSmartBar: boolean;
   isSmsQuiz: boolean;
   isTeams: boolean;
+  isLeadRetrieval: boolean;
   isAdminOnly: boolean;
   iconURL: any;
   dependencyNFC: any;
   dependencySMS: any;
   compatibilityNFC: any;
   compatibilitySMS: any;
+}
+export interface EFxScreenTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isScanView: boolean;
+  isFailureView: boolean;
+  isCheckOutView: boolean;
+  isSuccessView: boolean;
+  isRegisterSuccessView: boolean;
+  isRegisterScanView: boolean;
+  isRegisterFailureView: boolean;
+}
+export interface EFxStationTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isCheckIn: boolean;
+  isCheckInOut: boolean;
 }
 
 export class EFx {
@@ -50,6 +70,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/guest-management.png',
@@ -78,6 +99,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/access.png',
         dependencyNFC: true,
@@ -104,6 +126,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: true,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/nike.png',
         dependencyNFC: true,
@@ -131,6 +154,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/concierge.png',
         dependencyNFC: true,
@@ -158,6 +182,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/digital-memory-bank.png',
@@ -185,6 +210,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: true,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/access.png',
         dependencyNFC: true,
@@ -211,6 +237,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/messaging.png',
         dependencyNFC: false,
@@ -238,6 +265,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: true,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/polling.png',
         dependencyNFC: false,
@@ -265,6 +293,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/product-pickup.png',
@@ -292,6 +321,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/raffle.png',
         dependencyNFC: true,
@@ -319,6 +349,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/reservation.png',
         dependencyNFC: true,
@@ -346,6 +377,7 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/photographer.png',
@@ -374,6 +406,7 @@ export class EFx {
         isSmartBar: true,
         isSmsQuiz: false,
         isTeams: false,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/smartbar-vertical.png',
@@ -402,12 +435,149 @@ export class EFx {
         isSmartBar: false,
         isSmsQuiz: false,
         isTeams: true,
+        isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/teams.png',
         dependencyNFC: false,
         dependencySMS: false,
         compatibilityNFC: false,
         compatibilitySMS: true,
+      },
+      {
+        id: 'LeadRetrieval',
+        slug: 'lead-retrieval',
+        name: 'Lead Retrieval',
+        description: 'Get leads for your events',
+        isAccessControl: false,
+        isGuestManagement: false,
+        isConcierge: false,
+        isAthleteBag: false,
+        isDigitalMemoryBank: false,
+        isGuestInfo: false,
+        isMessaging: false,
+        isProductPickup: false,
+        isRaffle: false,
+        isReservation: false,
+        isRoamingPhotographer: false,
+        isSmartBar: false,
+        isSmsQuiz: false,
+        isTeams: false,
+        isLeadRetrieval: true,
+        isAdminOnly: false,
+        iconURL:
+          'https://cdn.eventfarm.com/platform/img/icons/lead-retrieval.png',
+        dependencyNFC: false,
+        dependencySMS: false,
+        compatibilityNFC: true,
+        compatibilitySMS: false,
+      },
+    ];
+  }
+
+  EFxScreenType(): EFxScreenTypeInterface[] {
+    return [
+      {
+        slug: 'scan-view',
+        name: 'Scan View',
+        description: null,
+        isScanView: true,
+        isFailureView: false,
+        isCheckOutView: false,
+        isSuccessView: false,
+        isRegisterSuccessView: false,
+        isRegisterScanView: false,
+        isRegisterFailureView: false,
+      },
+      {
+        slug: 'failure-view',
+        name: 'Failure View',
+        description: null,
+        isScanView: false,
+        isFailureView: true,
+        isCheckOutView: false,
+        isSuccessView: false,
+        isRegisterSuccessView: false,
+        isRegisterScanView: false,
+        isRegisterFailureView: false,
+      },
+      {
+        slug: 'check-out-view',
+        name: 'Check Out View',
+        description: null,
+        isScanView: false,
+        isFailureView: false,
+        isCheckOutView: true,
+        isSuccessView: false,
+        isRegisterSuccessView: false,
+        isRegisterScanView: false,
+        isRegisterFailureView: false,
+      },
+      {
+        slug: 'success-view',
+        name: 'Success View',
+        description: null,
+        isScanView: false,
+        isFailureView: false,
+        isCheckOutView: false,
+        isSuccessView: true,
+        isRegisterSuccessView: false,
+        isRegisterScanView: false,
+        isRegisterFailureView: false,
+      },
+      {
+        slug: 'register-success-view',
+        name: 'Register Success View',
+        description: null,
+        isScanView: false,
+        isFailureView: false,
+        isCheckOutView: false,
+        isSuccessView: false,
+        isRegisterSuccessView: true,
+        isRegisterScanView: false,
+        isRegisterFailureView: false,
+      },
+      {
+        slug: 'register-scan-view',
+        name: 'Register Scan View',
+        description: null,
+        isScanView: false,
+        isFailureView: false,
+        isCheckOutView: false,
+        isSuccessView: false,
+        isRegisterSuccessView: false,
+        isRegisterScanView: true,
+        isRegisterFailureView: false,
+      },
+      {
+        slug: 'register-failure-view',
+        name: 'Register Failure View',
+        description: null,
+        isScanView: false,
+        isFailureView: false,
+        isCheckOutView: false,
+        isSuccessView: false,
+        isRegisterSuccessView: false,
+        isRegisterScanView: false,
+        isRegisterFailureView: true,
+      },
+    ];
+  }
+
+  EFxStationType(): EFxStationTypeInterface[] {
+    return [
+      {
+        slug: 'check-in',
+        name: 'CheckIn',
+        description: null,
+        isCheckIn: true,
+        isCheckInOut: false,
+      },
+      {
+        slug: 'check-in-out',
+        name: 'CheckInOut',
+        description: null,
+        isCheckIn: false,
+        isCheckInOut: true,
       },
     ];
   }

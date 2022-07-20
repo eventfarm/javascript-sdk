@@ -66,6 +66,18 @@ export class PoolContact {
   }
 
   /**
+   * @param string - poolId
+   * @param string - userId
+   * @return Promise|Observable|any
+   */
+  ResendPoolContactEmail(poolId: string, userId: string): any {
+    return this.restClient.post('PoolContact/UseCase/ResendPoolContactEmail', {
+      poolId,
+      userId,
+    });
+  }
+
+  /**
    * @param string - poolContactId
    * @param string - poolContactType full|create
    * @return Promise|Observable|any

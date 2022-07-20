@@ -4,6 +4,7 @@ import { ActivityLog } from './ActivityLog';
 import { Allotment } from './Allotment';
 import { AppVersion } from './AppVersion';
 import { BugReport } from './BugReport';
+import { Campaign } from './Campaign';
 import { Canvas } from './Canvas';
 import { DomainMask } from './DomainMask';
 import { EFx } from './EFx';
@@ -26,6 +27,7 @@ import { IntegrationFieldMapping } from './IntegrationFieldMapping';
 import { IntegrationStatusMapping } from './IntegrationStatusMapping';
 import { Invitation } from './Invitation';
 import { Lead } from './Lead';
+import { Link } from './Link';
 import { Logi } from './Logi';
 import { OAuth } from './OAuth';
 import { OAuth2 } from './OAuth2';
@@ -37,6 +39,7 @@ import { PoolContact } from './PoolContact';
 import { PoolContract } from './PoolContract';
 import { PoolFeature } from './PoolFeature';
 import { PoolWorld } from './PoolWorld';
+import { Profile } from './Profile';
 import { Promotion } from './Promotion';
 import { Question } from './Question';
 import { Queue } from './Queue';
@@ -81,6 +84,10 @@ export class UseCaseFactory {
 
   BugReport(): BugReport {
     return new BugReport(this.restClient);
+  }
+
+  Campaign(): Campaign {
+    return new Campaign(this.restClient);
   }
 
   Canvas(): Canvas {
@@ -171,6 +178,10 @@ export class UseCaseFactory {
     return new Lead(this.restClient);
   }
 
+  Link(): Link {
+    return new Link(this.restClient);
+  }
+
   Logi(): Logi {
     return new Logi(this.restClient);
   }
@@ -213,6 +224,10 @@ export class UseCaseFactory {
 
   PoolWorld(): PoolWorld {
     return new PoolWorld(this.restClient);
+  }
+
+  Profile(): Profile {
+    return new Profile(this.restClient);
   }
 
   Promotion(): Promotion {

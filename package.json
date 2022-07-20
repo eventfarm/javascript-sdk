@@ -1,14 +1,10 @@
 {
   "name": "@eventfarm/javascript-sdk",
   "description": "Official Event Farm Javascript SDK",
-  "version": "10.3.0-2",
+  "version": "10.3.15",
   "main": "./dist",
   "types": "./dist",
   "authors": [
-    {
-      "name": "Todd Cornett",
-      "email": "tcornett@gmail.com"
-    },
     {
       "name": "Jason Raimondi",
       "email": "jason@raimondi.us"
@@ -33,7 +29,7 @@
     "push-next": "npm publish --access public --tag next"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "jwt-decode": "^2.2.0"
   },
   "devDependencies": {

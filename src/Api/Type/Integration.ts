@@ -83,6 +83,11 @@ export class Integration {
         description: null,
       },
       {
+        slug: 'user-email-unsubscribe',
+        name: 'Email Unsubscribe',
+        description: null,
+      },
+      {
         slug: 'newCustomField',
         name: 'New Custom Field',
         description: null,

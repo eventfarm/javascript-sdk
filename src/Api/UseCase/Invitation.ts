@@ -126,21 +126,6 @@ export class Invitation {
    * @param string - eventId
    * @return Promise|Observable|any
    */
-  GetInvitationCountsForUserAttributeHealthPassScoreForEvent(
-    eventId: string,
-  ): any {
-    return this.restClient.get(
-      'Invitation/UseCase/GetInvitationCountsForUserAttributeHealthPassScoreForEvent',
-      {
-        eventId,
-      },
-    );
-  }
-
-  /**
-   * @param string - eventId
-   * @return Promise|Observable|any
-   */
   GetInvitationLastActionCountsForEvent(eventId: string): any {
     return this.restClient.get(
       'Invitation/UseCase/GetInvitationLastActionCountsForEvent',

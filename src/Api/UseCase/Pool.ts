@@ -81,17 +81,20 @@ export class Pool {
    * @param string - poolId
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-500
+   * @param string[]? - withData
    * @return Promise|Observable|any
    */
   ListPoolContactsByPoolId(
     poolId: string,
     page: number = null,
     itemsPerPage: number = null,
+    withData: string[] = null,
   ): any {
     return this.restClient.get('Pool/UseCase/ListPoolContactsByPoolId', {
       poolId,
       page,
       itemsPerPage,
+      withData,
     });
   }
 
@@ -101,6 +104,7 @@ export class Pool {
    * @param string? - sortDirection ascending|descending
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
+   * @param boolean? - shouldHideDeleted true|false
    * @return Promise|Observable|any
    */
   ListPools(
@@ -109,6 +113,7 @@ export class Pool {
     sortDirection: string = null,
     page: number = null,
     itemsPerPage: number = null,
+    shouldHideDeleted: boolean = null,
   ): any {
     return this.restClient.get('Pool/UseCase/ListPools', {
       name,
@@ -116,6 +121,7 @@ export class Pool {
       sortDirection,
       page,
       itemsPerPage,
+      shouldHideDeleted,
     });
   }
 
@@ -154,6 +160,16 @@ export class Pool {
   }
 
   // Commands
+
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
+  ArchivePool(poolId: string): any {
+    return this.restClient.post('Pool/UseCase/ArchivePool', {
+      poolId,
+    });
+  }
 
   /**
    * @param string - name
@@ -208,6 +224,16 @@ export class Pool {
       poolId,
       poolWebhookType,
       url,
+    });
+  }
+
+  /**
+   * @param string - poolId
+   * @return Promise|Observable|any
+   */
+  DeletePool(poolId: string): any {
+    return this.restClient.post('Pool/UseCase/DeletePool', {
+      poolId,
     });
   }
 
