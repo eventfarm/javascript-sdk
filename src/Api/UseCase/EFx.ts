@@ -304,6 +304,24 @@ export class EFx {
   }
 
   /**
+   * @param string - stationId
+   * @param string? - smsText
+   * @param string? - smsMedialUrl
+   * @return Promise|Observable|any
+   */
+  SetContentDeliveryForEFxStation(
+    stationId: string,
+    smsText: string = null,
+    smsMedialUrl: string = null,
+  ): any {
+    return this.restClient.post('EFx/UseCase/SetContentDeliveryForEFxStation', {
+      stationId,
+      smsText,
+      smsMedialUrl,
+    });
+  }
+
+  /**
    * @param string - eventId
    * @param string - message
    * @return Promise|Observable|any
