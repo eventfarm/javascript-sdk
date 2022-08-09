@@ -307,17 +307,20 @@ export class EFx {
    * @param string - stationId
    * @param string? - smsText
    * @param string? - smsMedialUrl
+   * @param string? - emailDesignId
    * @return Promise|Observable|any
    */
   SetContentDeliveryForEFxStation(
     stationId: string,
     smsText: string = null,
     smsMedialUrl: string = null,
+    emailDesignId: string = null,
   ): any {
     return this.restClient.post('EFx/UseCase/SetContentDeliveryForEFxStation', {
       stationId,
       smsText,
       smsMedialUrl,
+      emailDesignId,
     });
   }
 

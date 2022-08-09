@@ -19,6 +19,40 @@ export class Venue {
     });
   }
 
+  /**
+   * @param string - venueLocationId
+   * @return Promise|Observable|any
+   */
+  GetVenueLocation(venueLocationId: string): any {
+    return this.restClient.get('Venue/UseCase/GetVenueLocation', {
+      venueLocationId,
+    });
+  }
+
+  /**
+   * @param string - poolId
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
+   * @param string? - sortBy
+   * @param string? - sortDirection ascending|descending
+   * @return Promise|Observable|any
+   */
+  ListVenuesForPool(
+    poolId: string,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+  ): any {
+    return this.restClient.get('Venue/UseCase/ListVenuesForPool', {
+      poolId,
+      page,
+      itemsPerPage,
+      sortBy,
+      sortDirection,
+    });
+  }
+
   // Commands
 
   /**
@@ -74,11 +108,42 @@ export class Venue {
 
   /**
    * @param string - venueId
+   * @param string - name
+   * @param string? - gpsCoordinates
+   * @param string? - venueLocationId
+   * @return Promise|Observable|any
+   */
+  CreateVenueLocation(
+    venueId: string,
+    name: string,
+    gpsCoordinates: string = null,
+    venueLocationId: string = null,
+  ): any {
+    return this.restClient.post('Venue/UseCase/CreateVenueLocation', {
+      venueId,
+      name,
+      gpsCoordinates,
+      venueLocationId,
+    });
+  }
+
+  /**
+   * @param string - venueId
    * @return Promise|Observable|any
    */
   DeleteVenue(venueId: string): any {
     return this.restClient.post('Venue/UseCase/DeleteVenue', {
       venueId,
+    });
+  }
+
+  /**
+   * @param string - venueLocationId
+   * @return Promise|Observable|any
+   */
+  DeleteVenueLocation(venueLocationId: string): any {
+    return this.restClient.post('Venue/UseCase/DeleteVenueLocation', {
+      venueLocationId,
     });
   }
 
@@ -89,6 +154,16 @@ export class Venue {
   RemoveVenue(venueId: string): any {
     return this.restClient.post('Venue/UseCase/RemoveVenue', {
       venueId,
+    });
+  }
+
+  /**
+   * @param string - venueLocationId
+   * @return Promise|Observable|any
+   */
+  RemoveVenueLocation(venueLocationId: string): any {
+    return this.restClient.post('Venue/UseCase/RemoveVenueLocation', {
+      venueLocationId,
     });
   }
 
@@ -140,6 +215,27 @@ export class Venue {
       description,
       url,
       capacity,
+    });
+  }
+
+  /**
+   * @param string - venueLocationId
+   * @param string? - venueId
+   * @param string? - name
+   * @param string? - gpsCoordinates
+   * @return Promise|Observable|any
+   */
+  UpdateVenueLocation(
+    venueLocationId: string,
+    venueId: string = null,
+    name: string = null,
+    gpsCoordinates: string = null,
+  ): any {
+    return this.restClient.post('Venue/UseCase/UpdateVenueLocation', {
+      venueLocationId,
+      venueId,
+      name,
+      gpsCoordinates,
     });
   }
 }

@@ -147,30 +147,30 @@ export class EmailMessage {
   /**
    * @param string - emailMessageType confirmation|donation|invitation|sendamessage|sendgroupmessage
    * @param string - eventId
-   * @param string - ownerUserId
    * @param string - emailDesignId
    * @param string - invitationId
    * @param string - category alert|invitation|receipts|forgotpassword|changepassword|transferauthorization|transferconfirmation|eventmessage|eventmessagepreview|reportnotification|account|verify|system
    * @param string - subCategory ticketblock|group|eventcheckedin|tickettype|preview|noshow|waitlist|None|exhibitor
+   * @param string? - ownerUserId
    * @return Promise|Observable|any
    */
   CreateEmailMessage(
     emailMessageType: string,
     eventId: string,
-    ownerUserId: string,
     emailDesignId: string,
     invitationId: string,
     category: string,
     subCategory: string,
+    ownerUserId: string = null,
   ): any {
     return this.restClient.post('EmailMessage/UseCase/CreateEmailMessage', {
       emailMessageType,
       eventId,
-      ownerUserId,
       emailDesignId,
       invitationId,
       category,
       subCategory,
+      ownerUserId,
     });
   }
 
