@@ -2,6 +2,7 @@ import { RestClientInterface } from '../../Interfaces';
 
 import { ActivityLog } from './ActivityLog';
 import { Allotment } from './Allotment';
+import { Answer } from './Answer';
 import { AppVersion } from './AppVersion';
 import { BugReport } from './BugReport';
 import { Campaign } from './Campaign';
@@ -39,6 +40,7 @@ import { PoolAllotment } from './PoolAllotment';
 import { PoolContact } from './PoolContact';
 import { PoolContract } from './PoolContract';
 import { PoolFeature } from './PoolFeature';
+import { PoolFile } from './PoolFile';
 import { PoolImage } from './PoolImage';
 import { PoolWorld } from './PoolWorld';
 import { Profile } from './Profile';
@@ -80,6 +82,10 @@ export class UseCaseFactory {
 
   Allotment(): Allotment {
     return new Allotment(this.restClient);
+  }
+
+  Answer(): Answer {
+    return new Answer(this.restClient);
   }
 
   AppVersion(): AppVersion {
@@ -228,6 +234,10 @@ export class UseCaseFactory {
 
   PoolFeature(): PoolFeature {
     return new PoolFeature(this.restClient);
+  }
+
+  PoolFile(): PoolFile {
+    return new PoolFile(this.restClient);
   }
 
   PoolImage(): PoolImage {

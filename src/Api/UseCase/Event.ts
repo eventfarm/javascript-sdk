@@ -21,18 +21,6 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData Answers|TicketType|QuestionContexts
-   * @return Promise|Observable|any
-   */
-  GetAllQuestionsForEvent(eventId: string, withData: string[] = null): any {
-    return this.restClient.get('Event/UseCase/GetAllQuestionsForEvent', {
-      eventId,
-      withData,
-    });
-  }
-
-  /**
-   * @param string - eventId
    * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme|VirbelaWorld|AnswerBindings
    * @return Promise|Observable|any
    */
@@ -68,21 +56,9 @@ export class Event {
   }
 
   /**
-   * @param string - questionId
-   * @param string[]? - withData Answers|TicketType|QuestionResponseCounts|AnswerQuestionResponseCounts|QuestionContexts|AnswerBindings
-   * @return Promise|Observable|any
-   */
-  GetQuestion(questionId: string, withData: string[] = null): any {
-    return this.restClient.get('Event/UseCase/GetQuestion', {
-      questionId,
-      withData,
-    });
-  }
-
-  /**
    * @param string - parentEventId
    * @param string? - query
-   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|EventTexts|QuestionsAndAnswers|ThumbnailUrl
+   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|TicketTypes|TicketBlocks|EventTexts|QuestionsAndAnswers|ThumbnailUrl|Tracks
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
    * @param string? - sortBy event-start|event-end|name|event-created
@@ -215,6 +191,45 @@ export class Event {
   }
 
   /**
+   * @param string - trackId
+   * @param string - poolId
+   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl|VirbelaWorld
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
+   * @param string? - sortBy event-start|event-end|name|event-created
+   * @param string? - sortDirection ascending|descending
+   * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
+   * @param any[]? - tags
+   * @param number? - earliestStartTimestamp >= 0
+   * @return Promise|Observable|any
+   */
+  ListEventsForTrack(
+    trackId: string,
+    poolId: string,
+    withData: string[] = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    eventDateFilterType: string = null,
+    tags: any[] = null,
+    earliestStartTimestamp: number = null,
+  ): any {
+    return this.restClient.get('Event/UseCase/ListEventsForTrack', {
+      trackId,
+      poolId,
+      withData,
+      page,
+      itemsPerPage,
+      sortBy,
+      sortDirection,
+      eventDateFilterType,
+      tags,
+      earliestStartTimestamp,
+    });
+  }
+
+  /**
    * @param string - userId
    * @param string? - query
    * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled
@@ -271,21 +286,6 @@ export class Event {
     });
   }
 
-  /**
-   * @param string - eventId
-   * @param any[]? - questionContextTypes registration|lead
-   * @return Promise|Observable|any
-   */
-  ListQuestionsByEventAndContext(
-    eventId: string,
-    questionContextTypes: any[] = null,
-  ): any {
-    return this.restClient.get('Event/UseCase/ListQuestionsByEventAndContext', {
-      eventId,
-      questionContextTypes,
-    });
-  }
-
   // Commands
 
   /**
@@ -297,6 +297,18 @@ export class Event {
     return this.restClient.post('Event/UseCase/AddChildEvent', {
       eventId,
       childEventId,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - trackId
+   * @return Promise|Observable|any
+   */
+  AddEventToTrack(eventId: string, trackId: string): any {
+    return this.restClient.post('Event/UseCase/AddEventToTrack', {
+      eventId,
+      trackId,
     });
   }
 
@@ -348,6 +360,18 @@ export class Event {
       lastName,
       eventRole,
       authenticatedUserId,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - venueId
+   * @return Promise|Observable|any
+   */
+  AddVenueToEvent(eventId: string, venueId: string): any {
+    return this.restClient.post('Event/UseCase/AddVenueToEvent', {
+      eventId,
+      venueId,
     });
   }
 
@@ -469,30 +493,6 @@ export class Event {
   }
 
   /**
-   * @param string - questionId
-   * @param string - text
-   * @param number? - sortOrder
-   * @param boolean? - isDefault true|false
-   * @param string? - answerId
-   * @return Promise|Observable|any
-   */
-  CreateAnswer(
-    questionId: string,
-    text: string,
-    sortOrder: number = null,
-    isDefault: boolean = null,
-    answerId: string = null,
-  ): any {
-    return this.restClient.post('Event/UseCase/CreateAnswer', {
-      questionId,
-      text,
-      sortOrder,
-      isDefault,
-      answerId,
-    });
-  }
-
-  /**
    * @param string - poolId
    * @param string - userId
    * @param string - eventName
@@ -531,6 +531,8 @@ export class Event {
    * @param string? - startTime
    * @param string? - endTime
    * @param string? - timezone Africa/Abidjan|Africa/Accra|Africa/Addis_Ababa|Africa/Algiers|Africa/Asmara|Africa/Bamako|Africa/Bangui|Africa/Banjul|Africa/Bissau|Africa/Blantyre|Africa/Brazzaville|Africa/Bujumbura|Africa/Cairo|Africa/Casablanca|Africa/Ceuta|Africa/Conakry|Africa/Dakar|Africa/Dar_es_Salaam|Africa/Djibouti|Africa/Douala|Africa/El_Aaiun|Africa/Freetown|Africa/Gaborone|Africa/Harare|Africa/Johannesburg|Africa/Juba|Africa/Kampala|Africa/Khartoum|Africa/Kigali|Africa/Kinshasa|Africa/Lagos|Africa/Libreville|Africa/Lome|Africa/Luanda|Africa/Lubumbashi|Africa/Lusaka|Africa/Malabo|Africa/Maputo|Africa/Maseru|Africa/Mbabane|Africa/Mogadishu|Africa/Monrovia|Africa/Nairobi|Africa/Ndjamena|Africa/Niamey|Africa/Nouakchott|Africa/Ouagadougou|Africa/Porto-Novo|Africa/Sao_Tome|Africa/Tripoli|Africa/Tunis|Africa/Windhoek|America/Adak|America/Anchorage|America/Anguilla|America/Antigua|America/Araguaina|America/Argentina/Buenos_Aires|America/Argentina/Catamarca|America/Argentina/Cordoba|America/Argentina/Jujuy|America/Argentina/La_Rioja|America/Argentina/Mendoza|America/Argentina/Rio_Gallegos|America/Argentina/Salta|America/Argentina/San_Juan|America/Argentina/San_Luis|America/Argentina/Tucuman|America/Argentina/Ushuaia|America/Aruba|America/Asuncion|America/Atikokan|America/Bahia|America/Bahia_Banderas|America/Barbados|America/Belem|America/Belize|America/Blanc-Sablon|America/Boa_Vista|America/Bogota|America/Boise|America/Cambridge_Bay|America/Campo_Grande|America/Cancun|America/Caracas|America/Cayenne|America/Cayman|America/Chicago|America/Chihuahua|America/Costa_Rica|America/Creston|America/Cuiaba|America/Curacao|America/Danmarkshavn|America/Dawson|America/Dawson_Creek|America/Denver|America/Detroit|America/Dominica|America/Edmonton|America/Eirunepe|America/El_Salvador|America/Fort_Nelson|America/Fortaleza|America/Glace_Bay|America/Goose_Bay|America/Grand_Turk|America/Grenada|America/Guadeloupe|America/Guatemala|America/Guayaquil|America/Guyana|America/Halifax|America/Havana|America/Hermosillo|America/Indiana/Indianapolis|America/Indiana/Knox|America/Indiana/Marengo|America/Indiana/Petersburg|America/Indiana/Tell_City|America/Indiana/Vevay|America/Indiana/Vincennes|America/Indiana/Winamac|America/Inuvik|America/Iqaluit|America/Jamaica|America/Juneau|America/Kentucky/Louisville|America/Kentucky/Monticello|America/Kralendijk|America/La_Paz|America/Lima|America/Los_Angeles|America/Lower_Princes|America/Maceio|America/Managua|America/Manaus|America/Marigot|America/Martinique|America/Matamoros|America/Mazatlan|America/Menominee|America/Merida|America/Metlakatla|America/Mexico_City|America/Miquelon|America/Moncton|America/Monterrey|America/Montevideo|America/Montserrat|America/Nassau|America/New_York|America/Nipigon|America/Nome|America/Noronha|America/North_Dakota/Beulah|America/North_Dakota/Center|America/North_Dakota/New_Salem|America/Nuuk|America/Ojinaga|America/Panama|America/Pangnirtung|America/Paramaribo|America/Phoenix|America/Port-au-Prince|America/Port_of_Spain|America/Porto_Velho|America/Puerto_Rico|America/Punta_Arenas|America/Rainy_River|America/Rankin_Inlet|America/Recife|America/Regina|America/Resolute|America/Rio_Branco|America/Santarem|America/Santiago|America/Santo_Domingo|America/Sao_Paulo|America/Scoresbysund|America/Sitka|America/St_Barthelemy|America/St_Johns|America/St_Kitts|America/St_Lucia|America/St_Thomas|America/St_Vincent|America/Swift_Current|America/Tegucigalpa|America/Thule|America/Thunder_Bay|America/Tijuana|America/Toronto|America/Tortola|America/Vancouver|America/Whitehorse|America/Winnipeg|America/Yakutat|America/Yellowknife|Antarctica/Casey|Antarctica/Davis|Antarctica/DumontDUrville|Antarctica/Macquarie|Antarctica/Mawson|Antarctica/McMurdo|Antarctica/Palmer|Antarctica/Rothera|Antarctica/Syowa|Antarctica/Troll|Antarctica/Vostok|Arctic/Longyearbyen|Asia/Aden|Asia/Almaty|Asia/Amman|Asia/Anadyr|Asia/Aqtau|Asia/Aqtobe|Asia/Ashgabat|Asia/Atyrau|Asia/Baghdad|Asia/Bahrain|Asia/Baku|Asia/Bangkok|Asia/Barnaul|Asia/Beirut|Asia/Bishkek|Asia/Brunei|Asia/Chita|Asia/Choibalsan|Asia/Colombo|Asia/Damascus|Asia/Dhaka|Asia/Dili|Asia/Dubai|Asia/Dushanbe|Asia/Famagusta|Asia/Gaza|Asia/Hebron|Asia/Ho_Chi_Minh|Asia/Hong_Kong|Asia/Hovd|Asia/Irkutsk|Asia/Jakarta|Asia/Jayapura|Asia/Jerusalem|Asia/Kabul|Asia/Kamchatka|Asia/Karachi|Asia/Kathmandu|Asia/Khandyga|Asia/Kolkata|Asia/Krasnoyarsk|Asia/Kuala_Lumpur|Asia/Kuching|Asia/Kuwait|Asia/Macau|Asia/Magadan|Asia/Makassar|Asia/Manila|Asia/Muscat|Asia/Nicosia|Asia/Novokuznetsk|Asia/Novosibirsk|Asia/Omsk|Asia/Oral|Asia/Phnom_Penh|Asia/Pontianak|Asia/Pyongyang|Asia/Qatar|Asia/Qostanay|Asia/Qyzylorda|Asia/Riyadh|Asia/Sakhalin|Asia/Samarkand|Asia/Seoul|Asia/Shanghai|Asia/Singapore|Asia/Srednekolymsk|Asia/Taipei|Asia/Tashkent|Asia/Tbilisi|Asia/Tehran|Asia/Thimphu|Asia/Tokyo|Asia/Tomsk|Asia/Ulaanbaatar|Asia/Urumqi|Asia/Ust-Nera|Asia/Vientiane|Asia/Vladivostok|Asia/Yakutsk|Asia/Yangon|Asia/Yekaterinburg|Asia/Yerevan|Atlantic/Azores|Atlantic/Bermuda|Atlantic/Canary|Atlantic/Cape_Verde|Atlantic/Faroe|Atlantic/Madeira|Atlantic/Reykjavik|Atlantic/South_Georgia|Atlantic/St_Helena|Atlantic/Stanley|Australia/Adelaide|Australia/Brisbane|Australia/Broken_Hill|Australia/Currie|Australia/Darwin|Australia/Eucla|Australia/Hobart|Australia/Lindeman|Australia/Lord_Howe|Australia/Melbourne|Australia/Perth|Australia/Sydney|Europe/Amsterdam|Europe/Andorra|Europe/Astrakhan|Europe/Athens|Europe/Belgrade|Europe/Berlin|Europe/Bratislava|Europe/Brussels|Europe/Bucharest|Europe/Budapest|Europe/Busingen|Europe/Chisinau|Europe/Copenhagen|Europe/Dublin|Europe/Gibraltar|Europe/Guernsey|Europe/Helsinki|Europe/Isle_of_Man|Europe/Istanbul|Europe/Jersey|Europe/Kaliningrad|Europe/Kiev|Europe/Kirov|Europe/Lisbon|Europe/Ljubljana|Europe/London|Europe/Luxembourg|Europe/Madrid|Europe/Malta|Europe/Mariehamn|Europe/Minsk|Europe/Monaco|Europe/Moscow|Europe/Oslo|Europe/Paris|Europe/Podgorica|Europe/Prague|Europe/Riga|Europe/Rome|Europe/Samara|Europe/San_Marino|Europe/Sarajevo|Europe/Saratov|Europe/Simferopol|Europe/Skopje|Europe/Sofia|Europe/Stockholm|Europe/Tallinn|Europe/Tirane|Europe/Ulyanovsk|Europe/Uzhgorod|Europe/Vaduz|Europe/Vatican|Europe/Vienna|Europe/Vilnius|Europe/Volgograd|Europe/Warsaw|Europe/Zagreb|Europe/Zaporozhye|Europe/Zurich|Indian/Antananarivo|Indian/Chagos|Indian/Christmas|Indian/Cocos|Indian/Comoro|Indian/Kerguelen|Indian/Mahe|Indian/Maldives|Indian/Mauritius|Indian/Mayotte|Indian/Reunion|Pacific/Apia|Pacific/Auckland|Pacific/Bougainville|Pacific/Chatham|Pacific/Chuuk|Pacific/Easter|Pacific/Efate|Pacific/Enderbury|Pacific/Fakaofo|Pacific/Fiji|Pacific/Funafuti|Pacific/Galapagos|Pacific/Gambier|Pacific/Guadalcanal|Pacific/Guam|Pacific/Honolulu|Pacific/Kiritimati|Pacific/Kosrae|Pacific/Kwajalein|Pacific/Majuro|Pacific/Marquesas|Pacific/Midway|Pacific/Nauru|Pacific/Niue|Pacific/Norfolk|Pacific/Noumea|Pacific/Pago_Pago|Pacific/Palau|Pacific/Pitcairn|Pacific/Pohnpei|Pacific/Port_Moresby|Pacific/Rarotonga|Pacific/Saipan|Pacific/Tahiti|Pacific/Tarawa|Pacific/Tongatapu|Pacific/Wake|Pacific/Wallis|UTC
+   * @param string? - description
+   * @param string? - parentEventId
    * @param string? - eventId
    * @return Promise|Observable|any
    */
@@ -543,6 +545,8 @@ export class Event {
     startTime: string = null,
     endTime: string = null,
     timezone: string = null,
+    description: string = null,
+    parentEventId: string = null,
     eventId: string = null,
   ): any {
     return this.restClient.post('Event/UseCase/CreateEvent', {
@@ -554,63 +558,9 @@ export class Event {
       startTime,
       endTime,
       timezone,
+      description,
+      parentEventId,
       eventId,
-    });
-  }
-
-  /**
-   * @param string - eventId
-   * @param string - text
-   * @param string - questionType checkbox|radio|multi|text|select|date|waiver|address
-   * @param number? - sortOrder
-   * @param boolean? - isRequired true|false
-   * @param boolean? - isIndividual true|false
-   * @param string? - ticketTypeId
-   * @param string? - questionId
-   * @param any[]? - questionContextTypes registration|lead
-   * @return Promise|Observable|any
-   */
-  CreateQuestion(
-    eventId: string,
-    text: string,
-    questionType: string,
-    sortOrder: number = null,
-    isRequired: boolean = null,
-    isIndividual: boolean = null,
-    ticketTypeId: string = null,
-    questionId: string = null,
-    questionContextTypes: any[] = null,
-  ): any {
-    return this.restClient.post('Event/UseCase/CreateQuestion', {
-      eventId,
-      text,
-      questionType,
-      sortOrder,
-      isRequired,
-      isIndividual,
-      ticketTypeId,
-      questionId,
-      questionContextTypes,
-    });
-  }
-
-  /**
-   * @param string - answerId
-   * @return Promise|Observable|any
-   */
-  DeleteAnswer(answerId: string): any {
-    return this.restClient.post('Event/UseCase/DeleteAnswer', {
-      answerId,
-    });
-  }
-
-  /**
-   * @param string - questionId
-   * @return Promise|Observable|any
-   */
-  DeleteQuestion(questionId: string): any {
-    return this.restClient.post('Event/UseCase/DeleteQuestion', {
-      questionId,
     });
   }
 
@@ -741,16 +691,6 @@ export class Event {
   DisableQRCodeConfirmation(eventId: string): any {
     return this.restClient.post('Event/UseCase/DisableQRCodeConfirmation', {
       eventId,
-    });
-  }
-
-  /**
-   * @param string - questionId
-   * @return Promise|Observable|any
-   */
-  DisableQuestion(questionId: string): any {
-    return this.restClient.post('Event/UseCase/DisableQuestion', {
-      questionId,
     });
   }
 
@@ -976,16 +916,6 @@ export class Event {
   }
 
   /**
-   * @param string - questionId
-   * @return Promise|Observable|any
-   */
-  EnableQuestion(questionId: string): any {
-    return this.restClient.post('Event/UseCase/EnableQuestion', {
-      questionId,
-    });
-  }
-
-  /**
    * @param string - eventId
    * @return Promise|Observable|any
    */
@@ -1126,6 +1056,18 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @param string - trackId
+   * @return Promise|Observable|any
+   */
+  RemoveEventFromTrack(eventId: string, trackId: string): any {
+    return this.restClient.post('Event/UseCase/RemoveEventFromTrack', {
+      eventId,
+      trackId,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param string - messageType additional_invitation|confirmation_invitation|declination|wait_list_confirmation_invitation|additional|confirmation|wait_list_confirmation|soldout|opening|closing|disclaimer|response_restriction|reveal|wait_list_sms
    * @return Promise|Observable|any
    */
@@ -1170,6 +1112,16 @@ export class Event {
     return this.restClient.post('Event/UseCase/RemoveTrackingScriptForEvent', {
       eventId,
       trackingScriptType,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  RemoveVenueFromEvent(eventId: string): any {
+    return this.restClient.post('Event/UseCase/RemoveVenueFromEvent', {
+      eventId,
     });
   }
 
@@ -1329,18 +1281,6 @@ export class Event {
   }
 
   /**
-   * @param string - answerId
-   * @param number - sortOrder
-   * @return Promise|Observable|any
-   */
-  SetAnswerSortOrder(answerId: string, sortOrder: number): any {
-    return this.restClient.post('Event/UseCase/SetAnswerSortOrder', {
-      answerId,
-      sortOrder,
-    });
-  }
-
-  /**
    * @param string - eventId
    * @param string - contactEmail
    * @return Promise|Observable|any
@@ -1378,7 +1318,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - eventType eventfarm|cio|listly|dnc|rnc|rslc|sundance
+   * @param string - eventType in-person|virtual|hybrid|other
    * @return Promise|Observable|any
    */
   SetEventType(eventId: string, eventType: string): any {
@@ -1439,30 +1379,6 @@ export class Event {
     return this.restClient.post('Event/UseCase/SetLanguageForEvent', {
       eventId,
       language,
-    });
-  }
-
-  /**
-   * @param string - eventId
-   * @param string? - locationName
-   * @param string? - locationAddress
-   * @param string? - locationType in-person|virbela|virtual
-   * @param string? - locationDetails
-   * @return Promise|Observable|any
-   */
-  SetLocationForEvent(
-    eventId: string,
-    locationName: string = null,
-    locationAddress: string = null,
-    locationType: string = null,
-    locationDetails: string = null,
-  ): any {
-    return this.restClient.post('Event/UseCase/SetLocationForEvent', {
-      eventId,
-      locationName,
-      locationAddress,
-      locationType,
-      locationDetails,
     });
   }
 
@@ -1599,18 +1515,6 @@ export class Event {
   }
 
   /**
-   * @param string - questionId
-   * @param number - sortOrder
-   * @return Promise|Observable|any
-   */
-  SetQuestionSortOrder(questionId: string, sortOrder: number): any {
-    return this.restClient.post('Event/UseCase/SetQuestionSortOrder', {
-      questionId,
-      sortOrder,
-    });
-  }
-
-  /**
    * @param string - eventId
    * @param string - startTime
    * @param string - endTime
@@ -1658,30 +1562,6 @@ export class Event {
     return this.restClient.post('Event/UseCase/SetTwitterHandleForEvent', {
       eventId,
       twitterHandle,
-    });
-  }
-
-  /**
-   * @param string - eventId
-   * @param string? - locationName
-   * @param string? - locationAddress
-   * @param string? - locationType in-person|virbela|virtual
-   * @param string? - locationDetails
-   * @return Promise|Observable|any
-   */
-  SetVenueForEvent(
-    eventId: string,
-    locationName: string = null,
-    locationAddress: string = null,
-    locationType: string = null,
-    locationDetails: string = null,
-  ): any {
-    return this.restClient.post('Event/UseCase/SetVenueForEvent', {
-      eventId,
-      locationName,
-      locationAddress,
-      locationType,
-      locationDetails,
     });
   }
 
@@ -1741,50 +1621,6 @@ export class Event {
   UnsetPaymentGatewayForEvent(eventId: string): any {
     return this.restClient.post('Event/UseCase/UnsetPaymentGatewayForEvent', {
       eventId,
-    });
-  }
-
-  /**
-   * @param string - answerId
-   * @param string - text
-   * @param boolean? - isDefault true|false
-   * @return Promise|Observable|any
-   */
-  UpdateAnswer(answerId: string, text: string, isDefault: boolean = null): any {
-    return this.restClient.post('Event/UseCase/UpdateAnswer', {
-      answerId,
-      text,
-      isDefault,
-    });
-  }
-
-  /**
-   * @param string - questionId
-   * @param string - text
-   * @param string - questionType checkbox|radio|multi|text|select|date|waiver|address
-   * @param any[]? - questionContextTypes registration|lead
-   * @param boolean? - isRequired true|false
-   * @param boolean? - isIndividual true|false
-   * @param string? - ticketTypeId
-   * @return Promise|Observable|any
-   */
-  UpdateQuestion(
-    questionId: string,
-    text: string,
-    questionType: string,
-    questionContextTypes: any[] = null,
-    isRequired: boolean = null,
-    isIndividual: boolean = null,
-    ticketTypeId: string = null,
-  ): any {
-    return this.restClient.post('Event/UseCase/UpdateQuestion', {
-      questionId,
-      text,
-      questionType,
-      questionContextTypes,
-      isRequired,
-      isIndividual,
-      ticketTypeId,
     });
   }
 }

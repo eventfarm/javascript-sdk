@@ -19,6 +19,33 @@ export class Track {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param string[]? - withData Event
+   * @param string? - sortBy name
+   * @param string? - sortDirection ascending|descending
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @return Promise|Observable|any
+   */
+  ListTracksForEvent(
+    eventId: string,
+    withData: string[] = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    page: number = null,
+    itemsPerPage: number = null,
+  ): any {
+    return this.restClient.get('Track/UseCase/ListTracksForEvent', {
+      eventId,
+      withData,
+      sortBy,
+      sortDirection,
+      page,
+      itemsPerPage,
+    });
+  }
+
   // Commands
 
   /**

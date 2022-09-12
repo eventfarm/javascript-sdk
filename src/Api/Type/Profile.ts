@@ -8,6 +8,11 @@ export interface EventProfileTypeInterface {
   isSpeaker: boolean;
   isPresenter: boolean;
   isSponsor: boolean;
+  isPanelist: boolean;
+  isModerator: boolean;
+  isHost: boolean;
+  isParticipant: boolean;
+  isOther: boolean;
 }
 export interface ProfileTypeInterface {
   slug: string;
@@ -28,6 +33,11 @@ export class Profile {
         isSpeaker: true,
         isPresenter: false,
         isSponsor: false,
+        isPanelist: false,
+        isModerator: false,
+        isHost: false,
+        isParticipant: false,
+        isOther: false,
       },
       {
         slug: 'presenter',
@@ -36,6 +46,11 @@ export class Profile {
         isSpeaker: false,
         isPresenter: true,
         isSponsor: false,
+        isPanelist: false,
+        isModerator: false,
+        isHost: false,
+        isParticipant: false,
+        isOther: false,
       },
       {
         slug: 'sponsor',
@@ -44,6 +59,76 @@ export class Profile {
         isSpeaker: false,
         isPresenter: false,
         isSponsor: true,
+        isPanelist: false,
+        isModerator: false,
+        isHost: false,
+        isParticipant: false,
+        isOther: false,
+      },
+      {
+        slug: 'panelist',
+        name: 'Panelist',
+        description: null,
+        isSpeaker: false,
+        isPresenter: false,
+        isSponsor: false,
+        isPanelist: true,
+        isModerator: false,
+        isHost: false,
+        isParticipant: false,
+        isOther: false,
+      },
+      {
+        slug: 'moderator',
+        name: 'Moderator',
+        description: null,
+        isSpeaker: false,
+        isPresenter: false,
+        isSponsor: false,
+        isPanelist: false,
+        isModerator: true,
+        isHost: false,
+        isParticipant: false,
+        isOther: false,
+      },
+      {
+        slug: 'host',
+        name: 'Host',
+        description: null,
+        isSpeaker: false,
+        isPresenter: false,
+        isSponsor: false,
+        isPanelist: false,
+        isModerator: false,
+        isHost: true,
+        isParticipant: false,
+        isOther: false,
+      },
+      {
+        slug: 'participant',
+        name: 'Participant',
+        description: null,
+        isSpeaker: false,
+        isPresenter: false,
+        isSponsor: false,
+        isPanelist: false,
+        isModerator: false,
+        isHost: false,
+        isParticipant: true,
+        isOther: false,
+      },
+      {
+        slug: 'other',
+        name: 'Other',
+        description: null,
+        isSpeaker: false,
+        isPresenter: false,
+        isSponsor: false,
+        isPanelist: false,
+        isModerator: false,
+        isHost: false,
+        isParticipant: false,
+        isOther: true,
       },
     ];
   }

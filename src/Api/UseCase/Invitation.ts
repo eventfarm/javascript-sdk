@@ -468,6 +468,7 @@ export class Invitation {
    * @param string? - sortDirection
    * @param string[]? - withData Event|Stack
    * @param any[]? - statusFilter
+   * @param boolean? - excludeParent true|false
    * @return Promise|Observable|any
    */
   ListInvitationsForUserForParent(
@@ -480,6 +481,7 @@ export class Invitation {
     sortDirection: string = null,
     withData: string[] = null,
     statusFilter: any[] = null,
+    excludeParent: boolean = null,
   ): any {
     return this.restClient.get(
       'Invitation/UseCase/ListInvitationsForUserForParent',
@@ -493,6 +495,7 @@ export class Invitation {
         sortDirection,
         withData,
         statusFilter,
+        excludeParent,
       },
     );
   }

@@ -58,7 +58,7 @@ export class Venue {
   /**
    * @param string - poolId
    * @param string - name
-   * @param string? - venueType in-person|virbela|virtual|other
+   * @param string? - venueType physical|virbela|virtual|other
    * @param string? - street1
    * @param string? - street2
    * @param string? - city
@@ -169,9 +169,21 @@ export class Venue {
 
   /**
    * @param string - venueId
+   * @param string - venueLocationId
+   * @return Promise|Observable|any
+   */
+  SetVenueLocation(venueId: string, venueLocationId: string): any {
+    return this.restClient.post('Venue/UseCase/SetVenueLocation', {
+      venueId,
+      venueLocationId,
+    });
+  }
+
+  /**
+   * @param string - venueId
    * @param string - poolId
    * @param string - name
-   * @param string? - venueType in-person|virbela|virtual|other
+   * @param string? - venueType physical|virbela|virtual|other
    * @param string? - street1
    * @param string? - street2
    * @param string? - city

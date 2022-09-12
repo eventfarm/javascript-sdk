@@ -5,7 +5,7 @@ export interface VenueTypeInterface {
   slug: string;
   name: string;
   description?: string;
-  isInPerson: boolean;
+  isPhysical: boolean;
   isVirbela: boolean;
   isVirtual: boolean;
   isOther: boolean;
@@ -15,10 +15,10 @@ export class Venue {
   VenueType(): VenueTypeInterface[] {
     return [
       {
-        slug: 'in-person',
-        name: 'In Person',
+        slug: 'physical',
+        name: 'Physical',
         description: null,
-        isInPerson: true,
+        isPhysical: true,
         isVirbela: false,
         isVirtual: false,
         isOther: false,
@@ -27,7 +27,7 @@ export class Venue {
         slug: 'virbela',
         name: 'Virbela',
         description: null,
-        isInPerson: false,
+        isPhysical: false,
         isVirbela: true,
         isVirtual: false,
         isOther: false,
@@ -36,7 +36,7 @@ export class Venue {
         slug: 'virtual',
         name: 'Virtual',
         description: null,
-        isInPerson: false,
+        isPhysical: false,
         isVirbela: false,
         isVirtual: true,
         isOther: false,
@@ -45,7 +45,7 @@ export class Venue {
         slug: 'other',
         name: 'Other',
         description: null,
-        isInPerson: false,
+        isPhysical: false,
         isVirbela: false,
         isVirtual: false,
         isOther: true,

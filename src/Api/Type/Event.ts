@@ -50,6 +50,15 @@ export interface EventDateFilterTypeInterface {
   isPast3MonthsAndFuture: boolean;
   isPast6Months: boolean;
 }
+export interface EventEventTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isInPerson: boolean;
+  isHybrid: boolean;
+  isVirtual: boolean;
+  isOther: boolean;
+}
 export interface EventMessageSlugTypeInterface {
   slug: string;
   name: string;
@@ -108,21 +117,19 @@ export interface EventTypeInterface {
   slug: string;
   name: string;
   description?: string;
-  isEventFarm: boolean;
-  isCio: boolean;
-  isListly: boolean;
-  isDnc: boolean;
-  isRnc: boolean;
-  isRslc: boolean;
-  isSundance: boolean;
+  isInPerson: boolean;
+  isVirtual: boolean;
+  isHybrid: boolean;
+  isOther: boolean;
 }
 export interface LocationTypeInterface {
   slug: string;
   name: string;
   description?: string;
-  isInPerson: boolean;
+  isPhysical: boolean;
   isVirbela: boolean;
   isVirtual: boolean;
+  isOther: boolean;
 }
 export interface MapSourceTypeInterface {
   slug: string;
@@ -161,26 +168,6 @@ export interface ProcessingCurrencyTypeInterface {
   isCHF: boolean;
   isTHB: boolean;
   isUSD: boolean;
-}
-export interface QuestionContextTypeInterface {
-  slug: string;
-  name: string;
-  description?: string;
-  isRegistration: boolean;
-  isLeadCapture: boolean;
-}
-export interface QuestionTypeInterface {
-  slug: string;
-  name: string;
-  description?: string;
-  isCheckbox: boolean;
-  isRadio: boolean;
-  isMulti: boolean;
-  isText: boolean;
-  isSelect: boolean;
-  isDate: boolean;
-  isWaiver: boolean;
-  isAddress: boolean;
 }
 export interface ThemeColorTypeInterface {
   slug: string;
@@ -495,6 +482,47 @@ export class Event {
         isPast3Months: false,
         isPast3MonthsAndFuture: false,
         isPast6Months: true,
+      },
+    ];
+  }
+
+  EventEventType(): EventEventTypeInterface[] {
+    return [
+      {
+        slug: 'in-person',
+        name: 'In Person',
+        description: null,
+        isInPerson: true,
+        isHybrid: false,
+        isVirtual: false,
+        isOther: false,
+      },
+      {
+        slug: 'hybrid',
+        name: 'Hybrid',
+        description: null,
+        isInPerson: false,
+        isHybrid: true,
+        isVirtual: false,
+        isOther: false,
+      },
+      {
+        slug: 'virtual',
+        name: 'Virtual',
+        description: null,
+        isInPerson: false,
+        isHybrid: false,
+        isVirtual: true,
+        isOther: false,
+      },
+      {
+        slug: 'other',
+        name: 'Other',
+        description: null,
+        isInPerson: false,
+        isHybrid: false,
+        isVirtual: false,
+        isOther: true,
       },
     ];
   }
@@ -1754,88 +1782,40 @@ export class Event {
   EventType(): EventTypeInterface[] {
     return [
       {
-        slug: 'eventfarm',
-        name: 'Event Farm',
+        slug: 'in-person',
+        name: 'In-Person',
         description: null,
-        isEventFarm: true,
-        isCio: false,
-        isListly: false,
-        isDnc: false,
-        isRnc: false,
-        isRslc: false,
-        isSundance: false,
+        isInPerson: true,
+        isVirtual: false,
+        isHybrid: false,
+        isOther: false,
       },
       {
-        slug: 'cio',
-        name: 'Check-in-Only',
+        slug: 'virtual',
+        name: 'Virtual',
         description: null,
-        isEventFarm: false,
-        isCio: true,
-        isListly: false,
-        isDnc: false,
-        isRnc: false,
-        isRslc: false,
-        isSundance: false,
+        isInPerson: false,
+        isVirtual: true,
+        isHybrid: false,
+        isOther: false,
       },
       {
-        slug: 'listly',
-        name: 'Listly',
+        slug: 'hybrid',
+        name: 'Hybrid',
         description: null,
-        isEventFarm: false,
-        isCio: false,
-        isListly: true,
-        isDnc: false,
-        isRnc: false,
-        isRslc: false,
-        isSundance: false,
+        isInPerson: false,
+        isVirtual: false,
+        isHybrid: true,
+        isOther: false,
       },
       {
-        slug: 'dnc',
-        name: 'DNC',
+        slug: 'other',
+        name: 'Other',
         description: null,
-        isEventFarm: false,
-        isCio: false,
-        isListly: false,
-        isDnc: true,
-        isRnc: false,
-        isRslc: false,
-        isSundance: false,
-      },
-      {
-        slug: 'rnc',
-        name: 'RNC',
-        description: null,
-        isEventFarm: false,
-        isCio: false,
-        isListly: false,
-        isDnc: false,
-        isRnc: true,
-        isRslc: false,
-        isSundance: false,
-      },
-      {
-        slug: 'rslc',
-        name: 'RSLC',
-        description: null,
-        isEventFarm: false,
-        isCio: false,
-        isListly: false,
-        isDnc: false,
-        isRnc: false,
-        isRslc: true,
-        isSundance: false,
-      },
-      {
-        slug: 'sundance',
-        name: 'Sundance',
-        description: null,
-        isEventFarm: false,
-        isCio: false,
-        isListly: false,
-        isDnc: false,
-        isRnc: false,
-        isRslc: false,
-        isSundance: true,
+        isInPerson: false,
+        isVirtual: false,
+        isHybrid: false,
+        isOther: true,
       },
     ];
   }
@@ -1843,28 +1823,40 @@ export class Event {
   LocationType(): LocationTypeInterface[] {
     return [
       {
-        slug: 'in-person',
-        name: 'in-person',
+        slug: 'physical',
+        name: 'physical',
         description: null,
-        isInPerson: true,
+        isPhysical: true,
         isVirbela: false,
         isVirtual: false,
+        isOther: false,
       },
       {
         slug: 'virbela',
         name: 'virbela',
         description: null,
-        isInPerson: false,
+        isPhysical: false,
         isVirbela: true,
         isVirtual: false,
+        isOther: false,
       },
       {
         slug: 'virtual',
         name: 'virtual',
         description: null,
-        isInPerson: false,
+        isPhysical: false,
         isVirbela: false,
         isVirtual: true,
+        isOther: false,
+      },
+      {
+        slug: 'other',
+        name: 'other',
+        description: null,
+        isPhysical: false,
+        isVirbela: false,
+        isVirtual: false,
+        isOther: true,
       },
     ];
   }
@@ -2276,134 +2268,6 @@ export class Event {
         isCHF: false,
         isTHB: false,
         isUSD: true,
-      },
-    ];
-  }
-
-  QuestionContextType(): QuestionContextTypeInterface[] {
-    return [
-      {
-        slug: 'registration',
-        name: 'Registration',
-        description: null,
-        isRegistration: true,
-        isLeadCapture: false,
-      },
-      {
-        slug: 'lead',
-        name: 'Lead Capture',
-        description: null,
-        isRegistration: false,
-        isLeadCapture: true,
-      },
-    ];
-  }
-
-  QuestionType(): QuestionTypeInterface[] {
-    return [
-      {
-        slug: 'checkbox',
-        name: 'Checkboxes',
-        description: null,
-        isCheckbox: true,
-        isRadio: false,
-        isMulti: false,
-        isText: false,
-        isSelect: false,
-        isDate: false,
-        isWaiver: false,
-        isAddress: false,
-      },
-      {
-        slug: 'radio',
-        name: 'Radio Buttons',
-        description: null,
-        isCheckbox: false,
-        isRadio: true,
-        isMulti: false,
-        isText: false,
-        isSelect: false,
-        isDate: false,
-        isWaiver: false,
-        isAddress: false,
-      },
-      {
-        slug: 'multi',
-        name: 'Paragraph',
-        description: null,
-        isCheckbox: false,
-        isRadio: false,
-        isMulti: true,
-        isText: false,
-        isSelect: false,
-        isDate: false,
-        isWaiver: false,
-        isAddress: false,
-      },
-      {
-        slug: 'text',
-        name: 'Short Answer',
-        description: null,
-        isCheckbox: false,
-        isRadio: false,
-        isMulti: false,
-        isText: true,
-        isSelect: false,
-        isDate: false,
-        isWaiver: false,
-        isAddress: false,
-      },
-      {
-        slug: 'select',
-        name: 'Dropdown Select',
-        description: null,
-        isCheckbox: false,
-        isRadio: false,
-        isMulti: false,
-        isText: false,
-        isSelect: true,
-        isDate: false,
-        isWaiver: false,
-        isAddress: false,
-      },
-      {
-        slug: 'date',
-        name: 'Select Date',
-        description: null,
-        isCheckbox: false,
-        isRadio: false,
-        isMulti: false,
-        isText: false,
-        isSelect: false,
-        isDate: true,
-        isWaiver: false,
-        isAddress: false,
-      },
-      {
-        slug: 'waiver',
-        name: 'Sign Waiver',
-        description: null,
-        isCheckbox: false,
-        isRadio: false,
-        isMulti: false,
-        isText: false,
-        isSelect: false,
-        isDate: false,
-        isWaiver: true,
-        isAddress: false,
-      },
-      {
-        slug: 'address',
-        name: 'Address',
-        description: null,
-        isCheckbox: false,
-        isRadio: false,
-        isMulti: false,
-        isText: false,
-        isSelect: false,
-        isDate: false,
-        isWaiver: false,
-        isAddress: true,
       },
     ];
   }
