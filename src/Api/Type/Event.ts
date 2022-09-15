@@ -50,15 +50,6 @@ export interface EventDateFilterTypeInterface {
   isPast3MonthsAndFuture: boolean;
   isPast6Months: boolean;
 }
-export interface EventEventTypeInterface {
-  slug: string;
-  name: string;
-  description?: string;
-  isInPerson: boolean;
-  isHybrid: boolean;
-  isVirtual: boolean;
-  isOther: boolean;
-}
 export interface EventMessageSlugTypeInterface {
   slug: string;
   name: string;
@@ -112,6 +103,14 @@ export interface EventMessageTypeInterface {
   isWaitListSMS: boolean;
   defaultValue: any;
   value: any;
+}
+export interface EventStateTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isPublished: boolean;
+  isDraft: boolean;
+  isArchived: boolean;
 }
 export interface EventTypeInterface {
   slug: string;
@@ -198,6 +197,19 @@ export interface TrackingScriptTypeInterface {
   isRegistration: boolean;
   isConfirmation: boolean;
   value: any;
+}
+export interface VariantTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isFull: boolean;
+  isCio: boolean;
+  isLite: boolean;
+  isSession: boolean;
+  isPanel: boolean;
+  isKeynote: boolean;
+  isBlock: boolean;
+  isSample: boolean;
 }
 
 export class Event {
@@ -482,47 +494,6 @@ export class Event {
         isPast3Months: false,
         isPast3MonthsAndFuture: false,
         isPast6Months: true,
-      },
-    ];
-  }
-
-  EventEventType(): EventEventTypeInterface[] {
-    return [
-      {
-        slug: 'in-person',
-        name: 'In Person',
-        description: null,
-        isInPerson: true,
-        isHybrid: false,
-        isVirtual: false,
-        isOther: false,
-      },
-      {
-        slug: 'hybrid',
-        name: 'Hybrid',
-        description: null,
-        isInPerson: false,
-        isHybrid: true,
-        isVirtual: false,
-        isOther: false,
-      },
-      {
-        slug: 'virtual',
-        name: 'Virtual',
-        description: null,
-        isInPerson: false,
-        isHybrid: false,
-        isVirtual: true,
-        isOther: false,
-      },
-      {
-        slug: 'other',
-        name: 'Other',
-        description: null,
-        isInPerson: false,
-        isHybrid: false,
-        isVirtual: false,
-        isOther: true,
       },
     ];
   }
@@ -1779,6 +1750,35 @@ export class Event {
     ];
   }
 
+  EventStateType(): EventStateTypeInterface[] {
+    return [
+      {
+        slug: 'published',
+        name: 'Published',
+        description: null,
+        isPublished: true,
+        isDraft: false,
+        isArchived: false,
+      },
+      {
+        slug: 'draft',
+        name: 'Draft',
+        description: null,
+        isPublished: false,
+        isDraft: true,
+        isArchived: false,
+      },
+      {
+        slug: 'archived',
+        name: 'Archived',
+        description: null,
+        isPublished: false,
+        isDraft: false,
+        isArchived: true,
+      },
+    ];
+  }
+
   EventType(): EventTypeInterface[] {
     return [
       {
@@ -2368,6 +2368,115 @@ export class Event {
         isRegistration: false,
         isConfirmation: true,
         value: null,
+      },
+    ];
+  }
+
+  VariantType(): VariantTypeInterface[] {
+    return [
+      {
+        slug: 'full',
+        name: 'Full',
+        description: null,
+        isFull: true,
+        isCio: false,
+        isLite: false,
+        isSession: false,
+        isPanel: false,
+        isKeynote: false,
+        isBlock: false,
+        isSample: false,
+      },
+      {
+        slug: 'cio',
+        name: 'Check-in-Only',
+        description: null,
+        isFull: false,
+        isCio: true,
+        isLite: false,
+        isSession: false,
+        isPanel: false,
+        isKeynote: false,
+        isBlock: false,
+        isSample: false,
+      },
+      {
+        slug: 'lite',
+        name: 'Lite',
+        description: null,
+        isFull: false,
+        isCio: false,
+        isLite: true,
+        isSession: false,
+        isPanel: false,
+        isKeynote: false,
+        isBlock: false,
+        isSample: false,
+      },
+      {
+        slug: 'session',
+        name: 'Session',
+        description: null,
+        isFull: false,
+        isCio: false,
+        isLite: false,
+        isSession: true,
+        isPanel: false,
+        isKeynote: false,
+        isBlock: false,
+        isSample: false,
+      },
+      {
+        slug: 'panel',
+        name: 'Panel',
+        description: null,
+        isFull: false,
+        isCio: false,
+        isLite: false,
+        isSession: false,
+        isPanel: true,
+        isKeynote: false,
+        isBlock: false,
+        isSample: false,
+      },
+      {
+        slug: 'keynote',
+        name: 'Keynote',
+        description: null,
+        isFull: false,
+        isCio: false,
+        isLite: false,
+        isSession: false,
+        isPanel: false,
+        isKeynote: true,
+        isBlock: false,
+        isSample: false,
+      },
+      {
+        slug: 'block',
+        name: 'Block',
+        description: null,
+        isFull: false,
+        isCio: false,
+        isLite: false,
+        isSession: false,
+        isPanel: false,
+        isKeynote: false,
+        isBlock: true,
+        isSample: false,
+      },
+      {
+        slug: 'sample',
+        name: 'Sample',
+        description: null,
+        isFull: false,
+        isCio: false,
+        isLite: false,
+        isSession: false,
+        isPanel: false,
+        isKeynote: false,
+        isBlock: false,
+        isSample: true,
       },
     ];
   }

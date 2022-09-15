@@ -58,7 +58,7 @@ export class Event {
   /**
    * @param string - parentEventId
    * @param string? - query
-   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|TicketTypes|TicketBlocks|EventTexts|QuestionsAndAnswers|ThumbnailUrl|Tracks
+   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|TicketTypes|TicketBlocks|EventTexts|QuestionsAndAnswers|ThumbnailUrl|Tracks|Venue
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
    * @param string? - sortBy event-start|event-end|name|event-created
