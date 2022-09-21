@@ -21,7 +21,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme|VirbelaWorld|AnswerBindings
+   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme|VirbelaWorld|AnswerBindings|EventLinks
    * @return Promise|Observable|any
    */
   GetEvent(eventId: string, withData: string[] = null): any {

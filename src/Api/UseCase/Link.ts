@@ -19,7 +19,49 @@ export class Link {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
+   * @param string? - sortBy shownText|url|linkType|created
+   * @param string? - sortDirection ascending|descending
+   * @param string? - query
+   * @param boolean? - shouldHideDeleted true|false
+   * @return Promise|Observable|any
+   */
+  ListLinksForEvent(
+    eventId: string,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    query: string = null,
+    shouldHideDeleted: boolean = null,
+  ): any {
+    return this.restClient.get('Link/UseCase/ListLinksForEvent', {
+      eventId,
+      page,
+      itemsPerPage,
+      sortBy,
+      sortDirection,
+      query,
+      shouldHideDeleted,
+    });
+  }
+
   // Commands
+
+  /**
+   * @param string - linkId
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  AddLinkToEvent(linkId: string, eventId: string): any {
+    return this.restClient.post('Link/UseCase/AddLinkToEvent', {
+      linkId,
+      eventId,
+    });
+  }
 
   /**
    * @param string - linkId
@@ -86,6 +128,18 @@ export class Link {
   RemoveLink(linkId: string): any {
     return this.restClient.post('Link/UseCase/RemoveLink', {
       linkId,
+    });
+  }
+
+  /**
+   * @param string - linkId
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  RemoveLinkFromEvent(linkId: string, eventId: string): any {
+    return this.restClient.post('Link/UseCase/RemoveLinkFromEvent', {
+      linkId,
+      eventId,
     });
   }
 
