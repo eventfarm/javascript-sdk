@@ -9,7 +9,7 @@
   "author": "Jason Raimondi <jason@raimondi.us>",
   "license": "MIT",
   "dependencies": {
-    "@eventfarm/javascript-sdk": "^2.0.0-rc.4",
+    "@eventfarm/javascript-sdk": "^10.3.16",
     "dotenv": "^6.2.0"
   },
   "devDependencies": {
