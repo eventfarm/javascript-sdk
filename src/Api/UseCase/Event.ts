@@ -1330,6 +1330,18 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @param string - eventVariant full|cio|lite|session|panel|keynote|block|sample
+   * @return Promise|Observable|any
+   */
+  SetEventVariant(eventId: string, eventVariant: string): any {
+    return this.restClient.post('Event/UseCase/SetEventVariant', {
+      eventId,
+      eventVariant,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param string - facebookHandle
    * @return Promise|Observable|any
    */
