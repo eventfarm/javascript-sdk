@@ -9,6 +9,11 @@ export interface AppVersionTypeInterface {
   isCheckInAndroid: boolean;
   isTicketBlockManagementIos: boolean;
   isTicketBlockManagementAndroid: boolean;
+  isEFxIos: boolean;
+  isEFxAndroid: boolean;
+  isEventsIos: boolean;
+  isEventsAndroid: boolean;
+  isLeadsFlutter: boolean;
 }
 
 export class AppVersion {
@@ -22,6 +27,11 @@ export class AppVersion {
         isCheckInAndroid: false,
         isTicketBlockManagementIos: false,
         isTicketBlockManagementAndroid: false,
+        isEFxIos: false,
+        isEFxAndroid: false,
+        isEventsIos: false,
+        isEventsAndroid: false,
+        isLeadsFlutter: false,
       },
       {
         slug: 'check-in-android',
@@ -31,6 +41,11 @@ export class AppVersion {
         isCheckInAndroid: true,
         isTicketBlockManagementIos: false,
         isTicketBlockManagementAndroid: false,
+        isEFxIos: false,
+        isEFxAndroid: false,
+        isEventsIos: false,
+        isEventsAndroid: false,
+        isLeadsFlutter: false,
       },
       {
         slug: 'ticket-block-mgmt-ios',
@@ -40,6 +55,11 @@ export class AppVersion {
         isCheckInAndroid: false,
         isTicketBlockManagementIos: true,
         isTicketBlockManagementAndroid: false,
+        isEFxIos: false,
+        isEFxAndroid: false,
+        isEventsIos: false,
+        isEventsAndroid: false,
+        isLeadsFlutter: false,
       },
       {
         slug: 'ticket-block-mgmt-android',
@@ -49,6 +69,81 @@ export class AppVersion {
         isCheckInAndroid: false,
         isTicketBlockManagementIos: false,
         isTicketBlockManagementAndroid: true,
+        isEFxIos: false,
+        isEFxAndroid: false,
+        isEventsIos: false,
+        isEventsAndroid: false,
+        isLeadsFlutter: false,
+      },
+      {
+        slug: 'efx-ios',
+        name: 'EFx iOS',
+        description: null,
+        isCheckInIos: false,
+        isCheckInAndroid: false,
+        isTicketBlockManagementIos: false,
+        isTicketBlockManagementAndroid: false,
+        isEFxIos: true,
+        isEFxAndroid: false,
+        isEventsIos: false,
+        isEventsAndroid: false,
+        isLeadsFlutter: false,
+      },
+      {
+        slug: 'efx-android',
+        name: 'EFx Android',
+        description: null,
+        isCheckInIos: false,
+        isCheckInAndroid: false,
+        isTicketBlockManagementIos: false,
+        isTicketBlockManagementAndroid: false,
+        isEFxIos: false,
+        isEFxAndroid: true,
+        isEventsIos: false,
+        isEventsAndroid: false,
+        isLeadsFlutter: false,
+      },
+      {
+        slug: 'events-ios',
+        name: 'Events iOS',
+        description: null,
+        isCheckInIos: false,
+        isCheckInAndroid: false,
+        isTicketBlockManagementIos: false,
+        isTicketBlockManagementAndroid: false,
+        isEFxIos: false,
+        isEFxAndroid: false,
+        isEventsIos: true,
+        isEventsAndroid: false,
+        isLeadsFlutter: false,
+      },
+      {
+        slug: 'events-android',
+        name: 'Events Android',
+        description: null,
+        isCheckInIos: false,
+        isCheckInAndroid: false,
+        isTicketBlockManagementIos: false,
+        isTicketBlockManagementAndroid: false,
+        isEFxIos: false,
+        isEFxAndroid: false,
+        isEventsIos: false,
+        isEventsAndroid: true,
+        isLeadsFlutter: false,
+      },
+      {
+        slug: 'leads-flutter',
+        name: 'Leads Flutter',
+        description: null,
+        isCheckInIos: false,
+        isCheckInAndroid: false,
+        isTicketBlockManagementIos: false,
+        isTicketBlockManagementAndroid: false,
+        isEFxIos: false,
+        isEFxAndroid: false,
+        isEventsIos: false,
+        isEventsAndroid: false,
+        isLeadsFlutter: true,
       },
     ];
   }

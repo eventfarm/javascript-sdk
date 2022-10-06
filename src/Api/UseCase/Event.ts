@@ -21,7 +21,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme|VirbelaWorld|AnswerBindings
+   * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|EventTexts|TicketTypes|TicketBlocks|TicketBlocksWithAllotmentCounts|QuestionsAndAnswers|QuestionContext|AllQuestions|ParentEvent|PoolFeatures|EventTheme|VirbelaWorld|AnswerBindings|EventLinks
    * @return Promise|Observable|any
    */
   GetEvent(eventId: string, withData: string[] = null): any {
@@ -1325,6 +1325,18 @@ export class Event {
     return this.restClient.post('Event/UseCase/SetEventType', {
       eventId,
       eventType,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - eventVariant full|cio|lite|session|panel|keynote|block|sample
+   * @return Promise|Observable|any
+   */
+  SetEventVariant(eventId: string, eventVariant: string): any {
+    return this.restClient.post('Event/UseCase/SetEventVariant', {
+      eventId,
+      eventVariant,
     });
   }
 
