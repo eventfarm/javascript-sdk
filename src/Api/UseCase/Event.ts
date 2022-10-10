@@ -60,7 +60,7 @@ export class Event {
    * @param string? - query
    * @param string[]? - withData Pool|Stacks|StacksWithAvailabilityCounts|Tags|TicketTypes|TicketBlocks|EventTexts|QuestionsAndAnswers|ThumbnailUrl|Tracks|Venue
    * @param number? - page >= 1
-   * @param number? - itemsPerPage 1-100
+   * @param number? - itemsPerPage 1-500
    * @param string? - sortBy event-start|event-end|name|event-created
    * @param string? - sortDirection ascending|descending
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
