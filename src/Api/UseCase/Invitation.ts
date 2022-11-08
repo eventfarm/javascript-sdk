@@ -11,6 +11,33 @@ export class Invitation {
 
   /**
    * @param string - eventId
+   * @param string - firstName
+   * @param string - lastName
+   * @param string - clearUserId
+   * @param string - score
+   * @return Promise|Observable|any
+   */
+  CheckIfInvitationExistsForEventFromClearJSON(
+    eventId: string,
+    firstName: string,
+    lastName: string,
+    clearUserId: string,
+    score: string,
+  ): any {
+    return this.restClient.get(
+      'Invitation/UseCase/CheckIfInvitationExistsForEventFromClearJSON',
+      {
+        eventId,
+        firstName,
+        lastName,
+        clearUserId,
+        score,
+      },
+    );
+  }
+
+  /**
+   * @param string - eventId
    * @param string - clearId
    * @return Promise|Observable|any
    */
@@ -354,6 +381,7 @@ export class Invitation {
    * @param string? - sortDirection
    * @param string[]? - withData Event|EventWithTags|Stack|StackAndTicketType
    * @param any[]? - statusFilter
+   * @param any[]? - eventAttributesFilter
    * @return Promise|Observable|any
    */
   ListInvitationsForUser(
@@ -366,6 +394,7 @@ export class Invitation {
     sortDirection: string = null,
     withData: string[] = null,
     statusFilter: any[] = null,
+    eventAttributesFilter: any[] = null,
   ): any {
     return this.restClient.get('Invitation/UseCase/ListInvitationsForUser', {
       userId,
@@ -377,6 +406,7 @@ export class Invitation {
       sortDirection,
       withData,
       statusFilter,
+      eventAttributesFilter,
     });
   }
 
