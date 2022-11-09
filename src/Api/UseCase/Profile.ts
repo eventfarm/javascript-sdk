@@ -21,6 +21,7 @@ export class Profile {
 
   /**
    * @param string - eventId
+   * @param string[] - withData EventProfiles
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-500
    * @param string? - sortBy name|title|company|created
@@ -31,6 +32,7 @@ export class Profile {
    */
   ListProfilesForEvent(
     eventId: string,
+    withData: string[],
     page: number = null,
     itemsPerPage: number = null,
     sortBy: string = null,
@@ -40,6 +42,7 @@ export class Profile {
   ): any {
     return this.restClient.get('Profile/UseCase/ListProfilesForEvent', {
       eventId,
+      withData,
       page,
       itemsPerPage,
       sortBy,
