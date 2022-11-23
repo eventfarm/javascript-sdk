@@ -104,7 +104,7 @@ export class Event {
    * @param string - parentEventId
    * @param string - userId
    * @param string? - query
-   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl
+   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl|SessionTracks
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
    * @param string? - sortBy event-start|event-end|name|event-created

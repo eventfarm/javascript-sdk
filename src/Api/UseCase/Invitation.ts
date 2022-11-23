@@ -496,7 +496,7 @@ export class Invitation {
    * @param number? - itemsPerPage 1-100
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
    * @param string? - sortDirection
-   * @param string[]? - withData Event|Stack|Venue|Tracks
+   * @param string[]? - withData Event|Stack|Venue|SessionTracks
    * @param any[]? - statusFilter
    * @param boolean? - excludeParent true|false
    * @return Promise|Observable|any

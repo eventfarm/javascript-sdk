@@ -28,6 +28,7 @@ export class Profile {
    * @param string? - sortDirection ascending|descending
    * @param string? - query
    * @param boolean? - shouldHideDeleted true|false
+   * @param any[]? - eventProfileTypeFilter speaker|presenter|sponsor|panelist|moderator|host|participant|other
    * @return Promise|Observable|any
    */
   ListProfilesForEvent(
@@ -39,6 +40,7 @@ export class Profile {
     sortDirection: string = null,
     query: string = null,
     shouldHideDeleted: boolean = null,
+    eventProfileTypeFilter: any[] = null,
   ): any {
     return this.restClient.get('Profile/UseCase/ListProfilesForEvent', {
       eventId,
@@ -49,6 +51,7 @@ export class Profile {
       sortDirection,
       query,
       shouldHideDeleted,
+      eventProfileTypeFilter,
     });
   }
 
