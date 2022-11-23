@@ -21,6 +21,7 @@ export class Profile {
 
   /**
    * @param string - eventId
+   * @param string[] - withData EventProfiles
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-500
    * @param string? - sortBy name|title|company|created
@@ -31,6 +32,7 @@ export class Profile {
    */
   ListProfilesForEvent(
     eventId: string,
+    withData: string[],
     page: number = null,
     itemsPerPage: number = null,
     sortBy: string = null,
@@ -40,6 +42,7 @@ export class Profile {
   ): any {
     return this.restClient.get('Profile/UseCase/ListProfilesForEvent', {
       eventId,
+      withData,
       page,
       itemsPerPage,
       sortBy,
@@ -94,6 +97,24 @@ export class Profile {
   }
 
   /**
+   * @param any[] - profileIds
+   * @param string - eventId
+   * @param string - eventProfileType speaker|presenter|sponsor|panelist|moderator|host|participant|other
+   * @return Promise|Observable|any
+   */
+  AddProfilesToEvent(
+    profileIds: any[],
+    eventId: string,
+    eventProfileType: string,
+  ): any {
+    return this.restClient.post('Profile/UseCase/AddProfilesToEvent', {
+      profileIds,
+      eventId,
+      eventProfileType,
+    });
+  }
+
+  /**
    * @param string - poolId
    * @param string? - firstName
    * @param string? - lastName
@@ -104,6 +125,8 @@ export class Profile {
    * @param string? - imageUrl
    * @param string? - profileType person|company|other
    * @param string? - profileId
+   * @param string? - eventId
+   * @param string? - eventProfileType
    * @return Promise|Observable|any
    */
   CreateProfile(
@@ -117,6 +140,8 @@ export class Profile {
     imageUrl: string = null,
     profileType: string = null,
     profileId: string = null,
+    eventId: string = null,
+    eventProfileType: string = null,
   ): any {
     return this.restClient.post('Profile/UseCase/CreateProfile', {
       poolId,
@@ -129,6 +154,8 @@ export class Profile {
       imageUrl,
       profileType,
       profileId,
+      eventId,
+      eventProfileType,
     });
   }
 
@@ -215,6 +242,21 @@ export class Profile {
     return this.restClient.post('Profile/UseCase/SetProfileType', {
       profileId,
       profileType,
+    });
+  }
+
+  /**
+   * @param string - eventProfileId
+   * @param string - eventProfileType speaker|presenter|sponsor|panelist|moderator|host|participant|other
+   * @return Promise|Observable|any
+   */
+  UpdateEventProfileType(
+    eventProfileId: string,
+    eventProfileType: string,
+  ): any {
+    return this.restClient.post('Profile/UseCase/UpdateEventProfileType', {
+      eventProfileId,
+      eventProfileType,
     });
   }
 

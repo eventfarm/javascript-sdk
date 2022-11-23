@@ -21,11 +21,12 @@ export class Track {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData Event
+   * @param string[]? - withData Event|EventTracks
    * @param string? - sortBy name
    * @param string? - sortDirection ascending|descending
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
+   * @param string? - query
    * @return Promise|Observable|any
    */
   ListTracksForEvent(
@@ -35,6 +36,7 @@ export class Track {
     sortDirection: string = null,
     page: number = null,
     itemsPerPage: number = null,
+    query: string = null,
   ): any {
     return this.restClient.get('Track/UseCase/ListTracksForEvent', {
       eventId,
@@ -43,6 +45,7 @@ export class Track {
       sortDirection,
       page,
       itemsPerPage,
+      query,
     });
   }
 

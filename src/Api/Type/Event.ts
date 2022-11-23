@@ -210,6 +210,7 @@ export interface VariantTypeInterface {
   isKeynote: boolean;
   isBlock: boolean;
   isSample: boolean;
+  isAnySessionType: boolean;
 }
 
 export class Event {
@@ -2386,6 +2387,7 @@ export class Event {
         isKeynote: false,
         isBlock: false,
         isSample: false,
+        isAnySessionType: false,
       },
       {
         slug: 'cio',
@@ -2399,6 +2401,7 @@ export class Event {
         isKeynote: false,
         isBlock: false,
         isSample: false,
+        isAnySessionType: false,
       },
       {
         slug: 'lite',
@@ -2412,6 +2415,7 @@ export class Event {
         isKeynote: false,
         isBlock: false,
         isSample: false,
+        isAnySessionType: false,
       },
       {
         slug: 'session',
@@ -2425,6 +2429,7 @@ export class Event {
         isKeynote: false,
         isBlock: false,
         isSample: false,
+        isAnySessionType: true,
       },
       {
         slug: 'panel',
@@ -2438,6 +2443,7 @@ export class Event {
         isKeynote: false,
         isBlock: false,
         isSample: false,
+        isAnySessionType: true,
       },
       {
         slug: 'keynote',
@@ -2451,6 +2457,7 @@ export class Event {
         isKeynote: true,
         isBlock: false,
         isSample: false,
+        isAnySessionType: true,
       },
       {
         slug: 'block',
@@ -2464,6 +2471,7 @@ export class Event {
         isKeynote: false,
         isBlock: true,
         isSample: false,
+        isAnySessionType: true,
       },
       {
         slug: 'sample',
@@ -2477,6 +2485,7 @@ export class Event {
         isKeynote: false,
         isBlock: false,
         isSample: true,
+        isAnySessionType: false,
       },
     ];
   }
