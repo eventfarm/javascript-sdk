@@ -1612,6 +1612,18 @@ export class Event {
 
   /**
    * @param string - eventId
+   * @param any[] - trackIds
+   * @return Promise|Observable|any
+   */
+  SetTracksForSession(eventId: string, trackIds: any[]): any {
+    return this.restClient.post('Event/UseCase/SetTracksForSession', {
+      eventId,
+      trackIds,
+    });
+  }
+
+  /**
+   * @param string - eventId
    * @param string - twitterHandle
    * @return Promise|Observable|any
    */

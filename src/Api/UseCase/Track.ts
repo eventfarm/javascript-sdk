@@ -21,7 +21,7 @@ export class Track {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData Event|EventTracks
+   * @param string[]? - withData SessionTracks|TicketTypeTracks
    * @param string? - sortBy name
    * @param string? - sortDirection ascending|descending
    * @param number? - page >= 1
@@ -50,6 +50,18 @@ export class Track {
   }
 
   // Commands
+
+  /**
+   * @param string - ticketTypeId
+   * @param string - trackId
+   * @return Promise|Observable|any
+   */
+  AddTicketTypeToTrack(ticketTypeId: string, trackId: string): any {
+    return this.restClient.post('Track/UseCase/AddTicketTypeToTrack', {
+      ticketTypeId,
+      trackId,
+    });
+  }
 
   /**
    * @param string - eventId
@@ -83,12 +95,48 @@ export class Track {
   }
 
   /**
+   * @param string - ticketTypeId
+   * @param string - trackId
+   * @return Promise|Observable|any
+   */
+  RemoveTicketTypeFromTrack(ticketTypeId: string, trackId: string): any {
+    return this.restClient.post('Track/UseCase/RemoveTicketTypeFromTrack', {
+      ticketTypeId,
+      trackId,
+    });
+  }
+
+  /**
    * @param string - trackId
    * @return Promise|Observable|any
    */
   RemoveTrack(trackId: string): any {
     return this.restClient.post('Track/UseCase/RemoveTrack', {
       trackId,
+    });
+  }
+
+  /**
+   * @param string - trackId
+   * @param any[] - eventIds
+   * @return Promise|Observable|any
+   */
+  SetSessionsForTrack(trackId: string, eventIds: any[]): any {
+    return this.restClient.post('Track/UseCase/SetSessionsForTrack', {
+      trackId,
+      eventIds,
+    });
+  }
+
+  /**
+   * @param string - trackId
+   * @param any[] - ticketTypeIds
+   * @return Promise|Observable|any
+   */
+  SetTicketTypesForTrack(trackId: string, ticketTypeIds: any[]): any {
+    return this.restClient.post('Track/UseCase/SetTicketTypesForTrack', {
+      trackId,
+      ticketTypeIds,
     });
   }
 
