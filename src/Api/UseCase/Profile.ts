@@ -100,20 +100,14 @@ export class Profile {
   }
 
   /**
-   * @param any[] - profileIds
    * @param string - eventId
-   * @param string - eventProfileType speaker|presenter|sponsor|panelist|moderator|host|participant|other
+   * @param any[] - eventProfiles
    * @return Promise|Observable|any
    */
-  AddProfilesToEvent(
-    profileIds: any[],
-    eventId: string,
-    eventProfileType: string,
-  ): any {
+  AddProfilesToEvent(eventId: string, eventProfiles: any[]): any {
     return this.restClient.post('Profile/UseCase/AddProfilesToEvent', {
-      profileIds,
       eventId,
-      eventProfileType,
+      eventProfiles,
     });
   }
 
