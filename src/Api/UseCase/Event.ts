@@ -290,14 +290,16 @@ export class Event {
    * @param string - parentEventId
    * @param string - userId
    * @param string? - query
-   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl|SessionTracks|Invitations
+   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl|SessionTracks|Invitations|Venue|StacksWithAvailabilityCounts
    * @param number? - page >= 1
-   * @param number? - itemsPerPage 1-100
+   * @param number? - itemsPerPage 1-500
    * @param string? - sortBy event-start|event-end|name|event-created
    * @param string? - sortDirection ascending|descending
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
    * @param string? - poolId
    * @param any[]? - tags
+   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled
+   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled
    * @return Promise|Observable|any
    */
   ListSessionsForEventForUser(
@@ -312,6 +314,8 @@ export class Event {
     eventDateFilterType: string = null,
     poolId: string = null,
     tags: any[] = null,
+    attributesFilter: any[] = null,
+    attributesExcludeFilter: any[] = null,
   ): any {
     return this.restClient.get('Event/UseCase/ListSessionsForEventForUser', {
       parentEventId,
@@ -325,6 +329,8 @@ export class Event {
       eventDateFilterType,
       poolId,
       tags,
+      attributesFilter,
+      attributesExcludeFilter,
     });
   }
 

@@ -493,7 +493,7 @@ export class Invitation {
    * @param string - parentEventId
    * @param string? - poolId
    * @param number? - page >= 1
-   * @param number? - itemsPerPage 1-100
+   * @param number? - itemsPerPage 1-500
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
    * @param string? - sortDirection
    * @param string[]? - withData Event|Stack|Venue|SessionTracks
@@ -1149,6 +1149,7 @@ export class Invitation {
    * @param number? - updatedTime
    * @param boolean? - forceDuplicateInvitations true|false
    * @param number? - inviteCount
+   * @param string? - title
    * @return Promise|Observable|any
    */
   UpdateInvitation(
@@ -1165,6 +1166,7 @@ export class Invitation {
     updatedTime: number = null,
     forceDuplicateInvitations: boolean = null,
     inviteCount: number = null,
+    title: string = null,
   ): any {
     return this.restClient.post('Invitation/UseCase/UpdateInvitation', {
       invitationId,
@@ -1180,6 +1182,7 @@ export class Invitation {
       updatedTime,
       forceDuplicateInvitations,
       inviteCount,
+      title,
     });
   }
 }

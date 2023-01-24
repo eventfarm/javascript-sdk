@@ -12,12 +12,18 @@ export class TicketBlock {
   /**
    * @param string - ticketBlockId
    * @param string[]? - withData Event|Allotments|AllotmentsAndStack|AllotmentCounts
+   * @param boolean? - shouldHideDeleted true|false
    * @return Promise|Observable|any
    */
-  GetTicketBlock(ticketBlockId: string, withData: string[] = null): any {
+  GetTicketBlock(
+    ticketBlockId: string,
+    withData: string[] = null,
+    shouldHideDeleted: boolean = null,
+  ): any {
     return this.restClient.get('TicketBlock/UseCase/GetTicketBlock', {
       ticketBlockId,
       withData,
+      shouldHideDeleted,
     });
   }
 
