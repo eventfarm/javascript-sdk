@@ -286,6 +286,48 @@ export class Event {
     });
   }
 
+  /**
+   * @param string - parentEventId
+   * @param string - userId
+   * @param string? - query
+   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl|SessionTracks|Invitations
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @param string? - sortBy event-start|event-end|name|event-created
+   * @param string? - sortDirection ascending|descending
+   * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
+   * @param string? - poolId
+   * @param any[]? - tags
+   * @return Promise|Observable|any
+   */
+  ListSessionsForEventForUser(
+    parentEventId: string,
+    userId: string,
+    query: string = null,
+    withData: string[] = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    eventDateFilterType: string = null,
+    poolId: string = null,
+    tags: any[] = null,
+  ): any {
+    return this.restClient.get('Event/UseCase/ListSessionsForEventForUser', {
+      parentEventId,
+      userId,
+      query,
+      withData,
+      page,
+      itemsPerPage,
+      sortBy,
+      sortDirection,
+      eventDateFilterType,
+      poolId,
+      tags,
+    });
+  }
+
   // Commands
 
   /**
@@ -1568,6 +1610,18 @@ export class Event {
     return this.restClient.post('Event/UseCase/SetProcessingRefund', {
       eventId,
       processingRefund,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param any[] - eventProfiles
+   * @return Promise|Observable|any
+   */
+  SetProfilesForSession(eventId: string, eventProfiles: any[]): any {
+    return this.restClient.post('Event/UseCase/SetProfilesForSession', {
+      eventId,
+      eventProfiles,
     });
   }
 
