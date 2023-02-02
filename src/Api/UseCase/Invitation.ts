@@ -922,6 +922,24 @@ export class Invitation {
   }
 
   /**
+   * @param string - parentEventInvitationId
+   * @param string - sessionId
+   * @param string? - invitationId
+   * @return Promise|Observable|any
+   */
+  CreateSessionInvitation(
+    parentEventInvitationId: string,
+    sessionId: string,
+    invitationId: string = null,
+  ): any {
+    return this.restClient.post('Invitation/UseCase/CreateSessionInvitation', {
+      parentEventInvitationId,
+      sessionId,
+      invitationId,
+    });
+  }
+
+  /**
    * @param string - eventId
    * @param string - webhookType
    * @param string - webhookMethod
