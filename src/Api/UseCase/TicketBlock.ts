@@ -32,7 +32,7 @@ export class TicketBlock {
    * @param string? - query
    * @param string[]? - withData Event|Allotments|AllotmentsAndStack|AllotmentCounts
    * @param number? - page >= 1
-   * @param number? - itemsPerPage 1-50
+   * @param number? - itemsPerPage 1-100
    * @param string? - sortBy name
    * @param string? - sortDirection ascending|descending
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
