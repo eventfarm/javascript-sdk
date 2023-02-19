@@ -770,6 +770,7 @@ export class Invitation {
    * @param string? - title
    * @param string? - telephone
    * @param string? - other
+   * @param boolean? - shouldCreateParentInvitation true|false
    * @return Promise|Observable|any
    */
   CreateInvitationForTicketBlock(
@@ -792,6 +793,7 @@ export class Invitation {
     title: string = null,
     telephone: string = null,
     other: string = null,
+    shouldCreateParentInvitation: boolean = null,
   ): any {
     return this.restClient.post(
       'Invitation/UseCase/CreateInvitationForTicketBlock',
@@ -815,6 +817,7 @@ export class Invitation {
         title,
         telephone,
         other,
+        shouldCreateParentInvitation,
       },
     );
   }
@@ -1019,6 +1022,19 @@ export class Invitation {
     return this.restClient.post('Invitation/UseCase/RescindInvitation', {
       invitationId,
     });
+  }
+
+  /**
+   * @param string - invitationId
+   * @return Promise|Observable|any
+   */
+  RescindInvitationForSession(invitationId: string): any {
+    return this.restClient.post(
+      'Invitation/UseCase/RescindInvitationForSession',
+      {
+        invitationId,
+      },
+    );
   }
 
   /**
