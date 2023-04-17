@@ -133,6 +133,7 @@ export class TicketBlock {
    * @param string - name
    * @param boolean? - isBlacklistEnabled true|false
    * @param string? - emailText
+   * @param string? - ticketBlockType standard|session
    * @param string? - ticketBlockId
    * @return Promise|Observable|any
    */
@@ -141,6 +142,7 @@ export class TicketBlock {
     name: string,
     isBlacklistEnabled: boolean = null,
     emailText: string = null,
+    ticketBlockType: string = null,
     ticketBlockId: string = null,
   ): any {
     return this.restClient.post('TicketBlock/UseCase/CreateTicketBlock', {
@@ -148,6 +150,7 @@ export class TicketBlock {
       name,
       isBlacklistEnabled,
       emailText,
+      ticketBlockType,
       ticketBlockId,
     });
   }

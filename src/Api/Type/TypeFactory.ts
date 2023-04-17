@@ -26,6 +26,7 @@ import { Salesforce } from './Salesforce';
 import { Salutation } from './Salutation';
 import { SitePage } from './SitePage';
 import { Stack } from './Stack';
+import { TicketBlock } from './TicketBlock';
 import { User } from './User';
 import { Venue } from './Venue';
 import { Virbela } from './Virbela';
@@ -142,6 +143,10 @@ export class TypeFactory {
 
   Stack(): Stack {
     return new Stack();
+  }
+
+  TicketBlock(): TicketBlock {
+    return new TicketBlock();
   }
 
   User(): User {
