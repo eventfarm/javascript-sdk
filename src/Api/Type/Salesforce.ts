@@ -1,6 +1,16 @@
 /**
  * This file was auto generated, please do not edit it directly.
  **/
+export interface CampaignMemberExportTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isSkipped: boolean;
+  isCreated: boolean;
+  isUpdated: boolean;
+  isFailedCreating: boolean;
+  isFailedUpdating: boolean;
+}
 export interface CampaignMemberImportTypeInterface {
   slug: string;
   name: string;
@@ -28,6 +38,61 @@ export interface NewContactRuleTypeInterface {
 }
 
 export class Salesforce {
+  CampaignMemberExportType(): CampaignMemberExportTypeInterface[] {
+    return [
+      {
+        slug: 'skipped',
+        name: 'Skipped',
+        description: null,
+        isSkipped: true,
+        isCreated: false,
+        isUpdated: false,
+        isFailedCreating: false,
+        isFailedUpdating: false,
+      },
+      {
+        slug: 'created',
+        name: 'Created',
+        description: null,
+        isSkipped: false,
+        isCreated: true,
+        isUpdated: false,
+        isFailedCreating: false,
+        isFailedUpdating: false,
+      },
+      {
+        slug: 'updated',
+        name: 'Updated',
+        description: null,
+        isSkipped: false,
+        isCreated: false,
+        isUpdated: true,
+        isFailedCreating: false,
+        isFailedUpdating: false,
+      },
+      {
+        slug: 'failed-creating',
+        name: 'Failed Creating',
+        description: null,
+        isSkipped: false,
+        isCreated: false,
+        isUpdated: false,
+        isFailedCreating: true,
+        isFailedUpdating: false,
+      },
+      {
+        slug: 'failed-updating',
+        name: 'Failed Updating',
+        description: null,
+        isSkipped: false,
+        isCreated: false,
+        isUpdated: false,
+        isFailedCreating: false,
+        isFailedUpdating: true,
+      },
+    ];
+  }
+
   CampaignMemberImportType(): CampaignMemberImportTypeInterface[] {
     return [
       {
