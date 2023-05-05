@@ -10,6 +10,7 @@ export interface CampaignMemberExportTypeInterface {
   isUpdated: boolean;
   isFailedCreating: boolean;
   isFailedUpdating: boolean;
+  isDuplicate: boolean;
 }
 export interface CampaignMemberImportTypeInterface {
   slug: string;
@@ -41,6 +42,17 @@ export class Salesforce {
   CampaignMemberExportType(): CampaignMemberExportTypeInterface[] {
     return [
       {
+        slug: 'duplicate',
+        name: 'Duplicate',
+        description: null,
+        isSkipped: false,
+        isCreated: false,
+        isUpdated: false,
+        isFailedCreating: false,
+        isFailedUpdating: false,
+        isDuplicate: true,
+      },
+      {
         slug: 'skipped',
         name: 'Skipped',
         description: null,
@@ -49,6 +61,7 @@ export class Salesforce {
         isUpdated: false,
         isFailedCreating: false,
         isFailedUpdating: false,
+        isDuplicate: false,
       },
       {
         slug: 'created',
@@ -59,6 +72,7 @@ export class Salesforce {
         isUpdated: false,
         isFailedCreating: false,
         isFailedUpdating: false,
+        isDuplicate: false,
       },
       {
         slug: 'updated',
@@ -69,6 +83,7 @@ export class Salesforce {
         isUpdated: true,
         isFailedCreating: false,
         isFailedUpdating: false,
+        isDuplicate: false,
       },
       {
         slug: 'failed-creating',
@@ -79,6 +94,7 @@ export class Salesforce {
         isUpdated: false,
         isFailedCreating: true,
         isFailedUpdating: false,
+        isDuplicate: false,
       },
       {
         slug: 'failed-updating',
@@ -89,6 +105,7 @@ export class Salesforce {
         isUpdated: false,
         isFailedCreating: false,
         isFailedUpdating: true,
+        isDuplicate: false,
       },
     ];
   }

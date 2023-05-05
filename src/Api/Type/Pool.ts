@@ -38,6 +38,7 @@ export interface FeatureTypeInterface {
   isLogi: boolean;
   isSessionManagement: boolean;
   isBetaFeatures: boolean;
+  isDisablePayments: boolean;
 }
 export interface PoolAllotmentTypeInterface {
   slug: string;
@@ -130,6 +131,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'apiaccess',
@@ -168,6 +170,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'marketo',
@@ -206,6 +209,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'emailmasking',
@@ -244,6 +248,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'whitelabeling',
@@ -282,6 +287,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'agents',
@@ -320,6 +326,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'visacheckout',
@@ -358,6 +365,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'canvas',
@@ -396,6 +404,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'harvester',
@@ -434,6 +443,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'accesscontrol-efx',
@@ -472,6 +482,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'athletebag-efx',
@@ -510,6 +521,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'concierge-efx',
@@ -548,6 +560,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'digitalmemorybank-efx',
@@ -586,6 +599,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'guestinfo-efx',
@@ -624,6 +638,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'messaging-efx',
@@ -662,6 +677,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'smsquiz-efx',
@@ -700,6 +716,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'productpickup-efx',
@@ -738,6 +755,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'raffle-efx',
@@ -776,6 +794,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'reservation-efx',
@@ -814,6 +833,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'roamingphotog-efx',
@@ -852,6 +872,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'smartbar-efx',
@@ -890,6 +911,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'teams-efx',
@@ -928,6 +950,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'event-app',
@@ -966,6 +989,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'child-events',
@@ -1004,6 +1028,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'waitlist',
@@ -1042,6 +1067,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'virbela',
@@ -1080,6 +1106,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'web-conference',
@@ -1118,6 +1145,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'health-pass',
@@ -1156,6 +1184,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'question-logic',
@@ -1194,6 +1223,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'logi',
@@ -1232,6 +1262,7 @@ export class Pool {
         isLogi: true,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'exhibitors',
@@ -1270,6 +1301,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'session-management',
@@ -1308,6 +1340,7 @@ export class Pool {
         isLogi: false,
         isSessionManagement: true,
         isBetaFeatures: false,
+        isDisablePayments: false,
       },
       {
         slug: 'beta-features',
@@ -1346,6 +1379,46 @@ export class Pool {
         isLogi: false,
         isSessionManagement: false,
         isBetaFeatures: true,
+        isDisablePayments: false,
+      },
+      {
+        slug: 'disable-payments',
+        name: 'Disable Payments',
+        description: null,
+        isSalesforce: false,
+        isApiAccess: false,
+        isMarketo: false,
+        isEmailMasking: false,
+        isWhiteLabeling: false,
+        isAgents: false,
+        isVisaCheckout: false,
+        isCanvas: false,
+        isHarvesterPPP: false,
+        isAccessControlEFx: false,
+        isAthleteBagEFx: false,
+        isConciergeEFx: false,
+        isDigitalMemoryBankEFx: false,
+        isGuestInfoEFx: false,
+        isMessagingEFx: false,
+        isSmsQuizEFx: false,
+        isProductPickupEFx: false,
+        isRaffleEFx: false,
+        isReservationEFx: false,
+        isRoamingPhotogEFx: false,
+        isSmartBarEFx: false,
+        isTeamsEFx: false,
+        isEventApp: false,
+        isChildEvents: false,
+        isWaitlist: false,
+        isVirbela: false,
+        isWebConference: false,
+        isQuestionLogic: false,
+        isHealthPass: false,
+        isExhibitors: false,
+        isLogi: false,
+        isSessionManagement: false,
+        isBetaFeatures: false,
+        isDisablePayments: true,
       },
     ];
   }
