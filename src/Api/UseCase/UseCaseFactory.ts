@@ -42,6 +42,7 @@ import { PoolContract } from './PoolContract';
 import { PoolFeature } from './PoolFeature';
 import { PoolFile } from './PoolFile';
 import { PoolImage } from './PoolImage';
+import { PoolPaymentGateway } from './PoolPaymentGateway';
 import { PoolWorld } from './PoolWorld';
 import { Profile } from './Profile';
 import { Promotion } from './Promotion';
@@ -242,6 +243,10 @@ export class UseCaseFactory {
 
   PoolImage(): PoolImage {
     return new PoolImage(this.restClient);
+  }
+
+  PoolPaymentGateway(): PoolPaymentGateway {
+    return new PoolPaymentGateway(this.restClient);
   }
 
   PoolWorld(): PoolWorld {

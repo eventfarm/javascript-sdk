@@ -9,85 +9,46 @@ export class PaymentGateway {
 
   // Queries
 
-  /**
-   * @param string - poolId
-   * @return Promise|Observable|any
-   */
-  ListPaymentGatewaysForPool(poolId: string): any {
-    return this.restClient.get(
-      'PaymentGateway/UseCase/ListPaymentGatewaysForPool',
-      {
-        poolId,
-      },
-    );
-  }
-
   // Commands
 
   /**
-   * @param string - poolId
-   * @param string - paymentGatewayType STRIPE|PAYPAL|AUTHORIZENET
-   * @param string - gatewayToken
-   * @param string? - paymentGatewayId
+   * @param string - stringId
+   * @param string - name
+   * @param string - companyName
+   * @param string? - companyUrl
+   * @param string? - logoUrl
    * @return Promise|Observable|any
    */
-  CreatePaymentGatewayForPool(
-    poolId: string,
-    paymentGatewayType: string,
-    gatewayToken: string,
-    paymentGatewayId: string = null,
+  CreatePaymentGateway(
+    stringId: string,
+    name: string,
+    companyName: string,
+    companyUrl: string = null,
+    logoUrl: string = null,
   ): any {
-    return this.restClient.post(
-      'PaymentGateway/UseCase/CreatePaymentGatewayForPool',
-      {
-        poolId,
-        paymentGatewayType,
-        gatewayToken,
-        paymentGatewayId,
-      },
-    );
+    return this.restClient.post('PaymentGateway/UseCase/CreatePaymentGateway', {
+      stringId,
+      name,
+      companyName,
+      companyUrl,
+      logoUrl,
+    });
   }
 
   /**
    * @param string - paymentGatewayId
+   * @param string - sortOrder 1-65535
    * @return Promise|Observable|any
    */
-  DeletePaymentGatewayForPool(paymentGatewayId: string): any {
-    return this.restClient.post(
-      'PaymentGateway/UseCase/DeletePaymentGatewayForPool',
-      {
-        paymentGatewayId,
-      },
-    );
-  }
-
-  /**
-   * @param string - paymentGatewayId
-   * @return Promise|Observable|any
-   */
-  RemovePaymentGatewayForPool(paymentGatewayId: string): any {
-    return this.restClient.post(
-      'PaymentGateway/UseCase/RemovePaymentGatewayForPool',
-      {
-        paymentGatewayId,
-      },
-    );
-  }
-
-  /**
-   * @param string - gatewayToken
-   * @param string - paymentGatewayId
-   * @return Promise|Observable|any
-   */
-  UpdateGatewayTokenForType(
-    gatewayToken: string,
+  SetSortOrderForPaymentGateway(
     paymentGatewayId: string,
+    sortOrder: string,
   ): any {
     return this.restClient.post(
-      'PaymentGateway/UseCase/UpdateGatewayTokenForType',
+      'PaymentGateway/UseCase/SetSortOrderForPaymentGateway',
       {
-        gatewayToken,
         paymentGatewayId,
+        sortOrder,
       },
     );
   }

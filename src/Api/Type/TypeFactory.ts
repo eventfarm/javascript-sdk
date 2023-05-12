@@ -14,7 +14,6 @@ import { IntegrationStatusMapping } from './IntegrationStatusMapping';
 import { Invitation } from './Invitation';
 import { Lead } from './Lead';
 import { Link } from './Link';
-import { PaymentGateway } from './PaymentGateway';
 import { Pool } from './Pool';
 import { Profile } from './Profile';
 import { Promotion } from './Promotion';
@@ -95,10 +94,6 @@ export class TypeFactory {
 
   Link(): Link {
     return new Link();
-  }
-
-  PaymentGateway(): PaymentGateway {
-    return new PaymentGateway();
   }
 
   Pool(): Pool {

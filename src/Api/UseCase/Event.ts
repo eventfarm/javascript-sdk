@@ -1561,13 +1561,16 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - paymentGatewayId
+   * @param string - poolPaymentGatewayId
    * @return Promise|Observable|any
    */
-  SetPaymentGatewayForEvent(eventId: string, paymentGatewayId: string): any {
-    return this.restClient.post('Event/UseCase/SetPaymentGatewayForEvent', {
+  SetPoolPaymentGatewayForEvent(
+    eventId: string,
+    poolPaymentGatewayId: string,
+  ): any {
+    return this.restClient.post('Event/UseCase/SetPoolPaymentGatewayForEvent', {
       eventId,
-      paymentGatewayId,
+      poolPaymentGatewayId,
     });
   }
 
@@ -1747,9 +1750,12 @@ export class Event {
    * @param string - eventId
    * @return Promise|Observable|any
    */
-  UnsetPaymentGatewayForEvent(eventId: string): any {
-    return this.restClient.post('Event/UseCase/UnsetPaymentGatewayForEvent', {
-      eventId,
-    });
+  UnsetPoolPaymentGatewayForEvent(eventId: string): any {
+    return this.restClient.post(
+      'Event/UseCase/UnsetPoolPaymentGatewayForEvent',
+      {
+        eventId,
+      },
+    );
   }
 }
