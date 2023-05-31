@@ -9,6 +9,16 @@ export class PaymentGateway {
 
   // Queries
 
+  /**
+   * @return Promise|Observable|any
+   */
+  ListPaymentGateways(): any {
+    return this.restClient.get(
+      'PaymentGateway/UseCase/ListPaymentGateways',
+      {},
+    );
+  }
+
   // Commands
 
   /**
@@ -51,5 +61,32 @@ export class PaymentGateway {
         sortOrder,
       },
     );
+  }
+
+  /**
+   * @param number - paymentGatewayId
+   * @param string? - name
+   * @param string? - companyName
+   * @param string? - companyUrl
+   * @param string? - logoUrl
+   * @param number? - sortOrder
+   * @return Promise|Observable|any
+   */
+  UpdatePaymentGateway(
+    paymentGatewayId: number,
+    name: string = null,
+    companyName: string = null,
+    companyUrl: string = null,
+    logoUrl: string = null,
+    sortOrder: number = null,
+  ): any {
+    return this.restClient.post('PaymentGateway/UseCase/UpdatePaymentGateway', {
+      paymentGatewayId,
+      name,
+      companyName,
+      companyUrl,
+      logoUrl,
+      sortOrder,
+    });
   }
 }

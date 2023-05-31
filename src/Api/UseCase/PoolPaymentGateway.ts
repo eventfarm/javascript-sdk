@@ -92,6 +92,19 @@ export class PoolPaymentGateway {
 
   /**
    * @param string - poolPaymentGatewayId
+   * @return Promise|Observable|any
+   */
+  SetDefaultPaymentGatewayForPool(poolPaymentGatewayId: string): any {
+    return this.restClient.post(
+      'PoolPaymentGateway/UseCase/SetDefaultPaymentGatewayForPool',
+      {
+        poolPaymentGatewayId,
+      },
+    );
+  }
+
+  /**
+   * @param string - poolPaymentGatewayId
    * @param string - name
    * @param string - paymentGatewayStringId
    * @param any[] - updateParameters

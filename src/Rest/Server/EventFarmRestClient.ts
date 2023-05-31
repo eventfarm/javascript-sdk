@@ -97,7 +97,7 @@ export class EventFarmRestClient implements RestClientInterface {
   }
 
   private async getRefreshToken() {
-    console.log('getRefreshToken method being invoked')
+    console.log('getRefreshToken method being invoked');
     const response = await this.accessTokenRestClient.post('oauth/token', {
       grant_type: 'client_credentials',
       client_id: this.clientId,
