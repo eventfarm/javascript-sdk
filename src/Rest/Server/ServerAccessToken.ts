@@ -24,7 +24,7 @@ export class ServerAccessToken {
   }
 
   get isExpired(): boolean {
-    let currentTime = new Date().getSeconds();
+    let currentTime = Math.floor(Date.now() / 1000)
     return currentTime > this._expiresAt;
   }
 }
