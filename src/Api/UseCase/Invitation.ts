@@ -751,6 +751,7 @@ export class Invitation {
    * @param number? - createdTime
    * @param boolean? - forceDuplicateInvitations true|false
    * @param string? - relatedInvitationId
+   * @param string? - externalId
    * @return Promise|Observable|any
    */
   CreateInvitation(
@@ -775,6 +776,7 @@ export class Invitation {
     createdTime: number = null,
     forceDuplicateInvitations: boolean = null,
     relatedInvitationId: string = null,
+    externalId: string = null,
   ): any {
     return this.restClient.post('Invitation/UseCase/CreateInvitation', {
       eventId,
@@ -798,6 +800,7 @@ export class Invitation {
       createdTime,
       forceDuplicateInvitations,
       relatedInvitationId,
+      externalId,
     });
   }
 
