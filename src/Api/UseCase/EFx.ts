@@ -119,6 +119,18 @@ export class EFx {
   // Commands
 
   /**
+   * @param string - invitationId
+   * @param string - tagId
+   * @return Promise|Observable|any
+   */
+  ActivateInvitation(invitationId: string, tagId: string): any {
+    return this.restClient.post('EFx/UseCase/ActivateInvitation', {
+      invitationId,
+      tagId,
+    });
+  }
+
+  /**
    * @param string - eventId
    * @param string - backgroundUrl
    * @param string - textColor
@@ -337,6 +349,18 @@ export class EFx {
   }
 
   /**
+   * @param string - eventId
+   * @param string - mediaUrl
+   * @return Promise|Observable|any
+   */
+  SetSMSMediaUrlForEvent(eventId: string, mediaUrl: string): any {
+    return this.restClient.post('EFx/UseCase/SetSMSMediaUrlForEvent', {
+      eventId,
+      mediaUrl,
+    });
+  }
+
+  /**
    * @param string - stationId
    * @param any[]? - screenIds
    * @return Promise|Observable|any
@@ -357,6 +381,21 @@ export class EFx {
     return this.restClient.post('EFx/UseCase/SetStacksForEFxStation', {
       stationId,
       stackIds,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string? - emailDesignId
+   * @return Promise|Observable|any
+   */
+  SetWelcomeEmailDesignForEvent(
+    eventId: string,
+    emailDesignId: string = null,
+  ): any {
+    return this.restClient.post('EFx/UseCase/SetWelcomeEmailDesignForEvent', {
+      eventId,
+      emailDesignId,
     });
   }
 

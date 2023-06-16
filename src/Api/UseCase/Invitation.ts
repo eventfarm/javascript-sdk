@@ -92,7 +92,7 @@ export class Invitation {
 
   /**
    * @param string - invitationId
-   * @param string[]? - withData UserHealthPass|Event|UserName|User|UserIdentifier|Stack|TicketType|QuestionResponse|Answer|Purchase|DayPassAvailabilityCounts
+   * @param string[]? - withData UserHealthPass|Event|UserName|User|UserIdentifier|Stack|TicketType|QuestionResponse|Answer|Purchase|DayPassAvailabilityCounts|EFxActivationStatus
    * @param any[]? - withUserAttributes
    * @return Promise|Observable|any
    */
