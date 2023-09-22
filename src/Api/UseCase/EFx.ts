@@ -57,6 +57,18 @@ export class EFx {
   }
 
   /**
+   * @param string - tagId
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  GetInvitationIdByTagId(tagId: string, eventId: string): any {
+    return this.restClient.get('EFx/UseCase/GetInvitationIdByTagId', {
+      tagId,
+      eventId,
+    });
+  }
+
+  /**
    * @param string - eventId
    * @param string? - sortBy createdAt
    * @param string? - sortDirection ascending|descending
@@ -295,11 +307,13 @@ export class EFx {
 
   /**
    * @param string - phoneNumber
+   * @param string? - appCategoryType check-in|efx|events|listed|exhibitor
    * @return Promise|Observable|any
    */
-  SendSMSWithAppLink(phoneNumber: string): any {
+  SendSMSWithAppLink(phoneNumber: string, appCategoryType: string = null): any {
     return this.restClient.post('EFx/UseCase/SendSMSWithAppLink', {
       phoneNumber,
+      appCategoryType,
     });
   }
 

@@ -234,7 +234,7 @@ export class Event {
    * @param string? - query
    * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled
    * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled
-   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl|VirbelaWorld
+   * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl|VirbelaWorld|EventUserRole
    * @param number? - lastModifiedTimestamp
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-500

@@ -1107,6 +1107,19 @@ export class Invitation {
   }
 
   /**
+   * @param string - ticketBlockId
+   * @return Promise|Observable|any
+   */
+  ResendAllTicketBlockInvitationEmails(ticketBlockId: string): any {
+    return this.restClient.post(
+      'Invitation/UseCase/ResendAllTicketBlockInvitationEmails',
+      {
+        ticketBlockId,
+      },
+    );
+  }
+
+  /**
    * @param string - invitationId
    * @return Promise|Observable|any
    */

@@ -11,6 +11,7 @@ export interface CampaignMemberExportTypeInterface {
   isFailedCreating: boolean;
   isFailedUpdating: boolean;
   isDuplicate: boolean;
+  isFailedUpdatingConvertedLead: boolean;
 }
 export interface CampaignMemberImportTypeInterface {
   slug: string;
@@ -51,6 +52,7 @@ export class Salesforce {
         isFailedCreating: false,
         isFailedUpdating: false,
         isDuplicate: true,
+        isFailedUpdatingConvertedLead: false,
       },
       {
         slug: 'skipped',
@@ -62,6 +64,7 @@ export class Salesforce {
         isFailedCreating: false,
         isFailedUpdating: false,
         isDuplicate: false,
+        isFailedUpdatingConvertedLead: false,
       },
       {
         slug: 'created',
@@ -73,6 +76,7 @@ export class Salesforce {
         isFailedCreating: false,
         isFailedUpdating: false,
         isDuplicate: false,
+        isFailedUpdatingConvertedLead: false,
       },
       {
         slug: 'updated',
@@ -84,6 +88,7 @@ export class Salesforce {
         isFailedCreating: false,
         isFailedUpdating: false,
         isDuplicate: false,
+        isFailedUpdatingConvertedLead: false,
       },
       {
         slug: 'failed-creating',
@@ -95,6 +100,7 @@ export class Salesforce {
         isFailedCreating: true,
         isFailedUpdating: false,
         isDuplicate: false,
+        isFailedUpdatingConvertedLead: false,
       },
       {
         slug: 'failed-updating',
@@ -106,6 +112,19 @@ export class Salesforce {
         isFailedCreating: false,
         isFailedUpdating: true,
         isDuplicate: false,
+        isFailedUpdatingConvertedLead: false,
+      },
+      {
+        slug: 'failed-updating-converted-lead',
+        name: 'Failed Updating Converted Lead',
+        description: null,
+        isSkipped: false,
+        isCreated: false,
+        isUpdated: false,
+        isFailedCreating: false,
+        isFailedUpdating: false,
+        isDuplicate: false,
+        isFailedUpdatingConvertedLead: true,
       },
     ];
   }
