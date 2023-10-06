@@ -31,6 +31,7 @@ import { Invitation } from './Invitation';
 import { Lead } from './Lead';
 import { Link } from './Link';
 import { Logi } from './Logi';
+import { Mobile } from './Mobile';
 import { OAuth } from './OAuth';
 import { OAuth2 } from './OAuth2';
 import { Payment } from './Payment';
@@ -199,6 +200,10 @@ export class UseCaseFactory {
 
   Logi(): Logi {
     return new Logi(this.restClient);
+  }
+
+  Mobile(): Mobile {
+    return new Mobile(this.restClient);
   }
 
   OAuth(): OAuth {

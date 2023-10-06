@@ -14,6 +14,7 @@ import { IntegrationStatusMapping } from './IntegrationStatusMapping';
 import { Invitation } from './Invitation';
 import { Lead } from './Lead';
 import { Link } from './Link';
+import { Mobile } from './Mobile';
 import { Payment } from './Payment';
 import { Pool } from './Pool';
 import { Profile } from './Profile';
@@ -95,6 +96,10 @@ export class TypeFactory {
 
   Link(): Link {
     return new Link();
+  }
+
+  Mobile(): Mobile {
+    return new Mobile();
   }
 
   Payment(): Payment {
