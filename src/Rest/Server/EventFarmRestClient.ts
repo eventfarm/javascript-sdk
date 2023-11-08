@@ -1,4 +1,5 @@
-import * as jwtDecode from 'jwt-decode';
+import * as jwt_decode from "jwt-decode";
+
 
 import { ServerAccessToken } from './ServerAccessToken';
 import { JWTAccessToken, JWTAccessTokenInterface } from '../JWTAccessToken';
@@ -14,7 +15,6 @@ export class EventFarmRestClient implements RestClientInterface {
     private clientSecret: string,
     private audience: string,
   ) {
-    console.log('ClientCredentialsGrantRestClient constructor');
   }
 
   async get(
@@ -36,7 +36,7 @@ export class EventFarmRestClient implements RestClientInterface {
     timeoutSeconds = 5000,
   ) {
     const authorizeHeaders = await this.getAuthorizationHeaders(headers);
-    console.log('authorizeHeaders', authorizeHeaders);
+    console.log("authorizeHeaders", authorizeHeaders)
     return this.restClient.post(path, formParameters, authorizeHeaders);
   }
 
@@ -62,15 +62,8 @@ export class EventFarmRestClient implements RestClientInterface {
   }
 
   private async getOAuthAccessToken(): Promise<ServerAccessToken> {
-    console.log('this inside getOAuthAccessToken  ', this);
-    console.log(
-      'getOAuthAccessToken: this.oAuthAccessToken',
-      this.oAuthAccessToken,
-    );
-
     if (this.oAuthAccessToken === null) {
-      const res = await this.getPasswordCredentialsAccessToken();
-      console.log('res from getPasswordCredentialsAccessToken ', res);
+      const res = await this.getPasswordCredentialsAccessToken()
       this.oAuthAccessToken = res;
     }
 
@@ -90,28 +83,25 @@ export class EventFarmRestClient implements RestClientInterface {
       grant_type: 'client_credentials',
       client_id: this.clientId,
       client_secret: this.clientSecret,
-      audience: this.audience,
+      audience: this.audience
     });
-    console.log('response from auth0', response);
     return this.getOAuthAccessTokenFromResponse(response.data);
   }
 
   private async getRefreshToken() {
-    console.log('getRefreshToken method being invoked');
     const response = await this.accessTokenRestClient.post('oauth/token', {
       grant_type: 'client_credentials',
       client_id: this.clientId,
       client_secret: this.clientSecret,
-      audience: this.audience,
+      audience: this.audience
     });
     return this.getOAuthAccessTokenFromResponse(response.data);
   }
 
   private getOAuthAccessTokenFromResponse(data: any): ServerAccessToken {
-    const accessTokenData: JWTAccessTokenInterface = jwtDecode(
+    const accessTokenData: JWTAccessTokenInterface = jwt_decode(
       data.access_token,
     );
-    console.log('accessTokenData', accessTokenData);
     const accessToken = new JWTAccessToken(
       accessTokenData.aud,
       accessTokenData.jti,
