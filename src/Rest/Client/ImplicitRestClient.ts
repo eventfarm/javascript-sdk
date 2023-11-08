@@ -3,14 +3,12 @@ import { RestClientInterface, StringField } from '../../Interfaces';
 export class ImplicitRestClient implements RestClientInterface {
   constructor(
     private restClient: RestClientInterface,
-    private accessToken: string,
   ) {}
 
   get(requestPath: string, queryParameters: any, headers?: any) {
     return this.restClient.get(
       requestPath,
       queryParameters,
-      this.getAuthorizationHeaders(),
     );
   }
 
@@ -18,7 +16,6 @@ export class ImplicitRestClient implements RestClientInterface {
     return this.restClient.post(
       requestPath,
       formParameters,
-      this.getAuthorizationHeaders(),
     );
   }
 
@@ -26,13 +23,8 @@ export class ImplicitRestClient implements RestClientInterface {
     return this.restClient.postMultipart(
       requestPath,
       formParameters,
-      this.getAuthorizationHeaders(),
     );
   }
 
-  private getAuthorizationHeaders(): StringField {
-    const headers = {};
-    headers['Authorization'] = this.accessToken;
-    return headers;
-  }
+
 }

@@ -1,8 +1,22 @@
 import axios, { AxiosPromise } from 'axios';
-import { RestClientInterface } from '../Interfaces';
-
+import {RestClientInterface, StringField} from '../Interfaces';
 export class AxiosRestClient implements RestClientInterface {
-  constructor(private basePath: string) {}
+  axiosInstance = axios.create({
+    baseURL: this.basePath, // Replace with your API base URL
+  });
+
+  constructor(
+    private basePath: string,
+    private interceptor?: any
+
+  ) {
+
+    // Add interceptor
+    if(this.interceptor){
+      this.axiosInstance.interceptors.request.use(this.interceptor);
+    }
+
+  }
 
   get(
     path: string,
@@ -11,7 +25,7 @@ export class AxiosRestClient implements RestClientInterface {
     options?: any,
     timeoutSeconds?: number,
   ): AxiosPromise {
-    return axios({
+    return this.axiosInstance({
       method: 'GET',
       url: this.makeUrl(path),
       headers: headers,
@@ -26,11 +40,11 @@ export class AxiosRestClient implements RestClientInterface {
     options?: any,
     timeoutSeconds?: number,
   ): AxiosPromise {
-    return axios({
+    return this.axiosInstance({
       method: 'POST',
       url: this.makeUrl(path),
       data: formParameters,
-      headers: headers,
+      headers: headers
     });
   }
 
@@ -47,4 +61,5 @@ export class AxiosRestClient implements RestClientInterface {
   private makeUrl(path: string): string {
     return this.basePath + '/' + path;
   }
+
 }
