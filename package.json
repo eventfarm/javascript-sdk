@@ -29,7 +29,7 @@
     "push-next": "npm publish --access public --tag next"
   },
   "dependencies": {
-    "axios": "^0.21.2",
+    "axios": "^1.6.0",
     "jwt-decode": "^2.2.0"
   },
   "devDependencies": {
