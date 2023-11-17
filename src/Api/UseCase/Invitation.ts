@@ -92,7 +92,7 @@ export class Invitation {
 
   /**
    * @param string - invitationId
-   * @param string[]? - withData UserHealthPass|Event|UserName|User|UserIdentifier|Stack|TicketType|QuestionResponse|Answer|Purchase|DayPassAvailabilityCounts|EFxActivationStatus
+   * @param string[]? - withData UserHealthPass|Event|UserName|User|UserIdentifier|Stack|TicketType|QuestionResponse|Answer|Purchase|DayPassAvailabilityCounts|EFxActivationStatus|RelatedInvitation
    * @param any[]? - withUserAttributes
    * @return Promise|Observable|any
    */
@@ -1263,6 +1263,7 @@ export class Invitation {
    * @param boolean? - forceDuplicateInvitations true|false
    * @param number? - inviteCount
    * @param string? - title
+   * @param string? - checkInNotes
    * @return Promise|Observable|any
    */
   UpdateInvitation(
@@ -1280,6 +1281,7 @@ export class Invitation {
     forceDuplicateInvitations: boolean = null,
     inviteCount: number = null,
     title: string = null,
+    checkInNotes: string = null,
   ): any {
     return this.restClient.post('Invitation/UseCase/UpdateInvitation', {
       invitationId,
@@ -1296,6 +1298,7 @@ export class Invitation {
       forceDuplicateInvitations,
       inviteCount,
       title,
+      checkInNotes,
     });
   }
 }

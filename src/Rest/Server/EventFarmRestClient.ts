@@ -1,5 +1,4 @@
-import * as jwt_decode from "jwt-decode";
-
+import * as jwt_decode from 'jwt-decode';
 
 import { ServerAccessToken } from './ServerAccessToken';
 import { JWTAccessToken, JWTAccessTokenInterface } from '../JWTAccessToken';
@@ -14,8 +13,7 @@ export class EventFarmRestClient implements RestClientInterface {
     private clientId: string,
     private clientSecret: string,
     private audience: string,
-  ) {
-  }
+  ) {}
 
   async get(
     path: string,
@@ -36,7 +34,6 @@ export class EventFarmRestClient implements RestClientInterface {
     timeoutSeconds = 5000,
   ) {
     const authorizeHeaders = await this.getAuthorizationHeaders(headers);
-    console.log("authorizeHeaders", authorizeHeaders)
     return this.restClient.post(path, formParameters, authorizeHeaders);
   }
 
@@ -63,7 +60,7 @@ export class EventFarmRestClient implements RestClientInterface {
 
   private async getOAuthAccessToken(): Promise<ServerAccessToken> {
     if (this.oAuthAccessToken === null) {
-      const res = await this.getPasswordCredentialsAccessToken()
+      const res = await this.getPasswordCredentialsAccessToken();
       this.oAuthAccessToken = res;
     }
 
@@ -83,7 +80,7 @@ export class EventFarmRestClient implements RestClientInterface {
       grant_type: 'client_credentials',
       client_id: this.clientId,
       client_secret: this.clientSecret,
-      audience: this.audience
+      audience: this.audience,
     });
     return this.getOAuthAccessTokenFromResponse(response.data);
   }
@@ -93,7 +90,7 @@ export class EventFarmRestClient implements RestClientInterface {
       grant_type: 'client_credentials',
       client_id: this.clientId,
       client_secret: this.clientSecret,
-      audience: this.audience
+      audience: this.audience,
     });
     return this.getOAuthAccessTokenFromResponse(response.data);
   }
