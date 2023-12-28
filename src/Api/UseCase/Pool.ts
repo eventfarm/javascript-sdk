@@ -82,6 +82,8 @@ export class Pool {
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-500
    * @param string[]? - withData
+   * @param string? - sortBy name
+   * @param string? - sortDirection ascending|descending
    * @return Promise|Observable|any
    */
   ListPoolContactsByPoolId(
@@ -89,12 +91,16 @@ export class Pool {
     page: number = null,
     itemsPerPage: number = null,
     withData: string[] = null,
+    sortBy: string = null,
+    sortDirection: string = null,
   ): any {
     return this.restClient.get('Pool/UseCase/ListPoolContactsByPoolId', {
       poolId,
       page,
       itemsPerPage,
       withData,
+      sortBy,
+      sortDirection,
     });
   }
 

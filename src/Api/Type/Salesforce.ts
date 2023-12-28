@@ -1,6 +1,18 @@
 /**
  * This file was auto generated, please do not edit it directly.
  **/
+export interface CampaignMemberExportTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isSkipped: boolean;
+  isCreated: boolean;
+  isUpdated: boolean;
+  isFailedCreating: boolean;
+  isFailedUpdating: boolean;
+  isDuplicate: boolean;
+  isFailedUpdatingConvertedLead: boolean;
+}
 export interface CampaignMemberImportTypeInterface {
   slug: string;
   name: string;
@@ -28,6 +40,95 @@ export interface NewContactRuleTypeInterface {
 }
 
 export class Salesforce {
+  CampaignMemberExportType(): CampaignMemberExportTypeInterface[] {
+    return [
+      {
+        slug: 'duplicate',
+        name: 'Duplicate',
+        description: null,
+        isSkipped: false,
+        isCreated: false,
+        isUpdated: false,
+        isFailedCreating: false,
+        isFailedUpdating: false,
+        isDuplicate: true,
+        isFailedUpdatingConvertedLead: false,
+      },
+      {
+        slug: 'skipped',
+        name: 'Skipped',
+        description: null,
+        isSkipped: true,
+        isCreated: false,
+        isUpdated: false,
+        isFailedCreating: false,
+        isFailedUpdating: false,
+        isDuplicate: false,
+        isFailedUpdatingConvertedLead: false,
+      },
+      {
+        slug: 'created',
+        name: 'Created',
+        description: null,
+        isSkipped: false,
+        isCreated: true,
+        isUpdated: false,
+        isFailedCreating: false,
+        isFailedUpdating: false,
+        isDuplicate: false,
+        isFailedUpdatingConvertedLead: false,
+      },
+      {
+        slug: 'updated',
+        name: 'Updated',
+        description: null,
+        isSkipped: false,
+        isCreated: false,
+        isUpdated: true,
+        isFailedCreating: false,
+        isFailedUpdating: false,
+        isDuplicate: false,
+        isFailedUpdatingConvertedLead: false,
+      },
+      {
+        slug: 'failed-creating',
+        name: 'Failed Creating',
+        description: null,
+        isSkipped: false,
+        isCreated: false,
+        isUpdated: false,
+        isFailedCreating: true,
+        isFailedUpdating: false,
+        isDuplicate: false,
+        isFailedUpdatingConvertedLead: false,
+      },
+      {
+        slug: 'failed-updating',
+        name: 'Failed Updating',
+        description: null,
+        isSkipped: false,
+        isCreated: false,
+        isUpdated: false,
+        isFailedCreating: false,
+        isFailedUpdating: true,
+        isDuplicate: false,
+        isFailedUpdatingConvertedLead: false,
+      },
+      {
+        slug: 'failed-updating-converted-lead',
+        name: 'Failed Updating Converted Lead',
+        description: null,
+        isSkipped: false,
+        isCreated: false,
+        isUpdated: false,
+        isFailedCreating: false,
+        isFailedUpdating: false,
+        isDuplicate: false,
+        isFailedUpdatingConvertedLead: true,
+      },
+    ];
+  }
+
   CampaignMemberImportType(): CampaignMemberImportTypeInterface[] {
     return [
       {

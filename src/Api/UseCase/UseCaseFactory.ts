@@ -31,6 +31,7 @@ import { Invitation } from './Invitation';
 import { Lead } from './Lead';
 import { Link } from './Link';
 import { Logi } from './Logi';
+import { Mobile } from './Mobile';
 import { OAuth } from './OAuth';
 import { OAuth2 } from './OAuth2';
 import { Payment } from './Payment';
@@ -42,6 +43,7 @@ import { PoolContract } from './PoolContract';
 import { PoolFeature } from './PoolFeature';
 import { PoolFile } from './PoolFile';
 import { PoolImage } from './PoolImage';
+import { PoolPaymentGateway } from './PoolPaymentGateway';
 import { PoolWorld } from './PoolWorld';
 import { Profile } from './Profile';
 import { Promotion } from './Promotion';
@@ -200,6 +202,10 @@ export class UseCaseFactory {
     return new Logi(this.restClient);
   }
 
+  Mobile(): Mobile {
+    return new Mobile(this.restClient);
+  }
+
   OAuth(): OAuth {
     return new OAuth(this.restClient);
   }
@@ -242,6 +248,10 @@ export class UseCaseFactory {
 
   PoolImage(): PoolImage {
     return new PoolImage(this.restClient);
+  }
+
+  PoolPaymentGateway(): PoolPaymentGateway {
+    return new PoolPaymentGateway(this.restClient);
   }
 
   PoolWorld(): PoolWorld {

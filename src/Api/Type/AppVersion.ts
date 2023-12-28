@@ -1,6 +1,16 @@
 /**
  * This file was auto generated, please do not edit it directly.
  **/
+export interface AppCategoryTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isCheckIn: boolean;
+  isEFx: boolean;
+  isEvents: boolean;
+  isListed: boolean;
+  isExhibitor: boolean;
+}
 export interface AppVersionTypeInterface {
   slug: string;
   name: string;
@@ -17,6 +27,61 @@ export interface AppVersionTypeInterface {
 }
 
 export class AppVersion {
+  AppCategoryType(): AppCategoryTypeInterface[] {
+    return [
+      {
+        slug: 'check-in',
+        name: 'Check-In by Event Farm',
+        description: null,
+        isCheckIn: true,
+        isEFx: false,
+        isEvents: false,
+        isListed: false,
+        isExhibitor: false,
+      },
+      {
+        slug: 'efx',
+        name: 'EFx by Event Farm',
+        description: null,
+        isCheckIn: false,
+        isEFx: true,
+        isEvents: false,
+        isListed: false,
+        isExhibitor: false,
+      },
+      {
+        slug: 'events',
+        name: 'Events by Event Farm',
+        description: null,
+        isCheckIn: false,
+        isEFx: false,
+        isEvents: true,
+        isListed: false,
+        isExhibitor: false,
+      },
+      {
+        slug: 'listed',
+        name: 'Listed by Event Farm',
+        description: null,
+        isCheckIn: false,
+        isEFx: false,
+        isEvents: false,
+        isListed: true,
+        isExhibitor: false,
+      },
+      {
+        slug: 'exhibitor',
+        name: 'Exhibitor by Event Farm',
+        description: null,
+        isCheckIn: false,
+        isEFx: false,
+        isEvents: false,
+        isListed: false,
+        isExhibitor: true,
+      },
+    ];
+  }
+
   AppVersionType(): AppVersionTypeInterface[] {
     return [
       {

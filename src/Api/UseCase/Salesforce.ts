@@ -106,11 +106,13 @@ export class Salesforce {
 
   /**
    * @param string - eventId
+   * @param string - userId
    * @return Promise|Observable|any
    */
-  ExportEventToSalesforce(eventId: string): any {
+  ExportEventToSalesforce(eventId: string, userId: string): any {
     return this.restClient.post('Salesforce/UseCase/ExportEventToSalesforce', {
       eventId,
+      userId,
     });
   }
 

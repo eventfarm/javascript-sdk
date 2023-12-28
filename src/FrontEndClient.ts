@@ -5,14 +5,17 @@ import { ImplicitRestClient } from './Rest/Client/ImplicitRestClient';
 
 export class FrontEndClient extends AbstractApi
   implements EventFarmAPIClientInterface {
-  constructor(protected accessToken: string, apiBaseUri?: string) {
+  constructor(
+    protected accessToken: string,
+    apiBaseUri?: string,
+    protected interceptor?: any,
+  ) {
     super(apiBaseUri);
   }
 
   get eventFarmRestClient(): RestClientInterface {
     return new ImplicitRestClient(
-      new AxiosRestClient(this.apiBaseUri),
-      this.accessToken,
+      new AxiosRestClient(this.apiBaseUri, this.interceptor),
     );
   }
 }

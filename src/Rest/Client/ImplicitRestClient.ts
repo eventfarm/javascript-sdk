@@ -1,38 +1,17 @@
 import { RestClientInterface, StringField } from '../../Interfaces';
 
 export class ImplicitRestClient implements RestClientInterface {
-  constructor(
-    private restClient: RestClientInterface,
-    private accessToken: string,
-  ) {}
+  constructor(private restClient: RestClientInterface) {}
 
   get(requestPath: string, queryParameters: any, headers?: any) {
-    return this.restClient.get(
-      requestPath,
-      queryParameters,
-      this.getAuthorizationHeaders(),
-    );
+    return this.restClient.get(requestPath, queryParameters);
   }
 
   post(requestPath: string, formParameters: any, headers?: any) {
-    return this.restClient.post(
-      requestPath,
-      formParameters,
-      this.getAuthorizationHeaders(),
-    );
+    return this.restClient.post(requestPath, formParameters);
   }
 
   postMultipart(requestPath: string, formParameters: any, headers?: any) {
-    return this.restClient.postMultipart(
-      requestPath,
-      formParameters,
-      this.getAuthorizationHeaders(),
-    );
-  }
-
-  private getAuthorizationHeaders(): StringField {
-    const headers = {};
-    headers['Authorization'] = this.accessToken;
-    return headers;
+    return this.restClient.postMultipart(requestPath, formParameters);
   }
 }

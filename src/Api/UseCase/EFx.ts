@@ -57,6 +57,18 @@ export class EFx {
   }
 
   /**
+   * @param string - tagId
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  GetInvitationIdByTagId(tagId: string, eventId: string): any {
+    return this.restClient.get('EFx/UseCase/GetInvitationIdByTagId', {
+      tagId,
+      eventId,
+    });
+  }
+
+  /**
    * @param string - eventId
    * @param string? - sortBy createdAt
    * @param string? - sortDirection ascending|descending
@@ -117,6 +129,18 @@ export class EFx {
   }
 
   // Commands
+
+  /**
+   * @param string - invitationId
+   * @param string - tagId
+   * @return Promise|Observable|any
+   */
+  ActivateInvitation(invitationId: string, tagId: string): any {
+    return this.restClient.post('EFx/UseCase/ActivateInvitation', {
+      invitationId,
+      tagId,
+    });
+  }
 
   /**
    * @param string - eventId
@@ -283,11 +307,13 @@ export class EFx {
 
   /**
    * @param string - phoneNumber
+   * @param string? - appCategoryType check-in|efx|events|listed|exhibitor
    * @return Promise|Observable|any
    */
-  SendSMSWithAppLink(phoneNumber: string): any {
+  SendSMSWithAppLink(phoneNumber: string, appCategoryType: string = null): any {
     return this.restClient.post('EFx/UseCase/SendSMSWithAppLink', {
       phoneNumber,
+      appCategoryType,
     });
   }
 
@@ -337,6 +363,18 @@ export class EFx {
   }
 
   /**
+   * @param string - eventId
+   * @param string - mediaUrl
+   * @return Promise|Observable|any
+   */
+  SetSMSMediaUrlForEvent(eventId: string, mediaUrl: string): any {
+    return this.restClient.post('EFx/UseCase/SetSMSMediaUrlForEvent', {
+      eventId,
+      mediaUrl,
+    });
+  }
+
+  /**
    * @param string - stationId
    * @param any[]? - screenIds
    * @return Promise|Observable|any
@@ -357,6 +395,21 @@ export class EFx {
     return this.restClient.post('EFx/UseCase/SetStacksForEFxStation', {
       stationId,
       stackIds,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string? - emailDesignId
+   * @return Promise|Observable|any
+   */
+  SetWelcomeEmailDesignForEvent(
+    eventId: string,
+    emailDesignId: string = null,
+  ): any {
+    return this.restClient.post('EFx/UseCase/SetWelcomeEmailDesignForEvent', {
+      eventId,
+      emailDesignId,
     });
   }
 

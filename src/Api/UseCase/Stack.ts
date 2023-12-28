@@ -236,6 +236,8 @@ export class Stack {
    * @param string? - stackId
    * @param number? - virbelaTeamId
    * @param string? - virbelaRole member|moderator|leader
+   * @param string? - expirationStartTime
+   * @param string? - expirationEndTime
    * @return Promise|Observable|any
    */
   CreateStackFromSettings(
@@ -256,6 +258,8 @@ export class Stack {
     stackId: string = null,
     virbelaTeamId: number = null,
     virbelaRole: string = null,
+    expirationStartTime: string = null,
+    expirationEndTime: string = null,
   ): any {
     return this.restClient.post('Stack/UseCase/CreateStackFromSettings', {
       eventId,
@@ -275,7 +279,63 @@ export class Stack {
       stackId,
       virbelaTeamId,
       virbelaRole,
+      expirationStartTime,
+      expirationEndTime,
     });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - ticketTypeId
+   * @param any[] - stacks
+   * @param boolean - privateInvite true|false
+   * @param boolean - fcfs true|false
+   * @param number - maxQty
+   * @param number? - price
+   * @param number? - serviceFee
+   * @param string? - openingTime
+   * @param string? - closingTime
+   * @param boolean? - transferable true|false
+   * @param string? - inviteDesignId
+   * @param string? - confirmDesignId
+   * @param string? - declineDesignId
+   * @return Promise|Observable|any
+   */
+  CreateStacksForTicketTypeFromSettings(
+    eventId: string,
+    ticketTypeId: string,
+    stacks: any[],
+    privateInvite: boolean,
+    fcfs: boolean,
+    maxQty: number,
+    price: number = null,
+    serviceFee: number = null,
+    openingTime: string = null,
+    closingTime: string = null,
+    transferable: boolean = null,
+    inviteDesignId: string = null,
+    confirmDesignId: string = null,
+    declineDesignId: string = null,
+  ): any {
+    return this.restClient.post(
+      'Stack/UseCase/CreateStacksForTicketTypeFromSettings',
+      {
+        eventId,
+        ticketTypeId,
+        stacks,
+        privateInvite,
+        fcfs,
+        maxQty,
+        price,
+        serviceFee,
+        openingTime,
+        closingTime,
+        transferable,
+        inviteDesignId,
+        confirmDesignId,
+        declineDesignId,
+      },
+    );
   }
 
   /**
@@ -471,6 +531,8 @@ export class Stack {
    * @param string? - declineDesignId
    * @param number? - virbelaTeamId
    * @param string? - virbelaRole member|moderator|leader
+   * @param string? - expirationStartTime
+   * @param string? - expirationEndTime
    * @return Promise|Observable|any
    */
   UpdateStackFromSettings(
@@ -491,6 +553,8 @@ export class Stack {
     declineDesignId: string = null,
     virbelaTeamId: number = null,
     virbelaRole: string = null,
+    expirationStartTime: string = null,
+    expirationEndTime: string = null,
   ): any {
     return this.restClient.post('Stack/UseCase/UpdateStackFromSettings', {
       stackId,
@@ -510,6 +574,62 @@ export class Stack {
       declineDesignId,
       virbelaTeamId,
       virbelaRole,
+      expirationStartTime,
+      expirationEndTime,
     });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - ticketTypeId
+   * @param any[] - stacks
+   * @param boolean? - privateInvite true|false
+   * @param boolean? - fcfs true|false
+   * @param number? - maxQty
+   * @param number? - price
+   * @param number? - serviceFee
+   * @param string? - openingTime
+   * @param string? - closingTime
+   * @param boolean? - transferable true|false
+   * @param string? - inviteDesignId
+   * @param string? - confirmDesignId
+   * @param string? - declineDesignId
+   * @return Promise|Observable|any
+   */
+  UpdateStacksForTicketTypeFromSettings(
+    eventId: string,
+    ticketTypeId: string,
+    stacks: any[],
+    privateInvite: boolean = null,
+    fcfs: boolean = null,
+    maxQty: number = null,
+    price: number = null,
+    serviceFee: number = null,
+    openingTime: string = null,
+    closingTime: string = null,
+    transferable: boolean = null,
+    inviteDesignId: string = null,
+    confirmDesignId: string = null,
+    declineDesignId: string = null,
+  ): any {
+    return this.restClient.post(
+      'Stack/UseCase/UpdateStacksForTicketTypeFromSettings',
+      {
+        eventId,
+        ticketTypeId,
+        stacks,
+        privateInvite,
+        fcfs,
+        maxQty,
+        price,
+        serviceFee,
+        openingTime,
+        closingTime,
+        transferable,
+        inviteDesignId,
+        confirmDesignId,
+        declineDesignId,
+      },
+    );
   }
 }
