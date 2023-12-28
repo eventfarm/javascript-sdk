@@ -1561,21 +1561,6 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - poolPaymentGatewayId
-   * @return Promise|Observable|any
-   */
-  SetPoolPaymentGatewayForEvent(
-    eventId: string,
-    poolPaymentGatewayId: string,
-  ): any {
-    return this.restClient.post('Event/UseCase/SetPoolPaymentGatewayForEvent', {
-      eventId,
-      poolPaymentGatewayId,
-    });
-  }
-
-  /**
-   * @param string - eventId
    * @param string - processingCurrency aud|brl|gbp|cad|dkk|eur|ils|jpy|mxn|nzd|php|rub|sek|chf|thb|usd
    * @return Promise|Observable|any
    */

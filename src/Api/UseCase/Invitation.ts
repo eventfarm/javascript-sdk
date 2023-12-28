@@ -1264,6 +1264,7 @@ export class Invitation {
    * @param number? - inviteCount
    * @param string? - title
    * @param string? - checkInNotes
+   * @param string? - relatedInvitationId
    * @return Promise|Observable|any
    */
   UpdateInvitation(
@@ -1282,6 +1283,7 @@ export class Invitation {
     inviteCount: number = null,
     title: string = null,
     checkInNotes: string = null,
+    relatedInvitationId: string = null,
   ): any {
     return this.restClient.post('Invitation/UseCase/UpdateInvitation', {
       invitationId,
@@ -1299,6 +1301,7 @@ export class Invitation {
       inviteCount,
       title,
       checkInNotes,
+      relatedInvitationId,
     });
   }
 }
