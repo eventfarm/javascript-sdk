@@ -10,7 +10,7 @@ export class BackEndClient extends AbstractApi
     protected readonly clientId: string,
     protected readonly clientSecret: string,
     protected readonly audience: string,
-    protected readonly loginBaseUri: string = 'https://eventfarm.us.auth0.com/api/v2/oauth/token',
+    protected readonly loginBaseUri: string = 'https://eventfarm.fusionauth.io',
     apiBaseUri?: string,
   ) {
     super(apiBaseUri);
