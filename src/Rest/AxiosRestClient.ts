@@ -2,6 +2,7 @@ import axios, { AxiosPromise } from 'axios';
 import { RestClientInterface, StringField } from '../Interfaces';
 export class AxiosRestClient implements RestClientInterface {
   axiosInstance = axios.create({
+    withCredentials: true,
     baseURL: this.basePath, // Replace with your API base URL
   });
 
