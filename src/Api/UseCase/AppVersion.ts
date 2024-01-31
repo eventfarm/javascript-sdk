@@ -20,7 +20,7 @@ export class AppVersion {
   }
 
   /**
-   * @param string - appVersionType check-in-ios|check-in-android|ticket-block-mgmt-ios|ticket-block-mgmt-android|efx-ios|efx-android|events-ios|events-android|leads-flutter
+   * @param string - appVersionType check-in-ios|check-in-android|ticket-block-mgmt-ios|ticket-block-mgmt-android|efx-ios|efx-android|events-ios|events-android|leads-flutter|wakanda
    * @return Promise|Observable|any
    */
   GetAppVersionByType(appVersionType: string): any {
@@ -46,7 +46,7 @@ export class AppVersion {
   // Commands
 
   /**
-   * @param string - appVersionType check-in-ios|check-in-android|ticket-block-mgmt-ios|ticket-block-mgmt-android|efx-ios|efx-android|events-ios|events-android|leads-flutter
+   * @param string - appVersionType check-in-ios|check-in-android|ticket-block-mgmt-ios|ticket-block-mgmt-android|efx-ios|efx-android|events-ios|events-android|leads-flutter|wakanda
    * @param string - softVersion
    * @param string - hardVersion
    * @return Promise|Observable|any

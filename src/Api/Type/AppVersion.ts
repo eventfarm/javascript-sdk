@@ -24,6 +24,7 @@ export interface AppVersionTypeInterface {
   isEventsIos: boolean;
   isEventsAndroid: boolean;
   isLeadsFlutter: boolean;
+  isWakanda: boolean;
 }
 
 export class AppVersion {
@@ -97,6 +98,7 @@ export class AppVersion {
         isEventsIos: false,
         isEventsAndroid: false,
         isLeadsFlutter: false,
+        isWakanda: false,
       },
       {
         slug: 'check-in-android',
@@ -111,6 +113,7 @@ export class AppVersion {
         isEventsIos: false,
         isEventsAndroid: false,
         isLeadsFlutter: false,
+        isWakanda: false,
       },
       {
         slug: 'ticket-block-mgmt-ios',
@@ -125,6 +128,7 @@ export class AppVersion {
         isEventsIos: false,
         isEventsAndroid: false,
         isLeadsFlutter: false,
+        isWakanda: false,
       },
       {
         slug: 'ticket-block-mgmt-android',
@@ -139,6 +143,7 @@ export class AppVersion {
         isEventsIos: false,
         isEventsAndroid: false,
         isLeadsFlutter: false,
+        isWakanda: false,
       },
       {
         slug: 'efx-ios',
@@ -153,6 +158,7 @@ export class AppVersion {
         isEventsIos: false,
         isEventsAndroid: false,
         isLeadsFlutter: false,
+        isWakanda: false,
       },
       {
         slug: 'efx-android',
@@ -167,6 +173,7 @@ export class AppVersion {
         isEventsIos: false,
         isEventsAndroid: false,
         isLeadsFlutter: false,
+        isWakanda: false,
       },
       {
         slug: 'events-ios',
@@ -181,6 +188,7 @@ export class AppVersion {
         isEventsIos: true,
         isEventsAndroid: false,
         isLeadsFlutter: false,
+        isWakanda: false,
       },
       {
         slug: 'events-android',
@@ -195,6 +203,7 @@ export class AppVersion {
         isEventsIos: false,
         isEventsAndroid: true,
         isLeadsFlutter: false,
+        isWakanda: false,
       },
       {
         slug: 'leads-flutter',
@@ -209,6 +218,22 @@ export class AppVersion {
         isEventsIos: false,
         isEventsAndroid: false,
         isLeadsFlutter: true,
+        isWakanda: false,
+      },
+      {
+        slug: 'wakanda',
+        name: 'Wakanda',
+        description: null,
+        isCheckInIos: false,
+        isCheckInAndroid: false,
+        isTicketBlockManagementIos: false,
+        isTicketBlockManagementAndroid: false,
+        isEFxIos: false,
+        isEFxAndroid: false,
+        isEventsIos: false,
+        isEventsAndroid: false,
+        isLeadsFlutter: false,
+        isWakanda: true,
       },
     ];
   }
