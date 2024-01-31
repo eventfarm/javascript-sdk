@@ -21,10 +21,11 @@
   "license": "MIT",
   "scripts": {
     "package": "run-s clean build push",
+    "package-next": "run-s clean build push-next",
     "build": "tsc",
     "pretty": "prettier --single-quote --trailing-comma all --write 'src/**/*.ts'",
     "clean": "rm -rf dist/*",
-    "push-lastest": "npm publish --access public",
+    "push": "npm publish --access public",
     "push-next": "npm publish --tag next"
   },
   "dependencies": {
