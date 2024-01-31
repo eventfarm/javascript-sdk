@@ -24,7 +24,8 @@
     "build": "tsc",
     "pretty": "prettier --single-quote --trailing-comma all --write 'src/**/*.ts'",
     "clean": "rm -rf dist/*",
-    "push": "npm publish --access public"
+    "push-lastest": "npm publish --access public",
+    "push-next": "npm publish --tag next"
   },
   "dependencies": {
     "axios": "^0.21.2",
