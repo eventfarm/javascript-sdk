@@ -102,27 +102,6 @@ export class Report {
    * @param string? - reportId
    * @return Promise|Observable|any
    */
-  CreateCheckinReport(
-    eventId: string,
-    ownerUserId: string,
-    name: string = null,
-    reportId: string = null,
-  ): any {
-    return this.restClient.post('Report/UseCase/CreateCheckinReport', {
-      eventId,
-      ownerUserId,
-      name,
-      reportId,
-    });
-  }
-
-  /**
-   * @param string - eventId
-   * @param string - ownerUserId
-   * @param string? - name
-   * @param string? - reportId
-   * @return Promise|Observable|any
-   */
   CreateConfirmedGuestReport(
     eventId: string,
     ownerUserId: string,
@@ -159,6 +138,27 @@ export class Report {
         reportId,
       },
     );
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - ownerUserId
+   * @param string? - name
+   * @param string? - reportId
+   * @return Promise|Observable|any
+   */
+  CreateGraphicalCheckinReport(
+    eventId: string,
+    ownerUserId: string,
+    name: string = null,
+    reportId: string = null,
+  ): any {
+    return this.restClient.post('Report/UseCase/CreateGraphicalCheckinReport', {
+      eventId,
+      ownerUserId,
+      name,
+      reportId,
+    });
   }
 
   /**

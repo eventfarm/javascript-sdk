@@ -30,6 +30,7 @@ import { IntegrationStatusMapping } from './IntegrationStatusMapping';
 import { Invitation } from './Invitation';
 import { Lead } from './Lead';
 import { Link } from './Link';
+import { Logi } from './Logi';
 import { Mobile } from './Mobile';
 import { OAuth } from './OAuth';
 import { OAuth2 } from './OAuth2';
@@ -195,6 +196,10 @@ export class UseCaseFactory {
 
   Link(): Link {
     return new Link(this.restClient);
+  }
+
+  Logi(): Logi {
+    return new Logi(this.restClient);
   }
 
   Mobile(): Mobile {
