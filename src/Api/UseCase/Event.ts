@@ -145,8 +145,8 @@ export class Event {
   /**
    * @param string - poolId
    * @param string? - query
-   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled|payment-settings-not-configured
-   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled|payment-settings-not-configured
+   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled|payment-settings-not-configured|kiosk-mode-breakout-sessions-enabled
+   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled|payment-settings-not-configured|kiosk-mode-breakout-sessions-enabled
    * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl
    * @param number? - lastModifiedTimestamp
    * @param number? - page >= 1
@@ -232,8 +232,8 @@ export class Event {
   /**
    * @param string - userId
    * @param string? - query
-   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled|payment-settings-not-configured
-   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled|payment-settings-not-configured
+   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled|payment-settings-not-configured|kiosk-mode-breakout-sessions-enabled
+   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled|payment-settings-not-configured|kiosk-mode-breakout-sessions-enabled
    * @param string[]? - withData Pool|Stacks|Tags|TicketTypes|TicketBlocks|QuestionsAndAnswers|ThumbnailUrl|VirbelaWorld|EventUserRole
    * @param number? - lastModifiedTimestamp
    * @param number? - page >= 1
@@ -298,8 +298,8 @@ export class Event {
    * @param string? - eventDateFilterType current-future|past-all|past-3-months|past-3-months-and-future|past-6-months
    * @param string? - poolId
    * @param any[]? - tags
-   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled|payment-settings-not-configured
-   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled|payment-settings-not-configured
+   * @param any[]? - attributesFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled|payment-settings-not-configured|kiosk-mode-breakout-sessions-enabled
+   * @param any[]? - attributesExcludeFilter distribute|donate|fee|editname|reveal|allow-notes|duplicate-emails|navigation|social-media|social-media-bar|map-location|show-description|ipad-purchase|simple-layout|label-print|skip-event-allocate-display|geo-restrict|visa-checkout|archived|guest-can-change-response|efx-enabled|show-calendar|show-qr-confirmation|event-app-enabled|child-events-enabled|show-waitlist-confirmation|waitlist-email-enabled|waitlist-sms-enabled|payment-settings-not-configured|kiosk-mode-breakout-sessions-enabled
    * @return Promise|Observable|any
    */
   ListSessionsForEventForUser(
@@ -615,7 +615,7 @@ export class Event {
   /**
    * @param string - poolId
    * @param string - userId
-   * @param string - variant session|panel|keynote|block|sample
+   * @param string - variant session|panel|keynote|block|sample|breakout
    * @param string - eventName
    * @param string - parentEventId
    * @param string - description
@@ -765,6 +765,19 @@ export class Event {
     return this.restClient.post('Event/UseCase/DisableInvitationReveal', {
       eventId,
     });
+  }
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  DisableKioskModeBreakoutSessionsEnabledForEvent(eventId: string): any {
+    return this.restClient.post(
+      'Event/UseCase/DisableKioskModeBreakoutSessionsEnabledForEvent',
+      {
+        eventId,
+      },
+    );
   }
 
   /**
@@ -986,6 +999,19 @@ export class Event {
     return this.restClient.post('Event/UseCase/EnableInvitationReveal', {
       eventId,
     });
+  }
+
+  /**
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  EnableKioskModeBreakoutSessionsEnabledForEvent(eventId: string): any {
+    return this.restClient.post(
+      'Event/UseCase/EnableKioskModeBreakoutSessionsEnabledForEvent',
+      {
+        eventId,
+      },
+    );
   }
 
   /**
@@ -1423,7 +1449,7 @@ export class Event {
 
   /**
    * @param string - eventId
-   * @param string - eventVariant full|cio|lite|session|panel|keynote|block|sample
+   * @param string - eventVariant full|cio|lite|session|panel|keynote|block|sample|breakout
    * @return Promise|Observable|any
    */
   SetEventVariant(eventId: string, eventVariant: string): any {
@@ -1746,7 +1772,7 @@ export class Event {
 
   /**
    * @param string - sessionId
-   * @param string - variant session|panel|keynote|block|sample
+   * @param string - variant session|panel|keynote|block|sample|breakout
    * @param string - eventName
    * @param string - startTime
    * @param string - endTime

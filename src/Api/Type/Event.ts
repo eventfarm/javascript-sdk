@@ -210,6 +210,7 @@ export interface VariantTypeInterface {
   isKeynote: boolean;
   isBlock: boolean;
   isSample: boolean;
+  isBreakout: boolean;
   isAnySessionType: boolean;
 }
 
@@ -2387,6 +2388,7 @@ export class Event {
         isKeynote: false,
         isBlock: false,
         isSample: false,
+        isBreakout: false,
         isAnySessionType: false,
       },
       {
@@ -2401,6 +2403,7 @@ export class Event {
         isKeynote: false,
         isBlock: false,
         isSample: false,
+        isBreakout: false,
         isAnySessionType: false,
       },
       {
@@ -2415,6 +2418,7 @@ export class Event {
         isKeynote: false,
         isBlock: false,
         isSample: false,
+        isBreakout: false,
         isAnySessionType: false,
       },
       {
@@ -2429,6 +2433,7 @@ export class Event {
         isKeynote: false,
         isBlock: false,
         isSample: false,
+        isBreakout: false,
         isAnySessionType: true,
       },
       {
@@ -2443,6 +2448,7 @@ export class Event {
         isKeynote: false,
         isBlock: false,
         isSample: false,
+        isBreakout: false,
         isAnySessionType: true,
       },
       {
@@ -2457,6 +2463,7 @@ export class Event {
         isKeynote: true,
         isBlock: false,
         isSample: false,
+        isBreakout: false,
         isAnySessionType: true,
       },
       {
@@ -2471,6 +2478,7 @@ export class Event {
         isKeynote: false,
         isBlock: true,
         isSample: false,
+        isBreakout: false,
         isAnySessionType: true,
       },
       {
@@ -2485,7 +2493,23 @@ export class Event {
         isKeynote: false,
         isBlock: false,
         isSample: true,
+        isBreakout: false,
         isAnySessionType: false,
+      },
+      {
+        slug: 'breakout',
+        name: 'Breakout',
+        description: null,
+        isFull: false,
+        isCio: false,
+        isLite: false,
+        isSession: false,
+        isPanel: false,
+        isKeynote: false,
+        isBlock: false,
+        isSample: false,
+        isBreakout: true,
+        isAnySessionType: true,
       },
     ];
   }
