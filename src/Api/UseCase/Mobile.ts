@@ -88,5 +88,35 @@ export class Mobile {
     });
   }
 
+  /**
+   * @param string - parentEventId
+   * @param string? - query
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-500
+   * @param string? - sortBy event-start|event-end|name|event-created
+   * @param string? - sortDirection ascending|descending
+   * @param any[]? - variantFilter full|cio|lite|session|panel|keynote|block|sample|breakout
+   * @return Promise|Observable|any
+   */
+  ListSessionsForParentEvent(
+    parentEventId: string,
+    query: string = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    variantFilter: any[] = null,
+  ): any {
+    return this.restClient.get('Mobile/UseCase/ListSessionsForParentEvent', {
+      parentEventId,
+      query,
+      page,
+      itemsPerPage,
+      sortBy,
+      sortDirection,
+      variantFilter,
+    });
+  }
+
   // Commands
 }

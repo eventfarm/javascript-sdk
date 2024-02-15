@@ -7,6 +7,7 @@ export interface MobileDTOTypeInterface {
   description?: string;
   isInvitations: boolean;
   isEvents: boolean;
+  isSessions: boolean;
 }
 
 export class Mobile {
@@ -18,6 +19,7 @@ export class Mobile {
         description: null,
         isInvitations: true,
         isEvents: false,
+        isSessions: false,
       },
       {
         slug: 'events',
@@ -25,6 +27,15 @@ export class Mobile {
         description: null,
         isInvitations: false,
         isEvents: true,
+        isSessions: false,
+      },
+      {
+        slug: 'sessions',
+        name: 'Sessions',
+        description: null,
+        isInvitations: false,
+        isEvents: false,
+        isSessions: true,
       },
     ];
   }
