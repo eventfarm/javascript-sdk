@@ -23,12 +23,14 @@ export interface EFxModuleTypeInterface {
   isLeadRetrieval: boolean;
   isAdminOnly: boolean;
   iconURL: any;
+  isConfigEnabled: boolean;
   dependencyNFC: any;
   dependencySMS: any;
   compatibilityNFC: any;
   compatibilitySMS: any;
 }
 export interface EFxScreenTypeInterface {
+  id: any;
   slug: string;
   name: string;
   description?: string;
@@ -39,6 +41,10 @@ export interface EFxScreenTypeInterface {
   isRegisterSuccessView: boolean;
   isRegisterScanView: boolean;
   isRegisterFailureView: boolean;
+  defaultTextColor: any;
+  defaultText: any;
+  defaultPhoneBackgroundUrl: any;
+  defaultTabletBackgroundUrl: any;
 }
 export interface EFxStationTypeInterface {
   slug: string;
@@ -74,6 +80,7 @@ export class EFx {
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/guest-management.png',
+        isConfigEnabled: false,
         dependencyNFC: true,
         dependencySMS: false,
         compatibilityNFC: true,
@@ -102,6 +109,7 @@ export class EFx {
         isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/access.png',
+        isConfigEnabled: true,
         dependencyNFC: true,
         dependencySMS: false,
         compatibilityNFC: true,
@@ -129,6 +137,7 @@ export class EFx {
         isLeadRetrieval: false,
         isAdminOnly: true,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/nike.png',
+        isConfigEnabled: false,
         dependencyNFC: true,
         dependencySMS: false,
         compatibilityNFC: true,
@@ -157,6 +166,7 @@ export class EFx {
         isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/concierge.png',
+        isConfigEnabled: false,
         dependencyNFC: true,
         dependencySMS: false,
         compatibilityNFC: true,
@@ -186,6 +196,7 @@ export class EFx {
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/digital-memory-bank.png',
+        isConfigEnabled: false,
         dependencyNFC: false,
         dependencySMS: false,
         compatibilityNFC: true,
@@ -213,6 +224,7 @@ export class EFx {
         isLeadRetrieval: false,
         isAdminOnly: true,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/access.png',
+        isConfigEnabled: false,
         dependencyNFC: true,
         dependencySMS: false,
         compatibilityNFC: true,
@@ -240,6 +252,7 @@ export class EFx {
         isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/messaging.png',
+        isConfigEnabled: false,
         dependencyNFC: false,
         dependencySMS: true,
         compatibilityNFC: false,
@@ -268,6 +281,7 @@ export class EFx {
         isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/polling.png',
+        isConfigEnabled: false,
         dependencyNFC: false,
         dependencySMS: true,
         compatibilityNFC: false,
@@ -297,6 +311,7 @@ export class EFx {
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/product-pickup.png',
+        isConfigEnabled: false,
         dependencyNFC: true,
         dependencySMS: false,
         compatibilityNFC: true,
@@ -324,6 +339,7 @@ export class EFx {
         isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/raffle.png',
+        isConfigEnabled: false,
         dependencyNFC: true,
         dependencySMS: true,
         compatibilityNFC: true,
@@ -352,6 +368,7 @@ export class EFx {
         isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/reservation.png',
+        isConfigEnabled: false,
         dependencyNFC: true,
         dependencySMS: false,
         compatibilityNFC: true,
@@ -381,6 +398,7 @@ export class EFx {
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/photographer.png',
+        isConfigEnabled: false,
         dependencyNFC: false,
         dependencySMS: false,
         compatibilityNFC: true,
@@ -410,6 +428,7 @@ export class EFx {
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/smartbar-vertical.png',
+        isConfigEnabled: false,
         dependencyNFC: true,
         dependencySMS: false,
         compatibilityNFC: true,
@@ -438,6 +457,7 @@ export class EFx {
         isLeadRetrieval: false,
         isAdminOnly: false,
         iconURL: 'https://cdn.eventfarm.com/platform/img/icons/teams.png',
+        isConfigEnabled: false,
         dependencyNFC: false,
         dependencySMS: false,
         compatibilityNFC: false,
@@ -466,6 +486,7 @@ export class EFx {
         isAdminOnly: false,
         iconURL:
           'https://cdn.eventfarm.com/platform/img/icons/lead-retrieval.png',
+        isConfigEnabled: false,
         dependencyNFC: false,
         dependencySMS: false,
         compatibilityNFC: true,
@@ -477,6 +498,7 @@ export class EFx {
   EFxScreenType(): EFxScreenTypeInterface[] {
     return [
       {
+        id: 'scanView',
         slug: 'scan-view',
         name: 'Scan View',
         description: null,
@@ -487,8 +509,15 @@ export class EFx {
         isRegisterSuccessView: false,
         isRegisterScanView: false,
         isRegisterFailureView: false,
+        defaultTextColor: '#000000',
+        defaultText: 'Scan Wristband',
+        defaultPhoneBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/ScanScreen.png',
+        defaultTabletBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/ScanScreen.png',
       },
       {
+        id: 'failureView',
         slug: 'failure-view',
         name: 'Failure View',
         description: null,
@@ -499,8 +528,16 @@ export class EFx {
         isRegisterSuccessView: false,
         isRegisterScanView: false,
         isRegisterFailureView: false,
+        defaultTextColor: '#FFFFFF',
+        defaultText:
+          'Oh no!  We can&#039;t find you.  Ask a staff member for help.',
+        defaultPhoneBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/ErrorScreen.png',
+        defaultTabletBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/ErrorScreen.png',
       },
       {
+        id: 'checkOutView',
         slug: 'check-out-view',
         name: 'Check Out View',
         description: null,
@@ -511,8 +548,15 @@ export class EFx {
         isRegisterSuccessView: false,
         isRegisterScanView: false,
         isRegisterFailureView: false,
+        defaultTextColor: '#FFFFFF',
+        defaultText: 'Good Bye, [first_name]!',
+        defaultPhoneBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/CheckOutScreen.png',
+        defaultTabletBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/CheckOutScreen.png',
       },
       {
+        id: 'successView',
         slug: 'success-view',
         name: 'Success View',
         description: null,
@@ -523,8 +567,15 @@ export class EFx {
         isRegisterSuccessView: false,
         isRegisterScanView: false,
         isRegisterFailureView: false,
+        defaultTextColor: '#FFFFFF',
+        defaultText: 'Welcome, [first_name]!',
+        defaultPhoneBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/SuccessScreen.png',
+        defaultTabletBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/SuccessScreen.png',
       },
       {
+        id: 'registerSuccessView',
         slug: 'register-success-view',
         name: 'Register Success View',
         description: null,
@@ -535,8 +586,15 @@ export class EFx {
         isRegisterSuccessView: true,
         isRegisterScanView: false,
         isRegisterFailureView: false,
+        defaultTextColor: '#FFFFFF',
+        defaultText: 'Welcome, [first_name]!',
+        defaultPhoneBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/SuccessScreen.png',
+        defaultTabletBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/SuccessScreen.png',
       },
       {
+        id: 'registerScanView',
         slug: 'register-scan-view',
         name: 'Register Scan View',
         description: null,
@@ -547,8 +605,15 @@ export class EFx {
         isRegisterSuccessView: false,
         isRegisterScanView: true,
         isRegisterFailureView: false,
+        defaultTextColor: '#000000',
+        defaultText: 'Scan Wristband',
+        defaultPhoneBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/ScanScreen.png',
+        defaultTabletBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/ScanScreen.png',
       },
       {
+        id: 'registerFailureView',
         slug: 'register-failure-view',
         name: 'Register Failure View',
         description: null,
@@ -559,6 +624,13 @@ export class EFx {
         isRegisterSuccessView: false,
         isRegisterScanView: false,
         isRegisterFailureView: true,
+        defaultTextColor: '#FFFFFF',
+        defaultText:
+          'Oh no!  We can&#039;t find you.  Ask a staff member for help.',
+        defaultPhoneBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/ErrorScreen.png',
+        defaultTabletBackgroundUrl:
+          'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/ErrorScreen.png',
       },
     ];
   }
