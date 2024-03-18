@@ -8,6 +8,7 @@ export interface MobileDTOTypeInterface {
   isInvitations: boolean;
   isEvents: boolean;
   isSessions: boolean;
+  isSessionInvitation: boolean;
 }
 
 export class Mobile {
@@ -20,6 +21,7 @@ export class Mobile {
         isInvitations: true,
         isEvents: false,
         isSessions: false,
+        isSessionInvitation: false,
       },
       {
         slug: 'events',
@@ -28,6 +30,7 @@ export class Mobile {
         isInvitations: false,
         isEvents: true,
         isSessions: false,
+        isSessionInvitation: false,
       },
       {
         slug: 'sessions',
@@ -36,6 +39,16 @@ export class Mobile {
         isInvitations: false,
         isEvents: false,
         isSessions: true,
+        isSessionInvitation: false,
+      },
+      {
+        slug: 'session-invitation',
+        name: 'Session Invitation',
+        description: null,
+        isInvitations: false,
+        isEvents: false,
+        isSessions: false,
+        isSessionInvitation: true,
       },
     ];
   }

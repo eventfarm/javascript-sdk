@@ -190,7 +190,7 @@ export class Invitation {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|TicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
@@ -239,7 +239,7 @@ export class Invitation {
   /**
    * @param string - eventId
    * @param string - stackId
-   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|TicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
@@ -283,7 +283,7 @@ export class Invitation {
 
   /**
    * @param string - ticketBlockId
-   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|TicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
@@ -328,7 +328,7 @@ export class Invitation {
 
   /**
    * @param string - transactionId
-   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|TicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
@@ -532,7 +532,7 @@ export class Invitation {
 
   /**
    * @param string - relatedInvitationId
-   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|TicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
@@ -580,7 +580,7 @@ export class Invitation {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|TicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param number? - lastModifiedTimestamp
@@ -620,7 +620,7 @@ export class Invitation {
   /**
    * @param string - eventId
    * @param string - stackId
-   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|TicketType|QuestionResponses|maxLastModifiedAt|DayPassAvailabilityCounts|RelatedInvitation
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
    * @param string? - query
    * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
@@ -752,6 +752,7 @@ export class Invitation {
    * @param boolean? - forceDuplicateInvitations true|false
    * @param string? - relatedInvitationId
    * @param string? - externalId
+   * @param any[]? - questionResponses
    * @return Promise|Observable|any
    */
   CreateInvitation(
@@ -777,6 +778,7 @@ export class Invitation {
     forceDuplicateInvitations: boolean = null,
     relatedInvitationId: string = null,
     externalId: string = null,
+    questionResponses: any[] = null,
   ): any {
     return this.restClient.post('Invitation/UseCase/CreateInvitation', {
       eventId,
@@ -801,6 +803,7 @@ export class Invitation {
       forceDuplicateInvitations,
       relatedInvitationId,
       externalId,
+      questionResponses,
     });
   }
 
@@ -1159,23 +1162,26 @@ export class Invitation {
 
   /**
    * @param string - invitationId
-   * @param string - toEmail
-   * @param any[]? - ccEmails
+   * @param any[]? - emails
    * @param boolean? - shouldSendArrivalAlert true|false
+   * @param any[]? - phoneNumbers
    * @return Promise|Observable|any
    */
-  SetArrivalAlertEmail(
+  SetArrivalAlertEmailsAndPhoneNumbers(
     invitationId: string,
-    toEmail: string,
-    ccEmails: any[] = null,
+    emails: any[] = null,
     shouldSendArrivalAlert: boolean = null,
+    phoneNumbers: any[] = null,
   ): any {
-    return this.restClient.post('Invitation/UseCase/SetArrivalAlertEmail', {
-      invitationId,
-      toEmail,
-      ccEmails,
-      shouldSendArrivalAlert,
-    });
+    return this.restClient.post(
+      'Invitation/UseCase/SetArrivalAlertEmailsAndPhoneNumbers',
+      {
+        invitationId,
+        emails,
+        shouldSendArrivalAlert,
+        phoneNumbers,
+      },
+    );
   }
 
   /**
@@ -1265,6 +1271,7 @@ export class Invitation {
    * @param string? - title
    * @param string? - checkInNotes
    * @param string? - relatedInvitationId
+   * @param any[]? - questionResponses
    * @return Promise|Observable|any
    */
   UpdateInvitation(
@@ -1284,6 +1291,7 @@ export class Invitation {
     title: string = null,
     checkInNotes: string = null,
     relatedInvitationId: string = null,
+    questionResponses: any[] = null,
   ): any {
     return this.restClient.post('Invitation/UseCase/UpdateInvitation', {
       invitationId,
@@ -1302,6 +1310,7 @@ export class Invitation {
       title,
       checkInNotes,
       relatedInvitationId,
+      questionResponses,
     });
   }
 }
