@@ -46,7 +46,7 @@ export class EFx {
 
   /**
    * @param string - stationId
-   * @param string[]? - withData TicketType|EFxScreens
+   * @param string[]? - withData StackAndTicketType|EFxScreens
    * @return Promise|Observable|any
    */
   GetEFxStation(stationId: string, withData: string[] = null): any {
@@ -97,7 +97,7 @@ export class EFx {
 
   /**
    * @param string - eventId
-   * @param string[]? - withData TicketType|EFxScreens
+   * @param string[]? - withData StackAndTicketType|EFxScreens
    * @param string? - sortBy createdAt
    * @param string? - sortDirection ascending|descending
    * @param number? - page >= 1
@@ -174,11 +174,6 @@ export class EFx {
    * @param string - stationName
    * @param string - moduleType access-control
    * @param string - stationType check-in|check-in-out
-   * @param string? - smsText
-   * @param string? - smsMedialUrl
-   * @param string? - emailDesignId
-   * @param any[]? - ticketTypeIds
-   * @param any[]? - efxScreens
    * @param string? - stationId
    * @return Promise|Observable|any
    */
@@ -187,11 +182,6 @@ export class EFx {
     stationName: string,
     moduleType: string,
     stationType: string,
-    smsText: string = null,
-    smsMedialUrl: string = null,
-    emailDesignId: string = null,
-    ticketTypeIds: any[] = null,
-    efxScreens: any[] = null,
     stationId: string = null,
   ): any {
     return this.restClient.post('EFx/UseCase/CreateEFxStation', {
@@ -199,11 +189,6 @@ export class EFx {
       stationName,
       moduleType,
       stationType,
-      smsText,
-      smsMedialUrl,
-      emailDesignId,
-      ticketTypeIds,
-      efxScreens,
       stationId,
     });
   }
@@ -406,8 +391,8 @@ export class EFx {
    * @param any[]? - stackIds
    * @return Promise|Observable|any
    */
-  SetTicketTypesForEFxStation(stationId: string, stackIds: any[] = null): any {
-    return this.restClient.post('EFx/UseCase/SetTicketTypesForEFxStation', {
+  SetStacksForEFxStation(stationId: string, stackIds: any[] = null): any {
+    return this.restClient.post('EFx/UseCase/SetStacksForEFxStation', {
       stationId,
       stackIds,
     });
@@ -450,44 +435,20 @@ export class EFx {
   }
 
   /**
-   * @param string - eventId
-   * @param any[] - efxScreens
-   * @return Promise|Observable|any
-   */
-  UpdateEFxScreens(eventId: string, efxScreens: any[]): any {
-    return this.restClient.post('EFx/UseCase/UpdateEFxScreens', {
-      eventId,
-      efxScreens,
-    });
-  }
-
-  /**
    * @param string - stationId
    * @param string - stationName
    * @param string - stationType check-in|check-in-out
-   * @param string? - smsText
-   * @param string? - smsMedialUrl
-   * @param string? - emailDesignId
-   * @param any[]? - ticketTypeIds
    * @return Promise|Observable|any
    */
   UpdateEFxStation(
     stationId: string,
     stationName: string,
     stationType: string,
-    smsText: string = null,
-    smsMedialUrl: string = null,
-    emailDesignId: string = null,
-    ticketTypeIds: any[] = null,
   ): any {
     return this.restClient.post('EFx/UseCase/UpdateEFxStation', {
       stationId,
       stationName,
       stationType,
-      smsText,
-      smsMedialUrl,
-      emailDesignId,
-      ticketTypeIds,
     });
   }
 }
