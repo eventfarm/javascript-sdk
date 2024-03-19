@@ -34,6 +34,7 @@ export class TicketType {
    * @param number - sortOrder
    * @param boolean? - isDeleted true|false
    * @param string? - description
+   * @param string? - checkInMessage
    * @param string? - ticketTypeId
    * @return Promise|Observable|any
    */
@@ -45,6 +46,7 @@ export class TicketType {
     sortOrder: number,
     isDeleted: boolean = null,
     description: string = null,
+    checkInMessage: string = null,
     ticketTypeId: string = null,
   ): any {
     return this.restClient.post('TicketType/UseCase/CreateTicketType', {
@@ -55,6 +57,7 @@ export class TicketType {
       sortOrder,
       isDeleted,
       description,
+      checkInMessage,
       ticketTypeId,
     });
   }
@@ -67,6 +70,24 @@ export class TicketType {
     return this.restClient.post('TicketType/UseCase/DeleteTicketType', {
       ticketTypeId,
     });
+  }
+
+  /**
+   * @param string - ticketTypeId
+   * @param string? - checkInMessage
+   * @return Promise|Observable|any
+   */
+  SetCheckInMessageForTicketType(
+    ticketTypeId: string,
+    checkInMessage: string = null,
+  ): any {
+    return this.restClient.post(
+      'TicketType/UseCase/SetCheckInMessageForTicketType',
+      {
+        ticketTypeId,
+        checkInMessage,
+      },
+    );
   }
 
   /**
