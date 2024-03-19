@@ -149,4 +149,34 @@ export class TicketType {
       quantity,
     });
   }
+
+  /**
+   * @param string - ticketTypeId
+   * @param string - name
+   * @param number - quantity
+   * @param number - sortOrder
+   * @param string? - code
+   * @param string? - description
+   * @param string? - checkInMessage
+   * @return Promise|Observable|any
+   */
+  UpdateTicketType(
+    ticketTypeId: string,
+    name: string,
+    quantity: number,
+    sortOrder: number,
+    code: string = null,
+    description: string = null,
+    checkInMessage: string = null,
+  ): any {
+    return this.restClient.post('TicketType/UseCase/UpdateTicketType', {
+      ticketTypeId,
+      name,
+      quantity,
+      sortOrder,
+      code,
+      description,
+      checkInMessage,
+    });
+  }
 }
