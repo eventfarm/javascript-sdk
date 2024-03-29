@@ -74,6 +74,30 @@ export class TicketType {
 
   /**
    * @param string - ticketTypeId
+   * @param any[]? - emails
+   * @param boolean? - shouldSendArrivalAlert true|false
+   * @param any[]? - phoneNumbers
+   * @return Promise|Observable|any
+   */
+  SetArrivalAlertEmailsAndPhoneNumbersForTicketType(
+    ticketTypeId: string,
+    emails: any[] = null,
+    shouldSendArrivalAlert: boolean = null,
+    phoneNumbers: any[] = null,
+  ): any {
+    return this.restClient.post(
+      'TicketType/UseCase/SetArrivalAlertEmailsAndPhoneNumbersForTicketType',
+      {
+        ticketTypeId,
+        emails,
+        shouldSendArrivalAlert,
+        phoneNumbers,
+      },
+    );
+  }
+
+  /**
+   * @param string - ticketTypeId
    * @param string? - checkInMessage
    * @return Promise|Observable|any
    */
