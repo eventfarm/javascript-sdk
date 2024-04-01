@@ -36,6 +36,7 @@ export class TicketType {
    * @param string? - description
    * @param string? - checkInMessage
    * @param string? - ticketTypeId
+   * @param string? - defaultSitePageId
    * @return Promise|Observable|any
    */
   CreateTicketType(
@@ -48,6 +49,7 @@ export class TicketType {
     description: string = null,
     checkInMessage: string = null,
     ticketTypeId: string = null,
+    defaultSitePageId: string = null,
   ): any {
     return this.restClient.post('TicketType/UseCase/CreateTicketType', {
       eventId,
@@ -59,6 +61,7 @@ export class TicketType {
       description,
       checkInMessage,
       ticketTypeId,
+      defaultSitePageId,
     });
   }
 
@@ -182,6 +185,7 @@ export class TicketType {
    * @param string? - code
    * @param string? - description
    * @param string? - checkInMessage
+   * @param string? - defaultSitePageId
    * @return Promise|Observable|any
    */
   UpdateTicketType(
@@ -192,6 +196,7 @@ export class TicketType {
     code: string = null,
     description: string = null,
     checkInMessage: string = null,
+    defaultSitePageId: string = null,
   ): any {
     return this.restClient.post('TicketType/UseCase/UpdateTicketType', {
       ticketTypeId,
@@ -201,6 +206,7 @@ export class TicketType {
       code,
       description,
       checkInMessage,
+      defaultSitePageId,
     });
   }
 }
