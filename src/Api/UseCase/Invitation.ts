@@ -753,6 +753,7 @@ export class Invitation {
    * @param string? - relatedInvitationId
    * @param string? - externalId
    * @param any[]? - questionResponses
+   * @param string? - proxyEmail
    * @return Promise|Observable|any
    */
   CreateInvitation(
@@ -779,6 +780,7 @@ export class Invitation {
     relatedInvitationId: string = null,
     externalId: string = null,
     questionResponses: any[] = null,
+    proxyEmail: string = null,
   ): any {
     return this.restClient.post('Invitation/UseCase/CreateInvitation', {
       eventId,
@@ -804,6 +806,7 @@ export class Invitation {
       relatedInvitationId,
       externalId,
       questionResponses,
+      proxyEmail,
     });
   }
 
@@ -1220,6 +1223,18 @@ export class Invitation {
     return this.restClient.post('Invitation/UseCase/SetInvitationNotes', {
       invitationId,
       invitationNotes,
+    });
+  }
+
+  /**
+   * @param string - invitationId
+   * @param string? - proxyEmail
+   * @return Promise|Observable|any
+   */
+  SetProxyEmail(invitationId: string, proxyEmail: string = null): any {
+    return this.restClient.post('Invitation/UseCase/SetProxyEmail', {
+      invitationId,
+      proxyEmail,
     });
   }
 

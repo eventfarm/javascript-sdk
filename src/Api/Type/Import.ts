@@ -27,6 +27,7 @@ export interface ImportColumnHeaderTypeInterface {
   isTicketStatus: boolean;
   isTicketType: boolean;
   isTitle: boolean;
+  isProxyEmail: boolean;
 }
 
 export class Import {
@@ -58,6 +59,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'address2',
@@ -85,6 +87,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'arrivalAlertEmail',
@@ -112,6 +115,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'arrivalAlertSMS',
@@ -139,6 +143,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'checkInNotes',
@@ -166,6 +171,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'city',
@@ -193,6 +199,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'company',
@@ -220,6 +227,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'country',
@@ -247,6 +255,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'email',
@@ -274,6 +283,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'firstName',
@@ -301,6 +311,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'ignored',
@@ -328,6 +339,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'invitationNotes',
@@ -355,6 +367,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'lastName',
@@ -382,6 +395,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'other',
@@ -409,6 +423,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'position',
@@ -436,6 +451,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'postalCode',
@@ -463,6 +479,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'quantity',
@@ -490,6 +507,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'state',
@@ -517,6 +535,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'telephone',
@@ -544,6 +563,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'ticketStatus',
@@ -571,6 +591,7 @@ export class Import {
         isTicketStatus: true,
         isTicketType: false,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'ticketType',
@@ -598,6 +619,7 @@ export class Import {
         isTicketStatus: false,
         isTicketType: true,
         isTitle: false,
+        isProxyEmail: false,
       },
       {
         slug: 'title',
@@ -625,6 +647,35 @@ export class Import {
         isTicketStatus: false,
         isTicketType: false,
         isTitle: true,
+        isProxyEmail: false,
+      },
+      {
+        slug: 'proxyEmail',
+        name: 'Proxy Email',
+        description: null,
+        isAddress1: false,
+        isAddress2: false,
+        isArrivalAlertEmail: false,
+        isArrivalAlertSMS: false,
+        isCheckInNotes: false,
+        isCity: false,
+        isCompany: false,
+        isCountry: false,
+        isEmail: false,
+        isFirstName: false,
+        isIgnored: false,
+        isInvitationNotes: false,
+        isLastName: false,
+        isOther: false,
+        isPosition: false,
+        isPostalCode: false,
+        isQuantity: false,
+        isState: false,
+        isTelephone: false,
+        isTicketStatus: false,
+        isTicketType: false,
+        isTitle: false,
+        isProxyEmail: true,
       },
     ];
   }
