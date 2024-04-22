@@ -23,6 +23,7 @@ import { Question } from './Question';
 import { Queue } from './Queue';
 import { Region } from './Region';
 import { Report } from './Report';
+import { SMSMessage } from './SMSMessage';
 import { Salesforce } from './Salesforce';
 import { Salutation } from './Salutation';
 import { SitePage } from './SitePage';
@@ -132,6 +133,10 @@ export class TypeFactory {
 
   Report(): Report {
     return new Report();
+  }
+
+  SMSMessage(): SMSMessage {
+    return new SMSMessage();
   }
 
   Salesforce(): Salesforce {

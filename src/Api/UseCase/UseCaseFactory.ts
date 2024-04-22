@@ -51,6 +51,7 @@ import { Queue } from './Queue';
 import { Refund } from './Refund';
 import { Region } from './Region';
 import { Report } from './Report';
+import { SMSMessage } from './SMSMessage';
 import { Salesforce } from './Salesforce';
 import { SalesforceEventSetting } from './SalesforceEventSetting';
 import { SalesforcePoolSetting } from './SalesforcePoolSetting';
@@ -279,6 +280,10 @@ export class UseCaseFactory {
 
   Report(): Report {
     return new Report(this.restClient);
+  }
+
+  SMSMessage(): SMSMessage {
+    return new SMSMessage(this.restClient);
   }
 
   Salesforce(): Salesforce {

@@ -1,0 +1,396 @@
+/**
+ * This file was auto generated, please do not edit it directly.
+ **/
+export interface MessageSourceTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isTwilio: boolean;
+}
+export interface MessageStatusTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isSending: boolean;
+  isSent: boolean;
+  isFailed: boolean;
+  isDelivered: boolean;
+  isReceived: boolean;
+  isScheduled: boolean;
+  isRead: boolean;
+  isCanceled: boolean;
+}
+export interface SMSMessageSlugTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isEventName: boolean;
+  isEventLocationName: boolean;
+  isEventLocationAddress: boolean;
+  isEventStartDateTime: boolean;
+  isEventEndDateTime: boolean;
+  isAccessTypeName: boolean;
+  isFirstName: boolean;
+  isLastName: boolean;
+  isInviteQRCode: boolean;
+  isCompany: boolean;
+  isPosition: boolean;
+  isTicketBlockName: boolean;
+}
+export interface SMSMessageTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isSendAMessage: boolean;
+  isSendGroupMessage: boolean;
+}
+
+export class SMSMessage {
+  MessageSourceType(): MessageSourceTypeInterface[] {
+    return [
+      {
+        slug: 'twilio',
+        name: 'Twilio',
+        description: null,
+        isTwilio: true,
+      },
+    ];
+  }
+
+  MessageStatusType(): MessageStatusTypeInterface[] {
+    return [
+      {
+        slug: 'sending',
+        name: 'Sending',
+        description: null,
+        isSending: true,
+        isSent: false,
+        isFailed: false,
+        isDelivered: false,
+        isReceived: false,
+        isScheduled: false,
+        isRead: false,
+        isCanceled: false,
+      },
+      {
+        slug: 'sent',
+        name: 'Sent',
+        description: null,
+        isSending: false,
+        isSent: true,
+        isFailed: false,
+        isDelivered: false,
+        isReceived: false,
+        isScheduled: false,
+        isRead: false,
+        isCanceled: false,
+      },
+      {
+        slug: 'failed',
+        name: 'Failed',
+        description: null,
+        isSending: false,
+        isSent: false,
+        isFailed: true,
+        isDelivered: false,
+        isReceived: false,
+        isScheduled: false,
+        isRead: false,
+        isCanceled: false,
+      },
+      {
+        slug: 'delivered',
+        name: 'Delivered',
+        description: null,
+        isSending: false,
+        isSent: false,
+        isFailed: false,
+        isDelivered: true,
+        isReceived: false,
+        isScheduled: false,
+        isRead: false,
+        isCanceled: false,
+      },
+      {
+        slug: 'received',
+        name: 'Received',
+        description: null,
+        isSending: false,
+        isSent: false,
+        isFailed: false,
+        isDelivered: false,
+        isReceived: true,
+        isScheduled: false,
+        isRead: false,
+        isCanceled: false,
+      },
+      {
+        slug: 'scheduled',
+        name: 'Scheduled',
+        description: null,
+        isSending: false,
+        isSent: false,
+        isFailed: false,
+        isDelivered: false,
+        isReceived: false,
+        isScheduled: true,
+        isRead: false,
+        isCanceled: false,
+      },
+      {
+        slug: 'read',
+        name: 'Read',
+        description: null,
+        isSending: false,
+        isSent: false,
+        isFailed: false,
+        isDelivered: false,
+        isReceived: false,
+        isScheduled: false,
+        isRead: true,
+        isCanceled: false,
+      },
+      {
+        slug: 'canceled',
+        name: 'Canceled',
+        description: null,
+        isSending: false,
+        isSent: false,
+        isFailed: false,
+        isDelivered: false,
+        isReceived: false,
+        isScheduled: false,
+        isRead: false,
+        isCanceled: true,
+      },
+    ];
+  }
+
+  SMSMessageSlugType(): SMSMessageSlugTypeInterface[] {
+    return [
+      {
+        slug: '[EVENT_NAME]',
+        name: 'Event Name',
+        description: null,
+        isEventName: true,
+        isEventLocationName: false,
+        isEventLocationAddress: false,
+        isEventStartDateTime: false,
+        isEventEndDateTime: false,
+        isAccessTypeName: false,
+        isFirstName: false,
+        isLastName: false,
+        isInviteQRCode: false,
+        isCompany: false,
+        isPosition: false,
+        isTicketBlockName: false,
+      },
+      {
+        slug: '[EVENT_LOCATION_NAME]',
+        name: 'Event Location Name',
+        description: null,
+        isEventName: false,
+        isEventLocationName: true,
+        isEventLocationAddress: false,
+        isEventStartDateTime: false,
+        isEventEndDateTime: false,
+        isAccessTypeName: false,
+        isFirstName: false,
+        isLastName: false,
+        isInviteQRCode: false,
+        isCompany: false,
+        isPosition: false,
+        isTicketBlockName: false,
+      },
+      {
+        slug: '[EVENT_LOCATION_ADDRESS]',
+        name: 'Event Location Address',
+        description: null,
+        isEventName: false,
+        isEventLocationName: false,
+        isEventLocationAddress: true,
+        isEventStartDateTime: false,
+        isEventEndDateTime: false,
+        isAccessTypeName: false,
+        isFirstName: false,
+        isLastName: false,
+        isInviteQRCode: false,
+        isCompany: false,
+        isPosition: false,
+        isTicketBlockName: false,
+      },
+      {
+        slug: '[EVENT_START_DATE_TIME]',
+        name: 'Event Start Date And Time',
+        description: null,
+        isEventName: false,
+        isEventLocationName: false,
+        isEventLocationAddress: false,
+        isEventStartDateTime: true,
+        isEventEndDateTime: false,
+        isAccessTypeName: false,
+        isFirstName: false,
+        isLastName: false,
+        isInviteQRCode: false,
+        isCompany: false,
+        isPosition: false,
+        isTicketBlockName: false,
+      },
+      {
+        slug: '[EVENT_END_DATE_TIME]',
+        name: 'Event End Date And Time',
+        description: null,
+        isEventName: false,
+        isEventLocationName: false,
+        isEventLocationAddress: false,
+        isEventStartDateTime: false,
+        isEventEndDateTime: true,
+        isAccessTypeName: false,
+        isFirstName: false,
+        isLastName: false,
+        isInviteQRCode: false,
+        isCompany: false,
+        isPosition: false,
+        isTicketBlockName: false,
+      },
+      {
+        slug: '[TICKET_TYPE_NAME]',
+        name: 'Access Type Name',
+        description: null,
+        isEventName: false,
+        isEventLocationName: false,
+        isEventLocationAddress: false,
+        isEventStartDateTime: false,
+        isEventEndDateTime: false,
+        isAccessTypeName: true,
+        isFirstName: false,
+        isLastName: false,
+        isInviteQRCode: false,
+        isCompany: false,
+        isPosition: false,
+        isTicketBlockName: false,
+      },
+      {
+        slug: '[TICKET_BLOCK_NAME]',
+        name: 'Ticket Block Name',
+        description: null,
+        isEventName: false,
+        isEventLocationName: false,
+        isEventLocationAddress: false,
+        isEventStartDateTime: false,
+        isEventEndDateTime: false,
+        isAccessTypeName: false,
+        isFirstName: false,
+        isLastName: false,
+        isInviteQRCode: false,
+        isCompany: false,
+        isPosition: false,
+        isTicketBlockName: true,
+      },
+      {
+        slug: '[FIRST_NAME]',
+        name: 'First Name',
+        description: null,
+        isEventName: false,
+        isEventLocationName: false,
+        isEventLocationAddress: false,
+        isEventStartDateTime: false,
+        isEventEndDateTime: false,
+        isAccessTypeName: false,
+        isFirstName: true,
+        isLastName: false,
+        isInviteQRCode: false,
+        isCompany: false,
+        isPosition: false,
+        isTicketBlockName: false,
+      },
+      {
+        slug: '[LAST_NAME]',
+        name: 'LastName',
+        description: null,
+        isEventName: false,
+        isEventLocationName: false,
+        isEventLocationAddress: false,
+        isEventStartDateTime: false,
+        isEventEndDateTime: false,
+        isAccessTypeName: false,
+        isFirstName: false,
+        isLastName: true,
+        isInviteQRCode: false,
+        isCompany: false,
+        isPosition: false,
+        isTicketBlockName: false,
+      },
+      {
+        slug: '[INVITE_QR_CODE]',
+        name: 'Invite QR Code',
+        description: null,
+        isEventName: false,
+        isEventLocationName: false,
+        isEventLocationAddress: false,
+        isEventStartDateTime: false,
+        isEventEndDateTime: false,
+        isAccessTypeName: false,
+        isFirstName: false,
+        isLastName: false,
+        isInviteQRCode: true,
+        isCompany: false,
+        isPosition: false,
+        isTicketBlockName: false,
+      },
+      {
+        slug: '[COMPANY]',
+        name: 'Company',
+        description: null,
+        isEventName: false,
+        isEventLocationName: false,
+        isEventLocationAddress: false,
+        isEventStartDateTime: false,
+        isEventEndDateTime: false,
+        isAccessTypeName: false,
+        isFirstName: false,
+        isLastName: false,
+        isInviteQRCode: false,
+        isCompany: true,
+        isPosition: false,
+        isTicketBlockName: false,
+      },
+      {
+        slug: '[POSITION]',
+        name: 'Position',
+        description: null,
+        isEventName: false,
+        isEventLocationName: false,
+        isEventLocationAddress: false,
+        isEventStartDateTime: false,
+        isEventEndDateTime: false,
+        isAccessTypeName: false,
+        isFirstName: false,
+        isLastName: false,
+        isInviteQRCode: false,
+        isCompany: false,
+        isPosition: true,
+        isTicketBlockName: false,
+      },
+    ];
+  }
+
+  SMSMessageType(): SMSMessageTypeInterface[] {
+    return [
+      {
+        slug: 'sendamessage',
+        name: 'Send A Message',
+        description: 'Send A Message Type',
+        isSendAMessage: true,
+        isSendGroupMessage: false,
+      },
+      {
+        slug: 'sendgroupmessage',
+        name: 'Send Group Message',
+        description: 'Send Group Message Type',
+        isSendAMessage: false,
+        isSendGroupMessage: true,
+      },
+    ];
+  }
+}

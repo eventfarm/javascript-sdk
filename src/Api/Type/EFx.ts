@@ -529,8 +529,7 @@ export class EFx {
         isRegisterScanView: false,
         isRegisterFailureView: false,
         defaultTextColor: '#FFFFFF',
-        defaultText:
-          'Oh no!  We can&#039;t find you.  Ask a staff member for help.',
+        defaultText: 'Oh no! We cannot find you. Ask a staff member for help.',
         defaultPhoneBackgroundUrl:
           'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/ErrorScreen.png',
         defaultTabletBackgroundUrl:
@@ -625,8 +624,7 @@ export class EFx {
         isRegisterScanView: false,
         isRegisterFailureView: true,
         defaultTextColor: '#FFFFFF',
-        defaultText:
-          'Oh no!  We can&#039;t find you.  Ask a staff member for help.',
+        defaultText: 'Oh no! We cannot find you. Ask a staff member for help.',
         defaultPhoneBackgroundUrl:
           'https://cdn.eventfarm.com/efx/moduleDefaults/accessControl/ErrorScreen.png',
         defaultTabletBackgroundUrl:

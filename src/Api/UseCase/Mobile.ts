@@ -32,6 +32,18 @@ export class Mobile {
   }
 
   /**
+   * @param string - tagId
+   * @param string - eventId
+   * @return Promise|Observable|any
+   */
+  GetInvitationDetailsByTagId(tagId: string, eventId: string): any {
+    return this.restClient.get('Mobile/UseCase/GetInvitationDetailsByTagId', {
+      tagId,
+      eventId,
+    });
+  }
+
+  /**
    * @param string - userId
    * @param string? - query
    * @param number? - page >= 1
