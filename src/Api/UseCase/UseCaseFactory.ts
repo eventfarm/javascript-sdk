@@ -52,6 +52,7 @@ import { Refund } from './Refund';
 import { Region } from './Region';
 import { Report } from './Report';
 import { SMSMessage } from './SMSMessage';
+import { SMSNotification } from './SMSNotification';
 import { Salesforce } from './Salesforce';
 import { SalesforceEventSetting } from './SalesforceEventSetting';
 import { SalesforcePoolSetting } from './SalesforcePoolSetting';
@@ -284,6 +285,10 @@ export class UseCaseFactory {
 
   SMSMessage(): SMSMessage {
     return new SMSMessage(this.restClient);
+  }
+
+  SMSNotification(): SMSNotification {
+    return new SMSNotification(this.restClient);
   }
 
   Salesforce(): Salesforce {

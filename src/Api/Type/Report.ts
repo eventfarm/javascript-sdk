@@ -36,6 +36,7 @@ export interface ReportTypeInterface {
   isWaiver: boolean;
   isActivityLog: boolean;
   isAdminEvents: boolean;
+  isSentSMS: boolean;
 }
 
 export class Report {
@@ -140,6 +141,7 @@ export class Report {
         isWaiver: false,
         isActivityLog: false,
         isAdminEvents: false,
+        isSentSMS: false,
       },
       {
         slug: 'confirmed',
@@ -158,6 +160,7 @@ export class Report {
         isWaiver: false,
         isActivityLog: false,
         isAdminEvents: false,
+        isSentSMS: false,
       },
       {
         slug: 'unconfirmed',
@@ -176,6 +179,7 @@ export class Report {
         isWaiver: false,
         isActivityLog: false,
         isAdminEvents: false,
+        isSentSMS: false,
       },
       {
         slug: 'purchase',
@@ -194,6 +198,7 @@ export class Report {
         isWaiver: false,
         isActivityLog: false,
         isAdminEvents: false,
+        isSentSMS: false,
       },
       {
         slug: 'waitlist',
@@ -212,6 +217,7 @@ export class Report {
         isWaiver: false,
         isActivityLog: false,
         isAdminEvents: false,
+        isSentSMS: false,
       },
       {
         slug: 'checkin',
@@ -230,6 +236,7 @@ export class Report {
         isWaiver: false,
         isActivityLog: false,
         isAdminEvents: false,
+        isSentSMS: false,
       },
       {
         slug: 'transfer',
@@ -248,6 +255,7 @@ export class Report {
         isWaiver: false,
         isActivityLog: false,
         isAdminEvents: false,
+        isSentSMS: false,
       },
       {
         slug: 'ticketblock',
@@ -266,6 +274,7 @@ export class Report {
         isWaiver: false,
         isActivityLog: false,
         isAdminEvents: false,
+        isSentSMS: false,
       },
       {
         slug: 'email',
@@ -284,6 +293,7 @@ export class Report {
         isWaiver: false,
         isActivityLog: false,
         isAdminEvents: false,
+        isSentSMS: false,
       },
       {
         slug: 'sent',
@@ -302,6 +312,7 @@ export class Report {
         isWaiver: false,
         isActivityLog: false,
         isAdminEvents: false,
+        isSentSMS: false,
       },
       {
         slug: 'waiver',
@@ -320,6 +331,7 @@ export class Report {
         isWaiver: true,
         isActivityLog: false,
         isAdminEvents: false,
+        isSentSMS: false,
       },
       {
         slug: 'activitylog',
@@ -338,6 +350,7 @@ export class Report {
         isWaiver: false,
         isActivityLog: true,
         isAdminEvents: false,
+        isSentSMS: false,
       },
       {
         slug: 'adminevents',
@@ -356,6 +369,26 @@ export class Report {
         isWaiver: false,
         isActivityLog: false,
         isAdminEvents: true,
+        isSentSMS: false,
+      },
+      {
+        slug: 'sent-sms',
+        name: 'Sent SMS',
+        description: 'Event Sent SMS Report',
+        isInvitation: false,
+        isConfirmed: false,
+        isUnconfirmed: false,
+        isPurchased: false,
+        isWaitlist: false,
+        isCheckin: false,
+        isTransfer: false,
+        isTicketblockUsers: false,
+        isEmailDeliverability: false,
+        isSentEmails: false,
+        isWaiver: false,
+        isActivityLog: false,
+        isAdminEvents: false,
+        isSentSMS: true,
       },
     ];
   }

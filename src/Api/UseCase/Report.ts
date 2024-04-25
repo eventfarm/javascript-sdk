@@ -227,6 +227,27 @@ export class Report {
   /**
    * @param string - eventId
    * @param string - ownerUserId
+   * @param string? - name
+   * @param string? - reportId
+   * @return Promise|Observable|any
+   */
+  CreateSentSMSReport(
+    eventId: string,
+    ownerUserId: string,
+    name: string = null,
+    reportId: string = null,
+  ): any {
+    return this.restClient.post('Report/UseCase/CreateSentSMSReport', {
+      eventId,
+      ownerUserId,
+      name,
+      reportId,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - ownerUserId
    * @param string - ticketBlockId
    * @param string? - name
    * @param string? - reportId

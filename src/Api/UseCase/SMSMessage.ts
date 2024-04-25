@@ -9,6 +9,291 @@ export class SMSMessage {
 
   // Queries
 
+  /**
+   * @param string - campaignId
+   * @param string[]? - withData SMSNotifications
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @param string? - sortBy sent-at|delivered-at
+   * @param string? - sortDirection ascending|descending
+   * @param string? - query
+   * @param any[]? - categoryFilter alert|event-message|event-message-preview|system
+   * @param any[]? - subCategoryFilter ticketblock|group|checked-in|ticket-type|preview|no_show|waitlist|invitation|opt-in|none
+   * @return Promise|Observable|any
+   */
+  ListSentSMSMessagesForCampaign(
+    campaignId: string,
+    withData: string[] = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    query: string = null,
+    categoryFilter: any[] = null,
+    subCategoryFilter: any[] = null,
+  ): any {
+    return this.restClient.get(
+      'SMSMessage/UseCase/ListSentSMSMessagesForCampaign',
+      {
+        campaignId,
+        withData,
+        page,
+        itemsPerPage,
+        sortBy,
+        sortDirection,
+        query,
+        categoryFilter,
+        subCategoryFilter,
+      },
+    );
+  }
+
+  /**
+   * @param string - eventId
+   * @param string[]? - withData SMSNotifications
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @param string? - sortBy sent-at|delivered-at
+   * @param string? - sortDirection ascending|descending
+   * @param string? - query
+   * @param any[]? - categoryFilter alert|event-message|event-message-preview|system
+   * @param any[]? - subCategoryFilter ticketblock|group|checked-in|ticket-type|preview|no_show|waitlist|invitation|opt-in|none
+   * @return Promise|Observable|any
+   */
+  ListSentSMSMessagesForEvent(
+    eventId: string,
+    withData: string[] = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    query: string = null,
+    categoryFilter: any[] = null,
+    subCategoryFilter: any[] = null,
+  ): any {
+    return this.restClient.get(
+      'SMSMessage/UseCase/ListSentSMSMessagesForEvent',
+      {
+        eventId,
+        withData,
+        page,
+        itemsPerPage,
+        sortBy,
+        sortDirection,
+        query,
+        categoryFilter,
+        subCategoryFilter,
+      },
+    );
+  }
+
+  /**
+   * @param string - poolId
+   * @param string[]? - withData SMSNotifications
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @param string? - sortBy sent-at|delivered-at
+   * @param string? - sortDirection ascending|descending
+   * @param string? - query
+   * @param any[]? - categoryFilter alert|event-message|event-message-preview|system
+   * @param any[]? - subCategoryFilter ticketblock|group|checked-in|ticket-type|preview|no_show|waitlist|invitation|opt-in|none
+   * @return Promise|Observable|any
+   */
+  ListSentSMSMessagesForPool(
+    poolId: string,
+    withData: string[] = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    query: string = null,
+    categoryFilter: any[] = null,
+    subCategoryFilter: any[] = null,
+  ): any {
+    return this.restClient.get(
+      'SMSMessage/UseCase/ListSentSMSMessagesForPool',
+      {
+        poolId,
+        withData,
+        page,
+        itemsPerPage,
+        sortBy,
+        sortDirection,
+        query,
+        categoryFilter,
+        subCategoryFilter,
+      },
+    );
+  }
+
+  /**
+   * @param string - sentTo
+   * @param string - eventId
+   * @param string[]? - withData SMSNotifications
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @param string? - sortBy sent-at|delivered-at
+   * @param string? - sortDirection ascending|descending
+   * @param string? - query
+   * @param any[]? - categoryFilter alert|event-message|event-message-preview|system
+   * @param any[]? - subCategoryFilter ticketblock|group|checked-in|ticket-type|preview|no_show|waitlist|invitation|opt-in|none
+   * @return Promise|Observable|any
+   */
+  ListSentSMSMessagesForSentToForEvent(
+    sentTo: string,
+    eventId: string,
+    withData: string[] = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    query: string = null,
+    categoryFilter: any[] = null,
+    subCategoryFilter: any[] = null,
+  ): any {
+    return this.restClient.get(
+      'SMSMessage/UseCase/ListSentSMSMessagesForSentToForEvent',
+      {
+        sentTo,
+        eventId,
+        withData,
+        page,
+        itemsPerPage,
+        sortBy,
+        sortDirection,
+        query,
+        categoryFilter,
+        subCategoryFilter,
+      },
+    );
+  }
+
+  /**
+   * @param string - sentTo
+   * @param string - poolId
+   * @param string[]? - withData SMSNotifications
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @param string? - sortBy sent-at|delivered-at
+   * @param string? - sortDirection ascending|descending
+   * @param string? - query
+   * @param any[]? - categoryFilter alert|event-message|event-message-preview|system
+   * @param any[]? - subCategoryFilter ticketblock|group|checked-in|ticket-type|preview|no_show|waitlist|invitation|opt-in|none
+   * @return Promise|Observable|any
+   */
+  ListSentSMSMessagesForSentToForPool(
+    sentTo: string,
+    poolId: string,
+    withData: string[] = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    query: string = null,
+    categoryFilter: any[] = null,
+    subCategoryFilter: any[] = null,
+  ): any {
+    return this.restClient.get(
+      'SMSMessage/UseCase/ListSentSMSMessagesForSentToForPool',
+      {
+        sentTo,
+        poolId,
+        withData,
+        page,
+        itemsPerPage,
+        sortBy,
+        sortDirection,
+        query,
+        categoryFilter,
+        subCategoryFilter,
+      },
+    );
+  }
+
+  /**
+   * @param string - userId
+   * @param string - eventId
+   * @param string[]? - withData SMSNotifications
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @param string? - sortBy sent-at|delivered-at
+   * @param string? - sortDirection ascending|descending
+   * @param string? - query
+   * @param any[]? - categoryFilter alert|event-message|event-message-preview|system
+   * @param any[]? - subCategoryFilter ticketblock|group|checked-in|ticket-type|preview|no_show|waitlist|invitation|opt-in|none
+   * @return Promise|Observable|any
+   */
+  ListSentSMSMessagesForUserForEvent(
+    userId: string,
+    eventId: string,
+    withData: string[] = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    query: string = null,
+    categoryFilter: any[] = null,
+    subCategoryFilter: any[] = null,
+  ): any {
+    return this.restClient.get(
+      'SMSMessage/UseCase/ListSentSMSMessagesForUserForEvent',
+      {
+        userId,
+        eventId,
+        withData,
+        page,
+        itemsPerPage,
+        sortBy,
+        sortDirection,
+        query,
+        categoryFilter,
+        subCategoryFilter,
+      },
+    );
+  }
+
+  /**
+   * @param string - userId
+   * @param string - poolId
+   * @param string[]? - withData SMSNotifications
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-100
+   * @param string? - sortBy sent-at|delivered-at
+   * @param string? - sortDirection ascending|descending
+   * @param string? - query
+   * @param any[]? - categoryFilter alert|event-message|event-message-preview|system
+   * @param any[]? - subCategoryFilter ticketblock|group|checked-in|ticket-type|preview|no_show|waitlist|invitation|opt-in|none
+   * @return Promise|Observable|any
+   */
+  ListSentSMSMessagesForUserForPool(
+    userId: string,
+    poolId: string,
+    withData: string[] = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    query: string = null,
+    categoryFilter: any[] = null,
+    subCategoryFilter: any[] = null,
+  ): any {
+    return this.restClient.get(
+      'SMSMessage/UseCase/ListSentSMSMessagesForUserForPool',
+      {
+        userId,
+        poolId,
+        withData,
+        page,
+        itemsPerPage,
+        sortBy,
+        sortDirection,
+        query,
+        categoryFilter,
+        subCategoryFilter,
+      },
+    );
+  }
+
   // Commands
 
   /**
@@ -266,8 +551,8 @@ export class SMSMessage {
   /**
    * @param string - toNumber
    * @param string - messageContent
-   * @param string - categoryType alert|event_message|event_message_preview
-   * @param string - subCategoryType ticketblock|group|checked_in|ticket_type|preview|no_show|waitlist|none
+   * @param string - categoryType alert|event-message|event-message-preview|system
+   * @param string - subCategoryType ticketblock|group|checked-in|ticket-type|preview|no_show|waitlist|invitation|opt-in|none
    * @param string - poolId
    * @param string? - mediaUrl
    * @param boolean? - isWhatsApp true|false
