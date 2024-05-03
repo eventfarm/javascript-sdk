@@ -315,7 +315,7 @@ export class SMSMessage {
       },
       {
         slug: '[LAST_NAME]',
-        name: 'LastName',
+        name: 'Last Name',
         description: null,
         isEventName: false,
         isEventLocationName: false,
