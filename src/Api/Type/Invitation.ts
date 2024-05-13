@@ -29,6 +29,14 @@ export interface InvitationActionTypeInterface {
   isUnsubscribed: boolean;
   isUnknown: boolean;
 }
+export interface InvitationBulkUpdateStatusTypeInterface {
+  slug: string;
+  name: string;
+  description?: string;
+  isAffirmative: boolean;
+  isUnconfirmed: boolean;
+  isRecycled: boolean;
+}
 export interface InvitationCreationTypeInterface {
   slug: string;
   name: string;
@@ -410,6 +418,35 @@ export class Invitation {
         isBlocked: false,
         isUnsubscribed: false,
         isUnknown: true,
+      },
+    ];
+  }
+
+  InvitationBulkUpdateStatusType(): InvitationBulkUpdateStatusTypeInterface[] {
+    return [
+      {
+        slug: 'affirmative',
+        name: 'Affirmative',
+        description: null,
+        isAffirmative: true,
+        isUnconfirmed: false,
+        isRecycled: false,
+      },
+      {
+        slug: 'unconfirmed',
+        name: 'Unconfirmed',
+        description: null,
+        isAffirmative: false,
+        isUnconfirmed: true,
+        isRecycled: false,
+      },
+      {
+        slug: 'recycled',
+        name: 'Deleted',
+        description: null,
+        isAffirmative: false,
+        isUnconfirmed: false,
+        isRecycled: true,
       },
     ];
   }

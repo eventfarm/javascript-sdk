@@ -202,6 +202,7 @@ export class Invitation {
    * @param number? - itemsPerPage 1-250
    * @param any[]? - healthPassScoreFilter green|red|amber|unknown
    * @param any[]? - excludeHealthPassScoreFilter green|red|amber|unknown
+   * @param any[]? - stackIds
    * @return Promise|Observable|any
    */
   ListInvitationsForEvent(
@@ -218,6 +219,7 @@ export class Invitation {
     itemsPerPage: number = null,
     healthPassScoreFilter: any[] = null,
     excludeHealthPassScoreFilter: any[] = null,
+    stackIds: any[] = null,
   ): any {
     return this.restClient.get('Invitation/UseCase/ListInvitationsForEvent', {
       eventId,
@@ -233,6 +235,7 @@ export class Invitation {
       itemsPerPage,
       healthPassScoreFilter,
       excludeHealthPassScoreFilter,
+      stackIds,
     });
   }
 
@@ -717,6 +720,30 @@ export class Invitation {
   }
 
   /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param number? - checkInAt
+   * @param boolean? - isWebCheckIn true|false
+   * @return Promise|Observable|any
+   */
+  CheckInInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    checkInAt: number = null,
+    isWebCheckIn: boolean = null,
+  ): any {
+    return this.restClient.post('Invitation/UseCase/CheckInInvitations', {
+      invitationIds,
+      eventId,
+      userId,
+      checkInAt,
+      isWebCheckIn,
+    });
+  }
+
+  /**
    * @param string - registrantId
    * @return Promise|Observable|any
    */
@@ -1188,6 +1215,36 @@ export class Invitation {
   }
 
   /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param any[]? - emails
+   * @param boolean? - shouldSendArrivalAlert true|false
+   * @param any[]? - phoneNumbers
+   * @return Promise|Observable|any
+   */
+  SetArrivalAlertEmailsAndPhoneNumbersForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    emails: any[] = null,
+    shouldSendArrivalAlert: boolean = null,
+    phoneNumbers: any[] = null,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetArrivalAlertEmailsAndPhoneNumbersForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        emails,
+        shouldSendArrivalAlert,
+        phoneNumbers,
+      },
+    );
+  }
+
+  /**
    * @param string - invitationId
    * @param string? - checkInNotes
    * @return Promise|Observable|any
@@ -1200,6 +1257,30 @@ export class Invitation {
   }
 
   /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param string? - checkInNotes
+   * @return Promise|Observable|any
+   */
+  SetCheckInNotesForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    checkInNotes: string = null,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetCheckInNotesForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        checkInNotes,
+      },
+    );
+  }
+
+  /**
    * @param string - invitationId
    * @param number? - guestPassCount >= -1
    * @return Promise|Observable|any
@@ -1209,6 +1290,30 @@ export class Invitation {
       invitationId,
       guestPassCount,
     });
+  }
+
+  /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param number? - guestPassCount
+   * @return Promise|Observable|any
+   */
+  SetGuestPassCountForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    guestPassCount: number = null,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetGuestPassCountForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        guestPassCount,
+      },
+    );
   }
 
   /**
@@ -1227,6 +1332,54 @@ export class Invitation {
   }
 
   /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param string? - checkInNotes
+   * @return Promise|Observable|any
+   */
+  SetInvitationNotesForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    checkInNotes: string = null,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetInvitationNotesForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        checkInNotes,
+      },
+    );
+  }
+
+  /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param number - inviteCount >= 1
+   * @return Promise|Observable|any
+   */
+  SetInviteCountForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    inviteCount: number,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetInviteCountForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        inviteCount,
+      },
+    );
+  }
+
+  /**
    * @param string - invitationId
    * @param string? - proxyEmail
    * @return Promise|Observable|any
@@ -1236,6 +1389,30 @@ export class Invitation {
       invitationId,
       proxyEmail,
     });
+  }
+
+  /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param string? - proxyEmail
+   * @return Promise|Observable|any
+   */
+  SetProxyEmailForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    proxyEmail: string = null,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetProxyEmailForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        proxyEmail,
+      },
+    );
   }
 
   /**
@@ -1257,6 +1434,51 @@ export class Invitation {
       answerIds,
       text,
     });
+  }
+
+  /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param string - stackId
+   * @return Promise|Observable|any
+   */
+  SetStackForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    stackId: string,
+  ): any {
+    return this.restClient.post('Invitation/UseCase/SetStackForInvitations', {
+      invitationIds,
+      eventId,
+      userId,
+      stackId,
+    });
+  }
+
+  /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param string - statusType
+   * @return Promise|Observable|any
+   */
+  SetStatusesForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    statusType: string,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetStatusesForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        statusType,
+      },
+    );
   }
 
   /**
