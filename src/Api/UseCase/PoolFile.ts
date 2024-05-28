@@ -60,7 +60,7 @@ export class PoolFile {
 
   /**
    * @param string - poolId
-   * @param any - image image/jpeg|image/png
+   * @param any - image image/jpeg|image/png|image/gif
    * @param string - poolFileCategoryType profile|efx|other
    * @param string - fileName
    * @param string? - poolAssetId

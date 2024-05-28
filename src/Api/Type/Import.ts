@@ -28,6 +28,7 @@ export interface ImportColumnHeaderTypeInterface {
   isTicketType: boolean;
   isTitle: boolean;
   isProxyEmail: boolean;
+  isProfileImageUrl: boolean;
 }
 
 export class Import {
@@ -60,6 +61,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'address2',
@@ -88,6 +90,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'arrivalAlertEmail',
@@ -116,6 +119,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'arrivalAlertSMS',
@@ -144,6 +148,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'checkInNotes',
@@ -172,6 +177,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'city',
@@ -200,6 +206,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'company',
@@ -228,6 +235,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'country',
@@ -256,6 +264,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'email',
@@ -284,6 +293,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'firstName',
@@ -312,6 +322,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'ignored',
@@ -340,6 +351,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'invitationNotes',
@@ -368,6 +380,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'lastName',
@@ -396,6 +409,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'other',
@@ -424,6 +438,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'position',
@@ -452,6 +467,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'postalCode',
@@ -480,6 +496,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'quantity',
@@ -508,6 +525,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'state',
@@ -536,6 +554,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'telephone',
@@ -564,6 +583,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'ticketStatus',
@@ -592,6 +612,7 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'ticketType',
@@ -620,6 +641,7 @@ export class Import {
         isTicketType: true,
         isTitle: false,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'title',
@@ -648,6 +670,7 @@ export class Import {
         isTicketType: false,
         isTitle: true,
         isProxyEmail: false,
+        isProfileImageUrl: false,
       },
       {
         slug: 'proxyEmail',
@@ -676,6 +699,36 @@ export class Import {
         isTicketType: false,
         isTitle: false,
         isProxyEmail: true,
+        isProfileImageUrl: false,
+      },
+      {
+        slug: 'profileImageUrl',
+        name: 'Profile Image Url',
+        description: null,
+        isAddress1: false,
+        isAddress2: false,
+        isArrivalAlertEmail: false,
+        isArrivalAlertSMS: false,
+        isCheckInNotes: false,
+        isCity: false,
+        isCompany: false,
+        isCountry: false,
+        isEmail: false,
+        isFirstName: false,
+        isIgnored: false,
+        isInvitationNotes: false,
+        isLastName: false,
+        isOther: false,
+        isPosition: false,
+        isPostalCode: false,
+        isQuantity: false,
+        isState: false,
+        isTelephone: false,
+        isTicketStatus: false,
+        isTicketType: false,
+        isTitle: false,
+        isProxyEmail: false,
+        isProfileImageUrl: true,
       },
     ];
   }

@@ -28,6 +28,18 @@ export class User {
   }
 
   /**
+   * @param string - poolId
+   * @param string - userId
+   * @return Promise|Observable|any
+   */
+  GetProfileImageForUser(poolId: string, userId: string): any {
+    return this.restClient.get('User/UseCase/GetProfileImageForUser', {
+      poolId,
+      userId,
+    });
+  }
+
+  /**
    * @param string - userId
    * @param string[]? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
@@ -439,6 +451,18 @@ export class User {
   }
 
   /**
+   * @param string - poolId
+   * @param string - userId
+   * @return Promise|Observable|any
+   */
+  DeleteProfileImageForUser(poolId: string, userId: string): any {
+    return this.restClient.post('User/UseCase/DeleteProfileImageForUser', {
+      poolId,
+      userId,
+    });
+  }
+
+  /**
    * @param string - userId
    * @param string - eventId
    * @return Promise|Observable|any
@@ -554,6 +578,23 @@ export class User {
       eventRole,
       authenticatedUserId,
     });
+  }
+
+  /**
+   * @param string - poolId
+   * @param string - userId
+   * @param any - image image/jpeg|image/png|image/gif
+   * @return Promise|Observable|any
+   */
+  SetProfileImageForUser(poolId: string, userId: string, image: any): any {
+    return this.restClient.postMultipart(
+      'User/UseCase/SetProfileImageForUser',
+      {
+        poolId,
+        userId,
+        image,
+      },
+    );
   }
 
   /**

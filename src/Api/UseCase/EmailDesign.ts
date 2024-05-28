@@ -162,7 +162,7 @@ export class EmailDesign {
 
   /**
    * @param string - eventId
-   * @param any - image image/jpeg|image/png
+   * @param any - image image/jpeg|image/png|image/gif
    * @param string? - emailDesignImageId
    * @return Promise|Observable|any
    */

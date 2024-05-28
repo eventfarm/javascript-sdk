@@ -202,6 +202,7 @@ export class Invitation {
    * @param number? - itemsPerPage 1-250
    * @param any[]? - healthPassScoreFilter green|red|amber|unknown
    * @param any[]? - excludeHealthPassScoreFilter green|red|amber|unknown
+   * @param any[]? - stackIds
    * @return Promise|Observable|any
    */
   ListInvitationsForEvent(
@@ -218,6 +219,7 @@ export class Invitation {
     itemsPerPage: number = null,
     healthPassScoreFilter: any[] = null,
     excludeHealthPassScoreFilter: any[] = null,
+    stackIds: any[] = null,
   ): any {
     return this.restClient.get('Invitation/UseCase/ListInvitationsForEvent', {
       eventId,
@@ -233,6 +235,7 @@ export class Invitation {
       itemsPerPage,
       healthPassScoreFilter,
       excludeHealthPassScoreFilter,
+      stackIds,
     });
   }
 
@@ -531,6 +534,63 @@ export class Invitation {
   }
 
   /**
+   * @param string - eventId
+   * @param string - groupId
+   * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt|GuestPassAvailabilityCounts|RelatedInvitation
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
+   * @param string? - query
+   * @param any[]? - statusFilter assigned|purchased|confirmed-by-rsvp|declined-by-rsvp|left-behind|not-yet-purchased|registered|unconfirmed|recycled|not-yet-registered|waitlisted
+   * @param number? - lastModifiedTimestamp
+   * @param boolean? - isCheckedIn true|false
+   * @param string? - sortBy name|first-name|last-name|last-action|last-action-name|last-notified|created-at|modified-at|checked-in-at
+   * @param string? - sortDirection ascending|descending
+   * @param number? - page >= 1
+   * @param number? - itemsPerPage 1-250
+   * @param any[]? - healthPassScoreFilter green|red|amber|unknown
+   * @param any[]? - excludeHealthPassScoreFilter green|red|amber|unknown
+   * @param any[]? - stackIds
+   * @return Promise|Observable|any
+   */
+  ListInvitationsForUsersInGroupForEvent(
+    eventId: string,
+    groupId: string,
+    withData: string[] = null,
+    withUserAttributes: any[] = null,
+    query: string = null,
+    statusFilter: any[] = null,
+    lastModifiedTimestamp: number = null,
+    isCheckedIn: boolean = null,
+    sortBy: string = null,
+    sortDirection: string = null,
+    page: number = null,
+    itemsPerPage: number = null,
+    healthPassScoreFilter: any[] = null,
+    excludeHealthPassScoreFilter: any[] = null,
+    stackIds: any[] = null,
+  ): any {
+    return this.restClient.get(
+      'Invitation/UseCase/ListInvitationsForUsersInGroupForEvent',
+      {
+        eventId,
+        groupId,
+        withData,
+        withUserAttributes,
+        query,
+        statusFilter,
+        lastModifiedTimestamp,
+        isCheckedIn,
+        sortBy,
+        sortDirection,
+        page,
+        itemsPerPage,
+        healthPassScoreFilter,
+        excludeHealthPassScoreFilter,
+        stackIds,
+      },
+    );
+  }
+
+  /**
    * @param string - relatedInvitationId
    * @param string[]? - withData UserHealthPasses|UserIdentifiers|StackAndTicketType|QuestionResponses|maxLastModifiedAt|GuestPassAvailabilityCounts|RelatedInvitation
    * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
@@ -717,6 +777,30 @@ export class Invitation {
   }
 
   /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param number? - checkInAt
+   * @param boolean? - isWebCheckIn true|false
+   * @return Promise|Observable|any
+   */
+  CheckInInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    checkInAt: number = null,
+    isWebCheckIn: boolean = null,
+  ): any {
+    return this.restClient.post('Invitation/UseCase/CheckInInvitations', {
+      invitationIds,
+      eventId,
+      userId,
+      checkInAt,
+      isWebCheckIn,
+    });
+  }
+
+  /**
    * @param string - registrantId
    * @return Promise|Observable|any
    */
@@ -754,6 +838,7 @@ export class Invitation {
    * @param string? - externalId
    * @param any[]? - questionResponses
    * @param string? - proxyEmail
+   * @param any? - profileImageUrl image/jpeg|image/png|image/gif
    * @return Promise|Observable|any
    */
   CreateInvitation(
@@ -781,33 +866,38 @@ export class Invitation {
     externalId: string = null,
     questionResponses: any[] = null,
     proxyEmail: string = null,
+    profileImageUrl: any = null,
   ): any {
-    return this.restClient.post('Invitation/UseCase/CreateInvitation', {
-      eventId,
-      stackId,
-      invitationStatus,
-      inviteSource,
-      isCheckedIn,
-      inviteCount,
-      email,
-      firstName,
-      lastName,
-      company,
-      position,
-      checkInNotes,
-      invitationId,
-      shouldSendInvitation,
-      invitationNotes,
-      title,
-      telephone,
-      other,
-      createdTime,
-      forceDuplicateInvitations,
-      relatedInvitationId,
-      externalId,
-      questionResponses,
-      proxyEmail,
-    });
+    return this.restClient.postMultipart(
+      'Invitation/UseCase/CreateInvitation',
+      {
+        eventId,
+        stackId,
+        invitationStatus,
+        inviteSource,
+        isCheckedIn,
+        inviteCount,
+        email,
+        firstName,
+        lastName,
+        company,
+        position,
+        checkInNotes,
+        invitationId,
+        shouldSendInvitation,
+        invitationNotes,
+        title,
+        telephone,
+        other,
+        createdTime,
+        forceDuplicateInvitations,
+        relatedInvitationId,
+        externalId,
+        questionResponses,
+        proxyEmail,
+        profileImageUrl,
+      },
+    );
   }
 
   /**
@@ -1188,6 +1278,36 @@ export class Invitation {
   }
 
   /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param any[]? - emails
+   * @param boolean? - shouldSendArrivalAlert true|false
+   * @param any[]? - phoneNumbers
+   * @return Promise|Observable|any
+   */
+  SetArrivalAlertEmailsAndPhoneNumbersForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    emails: any[] = null,
+    shouldSendArrivalAlert: boolean = null,
+    phoneNumbers: any[] = null,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetArrivalAlertEmailsAndPhoneNumbersForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        emails,
+        shouldSendArrivalAlert,
+        phoneNumbers,
+      },
+    );
+  }
+
+  /**
    * @param string - invitationId
    * @param string? - checkInNotes
    * @return Promise|Observable|any
@@ -1200,6 +1320,30 @@ export class Invitation {
   }
 
   /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param string? - checkInNotes
+   * @return Promise|Observable|any
+   */
+  SetCheckInNotesForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    checkInNotes: string = null,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetCheckInNotesForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        checkInNotes,
+      },
+    );
+  }
+
+  /**
    * @param string - invitationId
    * @param number? - guestPassCount >= -1
    * @return Promise|Observable|any
@@ -1209,6 +1353,30 @@ export class Invitation {
       invitationId,
       guestPassCount,
     });
+  }
+
+  /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param number? - guestPassCount
+   * @return Promise|Observable|any
+   */
+  SetGuestPassCountForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    guestPassCount: number = null,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetGuestPassCountForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        guestPassCount,
+      },
+    );
   }
 
   /**
@@ -1227,6 +1395,54 @@ export class Invitation {
   }
 
   /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param string? - checkInNotes
+   * @return Promise|Observable|any
+   */
+  SetInvitationNotesForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    checkInNotes: string = null,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetInvitationNotesForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        checkInNotes,
+      },
+    );
+  }
+
+  /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param number - inviteCount >= 1
+   * @return Promise|Observable|any
+   */
+  SetInviteCountForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    inviteCount: number,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetInviteCountForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        inviteCount,
+      },
+    );
+  }
+
+  /**
    * @param string - invitationId
    * @param string? - proxyEmail
    * @return Promise|Observable|any
@@ -1236,6 +1452,30 @@ export class Invitation {
       invitationId,
       proxyEmail,
     });
+  }
+
+  /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param string? - proxyEmail
+   * @return Promise|Observable|any
+   */
+  SetProxyEmailForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    proxyEmail: string = null,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetProxyEmailForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        proxyEmail,
+      },
+    );
   }
 
   /**
@@ -1257,6 +1497,51 @@ export class Invitation {
       answerIds,
       text,
     });
+  }
+
+  /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param string - stackId
+   * @return Promise|Observable|any
+   */
+  SetStackForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    stackId: string,
+  ): any {
+    return this.restClient.post('Invitation/UseCase/SetStackForInvitations', {
+      invitationIds,
+      eventId,
+      userId,
+      stackId,
+    });
+  }
+
+  /**
+   * @param any[] - invitationIds
+   * @param string - eventId
+   * @param string - userId
+   * @param string - statusType
+   * @return Promise|Observable|any
+   */
+  SetStatusesForInvitations(
+    invitationIds: any[],
+    eventId: string,
+    userId: string,
+    statusType: string,
+  ): any {
+    return this.restClient.post(
+      'Invitation/UseCase/SetStatusesForInvitations',
+      {
+        invitationIds,
+        eventId,
+        userId,
+        statusType,
+      },
+    );
   }
 
   /**
@@ -1287,6 +1572,7 @@ export class Invitation {
    * @param string? - checkInNotes
    * @param string? - relatedInvitationId
    * @param any[]? - questionResponses
+   * @param any? - profileImageUrl image/jpeg|image/png|image/gif
    * @return Promise|Observable|any
    */
   UpdateInvitation(
@@ -1307,25 +1593,30 @@ export class Invitation {
     checkInNotes: string = null,
     relatedInvitationId: string = null,
     questionResponses: any[] = null,
+    profileImageUrl: any = null,
   ): any {
-    return this.restClient.post('Invitation/UseCase/UpdateInvitation', {
-      invitationId,
-      stackId,
-      invitationStatus,
-      company,
-      position,
-      email,
-      firstName,
-      lastName,
-      other,
-      telephone,
-      updatedTime,
-      forceDuplicateInvitations,
-      inviteCount,
-      title,
-      checkInNotes,
-      relatedInvitationId,
-      questionResponses,
-    });
+    return this.restClient.postMultipart(
+      'Invitation/UseCase/UpdateInvitation',
+      {
+        invitationId,
+        stackId,
+        invitationStatus,
+        company,
+        position,
+        email,
+        firstName,
+        lastName,
+        other,
+        telephone,
+        updatedTime,
+        forceDuplicateInvitations,
+        inviteCount,
+        title,
+        checkInNotes,
+        relatedInvitationId,
+        questionResponses,
+        profileImageUrl,
+      },
+    );
   }
 }

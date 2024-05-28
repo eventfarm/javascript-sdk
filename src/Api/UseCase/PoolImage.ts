@@ -47,7 +47,7 @@ export class PoolImage {
 
   /**
    * @param string - poolId
-   * @param any - image image/jpeg|image/png
+   * @param any - image image/jpeg|image/png|image/gif
    * @param string - poolImageType
    * @param string? - poolImageId
    * @return Promise|Observable|any
