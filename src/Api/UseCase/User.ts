@@ -127,6 +127,18 @@ export class User {
   }
 
   /**
+   * @param number? - page
+   * @param number? - itemsPerPage
+   * @return Promise|Observable|any
+   */
+  ListAdmins(page: number = null, itemsPerPage: number = null): any {
+    return this.restClient.get('User/UseCase/ListAdmins', {
+      page,
+      itemsPerPage,
+    });
+  }
+
+  /**
    * @param string - exhibitorId
    * @param string - poolId
    * @param string[]? - withData UserIdentifiers|UserNames|UserAttributes
@@ -298,6 +310,16 @@ export class User {
 
   /**
    * @param string - userId
+   * @return Promise|Observable|any
+   */
+  AddAdminUserAccess(userId: string): any {
+    return this.restClient.post('User/UseCase/AddAdminUserAccess', {
+      userId,
+    });
+  }
+
+  /**
+   * @param string - userId
    * @param string - groupId
    * @return Promise|Observable|any
    */
@@ -458,6 +480,16 @@ export class User {
   DeleteProfileImageForUser(poolId: string, userId: string): any {
     return this.restClient.post('User/UseCase/DeleteProfileImageForUser', {
       poolId,
+      userId,
+    });
+  }
+
+  /**
+   * @param string - userId
+   * @return Promise|Observable|any
+   */
+  RemoveAdminUserAccess(userId: string): any {
+    return this.restClient.post('User/UseCase/RemoveAdminUserAccess', {
       userId,
     });
   }

@@ -1491,8 +1491,8 @@ export class Pool {
         isAllowInternalPaymentProcessor: false,
       },
       {
-        slug: 'guest-pass',
-        name: 'Guest Pass',
+        slug: 'custom-nike-localized-pp-tou',
+        name: 'Custom: Nike - Localized PP &amp; ToU',
         description: null,
         isSalesforce: false,
         isApiAccess: false,
@@ -1527,8 +1527,8 @@ export class Pool {
         isSessionManagement: false,
         isBetaFeatures: false,
         isDisablePayments: false,
-        isGuestPass: true,
-        isCustomNikeLocalizedPPToU: false,
+        isGuestPass: false,
+        isCustomNikeLocalizedPPToU: true,
         isAllowInternalPaymentProcessor: false,
       },
       {
