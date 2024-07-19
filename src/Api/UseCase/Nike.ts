@@ -33,8 +33,9 @@ export class Nike {
   /**
    * @param string - eventId
    * @param string - applicationSlug
-   * @param string? - start
-   * @param string? - end
+   * @param string? - applicationLocation
+   * @param number? - start
+   * @param number? - end
    * @param string? - gender
    * @param string? - sport
    * @param string? - country
@@ -43,8 +44,9 @@ export class Nike {
   GetAllUsersForApplicationForParis2024(
     eventId: string,
     applicationSlug: string,
-    start: string = null,
-    end: string = null,
+    applicationLocation: string = null,
+    start: number = null,
+    end: number = null,
     gender: string = null,
     sport: string = null,
     country: string = null,
@@ -54,6 +56,7 @@ export class Nike {
       {
         eventId,
         applicationSlug,
+        applicationLocation,
         start,
         end,
         gender,
