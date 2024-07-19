@@ -4,6 +4,7 @@ import { ActivityLog } from './ActivityLog';
 import { Allotment } from './Allotment';
 import { Answer } from './Answer';
 import { AppVersion } from './AppVersion';
+import { AuditLog } from './AuditLog';
 import { BugReport } from './BugReport';
 import { Campaign } from './Campaign';
 import { Canvas } from './Canvas';
@@ -31,6 +32,7 @@ import { Invitation } from './Invitation';
 import { Lead } from './Lead';
 import { Link } from './Link';
 import { Mobile } from './Mobile';
+import { Nike } from './Nike';
 import { OAuth } from './OAuth';
 import { OAuth2 } from './OAuth2';
 import { Payment } from './Payment';
@@ -93,6 +95,10 @@ export class UseCaseFactory {
 
   AppVersion(): AppVersion {
     return new AppVersion(this.restClient);
+  }
+
+  AuditLog(): AuditLog {
+    return new AuditLog(this.restClient);
   }
 
   BugReport(): BugReport {
@@ -201,6 +207,10 @@ export class UseCaseFactory {
 
   Mobile(): Mobile {
     return new Mobile(this.restClient);
+  }
+
+  Nike(): Nike {
+    return new Nike(this.restClient);
   }
 
   OAuth(): OAuth {

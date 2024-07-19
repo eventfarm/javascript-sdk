@@ -1,5 +1,6 @@
 import { ActivityLog } from './ActivityLog';
 import { AppVersion } from './AppVersion';
+import { AuditLog } from './AuditLog';
 import { EFx } from './EFx';
 import { EmailDesign } from './EmailDesign';
 import { EmailMessage } from './EmailMessage';
@@ -41,6 +42,10 @@ export class TypeFactory {
 
   AppVersion(): AppVersion {
     return new AppVersion();
+  }
+
+  AuditLog(): AuditLog {
+    return new AuditLog();
   }
 
   EFx(): EFx {
