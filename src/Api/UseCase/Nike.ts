@@ -39,6 +39,7 @@ export class Nike {
    * @param string? - gender
    * @param string? - sport
    * @param string? - country
+   * @param string? - ticketTypeName
    * @return Promise|Observable|any
    */
   GetAllUsersForApplicationForParis2024(
@@ -50,6 +51,7 @@ export class Nike {
     gender: string = null,
     sport: string = null,
     country: string = null,
+    ticketTypeName: string = null,
   ): any {
     return this.restClient.get(
       'Nike/UseCase/GetAllUsersForApplicationForParis2024',
@@ -62,6 +64,7 @@ export class Nike {
         gender,
         sport,
         country,
+        ticketTypeName,
       },
     );
   }
@@ -73,6 +76,7 @@ export class Nike {
    * @param string? - gender
    * @param string? - sport
    * @param string? - country
+   * @param string? - ticketTypeName
    * @return Promise|Observable|any
    */
   GetDashboardStatsForParis2024(
@@ -82,6 +86,7 @@ export class Nike {
     gender: string = null,
     sport: string = null,
     country: string = null,
+    ticketTypeName: string = null,
   ): any {
     return this.restClient.get('Nike/UseCase/GetDashboardStatsForParis2024', {
       eventId,
@@ -90,6 +95,7 @@ export class Nike {
       gender,
       sport,
       country,
+      ticketTypeName,
     });
   }
 
