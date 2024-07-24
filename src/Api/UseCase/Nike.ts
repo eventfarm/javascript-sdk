@@ -99,5 +99,26 @@ export class Nike {
     });
   }
 
+  /**
+   * @param string - eventId
+   * @param string - questionText
+   * @param string? - ticketTypeName
+   * @return Promise|Observable|any
+   */
+  GetResponsesForEventForForQuestionTextAndTicketTypeName(
+    eventId: string,
+    questionText: string,
+    ticketTypeName: string = null,
+  ): any {
+    return this.restClient.get(
+      'Nike/UseCase/GetResponsesForEventForForQuestionTextAndTicketTypeName',
+      {
+        eventId,
+        questionText,
+        ticketTypeName,
+      },
+    );
+  }
+
   // Commands
 }
