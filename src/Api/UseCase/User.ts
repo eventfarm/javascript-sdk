@@ -616,15 +616,22 @@ export class User {
    * @param string - poolId
    * @param string - userId
    * @param any - image image/jpeg|image/png|image/gif
+   * @param string? - invitationId
    * @return Promise|Observable|any
    */
-  SetProfileImageForUser(poolId: string, userId: string, image: any): any {
+  SetProfileImageForUser(
+    poolId: string,
+    userId: string,
+    image: any,
+    invitationId: string = null,
+  ): any {
     return this.restClient.postMultipart(
       'User/UseCase/SetProfileImageForUser',
       {
         poolId,
         userId,
         image,
+        invitationId,
       },
     );
   }

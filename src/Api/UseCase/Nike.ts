@@ -40,6 +40,8 @@ export class Nike {
    * @param string? - sport
    * @param string? - country
    * @param string? - ticketTypeName
+   * @param string? - smRep
+   * @param string? - submittedBy
    * @return Promise|Observable|any
    */
   GetAllUsersForApplicationForParis2024(
@@ -52,6 +54,8 @@ export class Nike {
     sport: string = null,
     country: string = null,
     ticketTypeName: string = null,
+    smRep: string = null,
+    submittedBy: string = null,
   ): any {
     return this.restClient.get(
       'Nike/UseCase/GetAllUsersForApplicationForParis2024',
@@ -65,6 +69,8 @@ export class Nike {
         sport,
         country,
         ticketTypeName,
+        smRep,
+        submittedBy,
       },
     );
   }
@@ -77,6 +83,8 @@ export class Nike {
    * @param string? - sport
    * @param string? - country
    * @param string? - ticketTypeName
+   * @param string? - smRep
+   * @param string? - submittedBy
    * @return Promise|Observable|any
    */
   GetDashboardStatsForParis2024(
@@ -87,6 +95,8 @@ export class Nike {
     sport: string = null,
     country: string = null,
     ticketTypeName: string = null,
+    smRep: string = null,
+    submittedBy: string = null,
   ): any {
     return this.restClient.get('Nike/UseCase/GetDashboardStatsForParis2024', {
       eventId,
@@ -96,7 +106,30 @@ export class Nike {
       sport,
       country,
       ticketTypeName,
+      smRep,
+      submittedBy,
     });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - questionText
+   * @param string? - ticketTypeName
+   * @return Promise|Observable|any
+   */
+  GetResponsesForEventForForQuestionTextAndTicketTypeName(
+    eventId: string,
+    questionText: string,
+    ticketTypeName: string = null,
+  ): any {
+    return this.restClient.get(
+      'Nike/UseCase/GetResponsesForEventForForQuestionTextAndTicketTypeName',
+      {
+        eventId,
+        questionText,
+        ticketTypeName,
+      },
+    );
   }
 
   // Commands

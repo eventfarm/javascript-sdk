@@ -11,6 +11,21 @@ export class SalesforcePoolSetting {
 
   /**
    * @param string - poolId
+   * @param string - userId
+   * @return Promise|Observable|any
+   */
+  GetSalesforceIntegrationLoginURI(poolId: string, userId: string): any {
+    return this.restClient.get(
+      'SalesforcePoolSetting/UseCase/GetSalesforceIntegrationLoginURI',
+      {
+        poolId,
+        userId,
+      },
+    );
+  }
+
+  /**
+   * @param string - poolId
    * @return Promise|Observable|any
    */
   GetSalesforcePoolSetting(poolId: string): any {
@@ -23,6 +38,21 @@ export class SalesforcePoolSetting {
   }
 
   // Commands
+
+  /**
+   * @param string - code
+   * @param any[] - state
+   * @return Promise|Observable|any
+   */
+  CompleteSalesforceIntegrationOAuthFlow(code: string, state: any[]): any {
+    return this.restClient.post(
+      'SalesforcePoolSetting/UseCase/CompleteSalesforceIntegrationOAuthFlow',
+      {
+        code,
+        state,
+      },
+    );
+  }
 
   /**
    * @param string - poolId
