@@ -30,6 +30,8 @@ export class EventTheme {
    * @param string - fontColor
    * @param string - themeNameType material
    * @param string - themeFontFamilyType times
+   * @param string? - companyLogo
+   * @param string? - kioskModeBackgroundUrl
    * @return Promise|Observable|any
    */
   SetEventTheme(
@@ -41,6 +43,8 @@ export class EventTheme {
     fontColor: string,
     themeNameType: string,
     themeFontFamilyType: string,
+    companyLogo: string = null,
+    kioskModeBackgroundUrl: string = null,
   ): any {
     return this.restClient.post('EventTheme/UseCase/SetEventTheme', {
       eventId,
@@ -51,6 +55,8 @@ export class EventTheme {
       fontColor,
       themeNameType,
       themeFontFamilyType,
+      companyLogo,
+      kioskModeBackgroundUrl,
     });
   }
 }
