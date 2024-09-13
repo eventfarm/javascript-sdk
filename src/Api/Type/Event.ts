@@ -2309,7 +2309,7 @@ export class Event {
       {
         slug: 'primary',
         name: 'Primary Color',
-        description: '#5085F0',
+        description: '#5d58f7',
         isAlert: false,
         isBackground: false,
         isFont: false,
