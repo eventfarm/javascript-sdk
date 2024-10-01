@@ -83,12 +83,14 @@ export class EmailMessage {
    * @param string - eventId
    * @param number? - page >= 1
    * @param number? - itemsPerPage 1-100
+   * @param string[]? - withData Design
    * @return Promise|Observable|any
    */
   ListScheduledBatchEmailMessagesByEvent(
     eventId: string,
     page: number = null,
     itemsPerPage: number = null,
+    withData: string[] = null,
   ): any {
     return this.restClient.get(
       'EmailMessage/UseCase/ListScheduledBatchEmailMessagesByEvent',
@@ -96,6 +98,7 @@ export class EmailMessage {
         eventId,
         page,
         itemsPerPage,
+        withData,
       },
     );
   }
