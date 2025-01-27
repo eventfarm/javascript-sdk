@@ -42,7 +42,7 @@ export class User {
   /**
    * @param string - userId
    * @param string[]? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass|jrni
    * @param string? - poolId
    * @return Promise|Observable|any
    */
@@ -63,7 +63,7 @@ export class User {
   /**
    * @param string - email
    * @param string[]? - withData UserName|UserAddress|UserToken|isEFAdmin|internalUserName
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass|jrni
    * @param string? - poolId
    * @return Promise|Observable|any
    */
@@ -85,7 +85,7 @@ export class User {
    * @param string - poolId
    * @param string - userId
    * @param string[]? - withData UserName|UserAddress|UserToken|UserIdentifier|isEFAdmin|internalUserName|UserHealthPass
-   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass
+   * @param any[]? - withUserAttributes internal|info|hover|facebook|linked-in|salesforce|twitter|convio|google|custom|virbela|healthpass|jrni
    * @return Promise|Observable|any
    */
   GetUserInPool(

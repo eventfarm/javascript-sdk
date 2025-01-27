@@ -77,6 +77,7 @@ export interface PoolFileCategoryTypeInterface {
   isProfile: boolean;
   isEFx: boolean;
   isOther: boolean;
+  isUploader: boolean;
 }
 export interface PoolImageTypeInterface {
   slug: string;
@@ -1741,6 +1742,7 @@ export class Pool {
         isProfile: true,
         isEFx: false,
         isOther: false,
+        isUploader: false,
       },
       {
         slug: 'efx',
@@ -1749,6 +1751,7 @@ export class Pool {
         isProfile: false,
         isEFx: true,
         isOther: false,
+        isUploader: false,
       },
       {
         slug: 'other',
@@ -1757,6 +1760,16 @@ export class Pool {
         isProfile: false,
         isEFx: false,
         isOther: true,
+        isUploader: false,
+      },
+      {
+        slug: 'uploader',
+        name: 'Uploader',
+        description: null,
+        isProfile: false,
+        isEFx: false,
+        isOther: false,
+        isUploader: true,
       },
     ];
   }

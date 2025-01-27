@@ -61,7 +61,7 @@ export class PoolFile {
   /**
    * @param string - poolId
    * @param any - image image/jpeg|image/png|image/gif
-   * @param string - poolFileCategoryType profile|efx|other
+   * @param string - poolFileCategoryType profile|efx|other|uploader
    * @param string - fileName
    * @param string? - poolAssetId
    * @return Promise|Observable|any
@@ -85,7 +85,7 @@ export class PoolFile {
   /**
    * @param string - poolId
    * @param any - document
-   * @param string - poolFileCategoryType profile|efx|other
+   * @param string - poolFileCategoryType profile|efx|other|uploader
    * @param string - fileName
    * @param string? - poolDocumentId
    * @return Promise|Observable|any

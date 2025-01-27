@@ -137,12 +137,14 @@ export class Import {
    * @param string - userId
    * @param string - poolId
    * @param any - spreadsheet
+   * @param string? - eventId
    * @return Promise|Observable|any
    */
   PreProcessSpreadsheetForUserImport(
     userId: string,
     poolId: string,
     spreadsheet: any,
+    eventId: string = null,
   ): any {
     return this.restClient.postMultipart(
       'Import/UseCase/PreProcessSpreadsheetForUserImport',
@@ -150,6 +152,7 @@ export class Import {
         userId,
         poolId,
         spreadsheet,
+        eventId,
       },
     );
   }

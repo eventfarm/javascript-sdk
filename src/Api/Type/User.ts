@@ -75,6 +75,7 @@ export interface UserAttributeNamespaceTypeInterface {
   isCustom: boolean;
   isVirbela: boolean;
   isHealthpass: boolean;
+  isJrni: boolean;
 }
 export interface UserIdentifierTypeInterface {
   slug: string;
@@ -1028,6 +1029,7 @@ export class User {
         isCustom: false,
         isVirbela: false,
         isHealthpass: false,
+        isJrni: false,
       },
       {
         slug: 'info',
@@ -1045,6 +1047,7 @@ export class User {
         isCustom: false,
         isVirbela: false,
         isHealthpass: false,
+        isJrni: false,
       },
       {
         slug: 'hover',
@@ -1062,6 +1065,7 @@ export class User {
         isCustom: false,
         isVirbela: false,
         isHealthpass: false,
+        isJrni: false,
       },
       {
         slug: 'facebook',
@@ -1079,6 +1083,7 @@ export class User {
         isCustom: false,
         isVirbela: false,
         isHealthpass: false,
+        isJrni: false,
       },
       {
         slug: 'linked-in',
@@ -1096,6 +1101,7 @@ export class User {
         isCustom: false,
         isVirbela: false,
         isHealthpass: false,
+        isJrni: false,
       },
       {
         slug: 'salesforce',
@@ -1113,6 +1119,7 @@ export class User {
         isCustom: false,
         isVirbela: false,
         isHealthpass: false,
+        isJrni: false,
       },
       {
         slug: 'twitter',
@@ -1130,6 +1137,7 @@ export class User {
         isCustom: false,
         isVirbela: false,
         isHealthpass: false,
+        isJrni: false,
       },
       {
         slug: 'convio',
@@ -1147,6 +1155,7 @@ export class User {
         isCustom: false,
         isVirbela: false,
         isHealthpass: false,
+        isJrni: false,
       },
       {
         slug: 'google',
@@ -1164,6 +1173,7 @@ export class User {
         isCustom: false,
         isVirbela: false,
         isHealthpass: false,
+        isJrni: false,
       },
       {
         slug: 'custom',
@@ -1181,6 +1191,7 @@ export class User {
         isCustom: true,
         isVirbela: false,
         isHealthpass: false,
+        isJrni: false,
       },
       {
         slug: 'virbela',
@@ -1198,6 +1209,7 @@ export class User {
         isCustom: false,
         isVirbela: true,
         isHealthpass: false,
+        isJrni: false,
       },
       {
         slug: 'healthpass',
@@ -1215,6 +1227,25 @@ export class User {
         isCustom: false,
         isVirbela: false,
         isHealthpass: true,
+        isJrni: false,
+      },
+      {
+        slug: 'jrni',
+        name: 'JRNI',
+        description: null,
+        isInternal: false,
+        isInfo: false,
+        isHover: false,
+        isSpamReport: false,
+        isLinkedin: false,
+        isSalesforce: false,
+        isTwitter: false,
+        isConvio: false,
+        isGoogle: false,
+        isCustom: false,
+        isVirbela: false,
+        isHealthpass: false,
+        isJrni: true,
       },
     ];
   }
