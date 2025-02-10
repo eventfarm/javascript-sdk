@@ -88,6 +88,16 @@ export class Integration {
         description: null,
       },
       {
+        slug: 'other',
+        name: 'Other',
+        description: null,
+      },
+      {
+        slug: 'external_id',
+        name: 'External ID',
+        description: null,
+      },
+      {
         slug: 'newCustomField',
         name: 'New Custom Field',
         description: null,

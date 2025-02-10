@@ -81,6 +81,27 @@ export class Report {
    * @param string? - reportId
    * @return Promise|Observable|any
    */
+  CreateAddressBookReport(
+    eventId: string,
+    ownerUserId: string,
+    name: string = null,
+    reportId: string = null,
+  ): any {
+    return this.restClient.post('Report/UseCase/CreateAddressBookReport', {
+      eventId,
+      ownerUserId,
+      name,
+      reportId,
+    });
+  }
+
+  /**
+   * @param string - eventId
+   * @param string - ownerUserId
+   * @param string? - name
+   * @param string? - reportId
+   * @return Promise|Observable|any
+   */
   CreateAdminEventReport(
     eventId: string,
     ownerUserId: string,

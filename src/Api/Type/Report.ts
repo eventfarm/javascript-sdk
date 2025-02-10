@@ -37,6 +37,7 @@ export interface ReportTypeInterface {
   isActivityLog: boolean;
   isAdminEvents: boolean;
   isSentSMS: boolean;
+  isContacts: boolean;
 }
 
 export class Report {
@@ -142,6 +143,7 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: false,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'confirmed',
@@ -161,6 +163,7 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: false,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'unconfirmed',
@@ -180,6 +183,7 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: false,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'purchase',
@@ -199,6 +203,7 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: false,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'waitlist',
@@ -218,6 +223,7 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: false,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'checkin',
@@ -237,6 +243,7 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: false,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'transfer',
@@ -256,6 +263,7 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: false,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'ticketblock',
@@ -275,6 +283,7 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: false,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'email',
@@ -294,6 +303,7 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: false,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'sent',
@@ -313,6 +323,7 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: false,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'waiver',
@@ -332,6 +343,7 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: false,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'activitylog',
@@ -351,6 +363,7 @@ export class Report {
         isActivityLog: true,
         isAdminEvents: false,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'adminevents',
@@ -370,6 +383,7 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: true,
         isSentSMS: false,
+        isContacts: false,
       },
       {
         slug: 'sent-sms',
@@ -389,6 +403,27 @@ export class Report {
         isActivityLog: false,
         isAdminEvents: false,
         isSentSMS: true,
+        isContacts: false,
+      },
+      {
+        slug: 'contacts',
+        name: 'Contacts',
+        description: 'Address Book Report',
+        isInvitation: false,
+        isConfirmed: false,
+        isUnconfirmed: false,
+        isPurchased: false,
+        isWaitlist: false,
+        isCheckin: false,
+        isTransfer: false,
+        isTicketblockUsers: false,
+        isEmailDeliverability: false,
+        isSentEmails: false,
+        isWaiver: false,
+        isActivityLog: false,
+        isAdminEvents: false,
+        isSentSMS: false,
+        isContacts: true,
       },
     ];
   }
