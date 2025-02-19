@@ -52,7 +52,7 @@ export class IntegrationFieldMapping {
    * @param boolean - canUpdateEventFarmField true|false
    * @param boolean - canUpdateIntegrationField true|false
    * @param boolean - canDeleteMapping true|false
-   * @param string? - updateRule never|different|blank
+   * @param string? - updateRule never|different|blank|append
    * @param string? - fieldName
    * @return Promise|Observable|any
    */
@@ -144,7 +144,7 @@ export class IntegrationFieldMapping {
 
   /**
    * @param string - integrationFieldMappingId
-   * @param string - updateRule never|different|blank
+   * @param string - updateRule never|different|blank|append
    * @return Promise|Observable|any
    */
   SetIntegrationFieldMappingUpdateRule(

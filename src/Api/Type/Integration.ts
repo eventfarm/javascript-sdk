@@ -97,11 +97,6 @@ export class Integration {
         name: 'External ID',
         description: null,
       },
-      {
-        slug: 'newCustomField',
-        name: 'New Custom Field',
-        description: null,
-      },
     ];
   }
 }

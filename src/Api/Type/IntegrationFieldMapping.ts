@@ -27,6 +27,7 @@ export interface UpdateRuleTypeInterface {
   isNever: boolean;
   isDifferent: boolean;
   isBlank: boolean;
+  isAppend: boolean;
 }
 
 export class IntegrationFieldMapping {
@@ -135,6 +136,7 @@ export class IntegrationFieldMapping {
         isNever: true,
         isDifferent: false,
         isBlank: false,
+        isAppend: false,
       },
       {
         slug: 'different',
@@ -143,6 +145,7 @@ export class IntegrationFieldMapping {
         isNever: false,
         isDifferent: true,
         isBlank: false,
+        isAppend: false,
       },
       {
         slug: 'blank',
@@ -151,6 +154,16 @@ export class IntegrationFieldMapping {
         isNever: false,
         isDifferent: false,
         isBlank: true,
+        isAppend: false,
+      },
+      {
+        slug: 'append',
+        name: 'Append To Current Value',
+        description: null,
+        isNever: false,
+        isDifferent: false,
+        isBlank: false,
+        isAppend: true,
       },
     ];
   }
