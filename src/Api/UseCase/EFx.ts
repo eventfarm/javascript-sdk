@@ -322,12 +322,18 @@ export class EFx {
 
   /**
    * @param string - phoneNumber
+   * @param string - eventId
    * @param string? - appCategoryType check-in|efx|events|listed|exhibitor
    * @return Promise|Observable|any
    */
-  SendSMSWithAppLink(phoneNumber: string, appCategoryType: string = null): any {
+  SendSMSWithAppLink(
+    phoneNumber: string,
+    eventId: string,
+    appCategoryType: string = null,
+  ): any {
     return this.restClient.post('EFx/UseCase/SendSMSWithAppLink', {
       phoneNumber,
+      eventId,
       appCategoryType,
     });
   }
