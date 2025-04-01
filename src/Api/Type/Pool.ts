@@ -41,6 +41,7 @@ export interface FeatureTypeInterface {
   isGuestPass: boolean;
   isCustomNikeLocalizedPPToU: boolean;
   isAllowInternalPaymentProcessor: boolean;
+  isAirship: boolean;
 }
 export interface PoolAllotmentTypeInterface {
   slug: string;
@@ -137,6 +138,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'apiaccess',
@@ -178,6 +180,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'marketo',
@@ -219,6 +222,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'emailmasking',
@@ -260,6 +264,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'whitelabeling',
@@ -301,6 +306,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'agents',
@@ -342,6 +348,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'visacheckout',
@@ -383,6 +390,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'canvas',
@@ -424,6 +432,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'shield',
@@ -465,6 +474,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'accesscontrol-efx',
@@ -506,6 +516,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'athletebag-efx',
@@ -547,6 +558,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'concierge-efx',
@@ -588,6 +600,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'digitalmemorybank-efx',
@@ -629,6 +642,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'guestinfo-efx',
@@ -670,6 +684,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'messaging-efx',
@@ -711,6 +726,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'smsquiz-efx',
@@ -752,6 +768,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'productpickup-efx',
@@ -793,6 +810,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'raffle-efx',
@@ -834,6 +852,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'reservation-efx',
@@ -875,6 +894,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'roamingphotog-efx',
@@ -916,6 +936,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'smartbar-efx',
@@ -957,6 +978,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'teams-efx',
@@ -998,6 +1020,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'event-app',
@@ -1039,6 +1062,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'child-events',
@@ -1080,6 +1104,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'waitlist',
@@ -1121,6 +1146,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'virbela',
@@ -1162,6 +1188,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'web-conference',
@@ -1203,6 +1230,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'health-pass',
@@ -1244,6 +1272,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'question-logic',
@@ -1285,6 +1314,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'exhibitors',
@@ -1326,6 +1356,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'session-management',
@@ -1367,6 +1398,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'beta-features',
@@ -1408,6 +1440,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'disable-payments',
@@ -1449,6 +1482,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'guest-pass',
@@ -1490,6 +1524,7 @@ export class Pool {
         isGuestPass: true,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'custom-nike-localized-pp-tou',
@@ -1531,6 +1566,7 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: true,
         isAllowInternalPaymentProcessor: false,
+        isAirship: false,
       },
       {
         slug: 'allow-internal-payment-processor',
@@ -1572,6 +1608,49 @@ export class Pool {
         isGuestPass: false,
         isCustomNikeLocalizedPPToU: false,
         isAllowInternalPaymentProcessor: true,
+        isAirship: false,
+      },
+      {
+        slug: 'airship',
+        name: 'Airship',
+        description: null,
+        isSalesforce: false,
+        isApiAccess: false,
+        isMarketo: false,
+        isEmailMasking: false,
+        isWhiteLabeling: false,
+        isAgents: false,
+        isVisaCheckout: false,
+        isCanvas: false,
+        isShield: false,
+        isAccessControlEFx: false,
+        isAthleteBagEFx: false,
+        isConciergeEFx: false,
+        isDigitalMemoryBankEFx: false,
+        isGuestInfoEFx: false,
+        isMessagingEFx: false,
+        isSmsQuizEFx: false,
+        isProductPickupEFx: false,
+        isRaffleEFx: false,
+        isReservationEFx: false,
+        isRoamingPhotogEFx: false,
+        isSmartBarEFx: false,
+        isTeamsEFx: false,
+        isEventApp: false,
+        isChildEvents: false,
+        isWaitlist: false,
+        isVirbela: false,
+        isWebConference: false,
+        isQuestionLogic: false,
+        isHealthPass: false,
+        isExhibitors: false,
+        isSessionManagement: false,
+        isBetaFeatures: false,
+        isDisablePayments: false,
+        isGuestPass: false,
+        isCustomNikeLocalizedPPToU: false,
+        isAllowInternalPaymentProcessor: false,
+        isAirship: true,
       },
     ];
   }
