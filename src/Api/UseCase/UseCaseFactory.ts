@@ -1,6 +1,7 @@
 import { RestClientInterface } from '../../Interfaces';
 
 import { ActivityLog } from './ActivityLog';
+import { Airship } from './Airship';
 import { Allotment } from './Allotment';
 import { Answer } from './Answer';
 import { AppVersion } from './AppVersion';
@@ -83,6 +84,10 @@ export class UseCaseFactory {
 
   ActivityLog(): ActivityLog {
     return new ActivityLog(this.restClient);
+  }
+
+  Airship(): Airship {
+    return new Airship(this.restClient);
   }
 
   Allotment(): Allotment {
