@@ -684,6 +684,7 @@ export class EmailMessage {
    * @param any[] - templateVariables
    * @param any[]? - ccEmails
    * @param any[]? - bccEmails
+   * @param string? - clientDomainMaskEmail
    * @return Promise|Observable|any
    */
   SendSystemEmail(
@@ -693,6 +694,7 @@ export class EmailMessage {
     templateVariables: any[],
     ccEmails: any[] = null,
     bccEmails: any[] = null,
+    clientDomainMaskEmail: string = null,
   ): any {
     return this.restClient.post('EmailMessage/UseCase/SendSystemEmail', {
       toEmail,
@@ -701,6 +703,7 @@ export class EmailMessage {
       templateVariables,
       ccEmails,
       bccEmails,
+      clientDomainMaskEmail,
     });
   }
 

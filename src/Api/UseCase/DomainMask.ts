@@ -52,4 +52,22 @@ export class DomainMask {
       domainMaskId,
     });
   }
+
+  /**
+   * @param string - domainMaskId
+   * @param string? - defaultUsername
+   * @return Promise|Observable|any
+   */
+  SetDefaultUsernameForPool(
+    domainMaskId: string,
+    defaultUsername: string = null,
+  ): any {
+    return this.restClient.post(
+      'DomainMask/UseCase/SetDefaultUsernameForPool',
+      {
+        domainMaskId,
+        defaultUsername,
+      },
+    );
+  }
 }
