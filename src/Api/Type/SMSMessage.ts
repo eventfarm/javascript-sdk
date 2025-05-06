@@ -38,6 +38,7 @@ export interface SMSMessageSlugTypeInterface {
   isTicketBlockName: boolean;
   isInviteLink: boolean;
   isAirshipAdaptiveLink: boolean;
+  isOther: boolean;
 }
 export interface SMSMessageTypeInterface {
   slug: string;
@@ -188,6 +189,7 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: false,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[EVENT_LOCATION_NAME]',
@@ -207,6 +209,7 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: false,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[EVENT_LOCATION_ADDRESS]',
@@ -226,6 +229,7 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: false,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[EVENT_START_DATE_TIME]',
@@ -245,6 +249,7 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: false,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[EVENT_END_DATE_TIME]',
@@ -264,6 +269,7 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: false,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[ACCESS_TYPE_NAME]',
@@ -283,6 +289,7 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: false,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[TICKET_BLOCK_NAME]',
@@ -302,6 +309,7 @@ export class SMSMessage {
         isTicketBlockName: true,
         isInviteLink: false,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[FIRST_NAME]',
@@ -321,6 +329,7 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: false,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[LAST_NAME]',
@@ -340,6 +349,7 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: false,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[INVITE_QR_CODE]',
@@ -359,6 +369,7 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: false,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[COMPANY]',
@@ -378,6 +389,7 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: false,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[POSITION]',
@@ -397,6 +409,7 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: false,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[INVITE_LINK]',
@@ -416,6 +429,7 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: true,
         isAirshipAdaptiveLink: false,
+        isOther: false,
       },
       {
         slug: '[AIRSHIP_ADAPTIVE_LINK]',
@@ -435,6 +449,27 @@ export class SMSMessage {
         isTicketBlockName: false,
         isInviteLink: false,
         isAirshipAdaptiveLink: true,
+        isOther: false,
+      },
+      {
+        slug: '[OTHER]',
+        name: 'Other',
+        description: null,
+        isEventName: false,
+        isEventLocationName: false,
+        isEventLocationAddress: false,
+        isEventStartDateTime: false,
+        isEventEndDateTime: false,
+        isAccessTypeName: false,
+        isFirstName: false,
+        isLastName: false,
+        isInviteQRCode: false,
+        isCompany: false,
+        isPosition: false,
+        isTicketBlockName: false,
+        isInviteLink: false,
+        isAirshipAdaptiveLink: false,
+        isOther: true,
       },
     ];
   }
